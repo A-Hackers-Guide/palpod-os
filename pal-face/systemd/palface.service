@@ -1,0 +1,32 @@
+[Unit]
+Description=PAL Face Renderer (kiosk)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=pal
+Group=pal
+WorkingDirectory=/opt/palpod/pal-face
+
+# --- Framebuffer kiosk on Jetson (no X server) ------------------------------
+# Use kmsdrm on modern Jetson stacks (L4T r35+); fall back to fbcon on old ones.
+Environment=SDL_VIDEODRIVER=kmsdrm
+Environment=SDL_FBDEV=/dev/fb0
+Environment=SDL_NOMOUSE=1
+Environment=PYTHONUNBUFFERED=1
+
+# If your Python is a venv, swap ExecStart accordingly.
+ExecStart=/opt/palpod/pal-face/.venv/bin/python -m palface -c /opt/palpod/pal-face/config.yaml
+
+Restart=always
+RestartSec=2
+StandardOutput=journal
+StandardError=journal
+
+# Access to the framebuffer / DRM devices requires membership in the `video`
+# group OR the following device rules — pick one:
+SupplementaryGroups=video render
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,190 @@
+2026-08-03 20:26:24.992 INFO   Freerouting v2.2.4 (build-date: 2026-05-13)
+2026-08-03 20:26:24.994 DEBUG  [startup] user-data path : /var/folders/hj/n001jc5d33s_718j452r8dl40000gn/T/freerouting  (source: default (java.io.tmpdir))
+2026-08-03 20:26:24.994 DEBUG  [startup] log file       : /var/folders/hj/n001jc5d33s_718j452r8dl40000gn/T/freerouting/freerouting.log
+2026-08-03 20:26:25.060 DEBUG  No default constructor found for field: filterByNet
+2026-08-03 20:26:25.061 DEBUG  Settings loaded from '/var/folders/hj/n001jc5d33s_718j452r8dl40000gn/T/freerouting/freerouting.json'.
+2026-08-03 20:26:25.061 DEBUG  Version: 2.2.4,2026-05-13
+2026-08-03 20:26:25.061 DEBUG  Command line arguments: '-de /private/tmp/claude-501/-Users-lexer-kindle/80e67baf-6192-4db2-b491-aa5b4ee00c5b/scratchpad/palpod-os/hardware/electrical/kicad/palpod-orb/palpod-orb-routed.dsn -do /private/tmp/claude-501/-Users-lexer-kindle/80e67baf-6192-4db2-b491-aa5b4ee00c5b/scratchpad/palpod-os/hardware/electrical/kicad/palpod-orb/palpod-orb-routed.ses -mp 3'
+2026-08-03 20:26:25.062 DEBUG  Architecture: Mac OS X,aarch64,27.0
+2026-08-03 20:26:25.062 DEBUG  Java: 26.0.2,Homebrew
+2026-08-03 20:26:25.062 DEBUG  System Language: en,en_US
+2026-08-03 20:26:25.062 DEBUG  Hardware: 6 CPU cores,2048 MB RAM
+2026-08-03 20:26:25.063 DEBUG  UTC Time: 2026-08-04T03:26:25.061632Z
+2026-08-03 20:26:25.063 DEBUG  GUI Language: en_US
+2026-08-03 20:26:25.063 DEBUG  Host: N/A
+2026-08-03 20:26:25.068 DEBUG  Screen: 2048x1280, 186 DPI
+2026-08-03 20:26:26.085 DEBUG  Loaded router settings from: /var/folders/hj/n001jc5d33s_718j452r8dl40000gn/T/freerouting/freerouting.json
+2026-08-03 20:26:26.086 DEBUG  Applied CLI router setting: router.max_passes = 3
+2026-08-03 20:26:26.086 DEBUG  No router settings found in environment variables
+2026-08-03 20:26:26.702 INFO   New version available: v2.2.4
+2026-08-03 20:26:26.852 INFO   Opening '/private/tmp/claude-501/-Users-lexer-kindle/80e67baf-6192-4db2-b491-aa5b4ee00c5b/scratchpad/palpod-os/hardware/electrical/kicad/palpod-orb/palpod-orb-routed.dsn'...
+2026-08-03 20:26:26.902 DEBUG  Set DEFAULT clearance (all layers): 1500 (0.0375 mm) from DSN value 150.0
+2026-08-03 20:26:26.906 DEBUG  Set clearance (all layers): smd_smd = 375 (0.009375 mm), classes [2,2]
+2026-08-03 20:26:26.907 DEBUG  Set default trace width (all layers): DSN=150.0 → board=1500 (0.0375 mm)
+2026-08-03 20:26:26.922 DEBUG  Loaded router settings from DSN file: palpod-orb-routed.dsn (6 layers)
+2026-08-03 20:26:26.924 DEBUG  Merging settings from 6 sources:
+2026-08-03 20:26:26.925 DEBUG    - Default Settings (priority 0): base settings
+2026-08-03 20:26:26.926 DEBUG    - freerouting.json (priority 10): 2 fields changed
+2026-08-03 20:26:26.926 DEBUG    - DSN file: palpod-orb-routed.dsn (priority 20): 4 fields changed
+2026-08-03 20:26:26.926 DEBUG    - GUI Settings (priority 50): 0 fields changed
+2026-08-03 20:26:26.926 DEBUG    - Environment Variables (priority 55): 0 fields changed
+2026-08-03 20:26:26.926 DEBUG    - CLI Arguments (priority 60): 0 fields changed
+2026-08-03 20:26:26.926 DEBUG  Settings merged successfully from 6 source(s)
+2026-08-03 20:26:28.317 DEBUG  Set DEFAULT clearance (all layers): 1500 (0.0375 mm) from DSN value 150.0
+2026-08-03 20:26:28.318 DEBUG  Set clearance (all layers): smd_smd = 375 (0.009375 mm), classes [2,2]
+2026-08-03 20:26:28.318 DEBUG  Set default trace width (all layers): DSN=150.0 → board=1500 (0.0375 mm)
+2026-08-03 20:26:28.492 DEBUG  Merging settings from 6 sources:
+2026-08-03 20:26:28.492 DEBUG    - Default Settings (priority 0): base settings
+2026-08-03 20:26:28.492 DEBUG    - freerouting.json (priority 10): 2 fields changed
+2026-08-03 20:26:28.492 DEBUG    - DSN file: palpod-orb-routed.dsn (priority 20): 4 fields changed
+2026-08-03 20:26:28.492 DEBUG    - GUI Settings (priority 50): 1 fields changed
+2026-08-03 20:26:28.493 DEBUG    - Environment Variables (priority 55): 0 fields changed
+2026-08-03 20:26:28.493 DEBUG    - CLI Arguments (priority 60): 0 fields changed
+2026-08-03 20:26:28.493 DEBUG  Settings merged successfully from 6 source(s)
+2026-08-03 20:26:37.153 INFO   [DD7A28\7D992B] Starting routing of 'palpod-orb-routed' on 5 threads...
+2026-08-03 20:26:37.368 DEBUG  Queuing item for routing: Pin on net 'VCC' (connected: 1/5)
+2026-08-03 20:26:37.369 DEBUG  Queuing item for routing: Pin on net 'VCC' (connected: 1/5)
+2026-08-03 20:26:37.369 DEBUG  Queuing item for routing: Pin on net 'VCC' (connected: 1/5)
+2026-08-03 20:26:37.369 DEBUG  Queuing item for routing: Pin on net 'VCC' (connected: 1/5)
+2026-08-03 20:26:37.370 DEBUG  Queuing item for routing: Pin on net 'VCC' (connected: 1/5)
+2026-08-03 20:26:37.370 DEBUG  Queuing item for routing: Pin on net 'VBUS' (connected: 1/2)
+2026-08-03 20:26:37.370 DEBUG  Queuing item for routing: Pin on net 'VBUS' (connected: 1/2)
+2026-08-03 20:26:37.370 DEBUG  Queuing item for routing: Pin on net 'VDD' (connected: 1/8)
+2026-08-03 20:26:37.370 DEBUG  Queuing item for routing: Pin on net 'VDD' (connected: 1/8)
+2026-08-03 20:26:37.370 DEBUG  Queuing item for routing: Pin on net 'VDD' (connected: 1/8)
+2026-08-03 20:26:37.370 DEBUG  Queuing item for routing: Pin on net 'GND' (connected: 1/8)
+2026-08-03 20:26:37.371 DEBUG  Queuing item for routing: Pin on net 'GND' (connected: 1/8)
+2026-08-03 20:26:37.371 DEBUG  Queuing item for routing: Pin on net 'VDD' (connected: 1/8)
+2026-08-03 20:26:37.371 DEBUG  Queuing item for routing: Pin on net 'VDD' (connected: 1/8)
+2026-08-03 20:26:37.371 DEBUG  Queuing item for routing: Pin on net 'VDD' (connected: 1/8)
+2026-08-03 20:26:37.371 DEBUG  Queuing item for routing: Pin on net 'GND' (connected: 1/8)
+2026-08-03 20:26:37.371 DEBUG  Queuing item for routing: Pin on net 'GND' (connected: 1/8)
+2026-08-03 20:26:37.371 DEBUG  Queuing item for routing: Pin on net 'GND' (connected: 1/8)
+2026-08-03 20:26:37.371 DEBUG  Queuing item for routing: Pin on net 'GND' (connected: 1/8)
+2026-08-03 20:26:37.371 DEBUG  Queuing item for routing: Pin on net 'GND' (connected: 1/8)
+2026-08-03 20:26:37.371 DEBUG  Queuing item for routing: Pin on net 'GND' (connected: 1/8)
+2026-08-03 20:26:37.372 DEBUG  Queuing item for routing: Pin on net 'VDD' (connected: 1/8)
+2026-08-03 20:26:37.372 DEBUG  Queuing item for routing: Pin on net 'VDD' (connected: 1/8)
+2026-08-03 20:26:37.372 DEBUG  Queuing item for routing: Pin on net 'AVDD' (connected: 1/2)
+2026-08-03 20:26:37.372 DEBUG  Queuing item for routing: Pin on net 'AVDD' (connected: 1/2)
+2026-08-03 20:26:37.372 DEBUG  Queuing item for routing: Pin on net '3V3' (connected: 1/4)
+2026-08-03 20:26:37.373 DEBUG  Queuing item for routing: Pin on net '3V3' (connected: 1/4)
+2026-08-03 20:26:37.373 DEBUG  Queuing item for routing: Pin on net '3V3' (connected: 1/4)
+2026-08-03 20:26:37.377 DEBUG  Queuing item for routing: Pin on net '3V3' (connected: 1/4)
+2026-08-03 20:26:37.404 DEBUG  [DD7A28\7D992B] Pass #1: 23 incompletes across 29 items to route
+2026-08-03 20:26:37.405 DEBUG  [DD7A28\7D992B]   Net '3V3' has 3 incomplete(s)
+2026-08-03 20:26:37.405 DEBUG  [DD7A28\7D992B]   Net 'AVDD' has 1 incomplete(s)
+2026-08-03 20:26:37.405 DEBUG  [DD7A28\7D992B]   Net 'VDD' has 7 incomplete(s)
+2026-08-03 20:26:37.405 DEBUG  [DD7A28\7D992B]   Net 'GND' has 7 incomplete(s)
+2026-08-03 20:26:37.405 DEBUG  [DD7A28\7D992B]   Net 'VBUS' has 1 incomplete(s)
+2026-08-03 20:26:37.405 DEBUG  [DD7A28\7D992B]   Net 'VCC' has 4 incomplete(s)
+2026-08-03 20:26:39.417 DEBUG  [DD7A28\7D992B] Autorouter Failed to route connection between pin of component #39, pin of component #38, pin of component #37, pin of component #23 and pin of component #40, because no connection was found between their nets.
+2026-08-03 20:26:40.810 DEBUG  [DD7A28\7D992B] Autorouter Failed to route connection between pin of component #40, pin of component #38, pin of component #37, pin of component #23 and pin of component #39, because no connection was found between their nets.
+2026-08-03 20:26:41.086 DEBUG  MazeSearchAlgo.init: Failed - no accessible expansion doors found (start items: 2, start rooms: 2, completed start rooms: 0, expansion doors found: 0, destination doors: 0, ripup_allowed: true, ripup_costs: 100)
+2026-08-03 20:26:41.087 DEBUG  [DD7A28\7D992B] Autorouter Failed to route connection between pin of component #40, pin of component #39 and polylinetrace, polylinetrace, polylinetrace, polylinetrace, pin of component #38, pin of component #37, pin of component #23, because the maze search algorithm could not be created.
+2026-08-03 20:26:41.104 DEBUG  MazeSearchAlgo.init: Failed - no accessible expansion doors found (start items: 7, start rooms: 7, completed start rooms: 0, expansion doors found: 0, destination doors: 0, ripup_allowed: true, ripup_costs: 100)
+2026-08-03 20:26:41.105 DEBUG  [DD7A28\7D992B] Autorouter Failed to route connection between pin #24 of component #17, pin #23 of component #17, pin #25 of component #16, pin #24 of component #16, pin #23 of component #16, pin #25 of component #14, pin #23 of component #14 and pin #25 of component #17, because the maze search algorithm could not be created.
+2026-08-03 20:26:41.110 DEBUG  MazeSearchAlgo.init: Failed - no accessible expansion doors found (start items: 7, start rooms: 7, completed start rooms: 0, expansion doors found: 0, destination doors: 0, ripup_allowed: true, ripup_costs: 100)
+2026-08-03 20:26:41.112 DEBUG  [DD7A28\7D992B] Autorouter Failed to route connection between pin #25 of component #17, pin #23 of component #17, pin #25 of component #16, pin #24 of component #16, pin #23 of component #16, pin #25 of component #14, pin #23 of component #14 and pin #24 of component #17, because the maze search algorithm could not be created.
+2026-08-03 20:26:41.113 DEBUG  MazeSearchAlgo.init: Failed - no accessible expansion doors found (start items: 7, start rooms: 7, completed start rooms: 0, expansion doors found: 0, destination doors: 0, ripup_allowed: true, ripup_costs: 100)
+2026-08-03 20:26:41.114 DEBUG  [DD7A28\7D992B] Autorouter Failed to route connection between pin #25 of component #17, pin #24 of component #17, pin #25 of component #16, pin #24 of component #16, pin #23 of component #16, pin #25 of component #14, pin #23 of component #14 and pin #23 of component #17, because the maze search algorithm could not be created.
+2026-08-03 20:26:42.533 DEBUG  [DD7A28\7D992B] Autorouter Failed to route connection between pin #26 of component #16, pin #17 of component #16, pin #14 of component #16, pin #11 of component #16, pin #8 of component #16, pin #5 of component #16, pin #2 of component #16 and pin #2 of component #17, because no connection was found between their nets.
+2026-08-03 20:26:42.768 DEBUG  MazeSearchAlgo.init: Failed - no accessible expansion doors found (start items: 7, start rooms: 7, completed start rooms: 0, expansion doors found: 0, destination doors: 0, ripup_allowed: true, ripup_costs: 100)
+2026-08-03 20:26:42.773 DEBUG  [DD7A28\7D992B] Autorouter Failed to route connection between pin #25 of component #17, pin #24 of component #17, pin #23 of component #17, pin #24 of component #16, pin #23 of component #16, pin #25 of component #14, pin #23 of component #14 and pin #25 of component #16, because the maze search algorithm could not be created.
+2026-08-03 20:26:42.777 DEBUG  MazeSearchAlgo.init: Failed - no accessible expansion doors found (start items: 7, start rooms: 7, completed start rooms: 0, expansion doors found: 0, destination doors: 0, ripup_allowed: true, ripup_costs: 100)
+2026-08-03 20:26:42.781 DEBUG  [DD7A28\7D992B] Autorouter Failed to route connection between pin #25 of component #17, pin #24 of component #17, pin #23 of component #17, pin #25 of component #16, pin #23 of component #16, pin #25 of component #14, pin #23 of component #14 and pin #24 of component #16, because the maze search algorithm could not be created.
+2026-08-03 20:26:42.782 DEBUG  MazeSearchAlgo.init: Failed - no accessible expansion doors found (start items: 7, start rooms: 7, completed start rooms: 0, expansion doors found: 0, destination doors: 0, ripup_allowed: true, ripup_costs: 100)
+2026-08-03 20:26:42.783 DEBUG  [DD7A28\7D992B] Autorouter Failed to route connection between pin #25 of component #17, pin #24 of component #17, pin #23 of component #17, pin #25 of component #16, pin #24 of component #16, pin #25 of component #14, pin #23 of component #14 and pin #23 of component #16, because the maze search algorithm could not be created.
+2026-08-03 20:26:42.900 DEBUG  MazeSearchAlgo.init: Failed - no accessible expansion doors found (start items: 1, start rooms: 1, completed start rooms: 0, expansion doors found: 0, destination doors: 0, ripup_allowed: true, ripup_costs: 100)
+2026-08-03 20:26:42.901 DEBUG  [DD7A28\7D992B] Autorouter Failed to route connection between pin #2 of component #17 and polylinetrace, polylinetrace, polylinetrace, polylinetrace, polylinetrace, polylinetrace, polylinetrace, polylinetrace, polylinetrace, polylinetrace, polylinetrace, polylinetrace, pin #26 of component #16, pin #17 of component #16, pin #14 of component #16, pin #11 of component #16, pin #8 of component #16, pin #5 of component #16, pin #2 of component #16, because the maze search algorithm could not be created.
+2026-08-03 20:26:42.902 DEBUG  MazeSearchAlgo.init: Failed - no accessible expansion doors found (start items: 7, start rooms: 7, completed start rooms: 0, expansion doors found: 0, destination doors: 0, ripup_allowed: true, ripup_costs: 100)
+2026-08-03 20:26:42.902 DEBUG  [DD7A28\7D992B] Autorouter Failed to route connection between pin #25 of component #17, pin #24 of component #17, pin #23 of component #17, pin #25 of component #16, pin #24 of component #16, pin #23 of component #16, pin #23 of component #14 and pin #25 of component #14, because the maze search algorithm could not be created.
+2026-08-03 20:26:42.903 DEBUG  MazeSearchAlgo.init: Failed - no accessible expansion doors found (start items: 7, start rooms: 7, completed start rooms: 0, expansion doors found: 0, destination doors: 0, ripup_allowed: true, ripup_costs: 100)
+2026-08-03 20:26:42.904 DEBUG  [DD7A28\7D992B] Autorouter Failed to route connection between pin #25 of component #17, pin #24 of component #17, pin #23 of component #17, pin #25 of component #16, pin #24 of component #16, pin #23 of component #16, pin #25 of component #14 and pin #23 of component #14, because the maze search algorithm could not be created.
+2026-08-03 20:26:43.836 DEBUG  [DD7A28\7D992B] Autorouter Failed to route connection between pin #7 of component #8, pin #5 of component #8 and polylinetrace, polylinetrace, polylinetrace, pin #73 of component #8, pin #71 of component #8, because no connection was found between their nets.
+2026-08-03 20:26:43.847 DEBUG  [DD7A28\7D992B] Pass #1: Failed to route Pin on net '3V3' (3 items remaining, 1 failures). State: FAILED
+2026-08-03 20:26:43.887 DEBUG  InsertFoundConnectionAlgo: insert trace failed for net #1 at corner 11/11 on layer 0, trace width: 750, from corner: 0, ok_point: (175000,96036), target: (165000,96036)
+2026-08-03 20:26:43.888 DEBUG  InsertFoundConnectionAlgo: insert trace failed for net #1
+2026-08-03 20:26:43.893 DEBUG  [DD7A28\7D992B] Autorouter Failed to route connection between polylinetrace, polylinetrace, polylinetrace, pin #73 of component #8, pin #71 of component #8, pin #5 of component #8 and pin #7 of component #8, because the new connection could not be inserted.
+2026-08-03 20:26:43.893 DEBUG  [DD7A28\7D992B] Pass #1: Failed to route Pin on net '3V3' (2 items remaining, 1 failures). State: FAILED
+2026-08-03 20:26:43.912 DEBUG  InsertFoundConnectionAlgo: insert trace failed for net #1 at corner 6/6 on layer 0, trace width: 750, from corner: 3, ok_point: (172250,78784), target: (175000,96036)
+2026-08-03 20:26:43.913 DEBUG  InsertFoundConnectionAlgo: insert trace failed for net #1
+2026-08-03 20:26:43.915 DEBUG  [DD7A28\7D992B] Autorouter Failed to route connection between polylinetrace, polylinetrace, polylinetrace, pin #73 of component #8, pin #71 of component #8, pin #7 of component #8 and pin #5 of component #8, because the new connection could not be inserted.
+2026-08-03 20:26:43.918 DEBUG  [DD7A28\7D992B] Pass #1: Failed to route Pin on net '3V3' (1 items remaining, 1 failures). State: FAILED
+2026-08-03 20:26:43.973 INFO   [DD7A28\7D992B] Auto-router pass #1 on board '7148a5640f60ccff8c902c84c613200f' was completed in 6.60 seconds with the score of 488.35 (12 unrouted and 46 violations).
+2026-08-03 20:26:44.073 DEBUG  Queuing item for routing: Pin on net 'VCC' (connected: 1/9)
+2026-08-03 20:26:44.073 DEBUG  Queuing item for routing: Pin on net 'VCC' (connected: 1/9)
+2026-08-03 20:26:44.073 DEBUG  Queuing item for routing: Pin on net 'VCC' (connected: 7/9)
+2026-08-03 20:26:44.073 DEBUG  Queuing item for routing: Pin on net 'VDD' (connected: 1/8)
+2026-08-03 20:26:44.073 DEBUG  Queuing item for routing: Pin on net 'VDD' (connected: 1/8)
+2026-08-03 20:26:44.073 DEBUG  Queuing item for routing: Pin on net 'VDD' (connected: 1/8)
+2026-08-03 20:26:44.073 DEBUG  Queuing item for routing: Pin on net 'GND' (connected: 1/20)
+2026-08-03 20:26:44.074 DEBUG  Queuing item for routing: Pin on net 'GND' (connected: 19/20)
+2026-08-03 20:26:44.074 DEBUG  Queuing item for routing: Pin on net 'VDD' (connected: 1/8)
+2026-08-03 20:26:44.074 DEBUG  Queuing item for routing: Pin on net 'VDD' (connected: 1/8)
+2026-08-03 20:26:44.074 DEBUG  Queuing item for routing: Pin on net 'VDD' (connected: 1/8)
+2026-08-03 20:26:44.074 DEBUG  Queuing item for routing: Pin on net 'VDD' (connected: 1/8)
+2026-08-03 20:26:44.074 DEBUG  Queuing item for routing: Pin on net 'VDD' (connected: 1/8)
+2026-08-03 20:26:44.074 DEBUG  Queuing item for routing: Pin on net '3V3' (connected: 5/7)
+2026-08-03 20:26:44.074 DEBUG  Queuing item for routing: Pin on net '3V3' (connected: 1/7)
+2026-08-03 20:26:44.074 DEBUG  Queuing item for routing: Pin on net '3V3' (connected: 1/7)
+2026-08-03 20:26:44.088 DEBUG  [DD7A28\7D992B] Pass #2: 12 incompletes across 16 items to route
+2026-08-03 20:26:44.088 DEBUG  [DD7A28\7D992B]   Net '3V3' has 2 incomplete(s)
+2026-08-03 20:26:44.088 DEBUG  [DD7A28\7D992B]   Net 'VDD' has 7 incomplete(s)
+2026-08-03 20:26:44.088 DEBUG  [DD7A28\7D992B]   Net 'GND' has 1 incomplete(s)
+2026-08-03 20:26:44.088 DEBUG  [DD7A28\7D992B]   Net 'VCC' has 2 incomplete(s)
+2026-08-03 20:26:45.010 DEBUG  [DD7A28\7D992B] Autorouter Failed to route connection between polylinetrace, polylinetrace, polylinetrace, polylinetrace, pin of component #39, pin of component #38, pin of component #37, pin of component #23 and pin of component #40, because no connection was found between their nets.
+2026-08-03 20:26:45.863 DEBUG  [DD7A28\7D992B] Autorouter Failed to route connection between polylinetrace, polylinetrace, polylinetrace, polylinetrace, pin of component #40, pin of component #38, pin of component #37, pin of component #23 and pin of component #39, because no connection was found between their nets.
+2026-08-03 20:26:45.882 DEBUG  MazeSearchAlgo.init: Failed - no accessible expansion doors found (start items: 2, start rooms: 2, completed start rooms: 0, expansion doors found: 0, destination doors: 0, ripup_allowed: true, ripup_costs: 200)
+2026-08-03 20:26:45.883 DEBUG  [DD7A28\7D992B] Autorouter Failed to route connection between pin of component #40, pin of component #39 and polylinetrace, polylinetrace, polylinetrace, polylinetrace, pin of component #38, pin of component #37, pin of component #23, because the maze search algorithm could not be created.
+2026-08-03 20:26:45.883 DEBUG  MazeSearchAlgo.init: Failed - no accessible expansion doors found (start items: 7, start rooms: 7, completed start rooms: 0, expansion doors found: 0, destination doors: 0, ripup_allowed: true, ripup_costs: 200)
+2026-08-03 20:26:45.884 DEBUG  [DD7A28\7D992B] Autorouter Failed to route connection between pin #24 of component #17, pin #23 of component #17, pin #25 of component #16, pin #24 of component #16, pin #23 of component #16, pin #25 of component #14, pin #23 of component #14 and pin #25 of component #17, because the maze search algorithm could not be created.
+2026-08-03 20:26:45.885 DEBUG  MazeSearchAlgo.init: Failed - no accessible expansion doors found (start items: 7, start rooms: 7, completed start rooms: 0, expansion doors found: 0, destination doors: 0, ripup_allowed: true, ripup_costs: 200)
+2026-08-03 20:26:45.886 DEBUG  [DD7A28\7D992B] Autorouter Failed to route connection between pin #25 of component #17, pin #23 of component #17, pin #25 of component #16, pin #24 of component #16, pin #23 of component #16, pin #25 of component #14, pin #23 of component #14 and pin #24 of component #17, because the maze search algorithm could not be created.
+2026-08-03 20:26:45.887 DEBUG  MazeSearchAlgo.init: Failed - no accessible expansion doors found (start items: 7, start rooms: 7, completed start rooms: 0, expansion doors found: 0, destination doors: 0, ripup_allowed: true, ripup_costs: 200)
+2026-08-03 20:26:45.888 DEBUG  [DD7A28\7D992B] Autorouter Failed to route connection between pin #25 of component #17, pin #24 of component #17, pin #25 of component #16, pin #24 of component #16, pin #23 of component #16, pin #25 of component #14, pin #23 of component #14 and pin #23 of component #17, because the maze search algorithm could not be created.
+2026-08-03 20:26:46.784 DEBUG  [DD7A28\7D992B] Autorouter Failed to route connection between polylinetrace, polylinetrace, polylinetrace, polylinetrace, polylinetrace, polylinetrace, polylinetrace, polylinetrace, polylinetrace, polylinetrace, polylinetrace, polylinetrace, pin #26 of component #16, pin #17 of component #16, pin #14 of component #16, pin #11 of component #16, pin #8 of component #16, pin #5 of component #16, pin #2 of component #16 and pin #2 of component #17, because no connection was found between their nets.
+2026-08-03 20:26:46.817 DEBUG  MazeSearchAlgo.init: Failed - no accessible expansion doors found (start items: 1, start rooms: 1, completed start rooms: 0, expansion doors found: 0, destination doors: 0, ripup_allowed: true, ripup_costs: 200)
+2026-08-03 20:26:46.819 DEBUG  [DD7A28\7D992B] Autorouter Failed to route connection between pin #2 of component #17 and polylinetrace, polylinetrace, polylinetrace, polylinetrace, polylinetrace, polylinetrace, polylinetrace, polylinetrace, polylinetrace, polylinetrace, polylinetrace, polylinetrace, pin #26 of component #16, pin #17 of component #16, pin #14 of component #16, pin #11 of component #16, pin #8 of component #16, pin #5 of component #16, pin #2 of component #16, because the maze search algorithm could not be created.
+2026-08-03 20:26:46.820 DEBUG  MazeSearchAlgo.init: Failed - no accessible expansion doors found (start items: 7, start rooms: 7, completed start rooms: 0, expansion doors found: 0, destination doors: 0, ripup_allowed: true, ripup_costs: 200)
+2026-08-03 20:26:46.823 DEBUG  [DD7A28\7D992B] Autorouter Failed to route connection between pin #25 of component #17, pin #24 of component #17, pin #23 of component #17, pin #24 of component #16, pin #23 of component #16, pin #25 of component #14, pin #23 of component #14 and pin #25 of component #16, because the maze search algorithm could not be created.
+2026-08-03 20:26:46.833 DEBUG  MazeSearchAlgo.init: Failed - no accessible expansion doors found (start items: 7, start rooms: 7, completed start rooms: 0, expansion doors found: 0, destination doors: 0, ripup_allowed: true, ripup_costs: 200)
+2026-08-03 20:26:46.834 DEBUG  [DD7A28\7D992B] Autorouter Failed to route connection between pin #25 of component #17, pin #24 of component #17, pin #23 of component #17, pin #25 of component #16, pin #23 of component #16, pin #25 of component #14, pin #23 of component #14 and pin #24 of component #16, because the maze search algorithm could not be created.
+2026-08-03 20:26:46.835 DEBUG  MazeSearchAlgo.init: Failed - no accessible expansion doors found (start items: 7, start rooms: 7, completed start rooms: 0, expansion doors found: 0, destination doors: 0, ripup_allowed: true, ripup_costs: 200)
+2026-08-03 20:26:46.836 DEBUG  [DD7A28\7D992B] Autorouter Failed to route connection between pin #25 of component #17, pin #24 of component #17, pin #23 of component #17, pin #25 of component #16, pin #24 of component #16, pin #25 of component #14, pin #23 of component #14 and pin #23 of component #16, because the maze search algorithm could not be created.
+2026-08-03 20:26:46.838 DEBUG  MazeSearchAlgo.init: Failed - no accessible expansion doors found (start items: 7, start rooms: 7, completed start rooms: 0, expansion doors found: 0, destination doors: 0, ripup_allowed: true, ripup_costs: 200)
+2026-08-03 20:26:46.839 DEBUG  [DD7A28\7D992B] Autorouter Failed to route connection between pin #25 of component #17, pin #24 of component #17, pin #23 of component #17, pin #25 of component #16, pin #24 of component #16, pin #23 of component #16, pin #23 of component #14 and pin #25 of component #14, because the maze search algorithm could not be created.
+2026-08-03 20:26:46.839 DEBUG  [DD7A28\7D992B] Pass #2: Failed to route Pin on net 'VDD' (5 items remaining, 2 failures). State: FAILED
+2026-08-03 20:26:46.840 DEBUG  MazeSearchAlgo.init: Failed - no accessible expansion doors found (start items: 7, start rooms: 7, completed start rooms: 0, expansion doors found: 0, destination doors: 0, ripup_allowed: true, ripup_costs: 200)
+2026-08-03 20:26:46.842 DEBUG  [DD7A28\7D992B] Autorouter Failed to route connection between pin #25 of component #17, pin #24 of component #17, pin #23 of component #17, pin #25 of component #16, pin #24 of component #16, pin #23 of component #16, pin #25 of component #14 and pin #23 of component #14, because the maze search algorithm could not be created.
+2026-08-03 20:26:46.842 DEBUG  [DD7A28\7D992B] Pass #2: Failed to route Pin on net 'VDD' (4 items remaining, 2 failures). State: FAILED
+2026-08-03 20:26:47.638 DEBUG  [DD7A28\7D992B] Autorouter Failed to route connection between pin #7 of component #8, pin #5 of component #8 and polylinetrace, polylinetrace, polylinetrace, pin #73 of component #8, pin #71 of component #8, because no connection was found between their nets.
+2026-08-03 20:26:47.638 DEBUG  [DD7A28\7D992B] Pass #2: Failed to route Pin on net '3V3' (3 items remaining, 1 failures). State: FAILED
+2026-08-03 20:26:47.688 DEBUG  InsertFoundConnectionAlgo: insert trace failed for net #1 at corner 11/11 on layer 0, trace width: 750, from corner: 0, ok_point: (175000,96036), target: (165000,96036)
+2026-08-03 20:26:47.688 DEBUG  InsertFoundConnectionAlgo: insert trace failed for net #1
+2026-08-03 20:26:47.689 DEBUG  [DD7A28\7D992B] Autorouter Failed to route connection between polylinetrace, polylinetrace, polylinetrace, pin #73 of component #8, pin #71 of component #8, pin #5 of component #8 and pin #7 of component #8, because the new connection could not be inserted.
+2026-08-03 20:26:47.689 DEBUG  [DD7A28\7D992B] Pass #2: Failed to route Pin on net '3V3' (2 items remaining, 2 failures). State: FAILED
+2026-08-03 20:26:47.699 DEBUG  InsertFoundConnectionAlgo: insert trace failed for net #1 at corner 6/6 on layer 0, trace width: 750, from corner: 3, ok_point: (172250,78784), target: (175000,96036)
+2026-08-03 20:26:47.699 DEBUG  InsertFoundConnectionAlgo: insert trace failed for net #1
+2026-08-03 20:26:47.700 DEBUG  [DD7A28\7D992B] Autorouter Failed to route connection between polylinetrace, polylinetrace, polylinetrace, pin #73 of component #8, pin #71 of component #8, pin #7 of component #8 and pin #5 of component #8, because the new connection could not be inserted.
+2026-08-03 20:26:47.700 DEBUG  [DD7A28\7D992B] Pass #2: Failed to route Pin on net '3V3' (1 items remaining, 2 failures). State: FAILED
+2026-08-03 20:26:47.740 INFO   [DD7A28\7D992B] Auto-router pass #2 on board 'c3bba0d8ebb3e1282b1f2227533c234d' was completed in 3.67 seconds with the score of 488.35 (12 unrouted and 46 violations).
+2026-08-03 20:26:47.748 INFO   [DD7A28\7D992B] Board state has not changed since pass #2 (hash c3bba0d8ebb3e1282b1f2227533c234d). The auto-router cannot make further progress; stopping.
+2026-08-03 20:26:47.770 DEBUG  === Performance Profile ===
+2026-08-03 20:26:47.770 DEBUG  === Routing Parameters ===
+2026-08-03 20:26:47.770 DEBUG    Via Costs: 50, Plane Via Costs: 5
+2026-08-03 20:26:47.770 DEBUG    Layer Costs (Preferred / Against):
+2026-08-03 20:26:47.771 DEBUG      Layer 1: 1.0 / 3.6
+2026-08-03 20:26:47.771 DEBUG      Layer 2: 1.0 / 3.6
+2026-08-03 20:26:47.771 DEBUG      Layer 3: 1.0 / 3.6
+2026-08-03 20:26:47.771 DEBUG      Layer 4: 1.0 / 3.6
+2026-08-03 20:26:47.771 DEBUG      Layer 5: 1.0 / 3.6
+2026-08-03 20:26:47.771 DEBUG      Layer 6: 1.0 / 1.4
+2026-08-03 20:26:47.771 DEBUG  
+2026-08-03 20:26:47.781 DEBUG    autoroute_item                          :     9688 ms total,       45 calls,    215 ms avg
+2026-08-03 20:26:47.781 DEBUG  
+2026-08-03 20:26:47.781 DEBUG  === Pass History ===
+2026-08-03 20:26:47.781 DEBUG    Pass 1  :   12 unrouted items,     6.58 s,   100 ripup cost
+2026-08-03 20:26:47.782 DEBUG    Pass 2  :   12 unrouted items,     3.65 s,   200 ripup cost
+2026-08-03 20:26:47.783 DEBUG  ===========================
+2026-08-03 20:26:47.814 INFO   [DD7A28\7D992B] Auto-router session completed: started with 23 unrouted nets, completed in 10.66 seconds, final score: 488.35 (12 unrouted and 46 violations).

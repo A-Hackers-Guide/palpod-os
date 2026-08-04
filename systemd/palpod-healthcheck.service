@@ -1,0 +1,28 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# palpod-healthcheck.service — POSTs a health snapshot to pal-web every 60 s.
+#
+# pal-web listens on /api/health/report and updates the "system health" tile
+# in the control app. The check itself is a tiny shell script; the timer
+# (palpod-healthcheck.timer) drives it. Install both together:
+#
+#   sudo cp systemd/palpod-healthcheck.{service,timer} /etc/systemd/system/
+#   sudo systemctl daemon-reload
+#   sudo systemctl enable --now palpod-healthcheck.timer
+# ─────────────────────────────────────────────────────────────────────────────
+
+[Unit]
+Description=PAL Pod — periodic health report to pal-web
+After=palpod.service
+Requires=palpod.service
+
+[Service]
+Type=oneshot
+EnvironmentFile=/opt/palpod-os/.env
+ExecStart=/bin/bash -c ' \
+  status=$(docker compose -f /opt/palpod-os/docker-compose.yml ps --format json); \
+  curl -fsS -X POST \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer ${PAL_WEB_JWT_SECRET}" \
+    --data-binary "$status" \
+    http://localhost:3000/api/health/report || true \
+'

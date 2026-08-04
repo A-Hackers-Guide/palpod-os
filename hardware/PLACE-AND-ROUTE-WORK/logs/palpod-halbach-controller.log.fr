@@ -1,0 +1,11 @@
+2026-08-03 20:23:37.216 INFO   Freerouting v2.2.4 (build-date: 2026-05-13)
+WARNING: Final field userProfileSettings in class app.freerouting.settings.GlobalSettings has been mutated reflectively by class com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$2 in unnamed module @5bb21b69 (file:/private/tmp/freerouting/freerouting.jar)
+WARNING: Use --enable-final-field-mutation=ALL-UNNAMED to avoid a warning
+WARNING: Mutating final fields will be blocked in a future release unless final field mutation is enabled
+2026-08-03 20:23:38.892 INFO   New version available: v2.2.4
+2026-08-03 20:23:39.108 INFO   Opening '/private/tmp/claude-501/-Users-lexer-kindle/80e67baf-6192-4db2-b491-aa5b4ee00c5b/scratchpad/palpod-os/hardware/electrical/kicad/palpod-halbach-controller/palpod-halbach-controller-routed.dsn'...
+2026-08-03 20:23:49.296 INFO   [9ACDF9\2674A3] Starting routing of 'palpod-halbach-controller-routed' on 5 threads...
+2026-08-03 20:23:50.788 INFO   [9ACDF9\2674A3] Auto-router pass #1 on board '532fb5dbc8ad39184632b27c7cf8550b' was completed in 1.15 seconds with the score of 834.83 (5 unrouted).
+2026-08-03 20:23:50.942 INFO   [9ACDF9\2674A3] Auto-router pass #2 on board '984e55ebdb7af286aa786f7bc66b2562' was completed in 0.08 seconds with the score of 834.83 (5 unrouted).
+2026-08-03 20:23:50.955 INFO   [9ACDF9\2674A3] Board state has not changed since pass #2 (hash 984e55ebdb7af286aa786f7bc66b2562). The auto-router cannot make further progress; stopping.
+2026-08-03 20:23:50.964 INFO   [9ACDF9\2674A3] Auto-router session completed: started with 16 unrouted nets, completed in 1.67 seconds, final score: 834.83 (5 unrouted).

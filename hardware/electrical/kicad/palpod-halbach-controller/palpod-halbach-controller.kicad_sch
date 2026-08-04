@@ -1,0 +1,5662 @@
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9")
+	(paper "A2")
+	(title_block
+		(title "PAL Pod Halbach Levitation Controller")
+		(date "2026-08-03")
+		(rev "A0")
+		(company "PAL Pod")
+		(comment 1 "SAFETY-CRITICAL: 2kg glass orb levitates via active servo control - a controller fault means the orb falls")
+		(comment 2 "Dual STM32H723 lockstep, 6x DRV8323 half-bridge, 6x MLX90393 hall, MAX706 window WDT, hardware OC latch, E-stop")
+		(comment 3 "Reference: hardware/electrical/block-diagrams/levitation-controller.md")
+		(comment 4 "PLACEHOLDER schematic - EE completes wiring + safety review before power-on")
+	)
+	(lib_symbols
+		(symbol "Device:R"
+			(pin_numbers (hide yes))
+			(pin_names (offset 0) (hide yes))
+			(exclude_from_sim no) (in_bom yes) (on_board yes)
+			(property "Reference" "R" (at 2.032 0 90) (effects (font (size 1.27 1.27))))
+			(property "Value" "R" (at 0 0 90) (effects (font (size 1.27 1.27))))
+			(property "Footprint" "" (at -1.778 0 90) (effects (font (size 1.27 1.27)) (hide yes)))
+			(property "Datasheet" "~" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+			(symbol "R_0_1"
+				(rectangle (start -1.016 -2.54) (end 1.016 2.54)
+					(stroke (width 0.254) (type default)) (fill (type none))))
+			(symbol "R_1_1"
+				(pin passive line (at 0 3.81 270) (length 1.27)
+					(name "~" (effects (font (size 1.27 1.27))))
+					(number "1" (effects (font (size 1.27 1.27)))))
+				(pin passive line (at 0 -3.81 90) (length 1.27)
+					(name "~" (effects (font (size 1.27 1.27))))
+					(number "2" (effects (font (size 1.27 1.27)))))))
+		(symbol "Device:C"
+			(pin_numbers (hide yes))
+			(pin_names (offset 0.254) (hide yes))
+			(exclude_from_sim no) (in_bom yes) (on_board yes)
+			(property "Reference" "C" (at 0.635 2.54 0) (effects (font (size 1.27 1.27))))
+			(property "Value" "C" (at 0.635 -2.54 0) (effects (font (size 1.27 1.27))))
+			(property "Footprint" "" (at 0.9652 -3.81 0) (effects (font (size 1.27 1.27)) (hide yes)))
+			(property "Datasheet" "~" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+			(symbol "C_0_1"
+				(polyline (pts (xy -2.032 -0.762) (xy 2.032 -0.762))
+					(stroke (width 0.508) (type default)) (fill (type none)))
+				(polyline (pts (xy -2.032 0.762) (xy 2.032 0.762))
+					(stroke (width 0.508) (type default)) (fill (type none))))
+			(symbol "C_1_1"
+				(pin passive line (at 0 3.81 270) (length 2.794)
+					(name "~" (effects (font (size 1.27 1.27))))
+					(number "1" (effects (font (size 1.27 1.27)))))
+				(pin passive line (at 0 -3.81 90) (length 2.794)
+					(name "~" (effects (font (size 1.27 1.27))))
+					(number "2" (effects (font (size 1.27 1.27)))))))
+		(symbol "power:+3V3"
+			(power)
+			(pin_names (offset 0))
+			(exclude_from_sim no) (in_bom yes) (on_board yes)
+			(property "Reference" "#PWR" (at 0 -3.81 0) (effects (font (size 1.27 1.27)) (hide yes)))
+			(property "Value" "+3V3" (at 0 3.81 0) (effects (font (size 1.27 1.27))))
+			(property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+			(property "Datasheet" "" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+			(symbol "+3V3_0_1"
+				(polyline (pts (xy -0.762 1.27) (xy 0 2.54) (xy 0.762 1.27) (xy 0 0) (xy -0.762 1.27))
+					(stroke (width 0) (type default)) (fill (type none))))
+			(symbol "+3V3_1_1"
+				(pin power_in line (at 0 0 90) (length 0) (hide yes)
+					(name "+3V3" (effects (font (size 1.27 1.27))))
+					(number "1" (effects (font (size 1.27 1.27)))))))
+		(symbol "power:+5V"
+			(power)
+			(pin_names (offset 0))
+			(exclude_from_sim no) (in_bom yes) (on_board yes)
+			(property "Reference" "#PWR" (at 0 -3.81 0) (effects (font (size 1.27 1.27)) (hide yes)))
+			(property "Value" "+5V" (at 0 3.81 0) (effects (font (size 1.27 1.27))))
+			(property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+			(property "Datasheet" "" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+			(symbol "+5V_0_1"
+				(polyline (pts (xy -0.762 1.27) (xy 0 2.54) (xy 0.762 1.27) (xy 0 0) (xy -0.762 1.27))
+					(stroke (width 0) (type default)) (fill (type none))))
+			(symbol "+5V_1_1"
+				(pin power_in line (at 0 0 90) (length 0) (hide yes)
+					(name "+5V" (effects (font (size 1.27 1.27))))
+					(number "1" (effects (font (size 1.27 1.27)))))))
+		(symbol "power:+12V"
+			(power)
+			(pin_names (offset 0))
+			(exclude_from_sim no) (in_bom yes) (on_board yes)
+			(property "Reference" "#PWR" (at 0 -3.81 0) (effects (font (size 1.27 1.27)) (hide yes)))
+			(property "Value" "+12V" (at 0 3.81 0) (effects (font (size 1.27 1.27))))
+			(property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+			(property "Datasheet" "" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+			(symbol "+12V_0_1"
+				(polyline (pts (xy -0.762 1.27) (xy 0 2.54) (xy 0.762 1.27) (xy 0 0) (xy -0.762 1.27))
+					(stroke (width 0) (type default)) (fill (type none))))
+			(symbol "+12V_1_1"
+				(pin power_in line (at 0 0 90) (length 0) (hide yes)
+					(name "+12V" (effects (font (size 1.27 1.27))))
+					(number "1" (effects (font (size 1.27 1.27)))))))
+		(symbol "power:+48V"
+			(power)
+			(pin_names (offset 0))
+			(exclude_from_sim no) (in_bom yes) (on_board yes)
+			(property "Reference" "#PWR" (at 0 -3.81 0) (effects (font (size 1.27 1.27)) (hide yes)))
+			(property "Value" "+48V" (at 0 3.81 0) (effects (font (size 1.27 1.27))))
+			(property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+			(property "Datasheet" "" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+			(symbol "+48V_0_1"
+				(polyline (pts (xy -0.762 1.27) (xy 0 2.54) (xy 0.762 1.27) (xy 0 0) (xy -0.762 1.27))
+					(stroke (width 0) (type default)) (fill (type none))))
+			(symbol "+48V_1_1"
+				(pin power_in line (at 0 0 90) (length 0) (hide yes)
+					(name "+48V" (effects (font (size 1.27 1.27))))
+					(number "1" (effects (font (size 1.27 1.27)))))))
+		(symbol "power:GND"
+			(power)
+			(pin_names (offset 0))
+			(exclude_from_sim no) (in_bom yes) (on_board yes)
+			(property "Reference" "#PWR" (at 0 -6.35 0) (effects (font (size 1.27 1.27)) (hide yes)))
+			(property "Value" "GND" (at 0 -3.81 0) (effects (font (size 1.27 1.27))))
+			(property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+			(property "Datasheet" "" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+			(symbol "GND_0_1"
+				(polyline (pts (xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27))
+					(stroke (width 0) (type default)) (fill (type none))))
+			(symbol "GND_1_1"
+				(pin power_in line (at 0 0 270) (length 0) (hide yes)
+					(name "GND" (effects (font (size 1.27 1.27))))
+					(number "1" (effects (font (size 1.27 1.27)))))))
+		(symbol "power:GNDA"
+			(power)
+			(pin_names (offset 0))
+			(exclude_from_sim no) (in_bom yes) (on_board yes)
+			(property "Reference" "#PWR" (at 0 -6.35 0) (effects (font (size 1.27 1.27)) (hide yes)))
+			(property "Value" "GNDA" (at 0 -3.81 0) (effects (font (size 1.27 1.27))))
+			(property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+			(property "Datasheet" "" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+			(symbol "GNDA_0_1"
+				(polyline (pts (xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27))
+					(stroke (width 0) (type default)) (fill (type none))))
+			(symbol "GNDA_1_1"
+				(pin power_in line (at 0 0 270) (length 0) (hide yes)
+					(name "GNDA" (effects (font (size 1.27 1.27))))
+					(number "1" (effects (font (size 1.27 1.27)))))))
+		(symbol "power:PGND"
+			(power)
+			(pin_names (offset 0))
+			(exclude_from_sim no) (in_bom yes) (on_board yes)
+			(property "Reference" "#PWR" (at 0 -6.35 0) (effects (font (size 1.27 1.27)) (hide yes)))
+			(property "Value" "PGND" (at 0 -3.81 0) (effects (font (size 1.27 1.27))))
+			(property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+			(property "Datasheet" "" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
+			(symbol "PGND_0_1"
+				(polyline (pts (xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27))
+					(stroke (width 0) (type default)) (fill (type none))))
+			(symbol "PGND_1_1"
+				(pin power_in line (at 0 0 270) (length 0) (hide yes)
+					(name "PGND" (effects (font (size 1.27 1.27))))
+					(number "1" (effects (font (size 1.27 1.27)))))))
+		(symbol "palpod-halbach-controller:STM32H723ZGT6"
+			(pin_names (offset 1.016))
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 0 2.54 0)
+				(effects
+					(font (size 1.27 1.27))
+				)
+			)
+			(property "Value" "STM32H723ZGT6"
+				(at 0 -2.54 0)
+				(effects
+					(font (size 1.27 1.27))
+				)
+			)
+			(property "Footprint" "palpod-halbach-controller:LQFP-144_20x20mm_P0.5mm"
+				(at 0 0 0)
+				(effects
+					(font (size 1.27 1.27))
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.st.com/en/microcontrollers-microprocessors/stm32h723zg.html"
+				(at 0 0 0)
+				(effects
+					(font (size 1.27 1.27))
+					(hide yes)
+				)
+			)
+			(property "Description" "STMicro STM32H723ZGT6 Cortex-M7 550MHz MCU, LQFP-144 - PLACEHOLDER pin grouping"
+				(at 0 0 0)
+				(effects
+					(font (size 1.27 1.27))
+					(hide yes)
+				)
+			)
+			(symbol "STM32H723ZGT6_0_1"
+				(rectangle
+					(start -25.4 45.72)
+					(end 25.4 -50.8)
+					(stroke (width 0.254) (type default))
+					(fill (type background))
+				)
+			)
+				(pin bidirectional line
+					(at -27.94 43.18 0)
+					(length 2.54)
+					(name "PA0"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "1"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -27.94 40.64 0)
+					(length 2.54)
+					(name "PA1"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "2"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -27.94 38.1 0)
+					(length 2.54)
+					(name "PA2"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "3"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -27.94 35.56 0)
+					(length 2.54)
+					(name "PA3"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "4"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -27.94 33.019999999999996 0)
+					(length 2.54)
+					(name "PA4"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "5"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -27.94 30.48 0)
+					(length 2.54)
+					(name "PA5"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "6"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -27.94 27.939999999999998 0)
+					(length 2.54)
+					(name "PA6"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "7"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -27.94 25.4 0)
+					(length 2.54)
+					(name "PA7"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "8"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -27.94 22.86 0)
+					(length 2.54)
+					(name "PA8"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "9"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -27.94 20.32 0)
+					(length 2.54)
+					(name "PA9"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "10"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -27.94 17.78 0)
+					(length 2.54)
+					(name "PA10"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "11"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -27.94 15.239999999999998 0)
+					(length 2.54)
+					(name "PA11"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "12"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -27.94 12.7 0)
+					(length 2.54)
+					(name "PA12"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "13"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -27.94 10.159999999999997 0)
+					(length 2.54)
+					(name "PA13"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "14"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -27.94 7.619999999999997 0)
+					(length 2.54)
+					(name "PA14"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "15"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -27.94 5.079999999999998 0)
+					(length 2.54)
+					(name "PA15"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "16"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -27.94 2.539999999999999 0)
+					(length 2.54)
+					(name "PB0"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "17"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -27.94 0.0 0)
+					(length 2.54)
+					(name "PB1"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "18"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -27.94 -2.539999999999999 0)
+					(length 2.54)
+					(name "PB2"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "19"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -27.94 -5.079999999999998 0)
+					(length 2.54)
+					(name "PB3"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "20"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -27.94 -7.619999999999997 0)
+					(length 2.54)
+					(name "PB4"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "21"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -27.94 -10.160000000000004 0)
+					(length 2.54)
+					(name "PB5"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "22"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -27.94 -12.700000000000003 0)
+					(length 2.54)
+					(name "PB6"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "23"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -27.94 -15.240000000000002 0)
+					(length 2.54)
+					(name "PB7"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "24"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -27.94 -17.78 0)
+					(length 2.54)
+					(name "PB8"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "25"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -27.94 -20.32 0)
+					(length 2.54)
+					(name "PB9"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "26"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -27.94 -22.860000000000007 0)
+					(length 2.54)
+					(name "PB10"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "27"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -27.94 -25.4 0)
+					(length 2.54)
+					(name "PB11"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "28"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -27.94 -27.940000000000005 0)
+					(length 2.54)
+					(name "PB12"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "29"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -27.94 -30.479999999999997 0)
+					(length 2.54)
+					(name "PB13"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "30"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -27.94 -33.02 0)
+					(length 2.54)
+					(name "PB14"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "31"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -27.94 -35.559999999999995 0)
+					(length 2.54)
+					(name "PB15"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "32"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 27.94 43.18 180)
+					(length 2.54)
+					(name "PC0"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "33"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 27.94 40.64 180)
+					(length 2.54)
+					(name "PC1"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "34"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 27.94 38.1 180)
+					(length 2.54)
+					(name "PC2"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "35"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 27.94 35.56 180)
+					(length 2.54)
+					(name "PC3"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "36"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 27.94 33.019999999999996 180)
+					(length 2.54)
+					(name "PC4"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "37"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 27.94 30.48 180)
+					(length 2.54)
+					(name "PC5"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "38"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 27.94 27.939999999999998 180)
+					(length 2.54)
+					(name "PC6"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "39"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 27.94 25.4 180)
+					(length 2.54)
+					(name "PC7"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "40"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 27.94 22.86 180)
+					(length 2.54)
+					(name "PC8"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "41"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 27.94 20.32 180)
+					(length 2.54)
+					(name "PC9"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "42"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 27.94 17.78 180)
+					(length 2.54)
+					(name "PC10"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "43"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 27.94 15.239999999999998 180)
+					(length 2.54)
+					(name "PC11"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "44"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 27.94 12.7 180)
+					(length 2.54)
+					(name "PC12"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "45"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 27.94 10.159999999999997 180)
+					(length 2.54)
+					(name "PC13"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "46"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 27.94 7.619999999999997 180)
+					(length 2.54)
+					(name "PC14"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "47"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 27.94 5.079999999999998 180)
+					(length 2.54)
+					(name "PC15"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "48"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 27.94 2.539999999999999 180)
+					(length 2.54)
+					(name "PD0"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "49"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 27.94 0.0 180)
+					(length 2.54)
+					(name "PD1"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "50"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 27.94 -2.539999999999999 180)
+					(length 2.54)
+					(name "PD2"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "51"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 27.94 -5.079999999999998 180)
+					(length 2.54)
+					(name "PD3"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "52"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 27.94 -7.619999999999997 180)
+					(length 2.54)
+					(name "PD4"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "53"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 27.94 -10.160000000000004 180)
+					(length 2.54)
+					(name "PD5"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "54"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 27.94 -12.700000000000003 180)
+					(length 2.54)
+					(name "PD6"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "55"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 27.94 -15.240000000000002 180)
+					(length 2.54)
+					(name "PD7"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "56"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 27.94 -17.78 180)
+					(length 2.54)
+					(name "PD8"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "57"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 27.94 -20.32 180)
+					(length 2.54)
+					(name "PD9"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "58"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 27.94 -22.860000000000007 180)
+					(length 2.54)
+					(name "PD10"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "59"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 27.94 -25.4 180)
+					(length 2.54)
+					(name "PD11"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "60"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 27.94 -27.940000000000005 180)
+					(length 2.54)
+					(name "PD12"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "61"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 27.94 -30.479999999999997 180)
+					(length 2.54)
+					(name "PD13"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "62"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 27.94 -33.02 180)
+					(length 2.54)
+					(name "PD14"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "63"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 27.94 -35.559999999999995 180)
+					(length 2.54)
+					(name "PD15"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "64"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -22.86 -48.26 270)
+					(length 2.54)
+					(name "PE0"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "65"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -20.32 -48.26 270)
+					(length 2.54)
+					(name "PE1"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "66"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -17.78 -48.26 270)
+					(length 2.54)
+					(name "PE2"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "67"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -15.239999999999998 -48.26 270)
+					(length 2.54)
+					(name "PE3"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "68"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 -48.26 270)
+					(length 2.54)
+					(name "PE4"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "69"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -10.16 -48.26 270)
+					(length 2.54)
+					(name "PE5"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "70"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -7.619999999999999 -48.26 270)
+					(length 2.54)
+					(name "PE6"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "71"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -5.079999999999998 -48.26 270)
+					(length 2.54)
+					(name "PE7"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "72"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -2.539999999999999 -48.26 270)
+					(length 2.54)
+					(name "PE8"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "73"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 0.0 -48.26 270)
+					(length 2.54)
+					(name "PE9"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "74"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 2.539999999999999 -48.26 270)
+					(length 2.54)
+					(name "PE10"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "75"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 5.080000000000002 -48.26 270)
+					(length 2.54)
+					(name "PE11"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "76"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 7.620000000000001 -48.26 270)
+					(length 2.54)
+					(name "PE12"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "77"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 10.160000000000004 -48.26 270)
+					(length 2.54)
+					(name "PE13"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "78"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 12.700000000000003 -48.26 270)
+					(length 2.54)
+					(name "PE14"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "79"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 15.240000000000002 -48.26 270)
+					(length 2.54)
+					(name "PE15"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "80"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 17.78 -48.26 270)
+					(length 2.54)
+					(name "PF0"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "81"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 20.32 -48.26 270)
+					(length 2.54)
+					(name "PF1"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "82"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 22.86 -48.26 270)
+					(length 2.54)
+					(name "PF2"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "83"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 25.4 -48.26 270)
+					(length 2.54)
+					(name "PF3"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "84"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 27.939999999999998 -48.26 270)
+					(length 2.54)
+					(name "PF4"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "85"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 30.480000000000004 -48.26 270)
+					(length 2.54)
+					(name "PF5"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "86"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 33.02 -48.26 270)
+					(length 2.54)
+					(name "PF6"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "87"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 35.56 -48.26 270)
+					(length 2.54)
+					(name "PF7"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "88"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 38.1 -48.26 270)
+					(length 2.54)
+					(name "PF8"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "89"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 40.64 -48.26 270)
+					(length 2.54)
+					(name "PF9"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "90"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 43.18000000000001 -48.26 270)
+					(length 2.54)
+					(name "PF10"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "91"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 45.72 -48.26 270)
+					(length 2.54)
+					(name "PF11"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "92"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 48.260000000000005 -48.26 270)
+					(length 2.54)
+					(name "PF12"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "93"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 50.8 -48.26 270)
+					(length 2.54)
+					(name "PF13"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "94"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 53.34 -48.26 270)
+					(length 2.54)
+					(name "PF14"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "95"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 55.879999999999995 -48.26 270)
+					(length 2.54)
+					(name "PF15"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "96"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -25.4 -53.339999999999996 90)
+					(length 2.54)
+					(name "PE0"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "65"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -22.86 -53.339999999999996 90)
+					(length 2.54)
+					(name "PE1"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "66"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -20.32 -53.339999999999996 90)
+					(length 2.54)
+					(name "PE2"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "67"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -17.779999999999998 -53.339999999999996 90)
+					(length 2.54)
+					(name "PE3"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "68"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -15.239999999999998 -53.339999999999996 90)
+					(length 2.54)
+					(name "PE4"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "69"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 -53.339999999999996 90)
+					(length 2.54)
+					(name "PE5"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "70"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -10.159999999999998 -53.339999999999996 90)
+					(length 2.54)
+					(name "PE6"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "71"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -7.619999999999997 -53.339999999999996 90)
+					(length 2.54)
+					(name "PE7"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "72"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -5.079999999999998 -53.339999999999996 90)
+					(length 2.54)
+					(name "PE8"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "73"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -2.539999999999999 -53.339999999999996 90)
+					(length 2.54)
+					(name "PE9"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "74"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 0.0 -53.339999999999996 90)
+					(length 2.54)
+					(name "PE10"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "75"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 2.5400000000000027 -53.339999999999996 90)
+					(length 2.54)
+					(name "PE11"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "76"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 5.080000000000002 -53.339999999999996 90)
+					(length 2.54)
+					(name "PE12"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "77"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 7.6200000000000045 -53.339999999999996 90)
+					(length 2.54)
+					(name "PE13"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "78"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 10.160000000000004 -53.339999999999996 90)
+					(length 2.54)
+					(name "PE14"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "79"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 12.700000000000003 -53.339999999999996 90)
+					(length 2.54)
+					(name "PE15"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "80"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -25.4 -55.879999999999995 90)
+					(length 2.54)
+					(name "PF0"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "81"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -22.86 -55.879999999999995 90)
+					(length 2.54)
+					(name "PF1"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "82"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -20.32 -55.879999999999995 90)
+					(length 2.54)
+					(name "PF2"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "83"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -17.779999999999998 -55.879999999999995 90)
+					(length 2.54)
+					(name "PF3"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "84"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -15.239999999999998 -55.879999999999995 90)
+					(length 2.54)
+					(name "PF4"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "85"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 -55.879999999999995 90)
+					(length 2.54)
+					(name "PF5"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "86"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -10.159999999999998 -55.879999999999995 90)
+					(length 2.54)
+					(name "PF6"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "87"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -7.619999999999997 -55.879999999999995 90)
+					(length 2.54)
+					(name "PF7"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "88"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -5.079999999999998 -55.879999999999995 90)
+					(length 2.54)
+					(name "PF8"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "89"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -2.539999999999999 -55.879999999999995 90)
+					(length 2.54)
+					(name "PF9"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "90"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 0.0 -55.879999999999995 90)
+					(length 2.54)
+					(name "PF10"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "91"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 2.5400000000000027 -55.879999999999995 90)
+					(length 2.54)
+					(name "PF11"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "92"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 5.080000000000002 -55.879999999999995 90)
+					(length 2.54)
+					(name "PF12"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "93"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 7.6200000000000045 -55.879999999999995 90)
+					(length 2.54)
+					(name "PF13"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "94"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 10.160000000000004 -55.879999999999995 90)
+					(length 2.54)
+					(name "PF14"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "95"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 12.700000000000003 -55.879999999999995 90)
+					(length 2.54)
+					(name "PF15"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "96"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -25.4 -58.419999999999995 90)
+					(length 2.54)
+					(name "PG0"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "97"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -22.86 -58.419999999999995 90)
+					(length 2.54)
+					(name "PG1"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "98"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -20.32 -58.419999999999995 90)
+					(length 2.54)
+					(name "PG2"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "99"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -17.779999999999998 -58.419999999999995 90)
+					(length 2.54)
+					(name "PG3"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "100"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -15.239999999999998 -58.419999999999995 90)
+					(length 2.54)
+					(name "PG4"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "101"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 -58.419999999999995 90)
+					(length 2.54)
+					(name "PG5"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "102"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -10.159999999999998 -58.419999999999995 90)
+					(length 2.54)
+					(name "PG6"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "103"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -7.619999999999997 -58.419999999999995 90)
+					(length 2.54)
+					(name "PG7"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "104"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -5.079999999999998 -58.419999999999995 90)
+					(length 2.54)
+					(name "PG8"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "105"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -2.539999999999999 -58.419999999999995 90)
+					(length 2.54)
+					(name "PG9"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "106"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 0.0 -58.419999999999995 90)
+					(length 2.54)
+					(name "PG10"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "107"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 2.5400000000000027 -58.419999999999995 90)
+					(length 2.54)
+					(name "PG11"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "108"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 5.080000000000002 -58.419999999999995 90)
+					(length 2.54)
+					(name "PG12"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "109"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 7.6200000000000045 -58.419999999999995 90)
+					(length 2.54)
+					(name "PG13"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "110"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 10.160000000000004 -58.419999999999995 90)
+					(length 2.54)
+					(name "PG14"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "111"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 12.700000000000003 -58.419999999999995 90)
+					(length 2.54)
+					(name "PG15"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "112"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin power_in line
+					(at -25.4 -60.959999999999994 90)
+					(length 2.54)
+					(name "VDD"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "113"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin power_in line
+					(at -22.86 -60.959999999999994 90)
+					(length 2.54)
+					(name "VDD"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "114"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin power_in line
+					(at -20.32 -60.959999999999994 90)
+					(length 2.54)
+					(name "VDD"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "115"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin power_in line
+					(at -17.779999999999998 -60.959999999999994 90)
+					(length 2.54)
+					(name "VDD"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "116"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin power_in line
+					(at -15.239999999999998 -60.959999999999994 90)
+					(length 2.54)
+					(name "VDDA"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "117"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin power_in line
+					(at -12.7 -60.959999999999994 90)
+					(length 2.54)
+					(name "VREF+"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "118"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin power_in line
+					(at -10.159999999999998 -60.959999999999994 90)
+					(length 2.54)
+					(name "VBAT"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "119"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin power_in line
+					(at -7.619999999999997 -60.959999999999994 90)
+					(length 2.54)
+					(name "VCAP1"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "120"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin power_in line
+					(at -5.079999999999998 -60.959999999999994 90)
+					(length 2.54)
+					(name "VCAP2"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "121"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin power_in line
+					(at -2.539999999999999 -60.959999999999994 90)
+					(length 2.54)
+					(name "VDDUSB"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "122"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin power_in line
+					(at 0.0 -60.959999999999994 90)
+					(length 2.54)
+					(name "VDDLDO"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "123"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin power_in line
+					(at 2.5400000000000027 -60.959999999999994 90)
+					(length 2.54)
+					(name "VDDSMPS"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "124"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin power_in line
+					(at 5.080000000000002 -60.959999999999994 90)
+					(length 2.54)
+					(name "VLXSMPS"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "125"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin power_in line
+					(at 7.6200000000000045 -60.959999999999994 90)
+					(length 2.54)
+					(name "VFBSMPS"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "126"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin power_in line
+					(at 10.160000000000004 -60.959999999999994 90)
+					(length 2.54)
+					(name "VSSSMPS"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "127"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin power_in line
+					(at 12.700000000000003 -60.959999999999994 90)
+					(length 2.54)
+					(name "VSSA"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "128"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin power_in line
+					(at -25.4 -63.5 90)
+					(length 2.54)
+					(name "VSS"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "129"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin power_in line
+					(at -22.86 -63.5 90)
+					(length 2.54)
+					(name "VSS"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "130"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin power_in line
+					(at -20.32 -63.5 90)
+					(length 2.54)
+					(name "VSS"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "131"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin power_in line
+					(at -17.779999999999998 -63.5 90)
+					(length 2.54)
+					(name "VSS"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "132"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin input line
+					(at -15.239999999999998 -63.5 90)
+					(length 2.54)
+					(name "NRST"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "133"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin input line
+					(at -12.7 -63.5 90)
+					(length 2.54)
+					(name "BOOT0"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "134"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin input line
+					(at -10.159999999999998 -63.5 90)
+					(length 2.54)
+					(name "PH0/OSC_IN"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "135"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin input line
+					(at -7.619999999999997 -63.5 90)
+					(length 2.54)
+					(name "PH1/OSC_OUT"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "136"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -5.079999999999998 -63.5 90)
+					(length 2.54)
+					(name "PI0"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "137"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -2.539999999999999 -63.5 90)
+					(length 2.54)
+					(name "PI1"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "138"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 0.0 -63.5 90)
+					(length 2.54)
+					(name "PI2"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "139"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 2.5400000000000027 -63.5 90)
+					(length 2.54)
+					(name "PI3"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "140"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 5.080000000000002 -63.5 90)
+					(length 2.54)
+					(name "PI4"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "141"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 7.6200000000000045 -63.5 90)
+					(length 2.54)
+					(name "PI5"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "142"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 10.160000000000004 -63.5 90)
+					(length 2.54)
+					(name "PI6"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "143"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 12.700000000000003 -63.5 90)
+					(length 2.54)
+					(name "PI7"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "144"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+		)
+		(symbol "palpod-halbach-controller:DRV8323"
+			(pin_names (offset 1.016))
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 0 2.54 0)
+				(effects
+					(font (size 1.27 1.27))
+				)
+			)
+			(property "Value" "DRV8323"
+				(at 0 -2.54 0)
+				(effects
+					(font (size 1.27 1.27))
+				)
+			)
+			(property "Footprint" "palpod-halbach-controller:HTSSOP-48_6.1x12.5mm_P0.5mm_EP"
+				(at 0 0 0)
+				(effects
+					(font (size 1.27 1.27))
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.ti.com/product/DRV8323"
+				(at 0 0 0)
+				(effects
+					(font (size 1.27 1.27))
+					(hide yes)
+				)
+			)
+			(property "Description" "TI DRV8323 3-phase smart gate driver, HTSSOP-48 EP - PLACEHOLDER pin grouping"
+				(at 0 0 0)
+				(effects
+					(font (size 1.27 1.27))
+					(hide yes)
+				)
+			)
+			(symbol "DRV8323_0_1"
+				(rectangle
+					(start -20.32 30.48)
+					(end 20.32 -30.48)
+					(stroke (width 0.254) (type default))
+					(fill (type background))
+				)
+			)
+				(pin input line
+					(at -22.86 27.94 0)
+					(length 2.54)
+					(name "INHA"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "1"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin input line
+					(at -22.86 25.654 0)
+					(length 2.54)
+					(name "INLA"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "2"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin input line
+					(at -22.86 23.368000000000002 0)
+					(length 2.54)
+					(name "INHB"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "3"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin input line
+					(at -22.86 21.082 0)
+					(length 2.54)
+					(name "INLB"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "4"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin input line
+					(at -22.86 18.796 0)
+					(length 2.54)
+					(name "INHC"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "5"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin input line
+					(at -22.86 16.51 0)
+					(length 2.54)
+					(name "INLC"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "6"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin input line
+					(at -22.86 14.224 0)
+					(length 2.54)
+					(name "nENABLE"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "7"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin input line
+					(at -22.86 11.938000000000002 0)
+					(length 2.54)
+					(name "nFAULT"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "8"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin input line
+					(at -22.86 9.652000000000001 0)
+					(length 2.54)
+					(name "SDI"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "9"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin output line
+					(at -22.86 7.366 0)
+					(length 2.54)
+					(name "SDO"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "10"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin input line
+					(at -22.86 5.080000000000002 0)
+					(length 2.54)
+					(name "SCLK"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "11"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin input line
+					(at -22.86 2.7940000000000005 0)
+					(length 2.54)
+					(name "nSCS"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "12"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin input line
+					(at -22.86 0.5079999999999991 0)
+					(length 2.54)
+					(name "DVDD"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "13"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin input line
+					(at -22.86 -1.7779999999999987 0)
+					(length 2.54)
+					(name "AGND"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "14"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin input line
+					(at -22.86 -4.0639999999999965 0)
+					(length 2.54)
+					(name "AVDD"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "15"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin input line
+					(at -22.86 -6.349999999999998 0)
+					(length 2.54)
+					(name "VREF"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "16"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin output line
+					(at -22.86 -8.636 0)
+					(length 2.54)
+					(name "SOA"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "17"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin output line
+					(at -22.86 -10.922 0)
+					(length 2.54)
+					(name "SOB"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "18"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin output line
+					(at -22.86 -13.208000000000002 0)
+					(length 2.54)
+					(name "SOC"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "19"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin input line
+					(at -22.86 -15.493999999999996 0)
+					(length 2.54)
+					(name "SNA"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "20"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin input line
+					(at -22.86 -17.779999999999998 0)
+					(length 2.54)
+					(name "SNB"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "21"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin input line
+					(at -22.86 -20.066 0)
+					(length 2.54)
+					(name "SNC"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "22"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin input line
+					(at -22.86 -22.352 0)
+					(length 2.54)
+					(name "SPA"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "23"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin input line
+					(at -22.86 -24.638 0)
+					(length 2.54)
+					(name "SPB"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "24"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin output line
+					(at 22.86 27.94 180)
+					(length 2.54)
+					(name "GHA"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "25"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin output line
+					(at 22.86 25.654 180)
+					(length 2.54)
+					(name "SHA"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "26"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin output line
+					(at 22.86 23.368000000000002 180)
+					(length 2.54)
+					(name "GLA"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "27"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin output line
+					(at 22.86 21.082 180)
+					(length 2.54)
+					(name "GHB"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "28"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin output line
+					(at 22.86 18.796 180)
+					(length 2.54)
+					(name "SHB"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "29"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin output line
+					(at 22.86 16.51 180)
+					(length 2.54)
+					(name "GLB"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "30"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin output line
+					(at 22.86 14.224 180)
+					(length 2.54)
+					(name "GHC"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "31"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin output line
+					(at 22.86 11.938000000000002 180)
+					(length 2.54)
+					(name "SHC"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "32"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin output line
+					(at 22.86 9.652000000000001 180)
+					(length 2.54)
+					(name "GLC"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "33"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin output line
+					(at 22.86 7.366 180)
+					(length 2.54)
+					(name "CPH"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "34"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin output line
+					(at 22.86 5.080000000000002 180)
+					(length 2.54)
+					(name "CPL"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "35"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin output line
+					(at 22.86 2.7940000000000005 180)
+					(length 2.54)
+					(name "VCP"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "36"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin output line
+					(at 22.86 0.5079999999999991 180)
+					(length 2.54)
+					(name "VDRAIN"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "37"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin power_in line
+					(at 22.86 -1.7779999999999987 180)
+					(length 2.54)
+					(name "PVDD"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "38"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin power_in line
+					(at 22.86 -4.0639999999999965 180)
+					(length 2.54)
+					(name "PGND"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "39"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin power_in line
+					(at 22.86 -6.349999999999998 180)
+					(length 2.54)
+					(name "GVDD"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "40"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin input line
+					(at 22.86 -8.636 180)
+					(length 2.54)
+					(name "SPC"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "41"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin input line
+					(at 22.86 -10.922 180)
+					(length 2.54)
+					(name "IDRIVE"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "42"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin input line
+					(at 22.86 -13.208000000000002 180)
+					(length 2.54)
+					(name "GAIN"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "43"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin input line
+					(at 22.86 -15.493999999999996 180)
+					(length 2.54)
+					(name "MODE"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "44"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin input line
+					(at 22.86 -17.779999999999998 180)
+					(length 2.54)
+					(name "VDS"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "45"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin input line
+					(at 22.86 -20.066 180)
+					(length 2.54)
+					(name "OCP_MODE"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "46"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin input line
+					(at 22.86 -22.352 180)
+					(length 2.54)
+					(name "IDRIVEP"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "47"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin power_in line
+					(at 22.86 -24.638 180)
+					(length 2.54)
+					(name "EP_PAD"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "49"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+		)
+		(symbol "palpod-halbach-controller:INA240"
+			(pin_names (offset 1.016))
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 0 2.54 0)
+				(effects
+					(font (size 1.27 1.27))
+				)
+			)
+			(property "Value" "INA240"
+				(at 0 -2.54 0)
+				(effects
+					(font (size 1.27 1.27))
+				)
+			)
+			(property "Footprint" "palpod-halbach-controller:TSSOP-8_4.4x3mm_P0.65mm"
+				(at 0 0 0)
+				(effects
+					(font (size 1.27 1.27))
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.ti.com/product/INA240"
+				(at 0 0 0)
+				(effects
+					(font (size 1.27 1.27))
+					(hide yes)
+				)
+			)
+			(property "Description" "TI INA240 -4V..80V, bidirectional, low-drift current shunt monitor, TSSOP-8"
+				(at 0 0 0)
+				(effects
+					(font (size 1.27 1.27))
+					(hide yes)
+				)
+			)
+			(symbol "INA240_0_1"
+				(rectangle
+					(start -10.16 7.62)
+					(end 10.16 -7.62)
+					(stroke (width 0.254) (type default))
+					(fill (type background))
+				)
+			)
+				(pin input line
+					(at -12.7 5.08 0)
+					(length 2.54)
+					(name "REF1"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "1"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin input line
+					(at -12.7 2.54 0)
+					(length 2.54)
+					(name "IN-"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "2"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin input line
+					(at -12.7 0.0 0)
+					(length 2.54)
+					(name "IN+"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "3"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin power_in line
+					(at -12.7 -2.54 0)
+					(length 2.54)
+					(name "GND"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "4"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin input line
+					(at 12.7 5.08 180)
+					(length 2.54)
+					(name "REF2"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "5"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin output line
+					(at 12.7 2.54 180)
+					(length 2.54)
+					(name "OUT"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "6"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin input line
+					(at 12.7 0.0 180)
+					(length 2.54)
+					(name "EN"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "7"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin power_in line
+					(at 12.7 -2.54 180)
+					(length 2.54)
+					(name "V+"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "8"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+		)
+		(symbol "palpod-halbach-controller:MLX90393"
+			(pin_names (offset 1.016))
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 0 2.54 0)
+				(effects
+					(font (size 1.27 1.27))
+				)
+			)
+			(property "Value" "MLX90393"
+				(at 0 -2.54 0)
+				(effects
+					(font (size 1.27 1.27))
+				)
+			)
+			(property "Footprint" "palpod-halbach-controller:QFN-16_3x3mm_P0.5mm"
+				(at 0 0 0)
+				(effects
+					(font (size 1.27 1.27))
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.melexis.com/en/product/MLX90393/Triaxis-Micropower-Magnetometer"
+				(at 0 0 0)
+				(effects
+					(font (size 1.27 1.27))
+					(hide yes)
+				)
+			)
+			(property "Description" "Melexis MLX90393 3D magnetoresistive sensor, QFN-16 - I2C or SPI"
+				(at 0 0 0)
+				(effects
+					(font (size 1.27 1.27))
+					(hide yes)
+				)
+			)
+			(symbol "MLX90393_0_1"
+				(rectangle
+					(start -10.16 10.16)
+					(end 10.16 -10.16)
+					(stroke (width 0.254) (type default))
+					(fill (type background))
+				)
+			)
+				(pin passive line
+					(at -12.7 8.89 0)
+					(length 2.54)
+					(name "DNC1"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "1"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin power_in line
+					(at -12.7 6.604000000000001 0)
+					(length 2.54)
+					(name "VDD"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "2"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin input line
+					(at -12.7 4.3180000000000005 0)
+					(length 2.54)
+					(name "TRG"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "3"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin input line
+					(at -12.7 2.032 0)
+					(length 2.54)
+					(name "SCLK"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "4"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 -0.25399999999999956 0)
+					(length 2.54)
+					(name "MOSI/SDA"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "5"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 -2.539999999999999 0)
+					(length 2.54)
+					(name "MISO"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "6"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin passive line
+					(at -12.7 -4.8260000000000005 0)
+					(length 2.54)
+					(name "DNC2"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "7"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin output line
+					(at -12.7 -7.111999999999998 0)
+					(length 2.54)
+					(name "INT/DRDY"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "8"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin input line
+					(at 12.7 8.89 180)
+					(length 2.54)
+					(name "CS"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "9"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin input line
+					(at 12.7 6.604000000000001 180)
+					(length 2.54)
+					(name "A0"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "10"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin input line
+					(at 12.7 4.3180000000000005 180)
+					(length 2.54)
+					(name "A1"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "11"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin passive line
+					(at 12.7 2.032 180)
+					(length 2.54)
+					(name "TEST"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "12"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin power_in line
+					(at 12.7 -0.25399999999999956 180)
+					(length 2.54)
+					(name "GND"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "13"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin passive line
+					(at 12.7 -2.539999999999999 180)
+					(length 2.54)
+					(name "DNC3"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "14"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin passive line
+					(at 12.7 -4.8260000000000005 180)
+					(length 2.54)
+					(name "DNC4"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "15"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin passive line
+					(at 12.7 -7.111999999999998 180)
+					(length 2.54)
+					(name "DNC5"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "16"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+		)
+		(symbol "palpod-halbach-controller:MAX706"
+			(pin_names (offset 1.016))
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 0 2.54 0)
+				(effects
+					(font (size 1.27 1.27))
+				)
+			)
+			(property "Value" "MAX706"
+				(at 0 -2.54 0)
+				(effects
+					(font (size 1.27 1.27))
+				)
+			)
+			(property "Footprint" "palpod-halbach-controller:SOIC-8_3.9x4.9mm_P1.27mm"
+				(at 0 0 0)
+				(effects
+					(font (size 1.27 1.27))
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.analog.com/en/products/max706.html"
+				(at 0 0 0)
+				(effects
+					(font (size 1.27 1.27))
+					(hide yes)
+				)
+			)
+			(property "Description" "Maxim MAX706 microprocessor supervisor with watchdog, SO-8"
+				(at 0 0 0)
+				(effects
+					(font (size 1.27 1.27))
+					(hide yes)
+				)
+			)
+			(symbol "MAX706_0_1"
+				(rectangle
+					(start -10.16 7.62)
+					(end 10.16 -7.62)
+					(stroke (width 0.254) (type default))
+					(fill (type background))
+				)
+			)
+				(pin input line
+					(at -12.7 5.08 0)
+					(length 2.54)
+					(name "MR"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "1"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin output line
+					(at -12.7 2.54 0)
+					(length 2.54)
+					(name "RESET"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "2"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin output line
+					(at -12.7 0.0 0)
+					(length 2.54)
+					(name "WDO"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "3"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin input line
+					(at -12.7 -2.54 0)
+					(length 2.54)
+					(name "WDI"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "4"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin input line
+					(at 12.7 5.08 180)
+					(length 2.54)
+					(name "PFI"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "5"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin output line
+					(at 12.7 2.54 180)
+					(length 2.54)
+					(name "PFO"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "6"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin power_in line
+					(at 12.7 0.0 180)
+					(length 2.54)
+					(name "VCC"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "7"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin power_in line
+					(at 12.7 -2.54 180)
+					(length 2.54)
+					(name "GND"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "8"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+		)
+		(symbol "palpod-halbach-controller:MCP2542FD"
+			(pin_names (offset 1.016))
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 0 2.54 0)
+				(effects
+					(font (size 1.27 1.27))
+				)
+			)
+			(property "Value" "MCP2542FD"
+				(at 0 -2.54 0)
+				(effects
+					(font (size 1.27 1.27))
+				)
+			)
+			(property "Footprint" "palpod-halbach-controller:SOIC-8_3.9x4.9mm_P1.27mm"
+				(at 0 0 0)
+				(effects
+					(font (size 1.27 1.27))
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.microchip.com/en-us/product/MCP2542FD"
+				(at 0 0 0)
+				(effects
+					(font (size 1.27 1.27))
+					(hide yes)
+				)
+			)
+			(property "Description" "Microchip MCP2542FD CAN-FD transceiver, SO-8"
+				(at 0 0 0)
+				(effects
+					(font (size 1.27 1.27))
+					(hide yes)
+				)
+			)
+			(symbol "MCP2542FD_0_1"
+				(rectangle
+					(start -10.16 7.62)
+					(end 10.16 -7.62)
+					(stroke (width 0.254) (type default))
+					(fill (type background))
+				)
+			)
+				(pin input line
+					(at -12.7 5.08 0)
+					(length 2.54)
+					(name "TXD"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "1"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin power_in line
+					(at -12.7 2.54 0)
+					(length 2.54)
+					(name "VSS"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "2"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin power_in line
+					(at -12.7 0.0 0)
+					(length 2.54)
+					(name "VDD"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "3"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin output line
+					(at -12.7 -2.54 0)
+					(length 2.54)
+					(name "RXD"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "4"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin input line
+					(at 12.7 5.08 180)
+					(length 2.54)
+					(name "VIO"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "5"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin output line
+					(at 12.7 2.54 180)
+					(length 2.54)
+					(name "CANL"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "6"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin output line
+					(at 12.7 0.0 180)
+					(length 2.54)
+					(name "CANH"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "7"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin input line
+					(at 12.7 -2.54 180)
+					(length 2.54)
+					(name "STBY"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "8"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+		)
+		(symbol "palpod-halbach-controller:TL331"
+			(pin_names (offset 1.016))
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 0 2.54 0)
+				(effects
+					(font (size 1.27 1.27))
+				)
+			)
+			(property "Value" "TL331"
+				(at 0 -2.54 0)
+				(effects
+					(font (size 1.27 1.27))
+				)
+			)
+			(property "Footprint" "palpod-halbach-controller:SOT-23-5"
+				(at 0 0 0)
+				(effects
+					(font (size 1.27 1.27))
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.ti.com/product/TL331"
+				(at 0 0 0)
+				(effects
+					(font (size 1.27 1.27))
+					(hide yes)
+				)
+			)
+			(property "Description" "TI TL331 single differential comparator, SOT-23-5 - hardware overcurrent latch"
+				(at 0 0 0)
+				(effects
+					(font (size 1.27 1.27))
+					(hide yes)
+				)
+			)
+			(symbol "TL331_0_1"
+				(rectangle
+					(start -7.62 5.08)
+					(end 7.62 -5.08)
+					(stroke (width 0.254) (type default))
+					(fill (type background))
+				)
+			)
+				(pin output line
+					(at -10.16 2.54 0)
+					(length 2.54)
+					(name "OUT"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "1"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin power_in line
+					(at -10.16 0.0 0)
+					(length 2.54)
+					(name "GND"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "2"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin input line
+					(at -10.16 -2.54 0)
+					(length 2.54)
+					(name "IN+"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "3"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin input line
+					(at 10.16 2.54 180)
+					(length 2.54)
+					(name "IN-"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "4"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin power_in line
+					(at 10.16 0.0 180)
+					(length 2.54)
+					(name "V+"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "5"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+		)
+		(symbol "palpod-halbach-controller:IPI050N06N"
+			(pin_names (offset 1.016))
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "Q"
+				(at 0 2.54 0)
+				(effects
+					(font (size 1.27 1.27))
+				)
+			)
+			(property "Value" "IPI050N06N"
+				(at 0 -2.54 0)
+				(effects
+					(font (size 1.27 1.27))
+				)
+			)
+			(property "Footprint" "palpod-halbach-controller:TO-262-3_TabPin2"
+				(at 0 0 0)
+				(effects
+					(font (size 1.27 1.27))
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.infineon.com/dgdl/Infineon-IPI050N06N-DS-v02_00-EN.pdf"
+				(at 0 0 0)
+				(effects
+					(font (size 1.27 1.27))
+					(hide yes)
+				)
+			)
+			(property "Description" "Infineon IPI050N06N 60V/50A OptiMOS N-Channel MOSFET, TO-262 - PLACEHOLDER"
+				(at 0 0 0)
+				(effects
+					(font (size 1.27 1.27))
+					(hide yes)
+				)
+			)
+			(symbol "IPI050N06N_0_1"
+				(rectangle
+					(start -7.62 5.08)
+					(end 7.62 -5.08)
+					(stroke (width 0.254) (type default))
+					(fill (type background))
+				)
+			)
+				(pin input line
+					(at -10.16 2.54 0)
+					(length 2.54)
+					(name "G"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "1"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin passive line
+					(at 10.16 2.54 180)
+					(length 2.54)
+					(name "D"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "2"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin passive line
+					(at 10.16 0.0 180)
+					(length 2.54)
+					(name "S"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "3"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin passive line
+					(at 10.16 -2.54 180)
+					(length 2.54)
+					(name "D_TAB"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "4"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+		)
+		(symbol "palpod-halbach-controller:STM32G030K8T6"
+			(pin_names (offset 1.016))
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 0 2.54 0)
+				(effects
+					(font (size 1.27 1.27))
+				)
+			)
+			(property "Value" "STM32G030K8T6"
+				(at 0 -2.54 0)
+				(effects
+					(font (size 1.27 1.27))
+				)
+			)
+			(property "Footprint" "palpod-halbach-controller:LQFP-32_7x7mm_P0.8mm"
+				(at 0 0 0)
+				(effects
+					(font (size 1.27 1.27))
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.st.com/en/microcontrollers-microprocessors/stm32g030k8.html"
+				(at 0 0 0)
+				(effects
+					(font (size 1.27 1.27))
+					(hide yes)
+				)
+			)
+			(property "Description" "STMicro STM32G030K8T6 aux MCU, LQFP-32 - housekeeping"
+				(at 0 0 0)
+				(effects
+					(font (size 1.27 1.27))
+					(hide yes)
+				)
+			)
+			(symbol "STM32G030K8T6_0_1"
+				(rectangle
+					(start -12.7 20.32)
+					(end 12.7 -20.32)
+					(stroke (width 0.254) (type default))
+					(fill (type background))
+				)
+			)
+				(pin bidirectional line
+					(at -15.24 17.78 0)
+					(length 2.54)
+					(name "PA0"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "1"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 15.494000000000002 0)
+					(length 2.54)
+					(name "PA1"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "2"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 13.208000000000002 0)
+					(length 2.54)
+					(name "PA2"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "3"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 10.922 0)
+					(length 2.54)
+					(name "PA3"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "4"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 8.636000000000001 0)
+					(length 2.54)
+					(name "PA4"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "5"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 6.350000000000001 0)
+					(length 2.54)
+					(name "PA5"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "6"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 4.064 0)
+					(length 2.54)
+					(name "PA6"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "7"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 1.7780000000000022 0)
+					(length 2.54)
+					(name "PA7"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "8"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 -0.5079999999999991 0)
+					(length 2.54)
+					(name "PA8"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "9"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 -2.7940000000000005 0)
+					(length 2.54)
+					(name "PA9"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "10"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 -5.079999999999998 0)
+					(length 2.54)
+					(name "PA10"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "11"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 -7.366 0)
+					(length 2.54)
+					(name "PA11"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "12"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 -9.652000000000001 0)
+					(length 2.54)
+					(name "PA12"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "13"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 -11.937999999999999 0)
+					(length 2.54)
+					(name "PA13"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "14"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 -14.223999999999997 0)
+					(length 2.54)
+					(name "PA14"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "15"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at -15.24 -16.509999999999998 0)
+					(length 2.54)
+					(name "PA15"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "16"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 15.24 17.78 180)
+					(length 2.54)
+					(name "PB0"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "17"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 15.24 15.494000000000002 180)
+					(length 2.54)
+					(name "PB1"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "18"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 15.24 13.208000000000002 180)
+					(length 2.54)
+					(name "PB2"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "19"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 15.24 10.922 180)
+					(length 2.54)
+					(name "PB3"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "20"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 15.24 8.636000000000001 180)
+					(length 2.54)
+					(name "PB4"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "21"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 15.24 6.350000000000001 180)
+					(length 2.54)
+					(name "PB5"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "22"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 15.24 4.064 180)
+					(length 2.54)
+					(name "PB6"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "23"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 15.24 1.7780000000000022 180)
+					(length 2.54)
+					(name "PB7"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "24"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 15.24 -0.5079999999999991 180)
+					(length 2.54)
+					(name "PB8"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "25"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin power_in line
+					(at 15.24 -2.7940000000000005 180)
+					(length 2.54)
+					(name "VDD"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "26"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin power_in line
+					(at 15.24 -5.079999999999998 180)
+					(length 2.54)
+					(name "VSS"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "27"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin power_in line
+					(at 15.24 -7.366 180)
+					(length 2.54)
+					(name "VDDA"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "28"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin input line
+					(at 15.24 -9.652000000000001 180)
+					(length 2.54)
+					(name "NRST"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "29"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin input line
+					(at 15.24 -11.937999999999999 180)
+					(length 2.54)
+					(name "BOOT0"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "30"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 15.24 -14.223999999999997 180)
+					(length 2.54)
+					(name "PC14"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "31"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin bidirectional line
+					(at 15.24 -16.509999999999998 180)
+					(length 2.54)
+					(name "PC15"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "32"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+		)
+		(symbol "palpod-halbach-controller:RTK-2412"
+			(pin_names (offset 1.016))
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 0 2.54 0)
+				(effects
+					(font (size 1.27 1.27))
+				)
+			)
+			(property "Value" "RTK-2412"
+				(at 0 -2.54 0)
+				(effects
+					(font (size 1.27 1.27))
+				)
+			)
+			(property "Footprint" "palpod-halbach-controller:SIP-4_Recom_RTK"
+				(at 0 0 0)
+				(effects
+					(font (size 1.27 1.27))
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://recom-power.com/en/products/dc-dc-converters/rec-p-RTK-2412.html"
+				(at 0 0 0)
+				(effects
+					(font (size 1.27 1.27))
+					(hide yes)
+				)
+			)
+			(property "Description" "Recom RTK-2412 2W isolated DC-DC (12V->24V) - driver isolation barrier"
+				(at 0 0 0)
+				(effects
+					(font (size 1.27 1.27))
+					(hide yes)
+				)
+			)
+			(symbol "RTK-2412_0_1"
+				(rectangle
+					(start -10.16 7.62)
+					(end 10.16 -7.62)
+					(stroke (width 0.254) (type default))
+					(fill (type background))
+				)
+			)
+				(pin power_in line
+					(at -12.7 5.08 0)
+					(length 2.54)
+					(name "VIN+"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "1"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin power_in line
+					(at -12.7 2.54 0)
+					(length 2.54)
+					(name "VIN-"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "2"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin passive line
+					(at -12.7 0.0 0)
+					(length 2.54)
+					(name "NC"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "3"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin output line
+					(at 12.7 5.08 180)
+					(length 2.54)
+					(name "VOUT+"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "5"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+				(pin output line
+					(at 12.7 2.54 180)
+					(length 2.54)
+					(name "VOUT-"
+						(effects (font (size 1.0 1.0)))
+					)
+					(number "4"
+						(effects (font (size 1.0 1.0)))
+					)
+				)
+		)
+	)
+	(text "PAL POD HALBACH LEVITATION CONTROLLER - REV A0 - PLACEHOLDER"
+		(at 20 15 0)
+		(effects (font (size 3.0 3.0)) (justify left bottom))
+		(uuid "9e9c87e5-9a80-47c7-8f23-bc94fe961f73"))
+	(text "SAFETY-CRITICAL - Full design review + FMEA required before first power-on"
+		(at 20 20 0)
+		(effects (font (size 2.0 2.0)) (justify left bottom))
+		(uuid "31d6b034-a399-4210-83fe-73dcd3eea75d"))
+	(text "Reference: hardware/electrical/block-diagrams/levitation-controller.md"
+		(at 20 24 0)
+		(effects (font (size 1.5 1.5)) (justify left bottom))
+		(uuid "4bfff2e9-d926-45ff-8355-48ea7549ff50"))
+	(polyline
+		(pts (xy 20 40) (xy 220 40) (xy 220 52) (xy 20 52) (xy 20 40))
+		(stroke (width 0.5) (type default) (color 220 0 0 1))
+		(uuid "bca5ad2a-5608-418f-8758-4baa26193746"))
+	(text "SAFETY-CRITICAL NET GROUP #1 - OC_LATCH / nFAULT / WDOG - DO NOT REMOVE"
+		(at 21 43 0)
+		(effects (font (size 1.5 1.5)) (justify left bottom))
+		(uuid "21bcfe5b-785b-4168-82ed-6e0d3703687b"))
+	(polyline
+		(pts (xy 20 220) (xy 260 220) (xy 260 232) (xy 20 232) (xy 20 220))
+		(stroke (width 0.5) (type default) (color 220 0 0 1))
+		(uuid "bf630cfb-f213-4875-8ca9-1ae5b0459b3d"))
+	(text "SAFETY-CRITICAL NET GROUP #2 - ESTOP_IN / ESTOP_LATCH - hardwired to MAX706 MR - DO NOT REMOVE"
+		(at 21 223 0)
+		(effects (font (size 1.5 1.5)) (justify left bottom))
+		(uuid "72960aee-2fdb-4b54-8786-464fad43e929"))
+	(polyline
+		(pts (xy 20 370) (xy 260 370) (xy 260 382) (xy 20 382) (xy 20 370))
+		(stroke (width 0.5) (type default) (color 220 0 0 1))
+		(uuid "ed644a02-5341-4dbf-8339-40ba53703825"))
+	(text "SAFETY-CRITICAL NET GROUP #3 - LOCKSTEP_A/B consensus between STM32H723 pair - DO NOT REMOVE"
+		(at 21 373 0)
+		(effects (font (size 1.5 1.5)) (justify left bottom))
+		(uuid "4e6c4ef2-c07a-4d48-8d97-274ecbfd618d"))
+	(symbol
+		(lib_id "power:+48V")
+		(at 30 60 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "896addb7-baa8-43d0-808f-bf30b7c6114d")
+		(property "Reference" "#PWR001"
+			(at 32.54 54.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "+48V"
+			(at 32.54 65.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" ""
+			(at 30 60 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 30 60 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "#PWR001") (unit 1))))
+	)
+	(symbol
+		(lib_id "power:+12V")
+		(at 45 60 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "d7777f96-ec3f-41df-88df-2909f76785e9")
+		(property "Reference" "#PWR002"
+			(at 47.54 54.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "+12V"
+			(at 47.54 65.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" ""
+			(at 45 60 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 45 60 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "#PWR002") (unit 1))))
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 60 60 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "8dc5e3c4-216d-4341-8bf9-8dc411809694")
+		(property "Reference" "#PWR003"
+			(at 62.54 54.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "+5V"
+			(at 62.54 65.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" ""
+			(at 60 60 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 60 60 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "#PWR003") (unit 1))))
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 75 60 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "96cc50ae-b33c-48d5-8a93-019c7345086e")
+		(property "Reference" "#PWR004"
+			(at 77.54 54.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "+3V3"
+			(at 77.54 65.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" ""
+			(at 75 60 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 75 60 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "#PWR004") (unit 1))))
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 90 65 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "166469e5-1590-4ccf-8962-095ab03e66c0")
+		(property "Reference" "#PWR005"
+			(at 92.54 59.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "GND"
+			(at 92.54 70.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" ""
+			(at 90 65 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 90 65 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "#PWR005") (unit 1))))
+	)
+	(symbol
+		(lib_id "power:GNDA")
+		(at 105 65 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "732f0e3b-7c61-4c5b-8b4a-504a81caca35")
+		(property "Reference" "#PWR006"
+			(at 107.54 59.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "GNDA"
+			(at 107.54 70.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" ""
+			(at 105 65 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 105 65 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "#PWR006") (unit 1))))
+	)
+	(symbol
+		(lib_id "power:PGND")
+		(at 120 65 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "a6faa972-74c4-4e50-8726-08d488c9700f")
+		(property "Reference" "#PWR007"
+			(at 122.54 59.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "PGND"
+			(at 122.54 70.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" ""
+			(at 120 65 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 120 65 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "#PWR007") (unit 1))))
+	)
+	(text "Power tree: 12V input -> RTK-2412 isolated -> 48V coil rail. 12V -> 5V -> 3V3 for logic."
+		(at 30 55 0)
+		(effects (font (size 1.2 1.2)) (justify left bottom))
+		(uuid "8a4edd8f-7b1e-4fc5-86b9-9f9f75d64cbb"))
+	(label "+48V"
+		(at 30 68 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "01c850cb-4d84-4a56-8bc6-76ac53b24e4f"))
+	(label "+12V"
+		(at 45 68 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "01bf340c-53cc-4af7-8b74-82e071a9e4b3"))
+	(label "+5V"
+		(at 60 68 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "ac7fa494-00f4-4bd3-8e43-efeef792bda0"))
+	(label "+3V3"
+		(at 75 68 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "a276a3af-2fd3-4267-838b-9c2b4e99ab22"))
+	(symbol
+		(lib_id "palpod-halbach-controller:RTK-2412")
+		(at 130 75 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "85e97208-c32e-44b8-8280-5ff8cfe286f9")
+		(property "Reference" "U10"
+			(at 132.54 69.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "RTK-2412"
+			(at 132.54 80.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "palpod-halbach-controller:SIP-4_Recom_RTK"
+			(at 130 75 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 130 75 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "U10") (unit 1))))
+	)
+	(text "U10: Recom RTK-2412 - isolated 12V->24V driver rail (2W)"
+		(at 125 60 0)
+		(effects (font (size 1.2 1.2)) (justify left bottom))
+		(uuid "39c07f65-778a-4361-8d2f-a474f73ff768"))
+	(text "For 48V: cascade with LM5155 boost per driver-stage spec"
+		(at 125 63 0)
+		(effects (font (size 1.0 1.0)) (justify left bottom))
+		(uuid "c924b75a-8c5f-4dc4-8aed-98840c3857cb"))
+	(symbol
+		(lib_id "palpod-halbach-controller:STM32H723ZGT6")
+		(at 60 110 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "4bcc5986-6f33-4727-8a1d-829ebea87182")
+		(property "Reference" "U1"
+			(at 62.54 104.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "STM32H723ZGT6 (Primary)"
+			(at 62.54 115.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "palpod-halbach-controller:LQFP-144_20x20mm_P0.5mm"
+			(at 60 110 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 60 110 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "U1") (unit 1))))
+	)
+	(symbol
+		(lib_id "palpod-halbach-controller:STM32H723ZGT6")
+		(at 180 110 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "954f387e-3c47-4faf-8039-cc8d73e8e9ef")
+		(property "Reference" "U2"
+			(at 182.54 104.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "STM32H723ZGT6 (Redundant)"
+			(at 182.54 115.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "palpod-halbach-controller:LQFP-144_20x20mm_P0.5mm"
+			(at 180 110 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 180 110 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "U2") (unit 1))))
+	)
+	(text "Lockstep pair - both compute the servo loop; disagreement latches SAFE-SHUTDOWN"
+		(at 50 55 0)
+		(effects (font (size 1.5 1.5)) (justify left bottom))
+		(uuid "f8f363ca-06b3-4c31-88c7-891b4b263d3e"))
+	(text "Cross-strapped SPI: LOCKSTEP_A (U1 SPI2->U2 SPI2), LOCKSTEP_B (U2 SPI3->U1 SPI3)"
+		(at 50 58 0)
+		(effects (font (size 1.2 1.2)) (justify left bottom))
+		(uuid "20221779-e093-4198-83dd-733090c26b21"))
+	(label "LOCKSTEP_A_MOSI"
+		(at 140 80 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "0b0104ac-400a-4491-8353-b70d7bfe798e"))
+	(label "LOCKSTEP_A_MISO"
+		(at 140 83 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "63a23746-a812-40bc-8b80-328badeec091"))
+	(label "LOCKSTEP_A_SCK"
+		(at 140 86 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "1ff599ca-d4b5-4ad9-861e-d888e0758b6f"))
+	(label "LOCKSTEP_B_MOSI"
+		(at 140 95 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "a71a63b4-8f2a-44ff-8b13-e2bacc45d735"))
+	(label "LOCKSTEP_B_MISO"
+		(at 140 98 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "3dee7e74-0dee-4161-898c-748009344f4f"))
+	(label "LOCKSTEP_B_SCK"
+		(at 140 101 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "1c36b371-b81c-47ae-8c0a-e11496dea219"))
+	(wire
+		(pts (xy 125 80) (xy 115 80))
+		(stroke (width 0) (type default))
+		(uuid "07531df1-deab-455e-8ec0-6a3b5e2808d7"))
+	(wire
+		(pts (xy 125 83) (xy 115 83))
+		(stroke (width 0) (type default))
+		(uuid "c9a68825-6629-42a1-86ab-43fd42686122"))
+	(wire
+		(pts (xy 125 86) (xy 115 86))
+		(stroke (width 0) (type default))
+		(uuid "3cdd74ab-377e-46db-83a9-19aec03f33d3"))
+	(symbol
+		(lib_id "palpod-halbach-controller:MAX706")
+		(at 300 100 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "0b8709c3-ae79-465b-8401-1141f91cf121")
+		(property "Reference" "U3"
+			(at 302.54 94.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "MAX706"
+			(at 302.54 105.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "palpod-halbach-controller:SOIC-8_3.9x4.9mm_P1.27mm"
+			(at 300 100 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 300 100 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "U3") (unit 1))))
+	)
+	(text "U3: MAX706 window WDT + MR (manual reset from E-stop) + PFI (power-fail input)"
+		(at 285 85 0)
+		(effects (font (size 1.2 1.2)) (justify left bottom))
+		(uuid "6316025c-9610-4aaa-8f36-07e599ea0884"))
+	(label "WDOG_WDI"
+		(at 285 97 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "d0ae0070-63e3-4d8e-8a1f-dc54eace45ee"))
+	(label "WDOG_RESETn"
+		(at 315 97 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "9ef76a73-58d7-4586-8be6-a3051ee4be3c"))
+	(label "ESTOP_LATCH"
+		(at 285 94 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "a9eebe32-dd8d-410e-8abe-8341f4861cde"))
+	(symbol
+		(lib_id "palpod-halbach-controller:TL331")
+		(at 330 150 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "8029e220-2a29-40b0-8aeb-64caef98103a")
+		(property "Reference" "U4"
+			(at 332.54 144.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "TL331"
+			(at 332.54 155.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "palpod-halbach-controller:SOT-23-5"
+			(at 330 150 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 330 150 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "U4") (unit 1))))
+	)
+	(text "U4: TL331 - hardware overcurrent latch. Independent of MCU firmware."
+		(at 315 140 0)
+		(effects (font (size 1.2 1.2)) (justify left bottom))
+		(uuid "d0744ed9-8089-4a8f-872d-546fe1bf7152"))
+	(label "OC_SUM_IN"
+		(at 315 147 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "4540d56c-3aa2-4583-8579-2ee00f43c401"))
+	(label "OC_LATCH"
+		(at 345 147 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "2e0bd11e-d483-4c02-8e4a-ff6fda6ca867"))
+	(symbol
+		(lib_id "palpod-halbach-controller:MCP2542FD")
+		(at 380 100 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "06a0a413-7cdc-4197-8c72-29bd11a5fe6c")
+		(property "Reference" "U5"
+			(at 382.54 94.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "MCP2542FD"
+			(at 382.54 105.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "palpod-halbach-controller:SOIC-8_3.9x4.9mm_P1.27mm"
+			(at 380 100 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 380 100 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "U5") (unit 1))))
+	)
+	(label "CAN_TXD"
+		(at 365 97 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "50fd7f93-97f8-48c5-829e-586cdd1cb22a"))
+	(label "CAN_RXD"
+		(at 365 100 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "e6f1d80d-95ee-4289-8d6d-254887907279"))
+	(label "CANH"
+		(at 395 97 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "c76bb4c7-d5d3-4d95-8ba1-b6baa193c517"))
+	(label "CANL"
+		(at 395 100 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "ff7834f3-bd60-40d4-8144-bfd1818467c7"))
+	(symbol
+		(lib_id "palpod-halbach-controller:STM32G030K8T6")
+		(at 380 180 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "76ab8323-1f31-459d-8d67-2c438c8ef428")
+		(property "Reference" "U6"
+			(at 382.54 174.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "STM32G030K8T6"
+			(at 382.54 185.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "palpod-halbach-controller:LQFP-32_7x7mm_P0.8mm"
+			(at 380 180 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 380 180 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "U6") (unit 1))))
+	)
+	(text "U6: Aux MCU - coil temperature monitoring + heatsink fan PWM"
+		(at 365 155 0)
+		(effects (font (size 1.2 1.2)) (justify left bottom))
+		(uuid "54607622-fc3b-4e20-8fff-6bbc741aa78a"))
+	(symbol
+		(lib_id "palpod-halbach-controller:MLX90393")
+		(at 20 260 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "d08cce26-abff-4576-8907-f4b2a426c113")
+		(property "Reference" "U7"
+			(at 22.54 254.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "MLX90393 #1"
+			(at 22.54 265.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "palpod-halbach-controller:QFN-16_3x3mm_P0.5mm"
+			(at 20 260 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 20 260 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "U7") (unit 1))))
+	)
+	(label "HALL0_SDA"
+		(at 5 257 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "06807bff-9765-4ef0-85c9-2446d1dca61d"))
+	(label "HALL0_SCL"
+		(at 5 260 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "0e4299b6-366b-4627-8df0-9c2fc90fcbcf"))
+	(label "HALL0_DRDY"
+		(at 5 263 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "238555bd-7280-4ae4-83be-2d3b15ba6ecf"))
+	(symbol
+		(lib_id "palpod-halbach-controller:MLX90393")
+		(at 50 260 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "dfde48db-2752-4ece-8584-eaa96431f821")
+		(property "Reference" "U8"
+			(at 52.54 254.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "MLX90393 #2"
+			(at 52.54 265.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "palpod-halbach-controller:QFN-16_3x3mm_P0.5mm"
+			(at 50 260 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 50 260 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "U8") (unit 1))))
+	)
+	(label "HALL1_SDA"
+		(at 35 257 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "7ef46578-015e-4b24-8f2e-e202b941c98e"))
+	(label "HALL1_SCL"
+		(at 35 260 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "fd52a826-b01a-4e1e-84a5-de6b13732301"))
+	(label "HALL1_DRDY"
+		(at 35 263 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "cfc3a30d-09c6-49c1-8eb5-be8c9fb823ec"))
+	(symbol
+		(lib_id "palpod-halbach-controller:MLX90393")
+		(at 80 260 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "c2f4c400-6e73-4d99-81b1-d8e794487850")
+		(property "Reference" "U9"
+			(at 82.54 254.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "MLX90393 #3"
+			(at 82.54 265.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "palpod-halbach-controller:QFN-16_3x3mm_P0.5mm"
+			(at 80 260 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 80 260 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "U9") (unit 1))))
+	)
+	(label "HALL2_SDA"
+		(at 65 257 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "34d28f07-c07c-4f05-814d-2ca9b31d74dc"))
+	(label "HALL2_SCL"
+		(at 65 260 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "1fb03f8c-67ad-49ae-8673-d47f8975a1eb"))
+	(label "HALL2_DRDY"
+		(at 65 263 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "4f830f58-ace7-4d49-8d04-e951424765f4"))
+	(symbol
+		(lib_id "palpod-halbach-controller:MLX90393")
+		(at 110 260 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "66546cc6-3154-4a45-8d3e-c1c87374895c")
+		(property "Reference" "U10"
+			(at 112.54 254.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "MLX90393 #4"
+			(at 112.54 265.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "palpod-halbach-controller:QFN-16_3x3mm_P0.5mm"
+			(at 110 260 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 110 260 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "U10") (unit 1))))
+	)
+	(label "HALL3_SDA"
+		(at 95 257 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "630541ba-524c-4aeb-8a5a-15db92b0fefd"))
+	(label "HALL3_SCL"
+		(at 95 260 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "ac749126-a06e-4172-829d-0c6d60bdb374"))
+	(label "HALL3_DRDY"
+		(at 95 263 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "708e2352-f082-40b5-88c0-04af89686dc0"))
+	(symbol
+		(lib_id "palpod-halbach-controller:MLX90393")
+		(at 140 260 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "0c7772dc-34aa-4070-8eaa-366957a3690c")
+		(property "Reference" "U11"
+			(at 142.54 254.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "MLX90393 #5"
+			(at 142.54 265.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "palpod-halbach-controller:QFN-16_3x3mm_P0.5mm"
+			(at 140 260 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 140 260 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "U11") (unit 1))))
+	)
+	(label "HALL4_SDA"
+		(at 125 257 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "1a8edd1a-4cde-41cf-8082-2902c4d2fd01"))
+	(label "HALL4_SCL"
+		(at 125 260 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "a19f6def-caf3-435d-885a-d477d80f501e"))
+	(label "HALL4_DRDY"
+		(at 125 263 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "3f4b8184-b6c7-4ed8-8b2d-6c4fb33d8c8b"))
+	(symbol
+		(lib_id "palpod-halbach-controller:MLX90393")
+		(at 170 260 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "86f7bd1e-2b90-4148-8d1e-d9bf5065a886")
+		(property "Reference" "U12"
+			(at 172.54 254.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "MLX90393 #6"
+			(at 172.54 265.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "palpod-halbach-controller:QFN-16_3x3mm_P0.5mm"
+			(at 170 260 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 170 260 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "U12") (unit 1))))
+	)
+	(label "HALL5_SDA"
+		(at 155 257 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "016e7d6d-0e6c-4944-8dad-95fef4f27641"))
+	(label "HALL5_SCL"
+		(at 155 260 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "d21e8e4c-4e12-4cdb-8a11-4ab7f63ad7e3"))
+	(label "HALL5_DRDY"
+		(at 155 263 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "abb82cfc-8278-4ce6-88b4-faabefdb0c72"))
+	(text "6x MLX90393 3D hall sensors - 3 around column top + 3 around expected orb position"
+		(at 20 245 0)
+		(effects (font (size 1.5 1.5)) (justify left bottom))
+		(uuid "5737f13c-0fc3-4696-8454-658b4f7fe7b1"))
+	(symbol
+		(lib_id "palpod-halbach-controller:DRV8323")
+		(at 40 320 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "dc5efcbd-cf77-405e-858e-92d69bc724f5")
+		(property "Reference" "U13"
+			(at 42.54 314.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "DRV8323 CH1"
+			(at 42.54 325.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "palpod-halbach-controller:HTSSOP-48_6.1x12.5mm_P0.5mm_EP"
+			(at 40 320 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 40 320 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "U13") (unit 1))))
+	)
+	(symbol
+		(lib_id "palpod-halbach-controller:IPI050N06N")
+		(at 70 310 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "2e5daa16-f936-46d0-8eb1-ddddd15a3af5")
+		(property "Reference" "Q1"
+			(at 72.54 304.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "IPI050N06N"
+			(at 72.54 315.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "palpod-halbach-controller:TO-262-3_TabPin2"
+			(at 70 310 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 70 310 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "Q1") (unit 1))))
+	)
+	(symbol
+		(lib_id "palpod-halbach-controller:IPI050N06N")
+		(at 70 330 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "852f27d1-1a66-43bf-80f0-2201a68436b8")
+		(property "Reference" "Q2"
+			(at 72.54 324.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "IPI050N06N"
+			(at 72.54 335.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "palpod-halbach-controller:TO-262-3_TabPin2"
+			(at 70 330 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 70 330 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "Q2") (unit 1))))
+	)
+	(symbol
+		(lib_id "palpod-halbach-controller:INA240")
+		(at 95 320 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "01c36735-37f7-4900-882a-649ca047fe92")
+		(property "Reference" "U25"
+			(at 97.54 314.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "INA240"
+			(at 97.54 325.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "palpod-halbach-controller:TSSOP-8_4.4x3mm_P0.65mm"
+			(at 95 320 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 95 320 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "U25") (unit 1))))
+	)
+	(label "COIL_1_HIGH"
+		(at 110 315 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "ae0053e9-bcf9-4e3d-8053-6404e5a204ea"))
+	(label "COIL_1_LOW"
+		(at 110 325 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "86a45e40-b806-4fcd-8a16-b9318302b7f8"))
+	(label "OC_CH1"
+		(at 110 320 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "078ad7d3-bc87-49b7-8044-6e227eb31a25"))
+	(text "Coil Driver Block CH1 - DRV8323 + IPI050N06N half-bridge + INA240 shunt-amp"
+		(at 35 302 0)
+		(effects (font (size 1.2 1.2)) (justify left bottom))
+		(uuid "6fc9c86b-b3b4-48f0-8d62-be5ac8e3c105"))
+	(symbol
+		(lib_id "palpod-halbach-controller:DRV8323")
+		(at 130 320 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "b1fb6367-3da1-49b1-8514-bb6b340ab8c1")
+		(property "Reference" "U14"
+			(at 132.54 314.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "DRV8323 CH2"
+			(at 132.54 325.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "palpod-halbach-controller:HTSSOP-48_6.1x12.5mm_P0.5mm_EP"
+			(at 130 320 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 130 320 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "U14") (unit 1))))
+	)
+	(symbol
+		(lib_id "palpod-halbach-controller:IPI050N06N")
+		(at 160 310 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "f23e33ec-34a4-4379-898c-dee79135295e")
+		(property "Reference" "Q3"
+			(at 162.54 304.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "IPI050N06N"
+			(at 162.54 315.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "palpod-halbach-controller:TO-262-3_TabPin2"
+			(at 160 310 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 160 310 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "Q3") (unit 1))))
+	)
+	(symbol
+		(lib_id "palpod-halbach-controller:IPI050N06N")
+		(at 160 330 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "27967051-5667-48d4-8e3b-f0b982ad251c")
+		(property "Reference" "Q4"
+			(at 162.54 324.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "IPI050N06N"
+			(at 162.54 335.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "palpod-halbach-controller:TO-262-3_TabPin2"
+			(at 160 330 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 160 330 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "Q4") (unit 1))))
+	)
+	(symbol
+		(lib_id "palpod-halbach-controller:INA240")
+		(at 185 320 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "0aa37a64-f5ec-49ba-8c75-43d22b31daae")
+		(property "Reference" "U26"
+			(at 187.54 314.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "INA240"
+			(at 187.54 325.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "palpod-halbach-controller:TSSOP-8_4.4x3mm_P0.65mm"
+			(at 185 320 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 185 320 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "U26") (unit 1))))
+	)
+	(label "COIL_2_HIGH"
+		(at 200 315 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "ddfb9a9c-dca6-45b9-8f0d-32ed78f7ce67"))
+	(label "COIL_2_LOW"
+		(at 200 325 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "ea76c441-5856-4636-8e72-545e7f7abff6"))
+	(label "OC_CH2"
+		(at 200 320 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "4e6c0418-404d-41f2-8424-d2ae079a668e"))
+	(text "Coil Driver Block CH2 - DRV8323 + IPI050N06N half-bridge + INA240 shunt-amp"
+		(at 125 302 0)
+		(effects (font (size 1.2 1.2)) (justify left bottom))
+		(uuid "e51e5fc9-a2eb-4183-8cab-1a2610bad76c"))
+	(symbol
+		(lib_id "palpod-halbach-controller:DRV8323")
+		(at 220 320 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "3a51c53a-0217-41ab-83cc-c4a6502f7792")
+		(property "Reference" "U15"
+			(at 222.54 314.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "DRV8323 CH3"
+			(at 222.54 325.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "palpod-halbach-controller:HTSSOP-48_6.1x12.5mm_P0.5mm_EP"
+			(at 220 320 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 220 320 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "U15") (unit 1))))
+	)
+	(symbol
+		(lib_id "palpod-halbach-controller:IPI050N06N")
+		(at 250 310 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "4ee5c0f8-7cd3-4c4c-8bcb-f1801f30e3e0")
+		(property "Reference" "Q5"
+			(at 252.54 304.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "IPI050N06N"
+			(at 252.54 315.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "palpod-halbach-controller:TO-262-3_TabPin2"
+			(at 250 310 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 250 310 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "Q5") (unit 1))))
+	)
+	(symbol
+		(lib_id "palpod-halbach-controller:IPI050N06N")
+		(at 250 330 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "9e94bd45-81e0-43e5-845e-a5c8c0a40de0")
+		(property "Reference" "Q6"
+			(at 252.54 324.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "IPI050N06N"
+			(at 252.54 335.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "palpod-halbach-controller:TO-262-3_TabPin2"
+			(at 250 330 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 250 330 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "Q6") (unit 1))))
+	)
+	(symbol
+		(lib_id "palpod-halbach-controller:INA240")
+		(at 275 320 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "5b1db9ec-7d4b-4970-8844-81d847ef12c1")
+		(property "Reference" "U27"
+			(at 277.54 314.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "INA240"
+			(at 277.54 325.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "palpod-halbach-controller:TSSOP-8_4.4x3mm_P0.65mm"
+			(at 275 320 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 275 320 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "U27") (unit 1))))
+	)
+	(label "COIL_3_HIGH"
+		(at 290 315 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "8a1071b3-fc8e-4757-8f2b-e9adbbbbd486"))
+	(label "COIL_3_LOW"
+		(at 290 325 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "cbbcbcc1-53ba-49e8-8881-bbe9fdddd988"))
+	(label "OC_CH3"
+		(at 290 320 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "4435d842-f74e-4bec-8696-dabcd1096ee3"))
+	(text "Coil Driver Block CH3 - DRV8323 + IPI050N06N half-bridge + INA240 shunt-amp"
+		(at 215 302 0)
+		(effects (font (size 1.2 1.2)) (justify left bottom))
+		(uuid "0953ba5b-0b7c-4b0f-82ad-dc679faf4dce"))
+	(symbol
+		(lib_id "palpod-halbach-controller:DRV8323")
+		(at 40 360 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "e3db807a-3a9f-4924-8d8a-3801d2e2af8b")
+		(property "Reference" "U16"
+			(at 42.54 354.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "DRV8323 CH4"
+			(at 42.54 365.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "palpod-halbach-controller:HTSSOP-48_6.1x12.5mm_P0.5mm_EP"
+			(at 40 360 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 40 360 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "U16") (unit 1))))
+	)
+	(symbol
+		(lib_id "palpod-halbach-controller:IPI050N06N")
+		(at 70 350 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "5b5c3a77-230b-47d7-889b-e22d25f62b8c")
+		(property "Reference" "Q7"
+			(at 72.54 344.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "IPI050N06N"
+			(at 72.54 355.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "palpod-halbach-controller:TO-262-3_TabPin2"
+			(at 70 350 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 70 350 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "Q7") (unit 1))))
+	)
+	(symbol
+		(lib_id "palpod-halbach-controller:IPI050N06N")
+		(at 70 370 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "f4913a23-963b-4d43-8ad5-89d9327fb76e")
+		(property "Reference" "Q8"
+			(at 72.54 364.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "IPI050N06N"
+			(at 72.54 375.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "palpod-halbach-controller:TO-262-3_TabPin2"
+			(at 70 370 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 70 370 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "Q8") (unit 1))))
+	)
+	(symbol
+		(lib_id "palpod-halbach-controller:INA240")
+		(at 95 360 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "8b3232a1-7b56-4120-8ff2-51f34fc07a46")
+		(property "Reference" "U28"
+			(at 97.54 354.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "INA240"
+			(at 97.54 365.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "palpod-halbach-controller:TSSOP-8_4.4x3mm_P0.65mm"
+			(at 95 360 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 95 360 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "U28") (unit 1))))
+	)
+	(label "COIL_4_HIGH"
+		(at 110 355 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "5588688a-620e-4a6c-8c8d-51dde28106d0"))
+	(label "COIL_4_LOW"
+		(at 110 365 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "c5d5d4d9-9afc-4e91-82fd-a5e46d2d220e"))
+	(label "OC_CH4"
+		(at 110 360 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "d624a67f-134c-4d4e-880b-cd94691c734d"))
+	(text "Coil Driver Block CH4 - DRV8323 + IPI050N06N half-bridge + INA240 shunt-amp"
+		(at 35 342 0)
+		(effects (font (size 1.2 1.2)) (justify left bottom))
+		(uuid "b8dd9c96-9e41-464c-85c8-6c04be630f6b"))
+	(symbol
+		(lib_id "palpod-halbach-controller:DRV8323")
+		(at 130 360 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "f39ddb09-4e4a-4c9f-882d-80d8cc44ab99")
+		(property "Reference" "U17"
+			(at 132.54 354.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "DRV8323 CH5"
+			(at 132.54 365.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "palpod-halbach-controller:HTSSOP-48_6.1x12.5mm_P0.5mm_EP"
+			(at 130 360 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 130 360 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "U17") (unit 1))))
+	)
+	(symbol
+		(lib_id "palpod-halbach-controller:IPI050N06N")
+		(at 160 350 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "be4430f7-749f-44d7-8d05-9463635b4199")
+		(property "Reference" "Q9"
+			(at 162.54 344.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "IPI050N06N"
+			(at 162.54 355.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "palpod-halbach-controller:TO-262-3_TabPin2"
+			(at 160 350 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 160 350 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "Q9") (unit 1))))
+	)
+	(symbol
+		(lib_id "palpod-halbach-controller:IPI050N06N")
+		(at 160 370 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "f938f00e-8a6d-4bc4-872a-efcbf4bcad65")
+		(property "Reference" "Q10"
+			(at 162.54 364.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "IPI050N06N"
+			(at 162.54 375.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "palpod-halbach-controller:TO-262-3_TabPin2"
+			(at 160 370 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 160 370 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "Q10") (unit 1))))
+	)
+	(symbol
+		(lib_id "palpod-halbach-controller:INA240")
+		(at 185 360 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "fe91032f-48d8-4e97-8c62-05fb8d4812a7")
+		(property "Reference" "U29"
+			(at 187.54 354.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "INA240"
+			(at 187.54 365.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "palpod-halbach-controller:TSSOP-8_4.4x3mm_P0.65mm"
+			(at 185 360 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 185 360 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "U29") (unit 1))))
+	)
+	(label "COIL_5_HIGH"
+		(at 200 355 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "3c109d12-dba0-40df-85fd-949dd85307ee"))
+	(label "COIL_5_LOW"
+		(at 200 365 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "0ddaa403-93eb-4f71-800c-64026e89a62e"))
+	(label "OC_CH5"
+		(at 200 360 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "f22e957c-58ee-4058-8cf3-60875438eea3"))
+	(text "Coil Driver Block CH5 - DRV8323 + IPI050N06N half-bridge + INA240 shunt-amp"
+		(at 125 342 0)
+		(effects (font (size 1.2 1.2)) (justify left bottom))
+		(uuid "18a9c88b-0a4f-4b14-8ce3-1df548f48944"))
+	(symbol
+		(lib_id "palpod-halbach-controller:DRV8323")
+		(at 220 360 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "2d1b3c7d-2314-45f1-8d82-f59841719a6a")
+		(property "Reference" "U18"
+			(at 222.54 354.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "DRV8323 CH6"
+			(at 222.54 365.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "palpod-halbach-controller:HTSSOP-48_6.1x12.5mm_P0.5mm_EP"
+			(at 220 360 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 220 360 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "U18") (unit 1))))
+	)
+	(symbol
+		(lib_id "palpod-halbach-controller:IPI050N06N")
+		(at 250 350 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "60bab9eb-07d9-4062-8ba4-3f41543ef146")
+		(property "Reference" "Q11"
+			(at 252.54 344.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "IPI050N06N"
+			(at 252.54 355.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "palpod-halbach-controller:TO-262-3_TabPin2"
+			(at 250 350 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 250 350 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "Q11") (unit 1))))
+	)
+	(symbol
+		(lib_id "palpod-halbach-controller:IPI050N06N")
+		(at 250 370 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "4d986254-2584-43ad-815f-122aed257a66")
+		(property "Reference" "Q12"
+			(at 252.54 364.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "IPI050N06N"
+			(at 252.54 375.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "palpod-halbach-controller:TO-262-3_TabPin2"
+			(at 250 370 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 250 370 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "Q12") (unit 1))))
+	)
+	(symbol
+		(lib_id "palpod-halbach-controller:INA240")
+		(at 275 360 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "85b44753-02f3-4036-8653-25a474172d17")
+		(property "Reference" "U30"
+			(at 277.54 354.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "INA240"
+			(at 277.54 365.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "palpod-halbach-controller:TSSOP-8_4.4x3mm_P0.65mm"
+			(at 275 360 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 275 360 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "U30") (unit 1))))
+	)
+	(label "COIL_6_HIGH"
+		(at 290 355 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "63da648e-d5fa-457c-8342-1e564d72fe15"))
+	(label "COIL_6_LOW"
+		(at 290 365 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "fca29d05-b9d7-4d4f-862d-b78957609cf5"))
+	(label "OC_CH6"
+		(at 290 360 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "47f106db-df51-47cd-8aa5-f50b38f519b5"))
+	(text "Coil Driver Block CH6 - DRV8323 + IPI050N06N half-bridge + INA240 shunt-amp"
+		(at 215 342 0)
+		(effects (font (size 1.2 1.2)) (justify left bottom))
+		(uuid "f892d3f1-2523-40c2-8745-145f2c69dc51"))
+	(text "E-STOP INPUT (rear panel) - hardwired to MAX706 MR pin, coils de-energize <10ms"
+		(at 20 405 0)
+		(effects (font (size 1.8 1.8)) (justify left bottom))
+		(uuid "25161f1e-582c-43d6-86ad-0375daf8248f"))
+	(label "ESTOP_IN"
+		(at 30 415 0)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "dee8b5ab-57bd-433b-8c2b-13b4eeb3aa6a"))
+	(symbol
+		(lib_id "Device:C")
+		(at 240 50 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "49c2739a-14f9-463a-8fec-fa6176ff29e7")
+		(property "Reference" "C1"
+			(at 242.54 44.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "100nF"
+			(at 242.54 55.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 240 50 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 240 50 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "C1") (unit 1))))
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 248 50 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "dbbc70f1-6b4c-4e7a-8a96-83208a7543a5")
+		(property "Reference" "C2"
+			(at 250.54 44.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "100nF"
+			(at 250.54 55.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 248 50 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 248 50 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "C2") (unit 1))))
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 256 50 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "6b7b8672-c450-4dcf-84a9-eed6607fc879")
+		(property "Reference" "C3"
+			(at 258.54 44.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "100nF"
+			(at 258.54 55.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 256 50 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 256 50 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "C3") (unit 1))))
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 264 50 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "ba390571-a173-4a0f-81bd-b1cd3b0ae015")
+		(property "Reference" "C4"
+			(at 266.54 44.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "100nF"
+			(at 266.54 55.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 264 50 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 264 50 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "C4") (unit 1))))
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 272 50 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "4efcc82e-d640-4d66-8b09-92c10ebaa72b")
+		(property "Reference" "C5"
+			(at 274.54 44.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "100nF"
+			(at 274.54 55.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 272 50 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 272 50 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "C5") (unit 1))))
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 280 50 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "f0a5807f-6087-4d82-8f69-f11d27158cfb")
+		(property "Reference" "C6"
+			(at 282.54 44.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "100nF"
+			(at 282.54 55.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 280 50 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 280 50 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "C6") (unit 1))))
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 288 50 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "17061ac1-5371-4a9f-828c-f848d45c8c46")
+		(property "Reference" "C7"
+			(at 290.54 44.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "100nF"
+			(at 290.54 55.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 288 50 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 288 50 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "C7") (unit 1))))
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 296 50 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "de4f36a4-b296-4c97-8781-22c67ce0206c")
+		(property "Reference" "C8"
+			(at 298.54 44.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "100nF"
+			(at 298.54 55.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 296 50 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 296 50 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "C8") (unit 1))))
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 304 50 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "896c94d8-415b-4a54-802a-25012e1200d9")
+		(property "Reference" "C9"
+			(at 306.54 44.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "100nF"
+			(at 306.54 55.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 304 50 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 304 50 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "C9") (unit 1))))
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 312 50 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "296224cb-42b6-464f-8430-8ee15892d613")
+		(property "Reference" "C10"
+			(at 314.54 44.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "100nF"
+			(at 314.54 55.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 312 50 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 312 50 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "C10") (unit 1))))
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 240 65 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "3da91777-dfec-445d-86f2-548422c1bb42")
+		(property "Reference" "C11"
+			(at 242.54 59.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "220uF"
+			(at 242.54 70.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "Capacitor_SMD:CP_Elec_10x10.5"
+			(at 240 65 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 240 65 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "C11") (unit 1))))
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 260 65 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "52df6bbd-3666-4160-864d-f39e43f29244")
+		(property "Reference" "C12"
+			(at 262.54 59.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "220uF"
+			(at 262.54 70.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "Capacitor_SMD:CP_Elec_10x10.5"
+			(at 260 65 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 260 65 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "C12") (unit 1))))
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 280 65 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "8de664db-281e-485e-845c-47458475ab2f")
+		(property "Reference" "C13"
+			(at 282.54 59.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "220uF"
+			(at 282.54 70.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "Capacitor_SMD:CP_Elec_10x10.5"
+			(at 280 65 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 280 65 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "C13") (unit 1))))
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 80 200 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "9671bcf6-d148-4efa-8a05-198270ae2be9")
+		(property "Reference" "R1"
+			(at 82.54 194.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "10k"
+			(at 82.54 205.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 80 200 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 80 200 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "R1") (unit 1))))
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 90 200 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "17b8035d-a570-4e29-8292-5e098de460f1")
+		(property "Reference" "R2"
+			(at 92.54 194.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "10k"
+			(at 92.54 205.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 90 200 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 90 200 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "R2") (unit 1))))
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 100 200 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "f941d97f-d378-4f13-8a44-3fbbd18dfacc")
+		(property "Reference" "R3"
+			(at 102.54 194.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "10k"
+			(at 102.54 205.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 100 200 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 100 200 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "R3") (unit 1))))
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 110 200 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "c3dce2cb-3821-49ef-8202-7e3f2f20d3ca")
+		(property "Reference" "R4"
+			(at 112.54 194.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "10k"
+			(at 112.54 205.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 110 200 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 110 200 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "R4") (unit 1))))
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 120 200 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "c14ac2c9-f63a-4138-84f8-5425ba416fdd")
+		(property "Reference" "R5"
+			(at 122.54 194.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "10k"
+			(at 122.54 205.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 120 200 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 120 200 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "R5") (unit 1))))
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 200 340 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "a627b9e2-e709-4117-821d-098ada447f59")
+		(property "Reference" "R6"
+			(at 202.54 334.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "0R005 5W"
+			(at 202.54 345.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "Resistor_SMD:R_2512_6332Metric"
+			(at 200 340 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 200 340 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "R6") (unit 1))))
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 210 340 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "19972482-73cc-4f71-811d-850fbd9a656c")
+		(property "Reference" "R7"
+			(at 212.54 334.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "0R005 5W"
+			(at 212.54 345.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "Resistor_SMD:R_2512_6332Metric"
+			(at 210 340 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 210 340 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "R7") (unit 1))))
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 220 340 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "715f6478-010a-4020-842c-f217eb311ef2")
+		(property "Reference" "R8"
+			(at 222.54 334.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "0R005 5W"
+			(at 222.54 345.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "Resistor_SMD:R_2512_6332Metric"
+			(at 220 340 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 220 340 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "R8") (unit 1))))
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 230 340 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "b1f795de-8fa4-465b-8b21-a31cb8affd95")
+		(property "Reference" "R9"
+			(at 232.54 334.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "0R005 5W"
+			(at 232.54 345.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "Resistor_SMD:R_2512_6332Metric"
+			(at 230 340 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 230 340 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "R9") (unit 1))))
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 240 340 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "d6e67633-ed31-4228-825c-09f469b5a63c")
+		(property "Reference" "R10"
+			(at 242.54 334.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "0R005 5W"
+			(at 242.54 345.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "Resistor_SMD:R_2512_6332Metric"
+			(at 240 340 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 240 340 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "R10") (unit 1))))
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 250 340 0)
+		(unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "899e4c6f-5b17-40d0-85b8-c821ec0e5bf8")
+		(property "Reference" "R11"
+			(at 252.54 334.92 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Value" "0R005 5W"
+			(at 252.54 345.08 0)
+			(effects (font (size 1.27 1.27))))
+		(property "Footprint" "Resistor_SMD:R_2512_6332Metric"
+			(at 250 340 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(property "Datasheet" "~"
+			(at 250 340 0)
+			(effects (font (size 1.27 1.27)) (hide yes)))
+		(instances
+			(project "palpod-halbach-controller"
+				(path "/9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9"
+					(reference "R11") (unit 1))))
+	)
+	(wire
+		(pts (xy 30 80) (xy 30 90))
+		(stroke (width 0) (type default))
+		(uuid "99f6854d-5da5-4543-8f69-f71a3cc02472"))
+	(wire
+		(pts (xy 45 80) (xy 45 90))
+		(stroke (width 0) (type default))
+		(uuid "feac6d68-7ff9-49ce-838b-892ff775c8c2"))
+	(wire
+		(pts (xy 60 65) (xy 90 65))
+		(stroke (width 0) (type default))
+		(uuid "8881ee06-8cf7-48ee-82fb-6e73afeb12e8"))
+	(wire
+		(pts (xy 30 65) (xy 60 65))
+		(stroke (width 0) (type default))
+		(uuid "5bda10ca-7125-4f9a-85e3-e8de65425984"))
+	(no_connect (at 180 250) (uuid "792766e6-24df-499e-8447-5fca580d01d5"))
+	(no_connect (at 210 250) (uuid "daf2a381-08f2-4422-815f-e24241f02b20"))
+	(no_connect (at 240 250) (uuid "edb488bf-9ff4-480d-8ac0-142346d3ca53"))
+	(text "BEFORE POWER-ON: verify (1) OC latch trips at correct threshold, (2) MAX706 WDT window,"
+		(at 20 425 0)
+		(effects (font (size 1.5 1.5)) (justify left bottom))
+		(uuid "12937a87-8df6-4317-81ef-add2a2da6f57"))
+	(text "(3) E-stop opens contactor within 10ms, (4) lockstep MCUs agree on servo output."
+		(at 20 428 0)
+		(effects (font (size 1.5 1.5)) (justify left bottom))
+		(uuid "53f901ac-12b2-4b4e-8906-9a3888d939c2"))
+	(sheet_instances
+		(path "/" (page "1"))
+	)
+)

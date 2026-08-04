@@ -1,0 +1,76 @@
+==== palpod-mic-array at Mon Aug  3 20:22:42 PDT 2026 ====
+--- Stage 1-4: place + DSN ---
+./src/common/stdpbase.cpp(59): assert ""traits"" failed in Get(): create wxApp before calling this
+08:22:45 PM: Debug: Adding duplicate image handler for 'PNG file'
+08:22:45 PM: Debug: Adding duplicate image handler for 'JPEG file'
+08:22:45 PM: Debug: Adding duplicate image handler for 'TIFF file'
+08:22:45 PM: Debug: Adding duplicate image handler for 'GIF file'
+08:22:45 PM: Debug: Adding duplicate image handler for 'PNM file'
+08:22:45 PM: Debug: Adding duplicate image handler for 'PCX file'
+08:22:45 PM: Debug: Adding duplicate image handler for 'IFF file'
+08:22:45 PM: Debug: Adding duplicate image handler for 'Windows icon file'
+08:22:45 PM: Debug: Adding duplicate image handler for 'Windows cursor file'
+08:22:45 PM: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+08:22:45 PM: Debug: Adding duplicate image handler for 'TGA file'
+08:22:45 PM: Debug: Adding duplicate image handler for 'XPM file'
+
+======================================================================
+== BOARD: palpod-mic-array
+======================================================================
+RESULT: {
+  "board": "palpod-mic-array",
+  "stages": {
+    "netlist": "OK",
+    "place": "OK (31 placed, 2 lib-miss)",
+    "assign_nets": "OK (12 pads, 6 miss)",
+    "dsn": "OK (31352 bytes)"
+  },
+  "errors": [],
+  "comps_in_netlist": 33,
+  "nets_in_netlist": 3,
+  "synthetic_nets": 3,
+  "real_nets": 0,
+  "total_pads_to_route": 18,
+  "footprints_placed": 31,
+  "footprints_failed": 2,
+  "pads_net_assigned": 12,
+  "pads_missing": 6,
+  "dsn_path": "/private/tmp/claude-501/-Users-lexer-kindle/80e67baf-6192-4db2-b491-aa5b4ee00c5b/scratchpad/palpod-os/hardware/electrical/kicad/palpod-mic-array/palpod-mic-array-routed.dsn"
+}
+--- Stage 4b: FreeRouting (60s, 3 passes) ---
+  (session completed at Mon Aug  3 20:23:04 PDT 2026, waiting 15s for SES save)
+  (killing freerouting 15s after session completed)
+2026-08-03 20:22:47.248 INFO   Freerouting v2.2.4 (build-date: 2026-05-13)
+WARNING: Final field userProfileSettings in class app.freerouting.settings.GlobalSettings has been mutated reflectively by class com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$2 in unnamed module @5bb21b69 (file:/private/tmp/freerouting/freerouting.jar)
+WARNING: Use --enable-final-field-mutation=ALL-UNNAMED to avoid a warning
+WARNING: Mutating final fields will be blocked in a future release unless final field mutation is enabled
+2026-08-03 20:22:49.236 INFO   Opening '/private/tmp/claude-501/-Users-lexer-kindle/80e67baf-6192-4db2-b491-aa5b4ee00c5b/scratchpad/palpod-os/hardware/electrical/kicad/palpod-mic-array/palpod-mic-array-routed.dsn'...
+2026-08-03 20:22:49.301 INFO   New version available: v2.2.4
+2026-08-03 20:23:00.479 INFO   [D1CD17\8F8756] Starting routing of 'palpod-mic-array-routed' on 5 threads...
+2026-08-03 20:23:02.673 INFO   [D1CD17\8F8756] Auto-router pass #1 on board 'fbeecb8a530d909c84c87eaabec26acd' was completed in 1.79 seconds with the score of 990.90 (1 violation).
+2026-08-03 20:23:02.910 INFO   [D1CD17\8F8756] Auto-router pass #2 on board 'ef29a5751eafbe7201c288ea46c73af2' was completed in 0.05 seconds with the score of 990.90 (1 violation).
+2026-08-03 20:23:03.081 INFO   [D1CD17\8F8756] Auto-router session completed: started with 10 unrouted nets, completed in 2.59 seconds, final score: 990.90 (1 violation).
+FREEROUTING_FAIL (exit=143)
+--- Stage 6a: Gerbers ---
+Plotted to '/private/tmp/claude-501/-Users-lexer-kindle/80e67baf-6192-4db2-b491-aa5b4ee00c5b/scratchpad/palpod-os/hardware/electrical/kicad/palpod-mic-array/fab/gerbers-routed/palpod-mic-array-routed-User_7.gbr'.
+Plotted to '/private/tmp/claude-501/-Users-lexer-kindle/80e67baf-6192-4db2-b491-aa5b4ee00c5b/scratchpad/palpod-os/hardware/electrical/kicad/palpod-mic-array/fab/gerbers-routed/palpod-mic-array-routed-User_8.gbr'.
+Plotted to '/private/tmp/claude-501/-Users-lexer-kindle/80e67baf-6192-4db2-b491-aa5b4ee00c5b/scratchpad/palpod-os/hardware/electrical/kicad/palpod-mic-array/fab/gerbers-routed/palpod-mic-array-routed-User_9.gbr'.
+--- Stage 6b: Drill ---
+Created file '/private/tmp/claude-501/-Users-lexer-kindle/80e67baf-6192-4db2-b491-aa5b4ee00c5b/scratchpad/palpod-os/hardware/electrical/kicad/palpod-mic-array/fab/gerbers-routed/palpod-mic-array-routed.drl'
+Done.
+--- Stage 6c: DRC ---
+Found 89 violations
+Found 10 unconnected items
+Saved DRC Report to /private/tmp/claude-501/-Users-lexer-kindle/80e67baf-6192-4db2-b491-aa5b4ee00c5b/scratchpad/palpod-os/hardware/electrical/kicad/palpod-mic-array/fab/gerbers-routed/drc-report.txt
+--- Stage 6d: 3D render (top) ---
+Rendering: 100 %
+Rendering time 1.172 s
+Successfully created 3D render image
+--- Stage 6e: PDF (F.Cu+B.Cu) ---
+Plotted to '/private/tmp/claude-501/-Users-lexer-kindle/80e67baf-6192-4db2-b491-aa5b4ee00c5b/scratchpad/palpod-os/hardware/electrical/kicad/palpod-mic-array/fab/gerbers-routed/board-pcb-routed-top.pdf'.
+Done.
+Plotted to '/private/tmp/claude-501/-Users-lexer-kindle/80e67baf-6192-4db2-b491-aa5b4ee00c5b/scratchpad/palpod-os/hardware/electrical/kicad/palpod-mic-array/fab/gerbers-routed/board-pcb-routed-bot.pdf'.
+Done.
+--- Stage 6g: Zip ---
+-rw-r--r--  1 lexer_kindle  wheel  128395 Aug  3 20:23 palpod-mic-array-routed-fab-package.zip
+==== palpod-mic-array done at Mon Aug  3 20:23:33 PDT 2026 ====

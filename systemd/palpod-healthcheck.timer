@@ -1,0 +1,10 @@
+[Unit]
+Description=Fires palpod-healthcheck.service every 60 seconds
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=60s
+Unit=palpod-healthcheck.service
+
+[Install]
+WantedBy=timers.target

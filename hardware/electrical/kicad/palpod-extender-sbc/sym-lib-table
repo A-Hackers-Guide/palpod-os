@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "palpod-extender-sbc")(type "KiCad")(uri "${KIPRJMOD}/libraries/palpod-extender-sbc.kicad_sym")(options "")(descr "PAL Pod extender-SBC project-local symbols (RK3588, RK806, RTL8852BE, CS43198, TPA3255, CCG3PA, K3LKBFB0EM)"))
+)

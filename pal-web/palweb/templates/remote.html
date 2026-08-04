@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PAL Pod — Remote Devices</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <!-- CSRF -->
+  <!--
+    Content-Security-Policy is set by CSPMiddleware in
+    palweb/security_headers.py — a real HTTP header, not a meta tag. Meta CSP
+    can't enforce frame-ancestors and is advisory-only. The middleware ships
+    ``style-src 'self'`` (no ``'unsafe-inline'``); this page must never
+    reintroduce inline styles or a ``style=""`` attribute.
+  -->
+</head>
+<body class="pal-dark">
+  <header class="pal-header">
+    <h1>Remote devices</h1>
+    <p class="pal-subtle">
+      The Pod streams what's on your screens. Input is off by default —
+      grant control from this page, on this device, with a tap.
+    </p>
+  </header>
+
+  <main class="pal-main">
+    <section class="pal-card" aria-labelledby="pair-title">
+      <h2 id="pair-title">Pair a new device</h2>
+      <form id="pair-form" class="pal-form">
+        <label>Name<input name="display_name" required placeholder="Office Mac" /></label>
+        <label>Type
+          <select name="device_type">
+            <option value="macos">macOS</option>
+            <option value="windows">Windows</option>
+            <option value="linux">Linux</option>
+            <option value="ios">iOS</option>
+            <option value="android">Android</option>
+          </select>
+        </label>
+        <label>RustDesk ID<input name="rustdesk_id" required /></label>
+        <label>Auth token<input name="auth_token" required type="password" /></label>
+        <button type="submit" class="pal-btn pal-btn-primary">Pair device</button>
+      </form>
+    </section>
+
+    <section class="pal-card" aria-labelledby="devices-title">
+      <h2 id="devices-title">Paired devices</h2>
+      <div id="device-list" class="pal-device-list" aria-live="polite"></div>
+    </section>
+
+    <section class="pal-card" aria-labelledby="audit-title">
+      <h2 id="audit-title">Recent control grants</h2>
+      <p class="pal-subtle pal-small">
+        Every time control is granted or revoked lands here. Scroll for the
+        last 10 events per device — if you see a grant you don't remember
+        approving, revoke immediately and change your password.
+      </p>
+      <div id="audit-trail" class="pal-audit-trail" aria-live="polite"></div>
+    </section>
+
+    <section id="viewer" class="pal-card pal-hidden" aria-labelledby="viewer-title">
+      <h2 id="viewer-title">Live view — <span id="viewer-device-name"></span></h2>
+      <div class="pal-viewer-row">
+        <canvas id="viewer-canvas" width="960" height="540" tabindex="0"></canvas>
+        <aside class="pal-viewer-aside">
+          <label class="pal-checkbox">
+            <input type="checkbox" id="send-input-toggle" />
+            <span>Send my input to this device</span>
+          </label>
+          <p class="pal-subtle pal-small">
+            The checkbox is off by default. Even with it on, the Pod refuses
+            to forward input unless there's an active control grant.
+          </p>
+          <div id="grant-countdown" class="pal-countdown pal-hidden" aria-live="polite"></div>
+          <button id="close-viewer" class="pal-btn">Close viewer</button>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <!-- Grant modal -->
+  <div id="grant-modal" class="pal-modal pal-hidden" role="dialog" aria-modal="true" aria-labelledby="grant-modal-title">
+    <div class="pal-modal-card">
+      <h3 id="grant-modal-title">Grant Pod control</h3>
+      <p>How many minutes should the Pod be allowed to control <strong id="grant-modal-device"></strong>?</p>
+      <p class="pal-subtle pal-small">
+        Maximum 60 minutes. You can revoke at any time.
+      </p>
+      <div class="pal-radio-row" role="radiogroup" aria-label="Grant duration">
+        <label class="pal-radio"><input type="radio" name="grant-minutes" value="15" checked /><span>15 min</span></label>
+        <label class="pal-radio"><input type="radio" name="grant-minutes" value="30" /><span>30 min</span></label>
+        <label class="pal-radio"><input type="radio" name="grant-minutes" value="60" /><span>60 min</span></label>
+      </div>
+      <div class="pal-modal-actions">
+        <button id="grant-cancel" class="pal-btn">Cancel</button>
+        <button id="grant-confirm" class="pal-btn pal-btn-primary">Grant control</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/static/remote.js"></script>
+</body>
+</html>

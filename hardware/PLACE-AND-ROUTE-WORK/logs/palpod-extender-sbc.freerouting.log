@@ -1,0 +1,71 @@
+2026-08-03 20:27:20.519 INFO   Freerouting v2.2.4 (build-date: 2026-05-13)
+2026-08-03 20:27:20.524 DEBUG  [startup] user-data path : /var/folders/hj/n001jc5d33s_718j452r8dl40000gn/T/freerouting  (source: default (java.io.tmpdir))
+2026-08-03 20:27:20.524 DEBUG  [startup] log file       : /var/folders/hj/n001jc5d33s_718j452r8dl40000gn/T/freerouting/freerouting.log
+2026-08-03 20:27:20.561 DEBUG  No default constructor found for field: filterByNet
+2026-08-03 20:27:20.562 DEBUG  Settings loaded from '/var/folders/hj/n001jc5d33s_718j452r8dl40000gn/T/freerouting/freerouting.json'.
+2026-08-03 20:27:20.563 DEBUG  Version: 2.2.4,2026-05-13
+2026-08-03 20:27:20.563 DEBUG  Command line arguments: '-de /private/tmp/claude-501/-Users-lexer-kindle/80e67baf-6192-4db2-b491-aa5b4ee00c5b/scratchpad/palpod-os/hardware/electrical/kicad/palpod-extender-sbc/palpod-extender-sbc-routed.dsn -do /private/tmp/claude-501/-Users-lexer-kindle/80e67baf-6192-4db2-b491-aa5b4ee00c5b/scratchpad/palpod-os/hardware/electrical/kicad/palpod-extender-sbc/palpod-extender-sbc-routed.ses -mp 3'
+2026-08-03 20:27:20.563 DEBUG  Architecture: Mac OS X,aarch64,27.0
+2026-08-03 20:27:20.563 DEBUG  Java: 26.0.2,Homebrew
+2026-08-03 20:27:20.563 DEBUG  System Language: en,en_US
+2026-08-03 20:27:20.563 DEBUG  Hardware: 6 CPU cores,2048 MB RAM
+2026-08-03 20:27:20.563 DEBUG  UTC Time: 2026-08-04T03:27:20.562902Z
+2026-08-03 20:27:20.563 DEBUG  GUI Language: en_US
+2026-08-03 20:27:20.564 DEBUG  Host: N/A
+2026-08-03 20:27:20.565 DEBUG  Screen: 2048x1280, 186 DPI
+2026-08-03 20:27:21.584 DEBUG  Loaded router settings from: /var/folders/hj/n001jc5d33s_718j452r8dl40000gn/T/freerouting/freerouting.json
+2026-08-03 20:27:21.585 DEBUG  Applied CLI router setting: router.max_passes = 3
+2026-08-03 20:27:21.585 DEBUG  No router settings found in environment variables
+2026-08-03 20:27:22.084 INFO   New version available: v2.2.4
+2026-08-03 20:27:22.284 INFO   Opening '/private/tmp/claude-501/-Users-lexer-kindle/80e67baf-6192-4db2-b491-aa5b4ee00c5b/scratchpad/palpod-os/hardware/electrical/kicad/palpod-extender-sbc/palpod-extender-sbc-routed.dsn'...
+2026-08-03 20:27:22.335 DEBUG  Set DEFAULT clearance (all layers): 1500 (0.0375 mm) from DSN value 150.0
+2026-08-03 20:27:22.340 DEBUG  Set clearance (all layers): smd_smd = 375 (0.009375 mm), classes [2,2]
+2026-08-03 20:27:22.341 DEBUG  Set default trace width (all layers): DSN=150.0 → board=1500 (0.0375 mm)
+2026-08-03 20:27:22.351 DEBUG  Loaded router settings from DSN file: palpod-extender-sbc-routed.dsn (8 layers)
+2026-08-03 20:27:22.353 DEBUG  Merging settings from 6 sources:
+2026-08-03 20:27:22.353 DEBUG    - Default Settings (priority 0): base settings
+2026-08-03 20:27:22.356 DEBUG    - freerouting.json (priority 10): 2 fields changed
+2026-08-03 20:27:22.356 DEBUG    - DSN file: palpod-extender-sbc-routed.dsn (priority 20): 4 fields changed
+2026-08-03 20:27:22.356 DEBUG    - GUI Settings (priority 50): 0 fields changed
+2026-08-03 20:27:22.356 DEBUG    - Environment Variables (priority 55): 0 fields changed
+2026-08-03 20:27:22.356 DEBUG    - CLI Arguments (priority 60): 0 fields changed
+2026-08-03 20:27:22.356 DEBUG  Settings merged successfully from 6 source(s)
+2026-08-03 20:27:23.459 DEBUG  Set DEFAULT clearance (all layers): 1500 (0.0375 mm) from DSN value 150.0
+2026-08-03 20:27:23.467 DEBUG  Set clearance (all layers): smd_smd = 375 (0.009375 mm), classes [2,2]
+2026-08-03 20:27:23.468 DEBUG  Set default trace width (all layers): DSN=150.0 → board=1500 (0.0375 mm)
+2026-08-03 20:27:23.760 DEBUG  Merging settings from 6 sources:
+2026-08-03 20:27:23.761 DEBUG    - Default Settings (priority 0): base settings
+2026-08-03 20:27:23.761 DEBUG    - freerouting.json (priority 10): 2 fields changed
+2026-08-03 20:27:23.763 DEBUG    - DSN file: palpod-extender-sbc-routed.dsn (priority 20): 4 fields changed
+2026-08-03 20:27:23.764 DEBUG    - GUI Settings (priority 50): 1 fields changed
+2026-08-03 20:27:23.764 DEBUG    - Environment Variables (priority 55): 0 fields changed
+2026-08-03 20:27:23.764 DEBUG    - CLI Arguments (priority 60): 0 fields changed
+2026-08-03 20:27:23.764 DEBUG  Settings merged successfully from 6 source(s)
+2026-08-03 20:27:32.155 INFO   [DCFB2C\DF05D5] Starting routing of 'palpod-extender-sbc-routed' on 5 threads...
+2026-08-03 20:27:32.471 DEBUG  Queuing item for routing: Pin on net 'PVDD' (connected: 1/4)
+2026-08-03 20:27:32.472 DEBUG  Queuing item for routing: Pin on net 'PVDD' (connected: 1/4)
+2026-08-03 20:27:32.472 DEBUG  Queuing item for routing: Pin on net 'PVDD' (connected: 1/4)
+2026-08-03 20:27:32.472 DEBUG  Queuing item for routing: Pin on net 'PVDD' (connected: 1/4)
+2026-08-03 20:27:32.483 DEBUG  [DCFB2C\DF05D5] Pass #1: 3 incompletes across 4 items to route
+2026-08-03 20:27:32.483 DEBUG  [DCFB2C\DF05D5]   Net 'PVDD' has 3 incomplete(s)
+2026-08-03 20:27:32.816 INFO   [DCFB2C\DF05D5] Auto-router pass #1 on board '1b7601dc4b8a6102700f5e0f30de9578' was completed in 0.34 seconds with the score of 958.25 (1 violation).
+2026-08-03 20:27:32.886 INFO   [DCFB2C\DF05D5] Auto-router pass #2 on board '6d8d84e8e675e4e50206d45c2696a512' was completed in 0.00 seconds with the score of 958.25 (1 violation).
+2026-08-03 20:27:32.895 DEBUG  === Performance Profile ===
+2026-08-03 20:27:32.895 DEBUG  === Routing Parameters ===
+2026-08-03 20:27:32.895 DEBUG    Via Costs: 50, Plane Via Costs: 5
+2026-08-03 20:27:32.895 DEBUG    Layer Costs (Preferred / Against):
+2026-08-03 20:27:32.895 DEBUG      Layer 1: 1.8 / 2.8
+2026-08-03 20:27:32.895 DEBUG      Layer 2: 1.0 / 2.0
+2026-08-03 20:27:32.896 DEBUG      Layer 3: 1.0 / 2.0
+2026-08-03 20:27:32.896 DEBUG      Layer 4: 1.0 / 2.0
+2026-08-03 20:27:32.896 DEBUG      Layer 5: 1.0 / 2.0
+2026-08-03 20:27:32.896 DEBUG      Layer 6: 1.0 / 2.0
+2026-08-03 20:27:32.896 DEBUG      Layer 7: 1.0 / 2.0
+2026-08-03 20:27:32.896 DEBUG      Layer 8: 1.8 / 2.8
+2026-08-03 20:27:32.896 DEBUG  
+2026-08-03 20:27:32.898 DEBUG    autoroute_item                          :      286 ms total,        4 calls,     71 ms avg
+2026-08-03 20:27:32.898 DEBUG  
+2026-08-03 20:27:32.898 DEBUG  === Pass History ===
+2026-08-03 20:27:32.898 DEBUG    Pass 1  :    0 unrouted items,     0.34 s,   100 ripup cost
+2026-08-03 20:27:32.898 DEBUG  ===========================
+2026-08-03 20:27:32.910 INFO   [DCFB2C\DF05D5] Auto-router session completed: started with 3 unrouted nets, completed in 0.75 seconds, final score: 958.25 (1 violation).

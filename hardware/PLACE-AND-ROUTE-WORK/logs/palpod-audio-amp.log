@@ -1,0 +1,77 @@
+==== palpod-audio-amp at Mon Aug  3 20:24:19 PDT 2026 ====
+--- Stage 1-4: place + DSN ---
+./src/common/stdpbase.cpp(59): assert ""traits"" failed in Get(): create wxApp before calling this
+08:24:21 PM: Debug: Adding duplicate image handler for 'PNG file'
+08:24:21 PM: Debug: Adding duplicate image handler for 'JPEG file'
+08:24:21 PM: Debug: Adding duplicate image handler for 'TIFF file'
+08:24:21 PM: Debug: Adding duplicate image handler for 'GIF file'
+08:24:21 PM: Debug: Adding duplicate image handler for 'PNM file'
+08:24:21 PM: Debug: Adding duplicate image handler for 'PCX file'
+08:24:21 PM: Debug: Adding duplicate image handler for 'IFF file'
+08:24:21 PM: Debug: Adding duplicate image handler for 'Windows icon file'
+08:24:21 PM: Debug: Adding duplicate image handler for 'Windows cursor file'
+08:24:21 PM: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+08:24:21 PM: Debug: Adding duplicate image handler for 'TGA file'
+08:24:21 PM: Debug: Adding duplicate image handler for 'XPM file'
+
+======================================================================
+== BOARD: palpod-audio-amp
+======================================================================
+RESULT: {
+  "board": "palpod-audio-amp",
+  "stages": {
+    "netlist": "OK",
+    "place": "OK (70 placed, 3 lib-miss)",
+    "assign_nets": "OK (24 pads, 0 miss)",
+    "dsn": "OK (61834 bytes)"
+  },
+  "errors": [],
+  "comps_in_netlist": 73,
+  "nets_in_netlist": 5,
+  "synthetic_nets": 5,
+  "real_nets": 0,
+  "total_pads_to_route": 24,
+  "footprints_placed": 70,
+  "footprints_failed": 3,
+  "pads_net_assigned": 24,
+  "pads_missing": 0,
+  "dsn_path": "/private/tmp/claude-501/-Users-lexer-kindle/80e67baf-6192-4db2-b491-aa5b4ee00c5b/scratchpad/palpod-os/hardware/electrical/kicad/palpod-audio-amp/palpod-audio-amp-routed.dsn"
+}
+--- Stage 4b: FreeRouting (120s, 3 passes) ---
+  (session completed at Mon Aug  3 20:25:52 PDT 2026, waiting 15s for SES save)
+  (killing freerouting 15s after session completed)
+2026-08-03 20:24:23.024 INFO   Freerouting v2.2.4 (build-date: 2026-05-13)
+WARNING: Final field userProfileSettings in class app.freerouting.settings.GlobalSettings has been mutated reflectively by class com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$2 in unnamed module @5bb21b69 (file:/private/tmp/freerouting/freerouting.jar)
+WARNING: Use --enable-final-field-mutation=ALL-UNNAMED to avoid a warning
+WARNING: Mutating final fields will be blocked in a future release unless final field mutation is enabled
+2026-08-03 20:24:25.092 INFO   New version available: v2.2.4
+2026-08-03 20:24:25.884 INFO   Opening '/private/tmp/claude-501/-Users-lexer-kindle/80e67baf-6192-4db2-b491-aa5b4ee00c5b/scratchpad/palpod-os/hardware/electrical/kicad/palpod-audio-amp/palpod-audio-amp-routed.dsn'...
+2026-08-03 20:24:37.566 INFO   [75C50A\B89098] Starting routing of 'palpod-audio-amp-routed' on 5 threads...
+2026-08-03 20:25:03.888 INFO   [75C50A\B89098] Auto-router pass #1 on board 'a863c917c9921e8c905a0fd50b81a941' was completed in 26.09 seconds with the score of 626.42 (8 unrouted and 12 violations).
+2026-08-03 20:25:29.531 INFO   [75C50A\B89098] Auto-router pass #2 on board '88402ae854070b65e83ec252a64d916f' was completed in 25.04 seconds with the score of 581.38 (9 unrouted and 12 violations).
+2026-08-03 20:25:51.513 INFO   [75C50A\B89098] Auto-router pass #3 on board '9b55971c774affe8883a8ad24f6b97f7' was completed in 21.83 seconds with the score of 626.42 (8 unrouted and 12 violations).
+2026-08-03 20:25:51.769 INFO   [75C50A\B89098] Auto-router session completed: started with 19 unrouted nets, completed in 1 minute 14.20 seconds, final score: 626.42 (8 unrouted and 12 violations).
+FREEROUTING_FAIL (exit=143)
+--- Stage 6a: Gerbers ---
+Plotted to '/private/tmp/claude-501/-Users-lexer-kindle/80e67baf-6192-4db2-b491-aa5b4ee00c5b/scratchpad/palpod-os/hardware/electrical/kicad/palpod-audio-amp/fab/gerbers-routed/palpod-audio-amp-routed-User_7.gbr'.
+Plotted to '/private/tmp/claude-501/-Users-lexer-kindle/80e67baf-6192-4db2-b491-aa5b4ee00c5b/scratchpad/palpod-os/hardware/electrical/kicad/palpod-audio-amp/fab/gerbers-routed/palpod-audio-amp-routed-User_8.gbr'.
+Plotted to '/private/tmp/claude-501/-Users-lexer-kindle/80e67baf-6192-4db2-b491-aa5b4ee00c5b/scratchpad/palpod-os/hardware/electrical/kicad/palpod-audio-amp/fab/gerbers-routed/palpod-audio-amp-routed-User_9.gbr'.
+--- Stage 6b: Drill ---
+Created file '/private/tmp/claude-501/-Users-lexer-kindle/80e67baf-6192-4db2-b491-aa5b4ee00c5b/scratchpad/palpod-os/hardware/electrical/kicad/palpod-audio-amp/fab/gerbers-routed/palpod-audio-amp-routed.drl'
+Done.
+--- Stage 6c: DRC ---
+Found 546 violations
+Found 19 unconnected items
+Saved DRC Report to /private/tmp/claude-501/-Users-lexer-kindle/80e67baf-6192-4db2-b491-aa5b4ee00c5b/scratchpad/palpod-os/hardware/electrical/kicad/palpod-audio-amp/fab/gerbers-routed/drc-report.txt
+--- Stage 6d: 3D render (top) ---
+Rendering: 100 %
+Rendering time 0.778 s
+Successfully created 3D render image
+--- Stage 6e: PDF (F.Cu+B.Cu) ---
+Plotted to '/private/tmp/claude-501/-Users-lexer-kindle/80e67baf-6192-4db2-b491-aa5b4ee00c5b/scratchpad/palpod-os/hardware/electrical/kicad/palpod-audio-amp/fab/gerbers-routed/board-pcb-routed-top.pdf'.
+Done.
+Plotted to '/private/tmp/claude-501/-Users-lexer-kindle/80e67baf-6192-4db2-b491-aa5b4ee00c5b/scratchpad/palpod-os/hardware/electrical/kicad/palpod-audio-amp/fab/gerbers-routed/board-pcb-routed-bot.pdf'.
+Done.
+--- Stage 6g: Zip ---
+-rw-r--r--  1 lexer_kindle  wheel  271509 Aug  3 20:26 palpod-audio-amp-routed-fab-package.zip
+==== palpod-audio-amp done at Mon Aug  3 20:26:22 PDT 2026 ====

@@ -1,0 +1,31 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# palpod.service — bring the compose stack up on boot.
+#
+# Install:
+#   sudo cp systemd/palpod.service /etc/systemd/system/
+#   sudo systemctl daemon-reload
+#   sudo systemctl enable --now palpod
+#
+# The unit waits for docker and the network to be online, then runs
+# `docker compose up -d` from the repo path. It does NOT run in the
+# foreground — docker itself is the process supervisor for the containers.
+# ─────────────────────────────────────────────────────────────────────────────
+
+[Unit]
+Description=PAL Pod OS — docker compose stack
+Requires=docker.service
+After=docker.service network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+# EDIT this path to wherever you cloned the repo.
+WorkingDirectory=/opt/palpod-os
+EnvironmentFile=/opt/palpod-os/.env
+ExecStart=/usr/bin/docker compose up -d --remove-orphans
+ExecStop=/usr/bin/docker compose down
+TimeoutStartSec=600
+
+[Install]
+WantedBy=multi-user.target

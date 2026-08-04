@@ -1,0 +1,111 @@
+2026-08-03 20:23:37.216 INFO   Freerouting v2.2.4 (build-date: 2026-05-13)
+2026-08-03 20:23:37.219 DEBUG  [startup] user-data path : /var/folders/hj/n001jc5d33s_718j452r8dl40000gn/T/freerouting  (source: default (java.io.tmpdir))
+2026-08-03 20:23:37.220 DEBUG  [startup] log file       : /var/folders/hj/n001jc5d33s_718j452r8dl40000gn/T/freerouting/freerouting.log
+2026-08-03 20:23:37.262 DEBUG  No default constructor found for field: filterByNet
+2026-08-03 20:23:37.264 DEBUG  Settings loaded from '/var/folders/hj/n001jc5d33s_718j452r8dl40000gn/T/freerouting/freerouting.json'.
+2026-08-03 20:23:37.264 DEBUG  Version: 2.2.4,2026-05-13
+2026-08-03 20:23:37.264 DEBUG  Command line arguments: '-de /private/tmp/claude-501/-Users-lexer-kindle/80e67baf-6192-4db2-b491-aa5b4ee00c5b/scratchpad/palpod-os/hardware/electrical/kicad/palpod-halbach-controller/palpod-halbach-controller-routed.dsn -do /private/tmp/claude-501/-Users-lexer-kindle/80e67baf-6192-4db2-b491-aa5b4ee00c5b/scratchpad/palpod-os/hardware/electrical/kicad/palpod-halbach-controller/palpod-halbach-controller-routed.ses -mp 3'
+2026-08-03 20:23:37.264 DEBUG  Architecture: Mac OS X,aarch64,27.0
+2026-08-03 20:23:37.264 DEBUG  Java: 26.0.2,Homebrew
+2026-08-03 20:23:37.264 DEBUG  System Language: en,en_US
+2026-08-03 20:23:37.264 DEBUG  Hardware: 6 CPU cores,2048 MB RAM
+2026-08-03 20:23:37.265 DEBUG  UTC Time: 2026-08-04T03:23:37.264364Z
+2026-08-03 20:23:37.265 DEBUG  GUI Language: en_US
+2026-08-03 20:23:37.265 DEBUG  Host: N/A
+2026-08-03 20:23:37.266 DEBUG  Screen: 2048x1280, 186 DPI
+2026-08-03 20:23:38.303 DEBUG  Loaded router settings from: /var/folders/hj/n001jc5d33s_718j452r8dl40000gn/T/freerouting/freerouting.json
+2026-08-03 20:23:38.305 DEBUG  Applied CLI router setting: router.max_passes = 3
+2026-08-03 20:23:38.306 DEBUG  No router settings found in environment variables
+2026-08-03 20:23:38.892 INFO   New version available: v2.2.4
+2026-08-03 20:23:39.108 INFO   Opening '/private/tmp/claude-501/-Users-lexer-kindle/80e67baf-6192-4db2-b491-aa5b4ee00c5b/scratchpad/palpod-os/hardware/electrical/kicad/palpod-halbach-controller/palpod-halbach-controller-routed.dsn'...
+2026-08-03 20:23:39.162 DEBUG  Set DEFAULT clearance (all layers): 2000 (0.05 mm) from DSN value 200.0
+2026-08-03 20:23:39.166 DEBUG  Set clearance (all layers): smd_smd = 500 (0.0125 mm), classes [2,2]
+2026-08-03 20:23:39.166 DEBUG  Set default trace width (all layers): DSN=200.0 → board=2000 (0.05 mm)
+2026-08-03 20:23:39.179 DEBUG  Loaded router settings from DSN file: palpod-halbach-controller-routed.dsn (4 layers)
+2026-08-03 20:23:39.180 DEBUG  Merging settings from 6 sources:
+2026-08-03 20:23:39.180 DEBUG    - Default Settings (priority 0): base settings
+2026-08-03 20:23:39.181 DEBUG    - freerouting.json (priority 10): 2 fields changed
+2026-08-03 20:23:39.181 DEBUG    - DSN file: palpod-halbach-controller-routed.dsn (priority 20): 4 fields changed
+2026-08-03 20:23:39.181 DEBUG    - GUI Settings (priority 50): 0 fields changed
+2026-08-03 20:23:39.181 DEBUG    - Environment Variables (priority 55): 0 fields changed
+2026-08-03 20:23:39.182 DEBUG    - CLI Arguments (priority 60): 0 fields changed
+2026-08-03 20:23:39.182 DEBUG  Settings merged successfully from 6 source(s)
+2026-08-03 20:23:40.660 DEBUG  Set DEFAULT clearance (all layers): 2000 (0.05 mm) from DSN value 200.0
+2026-08-03 20:23:40.660 DEBUG  Set clearance (all layers): smd_smd = 500 (0.0125 mm), classes [2,2]
+2026-08-03 20:23:40.660 DEBUG  Set default trace width (all layers): DSN=200.0 → board=2000 (0.05 mm)
+2026-08-03 20:23:40.883 DEBUG  Merging settings from 6 sources:
+2026-08-03 20:23:40.883 DEBUG    - Default Settings (priority 0): base settings
+2026-08-03 20:23:40.883 DEBUG    - freerouting.json (priority 10): 2 fields changed
+2026-08-03 20:23:40.884 DEBUG    - DSN file: palpod-halbach-controller-routed.dsn (priority 20): 4 fields changed
+2026-08-03 20:23:40.884 DEBUG    - GUI Settings (priority 50): 1 fields changed
+2026-08-03 20:23:40.884 DEBUG    - Environment Variables (priority 55): 0 fields changed
+2026-08-03 20:23:40.884 DEBUG    - CLI Arguments (priority 60): 0 fields changed
+2026-08-03 20:23:40.885 DEBUG  Settings merged successfully from 6 source(s)
+2026-08-03 20:23:49.296 INFO   [9ACDF9\2674A3] Starting routing of 'palpod-halbach-controller-routed' on 5 threads...
+2026-08-03 20:23:49.652 DEBUG  Queuing item for routing: Pin on net 'GVDD' (connected: 1/6)
+2026-08-03 20:23:49.652 DEBUG  Queuing item for routing: Pin on net 'PVDD' (connected: 1/6)
+2026-08-03 20:23:49.653 DEBUG  Queuing item for routing: Pin on net 'GVDD' (connected: 1/6)
+2026-08-03 20:23:49.653 DEBUG  Queuing item for routing: Pin on net 'PVDD' (connected: 1/6)
+2026-08-03 20:23:49.653 DEBUG  Queuing item for routing: Pin on net 'GVDD' (connected: 1/6)
+2026-08-03 20:23:49.653 DEBUG  Queuing item for routing: Pin on net 'PVDD' (connected: 1/6)
+2026-08-03 20:23:49.653 DEBUG  Queuing item for routing: Pin on net 'GVDD' (connected: 1/6)
+2026-08-03 20:23:49.653 DEBUG  Queuing item for routing: Pin on net 'PVDD' (connected: 1/6)
+2026-08-03 20:23:49.654 DEBUG  Queuing item for routing: Pin on net 'GVDD' (connected: 1/6)
+2026-08-03 20:23:49.654 DEBUG  Queuing item for routing: Pin on net 'PVDD' (connected: 1/6)
+2026-08-03 20:23:49.658 DEBUG  Queuing item for routing: Pin on net 'GVDD' (connected: 1/6)
+2026-08-03 20:23:49.659 DEBUG  Queuing item for routing: Pin on net 'PVDD' (connected: 1/6)
+2026-08-03 20:23:49.659 DEBUG  Queuing item for routing: Pin on net 'V+' (connected: 1/7)
+2026-08-03 20:23:49.659 DEBUG  Queuing item for routing: Pin on net 'V+' (connected: 1/7)
+2026-08-03 20:23:49.659 DEBUG  Queuing item for routing: Pin on net 'V+' (connected: 1/7)
+2026-08-03 20:23:49.660 DEBUG  Queuing item for routing: Pin on net 'V+' (connected: 1/7)
+2026-08-03 20:23:49.660 DEBUG  Queuing item for routing: Pin on net 'V+' (connected: 1/7)
+2026-08-03 20:23:49.660 DEBUG  Queuing item for routing: Pin on net 'V+' (connected: 1/7)
+2026-08-03 20:23:49.660 DEBUG  Queuing item for routing: Pin on net 'V+' (connected: 1/7)
+2026-08-03 20:23:49.664 DEBUG  [9ACDF9\2674A3] Pass #1: 16 incompletes across 19 items to route
+2026-08-03 20:23:49.665 DEBUG  [9ACDF9\2674A3]   Net 'V+' has 6 incomplete(s)
+2026-08-03 20:23:49.667 DEBUG  [9ACDF9\2674A3]   Net 'PVDD' has 5 incomplete(s)
+2026-08-03 20:23:49.667 DEBUG  [9ACDF9\2674A3]   Net 'GVDD' has 5 incomplete(s)
+2026-08-03 20:23:50.144 DEBUG  [9ACDF9\2674A3] Autorouter Failed to route connection between pin #37 of component #24, pin #37 of component #23, pin #37 of component #22, pin #37 of component #21, pin #37 of component #20 and pin #37 of component #25, because no connection was found between their nets.
+2026-08-03 20:23:50.296 DEBUG  [9ACDF9\2674A3] Autorouter Failed to route connection between pin #37 of component #25, pin #37 of component #23, pin #37 of component #22, pin #37 of component #21, pin #37 of component #20 and pin #37 of component #24, because no connection was found between their nets.
+2026-08-03 20:23:50.380 DEBUG  [9ACDF9\2674A3] Autorouter Failed to route connection between pin #37 of component #25, pin #37 of component #24, pin #37 of component #22, pin #37 of component #21, pin #37 of component #20 and pin #37 of component #23, because no connection was found between their nets.
+2026-08-03 20:23:50.476 DEBUG  [9ACDF9\2674A3] Autorouter Failed to route connection between pin #37 of component #25, pin #37 of component #24, pin #37 of component #23, pin #37 of component #21, pin #37 of component #20 and pin #37 of component #22, because no connection was found between their nets.
+2026-08-03 20:23:50.615 DEBUG  [9ACDF9\2674A3] Autorouter Failed to route connection between pin #37 of component #25, pin #37 of component #24, pin #37 of component #23, pin #37 of component #22, pin #37 of component #20 and pin #37 of component #21, because no connection was found between their nets.
+2026-08-03 20:23:50.627 DEBUG  [9ACDF9\2674A3] Autorouter Failed to route connection between pin #37 of component #25, pin #37 of component #24, pin #37 of component #23, pin #37 of component #22, pin #37 of component #21 and pin #37 of component #20, because no connection was found between their nets.
+2026-08-03 20:23:50.788 INFO   [9ACDF9\2674A3] Auto-router pass #1 on board '532fb5dbc8ad39184632b27c7cf8550b' was completed in 1.15 seconds with the score of 834.83 (5 unrouted).
+2026-08-03 20:23:50.866 DEBUG  Queuing item for routing: Pin on net 'PVDD' (connected: 1/6)
+2026-08-03 20:23:50.867 DEBUG  Queuing item for routing: Pin on net 'PVDD' (connected: 1/6)
+2026-08-03 20:23:50.867 DEBUG  Queuing item for routing: Pin on net 'PVDD' (connected: 1/6)
+2026-08-03 20:23:50.867 DEBUG  Queuing item for routing: Pin on net 'PVDD' (connected: 1/6)
+2026-08-03 20:23:50.868 DEBUG  Queuing item for routing: Pin on net 'PVDD' (connected: 1/6)
+2026-08-03 20:23:50.868 DEBUG  Queuing item for routing: Pin on net 'PVDD' (connected: 1/6)
+2026-08-03 20:23:50.871 DEBUG  [9ACDF9\2674A3] Pass #2: 5 incompletes across 6 items to route
+2026-08-03 20:23:50.872 DEBUG  [9ACDF9\2674A3]   Net 'PVDD' has 5 incomplete(s)
+2026-08-03 20:23:50.883 DEBUG  [9ACDF9\2674A3] Autorouter Failed to route connection between pin #37 of component #24, pin #37 of component #23, pin #37 of component #22, pin #37 of component #21, pin #37 of component #20 and pin #37 of component #25, because no connection was found between their nets.
+2026-08-03 20:23:50.894 DEBUG  [9ACDF9\2674A3] Autorouter Failed to route connection between pin #37 of component #25, pin #37 of component #23, pin #37 of component #22, pin #37 of component #21, pin #37 of component #20 and pin #37 of component #24, because no connection was found between their nets.
+2026-08-03 20:23:50.896 DEBUG  [9ACDF9\2674A3] Pass #2: Failed to route Pin on net 'PVDD' (5 items remaining, 2 failures). State: FAILED
+2026-08-03 20:23:50.898 DEBUG  [9ACDF9\2674A3] Autorouter Failed to route connection between pin #37 of component #25, pin #37 of component #24, pin #37 of component #22, pin #37 of component #21, pin #37 of component #20 and pin #37 of component #23, because no connection was found between their nets.
+2026-08-03 20:23:50.898 DEBUG  [9ACDF9\2674A3] Pass #2: Failed to route Pin on net 'PVDD' (4 items remaining, 2 failures). State: FAILED
+2026-08-03 20:23:50.914 DEBUG  [9ACDF9\2674A3] Autorouter Failed to route connection between pin #37 of component #25, pin #37 of component #24, pin #37 of component #23, pin #37 of component #21, pin #37 of component #20 and pin #37 of component #22, because no connection was found between their nets.
+2026-08-03 20:23:50.915 DEBUG  [9ACDF9\2674A3] Pass #2: Failed to route Pin on net 'PVDD' (3 items remaining, 2 failures). State: FAILED
+2026-08-03 20:23:50.921 DEBUG  [9ACDF9\2674A3] Autorouter Failed to route connection between pin #37 of component #25, pin #37 of component #24, pin #37 of component #23, pin #37 of component #22, pin #37 of component #20 and pin #37 of component #21, because no connection was found between their nets.
+2026-08-03 20:23:50.922 DEBUG  [9ACDF9\2674A3] Pass #2: Failed to route Pin on net 'PVDD' (2 items remaining, 2 failures). State: FAILED
+2026-08-03 20:23:50.931 DEBUG  [9ACDF9\2674A3] Autorouter Failed to route connection between pin #37 of component #25, pin #37 of component #24, pin #37 of component #23, pin #37 of component #22, pin #37 of component #21 and pin #37 of component #20, because no connection was found between their nets.
+2026-08-03 20:23:50.931 DEBUG  [9ACDF9\2674A3] Pass #2: Failed to route Pin on net 'PVDD' (1 items remaining, 2 failures). State: FAILED
+2026-08-03 20:23:50.942 INFO   [9ACDF9\2674A3] Auto-router pass #2 on board '984e55ebdb7af286aa786f7bc66b2562' was completed in 0.08 seconds with the score of 834.83 (5 unrouted).
+2026-08-03 20:23:50.955 INFO   [9ACDF9\2674A3] Board state has not changed since pass #2 (hash 984e55ebdb7af286aa786f7bc66b2562). The auto-router cannot make further progress; stopping.
+2026-08-03 20:23:50.957 DEBUG  === Performance Profile ===
+2026-08-03 20:23:50.957 DEBUG  === Routing Parameters ===
+2026-08-03 20:23:50.957 DEBUG    Via Costs: 50, Plane Via Costs: 5
+2026-08-03 20:23:50.957 DEBUG    Layer Costs (Preferred / Against):
+2026-08-03 20:23:50.958 DEBUG      Layer 1: 1.0 / 2.5
+2026-08-03 20:23:50.958 DEBUG      Layer 2: 1.0 / 2.5
+2026-08-03 20:23:50.958 DEBUG      Layer 3: 1.0 / 2.5
+2026-08-03 20:23:50.958 DEBUG      Layer 4: 1.0 / 1.7
+2026-08-03 20:23:50.958 DEBUG  
+2026-08-03 20:23:50.959 DEBUG    autoroute_item                          :     1026 ms total,       25 calls,     41 ms avg
+2026-08-03 20:23:50.959 DEBUG  
+2026-08-03 20:23:50.959 DEBUG  === Pass History ===
+2026-08-03 20:23:50.959 DEBUG    Pass 1  :    5 unrouted items,     1.15 s,   100 ripup cost
+2026-08-03 20:23:50.959 DEBUG    Pass 2  :    5 unrouted items,     0.07 s,   200 ripup cost
+2026-08-03 20:23:50.959 DEBUG  ===========================
+2026-08-03 20:23:50.964 INFO   [9ACDF9\2674A3] Auto-router session completed: started with 16 unrouted nets, completed in 1.67 seconds, final score: 834.83 (5 unrouted).

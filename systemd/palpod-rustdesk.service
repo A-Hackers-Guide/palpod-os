@@ -1,0 +1,37 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# palpod-rustdesk.service — make sure the RustDesk containers come up on boot
+# even if someone brought them down manually.
+#
+# palpod.service already runs `docker compose up -d` for the whole stack,
+# which naturally includes rustdesk-hbbs and rustdesk-hbbr. This unit is a
+# belt-and-suspenders check that runs AFTER palpod.service and specifically
+# starts those two services (a no-op if they're already up).
+#
+# Install:
+#   sudo cp systemd/palpod-rustdesk.service /etc/systemd/system/
+#   sudo systemctl daemon-reload
+#   sudo systemctl enable --now palpod-rustdesk
+#
+# NOTE: this unit deliberately does NOT `--profile anydesk`. AnyDesk stays
+# opt-in and requires the household to accept the AnyDesk EULA by hand.
+# ─────────────────────────────────────────────────────────────────────────────
+
+[Unit]
+Description=PAL Pod OS — RustDesk rendezvous + relay
+Documentation=file:///opt/palpod-os/configs/rustdesk/README.md
+Requires=palpod.service docker.service
+After=palpod.service docker.service network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+WorkingDirectory=/opt/palpod-os
+EnvironmentFile=/opt/palpod-os/.env
+ExecStartPre=/opt/palpod-os/configs/rustdesk/generate-keys.sh
+ExecStart=/usr/bin/docker compose up -d rustdesk-hbbs rustdesk-hbbr
+ExecStop=/usr/bin/docker compose stop rustdesk-hbbs rustdesk-hbbr
+TimeoutStartSec=180
+
+[Install]
+WantedBy=multi-user.target

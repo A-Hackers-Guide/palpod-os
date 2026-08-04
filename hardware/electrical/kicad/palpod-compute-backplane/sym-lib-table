@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "palpod-compute-backplane")(type "KiCad")(uri "${KIPRJMOD}/libraries/palpod-compute-backplane.kicad_sym")(options "")(descr "PAL Pod compute-backplane project-local symbols (BCM56780, MM70 SODIMM, ExaMAX, UCD90320, Aries retimer, BMC, TPM, TPS, ATX24)"))
+)

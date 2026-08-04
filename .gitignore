@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.venv/
+venv/
+.env
+.env.local
+.mypy_cache/
+.ruff_cache/
+
+# Node
+node_modules/
+dist/
+build/
+
+# KiCad
+*-backups/
+_autosave-*
+*.kicad_lck
+fp-info-cache
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data + secrets
+data/
+secrets/
+*.pem
+*.key
+palpod_agent_token
+palpod_session_secret
+
+# Fab artifacts (regeneratable)
+hardware/electrical/kicad/*/fab/gerbers-routed/
+hardware/electrical/kicad/*/fab/*.pyc
+
+# Session-local scratch
+PLACE-AND-ROUTE-WORK/logs/

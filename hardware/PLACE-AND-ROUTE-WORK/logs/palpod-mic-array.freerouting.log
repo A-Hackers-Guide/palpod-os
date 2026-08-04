@@ -1,0 +1,89 @@
+2026-08-03 20:22:47.248 INFO   Freerouting v2.2.4 (build-date: 2026-05-13)
+2026-08-03 20:22:47.250 DEBUG  [startup] user-data path : /var/folders/hj/n001jc5d33s_718j452r8dl40000gn/T/freerouting  (source: default (java.io.tmpdir))
+2026-08-03 20:22:47.250 DEBUG  [startup] log file       : /var/folders/hj/n001jc5d33s_718j452r8dl40000gn/T/freerouting/freerouting.log
+2026-08-03 20:22:47.294 DEBUG  No default constructor found for field: filterByNet
+2026-08-03 20:22:47.296 DEBUG  Settings loaded from '/var/folders/hj/n001jc5d33s_718j452r8dl40000gn/T/freerouting/freerouting.json'.
+2026-08-03 20:22:47.296 DEBUG  Version: 2.2.4,2026-05-13
+2026-08-03 20:22:47.296 DEBUG  Command line arguments: '-de /private/tmp/claude-501/-Users-lexer-kindle/80e67baf-6192-4db2-b491-aa5b4ee00c5b/scratchpad/palpod-os/hardware/electrical/kicad/palpod-mic-array/palpod-mic-array-routed.dsn -do /private/tmp/claude-501/-Users-lexer-kindle/80e67baf-6192-4db2-b491-aa5b4ee00c5b/scratchpad/palpod-os/hardware/electrical/kicad/palpod-mic-array/palpod-mic-array-routed.ses -mp 3'
+2026-08-03 20:22:47.296 DEBUG  Architecture: Mac OS X,aarch64,27.0
+2026-08-03 20:22:47.296 DEBUG  Java: 26.0.2,Homebrew
+2026-08-03 20:22:47.296 DEBUG  System Language: en,en_US
+2026-08-03 20:22:47.296 DEBUG  Hardware: 6 CPU cores,2048 MB RAM
+2026-08-03 20:22:47.297 DEBUG  UTC Time: 2026-08-04T03:22:47.296434Z
+2026-08-03 20:22:47.297 DEBUG  GUI Language: en_US
+2026-08-03 20:22:47.297 DEBUG  Host: N/A
+2026-08-03 20:22:47.298 DEBUG  Screen: 2048x1280, 186 DPI
+2026-08-03 20:22:48.316 DEBUG  Loaded router settings from: /var/folders/hj/n001jc5d33s_718j452r8dl40000gn/T/freerouting/freerouting.json
+2026-08-03 20:22:48.317 DEBUG  Applied CLI router setting: router.max_passes = 3
+2026-08-03 20:22:48.318 DEBUG  No router settings found in environment variables
+2026-08-03 20:22:49.236 INFO   Opening '/private/tmp/claude-501/-Users-lexer-kindle/80e67baf-6192-4db2-b491-aa5b4ee00c5b/scratchpad/palpod-os/hardware/electrical/kicad/palpod-mic-array/palpod-mic-array-routed.dsn'...
+2026-08-03 20:22:49.300 DEBUG  Set DEFAULT clearance (all layers): 2000 (0.05 mm) from DSN value 200.0
+2026-08-03 20:22:49.301 INFO   New version available: v2.2.4
+2026-08-03 20:22:49.304 DEBUG  Set clearance (all layers): smd_smd = 500 (0.0125 mm), classes [2,2]
+2026-08-03 20:22:49.306 DEBUG  Set default trace width (all layers): DSN=200.0 → board=2000 (0.05 mm)
+2026-08-03 20:22:49.356 DEBUG  Loaded router settings from DSN file: palpod-mic-array-routed.dsn (4 layers)
+2026-08-03 20:22:49.357 DEBUG  Merging settings from 6 sources:
+2026-08-03 20:22:49.357 DEBUG    - Default Settings (priority 0): base settings
+2026-08-03 20:22:49.358 DEBUG    - freerouting.json (priority 10): 2 fields changed
+2026-08-03 20:22:49.359 DEBUG    - DSN file: palpod-mic-array-routed.dsn (priority 20): 4 fields changed
+2026-08-03 20:22:49.359 DEBUG    - GUI Settings (priority 50): 0 fields changed
+2026-08-03 20:22:49.359 DEBUG    - Environment Variables (priority 55): 0 fields changed
+2026-08-03 20:22:49.359 DEBUG    - CLI Arguments (priority 60): 1 fields changed
+2026-08-03 20:22:49.359 DEBUG  Settings merged successfully from 6 source(s)
+2026-08-03 20:22:51.425 DEBUG  Set DEFAULT clearance (all layers): 2000 (0.05 mm) from DSN value 200.0
+2026-08-03 20:22:51.426 DEBUG  Set clearance (all layers): smd_smd = 500 (0.0125 mm), classes [2,2]
+2026-08-03 20:22:51.426 DEBUG  Set default trace width (all layers): DSN=200.0 → board=2000 (0.05 mm)
+2026-08-03 20:22:51.716 DEBUG  Merging settings from 6 sources:
+2026-08-03 20:22:51.717 DEBUG    - Default Settings (priority 0): base settings
+2026-08-03 20:22:51.717 DEBUG    - freerouting.json (priority 10): 2 fields changed
+2026-08-03 20:22:51.717 DEBUG    - DSN file: palpod-mic-array-routed.dsn (priority 20): 4 fields changed
+2026-08-03 20:22:51.717 DEBUG    - GUI Settings (priority 50): 1 fields changed
+2026-08-03 20:22:51.717 DEBUG    - Environment Variables (priority 55): 0 fields changed
+2026-08-03 20:22:51.717 DEBUG    - CLI Arguments (priority 60): 1 fields changed
+2026-08-03 20:22:51.717 DEBUG  Settings merged successfully from 6 source(s)
+2026-08-03 20:23:00.479 INFO   [D1CD17\8F8756] Starting routing of 'palpod-mic-array-routed' on 5 threads...
+2026-08-03 20:23:00.884 DEBUG  Queuing item for routing: Pin on net 'VDD' (connected: 1/8)
+2026-08-03 20:23:00.885 DEBUG  Queuing item for routing: Pin on net 'VDD' (connected: 1/8)
+2026-08-03 20:23:00.885 DEBUG  Queuing item for routing: Pin on net 'VDD' (connected: 1/8)
+2026-08-03 20:23:00.885 DEBUG  Queuing item for routing: Pin on net 'VDD' (connected: 1/8)
+2026-08-03 20:23:00.885 DEBUG  Queuing item for routing: Pin on net 'GND' (connected: 1/4)
+2026-08-03 20:23:00.885 DEBUG  Queuing item for routing: Pin on net 'VDD' (connected: 1/8)
+2026-08-03 20:23:00.885 DEBUG  Queuing item for routing: Pin on net 'GND' (connected: 1/4)
+2026-08-03 20:23:00.885 DEBUG  Queuing item for routing: Pin on net 'VDD' (connected: 1/8)
+2026-08-03 20:23:00.885 DEBUG  Queuing item for routing: Pin on net 'GND' (connected: 1/4)
+2026-08-03 20:23:00.886 DEBUG  Queuing item for routing: Pin on net 'VDD' (connected: 1/8)
+2026-08-03 20:23:00.886 DEBUG  Queuing item for routing: Pin on net 'GND' (connected: 1/4)
+2026-08-03 20:23:00.886 DEBUG  Queuing item for routing: Pin on net 'VDD' (connected: 1/8)
+2026-08-03 20:23:00.991 DEBUG  [D1CD17\8F8756] Pass #1: 10 incompletes across 12 items to route
+2026-08-03 20:23:00.991 DEBUG  [D1CD17\8F8756]   Net 'VDD' has 7 incomplete(s)
+2026-08-03 20:23:00.991 DEBUG  [D1CD17\8F8756]   Net 'GND' has 3 incomplete(s)
+2026-08-03 20:23:01.864 DEBUG  ShapeSearchTree45Degree.restrain_shape: p_shape_to_be_contained is empty
+2026-08-03 20:23:01.864 DEBUG  ShapeSearchTree45Degree.restrain_shape: p_shape_to_be_contained is empty
+2026-08-03 20:23:01.868 DEBUG  ShapeSearchTree45Degree.restrain_shape: p_shape_to_be_contained is empty
+2026-08-03 20:23:01.868 DEBUG  ShapeSearchTree45Degree.restrain_shape: p_shape_to_be_contained is empty
+2026-08-03 20:23:01.868 DEBUG  ShapeSearchTree45Degree.restrain_shape: p_shape_to_be_contained is empty
+2026-08-03 20:23:01.868 DEBUG  ShapeSearchTree45Degree.restrain_shape: p_shape_to_be_contained is empty
+2026-08-03 20:23:01.869 DEBUG  ShapeSearchTree45Degree.restrain_shape: p_shape_to_be_contained is empty
+2026-08-03 20:23:02.183 DEBUG  ShapeSearchTree45Degree.restrain_shape: p_shape_to_be_contained is empty
+2026-08-03 20:23:02.183 DEBUG  ShapeSearchTree45Degree.restrain_shape: p_shape_to_be_contained is empty
+2026-08-03 20:23:02.184 DEBUG  ShapeSearchTree45Degree.restrain_shape: p_shape_to_be_contained is empty
+2026-08-03 20:23:02.184 DEBUG  ShapeSearchTree45Degree.restrain_shape: p_shape_to_be_contained is empty
+2026-08-03 20:23:02.184 DEBUG  ShapeSearchTree45Degree.restrain_shape: p_shape_to_be_contained is empty
+2026-08-03 20:23:02.184 DEBUG  ShapeSearchTree45Degree.restrain_shape: p_shape_to_be_contained is empty
+2026-08-03 20:23:02.673 INFO   [D1CD17\8F8756] Auto-router pass #1 on board 'fbeecb8a530d909c84c87eaabec26acd' was completed in 1.79 seconds with the score of 990.90 (1 violation).
+2026-08-03 20:23:02.910 INFO   [D1CD17\8F8756] Auto-router pass #2 on board 'ef29a5751eafbe7201c288ea46c73af2' was completed in 0.05 seconds with the score of 990.90 (1 violation).
+2026-08-03 20:23:02.973 DEBUG  === Performance Profile ===
+2026-08-03 20:23:02.974 DEBUG  === Routing Parameters ===
+2026-08-03 20:23:02.974 DEBUG    Via Costs: 50, Plane Via Costs: 5
+2026-08-03 20:23:02.974 DEBUG    Layer Costs (Preferred / Against):
+2026-08-03 20:23:02.974 DEBUG      Layer 1: 1.0 / 2.0
+2026-08-03 20:23:02.974 DEBUG      Layer 2: 1.0 / 2.0
+2026-08-03 20:23:02.974 DEBUG      Layer 3: 1.0 / 2.0
+2026-08-03 20:23:02.975 DEBUG      Layer 4: 1.0 / 2.0
+2026-08-03 20:23:02.975 DEBUG  
+2026-08-03 20:23:02.980 DEBUG    autoroute_item                          :      969 ms total,       12 calls,     80 ms avg
+2026-08-03 20:23:02.980 DEBUG  
+2026-08-03 20:23:02.980 DEBUG  === Pass History ===
+2026-08-03 20:23:02.981 DEBUG    Pass 1  :    0 unrouted items,     1.70 s,   100 ripup cost
+2026-08-03 20:23:02.981 DEBUG  ===========================
+2026-08-03 20:23:03.081 INFO   [D1CD17\8F8756] Auto-router session completed: started with 10 unrouted nets, completed in 2.59 seconds, final score: 990.90 (1 violation).

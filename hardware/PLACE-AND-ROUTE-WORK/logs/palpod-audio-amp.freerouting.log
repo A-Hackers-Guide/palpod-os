@@ -1,0 +1,168 @@
+2026-08-03 20:24:23.024 INFO   Freerouting v2.2.4 (build-date: 2026-05-13)
+2026-08-03 20:24:23.030 DEBUG  [startup] user-data path : /var/folders/hj/n001jc5d33s_718j452r8dl40000gn/T/freerouting  (source: default (java.io.tmpdir))
+2026-08-03 20:24:23.030 DEBUG  [startup] log file       : /var/folders/hj/n001jc5d33s_718j452r8dl40000gn/T/freerouting/freerouting.log
+2026-08-03 20:24:23.146 DEBUG  No default constructor found for field: filterByNet
+2026-08-03 20:24:23.147 DEBUG  Settings loaded from '/var/folders/hj/n001jc5d33s_718j452r8dl40000gn/T/freerouting/freerouting.json'.
+2026-08-03 20:24:23.147 DEBUG  Version: 2.2.4,2026-05-13
+2026-08-03 20:24:23.147 DEBUG  Command line arguments: '-de /private/tmp/claude-501/-Users-lexer-kindle/80e67baf-6192-4db2-b491-aa5b4ee00c5b/scratchpad/palpod-os/hardware/electrical/kicad/palpod-audio-amp/palpod-audio-amp-routed.dsn -do /private/tmp/claude-501/-Users-lexer-kindle/80e67baf-6192-4db2-b491-aa5b4ee00c5b/scratchpad/palpod-os/hardware/electrical/kicad/palpod-audio-amp/palpod-audio-amp-routed.ses -mp 3'
+2026-08-03 20:24:23.147 DEBUG  Architecture: Mac OS X,aarch64,27.0
+2026-08-03 20:24:23.148 DEBUG  Java: 26.0.2,Homebrew
+2026-08-03 20:24:23.148 DEBUG  System Language: en,en_US
+2026-08-03 20:24:23.148 DEBUG  Hardware: 6 CPU cores,2048 MB RAM
+2026-08-03 20:24:23.154 DEBUG  UTC Time: 2026-08-04T03:24:23.147566Z
+2026-08-03 20:24:23.156 DEBUG  GUI Language: en_US
+2026-08-03 20:24:23.157 DEBUG  Host: N/A
+2026-08-03 20:24:23.160 DEBUG  Screen: 2048x1280, 186 DPI
+2026-08-03 20:24:24.191 DEBUG  Loaded router settings from: /var/folders/hj/n001jc5d33s_718j452r8dl40000gn/T/freerouting/freerouting.json
+2026-08-03 20:24:24.191 DEBUG  Applied CLI router setting: router.max_passes = 3
+2026-08-03 20:24:24.192 DEBUG  No router settings found in environment variables
+2026-08-03 20:24:25.092 INFO   New version available: v2.2.4
+2026-08-03 20:24:25.884 INFO   Opening '/private/tmp/claude-501/-Users-lexer-kindle/80e67baf-6192-4db2-b491-aa5b4ee00c5b/scratchpad/palpod-os/hardware/electrical/kicad/palpod-audio-amp/palpod-audio-amp-routed.dsn'...
+2026-08-03 20:24:25.957 DEBUG  Set DEFAULT clearance (all layers): 2000 (0.05 mm) from DSN value 200.0
+2026-08-03 20:24:25.963 DEBUG  Set clearance (all layers): smd_smd = 500 (0.0125 mm), classes [2,2]
+2026-08-03 20:24:25.964 DEBUG  Set default trace width (all layers): DSN=250.0 → board=2500 (0.0625 mm)
+2026-08-03 20:24:25.981 DEBUG  Loaded router settings from DSN file: palpod-audio-amp-routed.dsn (6 layers)
+2026-08-03 20:24:25.983 DEBUG  Merging settings from 6 sources:
+2026-08-03 20:24:25.983 DEBUG    - Default Settings (priority 0): base settings
+2026-08-03 20:24:25.985 DEBUG    - freerouting.json (priority 10): 2 fields changed
+2026-08-03 20:24:25.986 DEBUG    - DSN file: palpod-audio-amp-routed.dsn (priority 20): 4 fields changed
+2026-08-03 20:24:25.987 DEBUG    - GUI Settings (priority 50): 0 fields changed
+2026-08-03 20:24:25.987 DEBUG    - Environment Variables (priority 55): 0 fields changed
+2026-08-03 20:24:25.987 DEBUG    - CLI Arguments (priority 60): 0 fields changed
+2026-08-03 20:24:25.987 DEBUG  Settings merged successfully from 6 source(s)
+2026-08-03 20:24:28.157 DEBUG  Set DEFAULT clearance (all layers): 2000 (0.05 mm) from DSN value 200.0
+2026-08-03 20:24:28.158 DEBUG  Set clearance (all layers): smd_smd = 500 (0.0125 mm), classes [2,2]
+2026-08-03 20:24:28.158 DEBUG  Set default trace width (all layers): DSN=250.0 → board=2500 (0.0625 mm)
+2026-08-03 20:24:28.596 DEBUG  Merging settings from 6 sources:
+2026-08-03 20:24:28.596 DEBUG    - Default Settings (priority 0): base settings
+2026-08-03 20:24:28.597 DEBUG    - freerouting.json (priority 10): 2 fields changed
+2026-08-03 20:24:28.597 DEBUG    - DSN file: palpod-audio-amp-routed.dsn (priority 20): 4 fields changed
+2026-08-03 20:24:28.597 DEBUG    - GUI Settings (priority 50): 1 fields changed
+2026-08-03 20:24:28.597 DEBUG    - Environment Variables (priority 55): 0 fields changed
+2026-08-03 20:24:28.598 DEBUG    - CLI Arguments (priority 60): 0 fields changed
+2026-08-03 20:24:28.598 DEBUG  Settings merged successfully from 6 source(s)
+2026-08-03 20:24:37.566 INFO   [75C50A\B89098] Starting routing of 'palpod-audio-amp-routed' on 5 threads...
+2026-08-03 20:24:37.808 DEBUG  Queuing item for routing: Pin on net 'VDD' (connected: 1/6)
+2026-08-03 20:24:37.810 DEBUG  Queuing item for routing: Pin on net 'VDD' (connected: 1/6)
+2026-08-03 20:24:37.810 DEBUG  Queuing item for routing: Pin on net 'VDD' (connected: 1/6)
+2026-08-03 20:24:37.810 DEBUG  Queuing item for routing: Pin on net 'VDD' (connected: 1/6)
+2026-08-03 20:24:37.810 DEBUG  Queuing item for routing: Pin on net 'VDD' (connected: 1/6)
+2026-08-03 20:24:37.811 DEBUG  Queuing item for routing: Pin on net 'VDD' (connected: 1/6)
+2026-08-03 20:24:37.812 DEBUG  Queuing item for routing: Pin on net 'V+' (connected: 1/4)
+2026-08-03 20:24:37.812 DEBUG  Queuing item for routing: Pin on net 'V-' (connected: 1/4)
+2026-08-03 20:24:37.813 DEBUG  Queuing item for routing: Pin on net 'V+' (connected: 1/4)
+2026-08-03 20:24:37.813 DEBUG  Queuing item for routing: Pin on net 'V-' (connected: 1/4)
+2026-08-03 20:24:37.813 DEBUG  Queuing item for routing: Pin on net 'V+' (connected: 1/4)
+2026-08-03 20:24:37.813 DEBUG  Queuing item for routing: Pin on net 'V-' (connected: 1/4)
+2026-08-03 20:24:37.815 DEBUG  Queuing item for routing: Pin on net 'V+' (connected: 1/4)
+2026-08-03 20:24:37.815 DEBUG  Queuing item for routing: Pin on net 'V-' (connected: 1/4)
+2026-08-03 20:24:37.816 DEBUG  Queuing item for routing: Pin on net 'VIN' (connected: 1/2)
+2026-08-03 20:24:37.816 DEBUG  Queuing item for routing: Pin on net 'VIN' (connected: 1/2)
+2026-08-03 20:24:37.816 DEBUG  Queuing item for routing: Pin on net 'GND' (connected: 1/8)
+2026-08-03 20:24:37.816 DEBUG  Queuing item for routing: Pin on net 'GND' (connected: 1/8)
+2026-08-03 20:24:37.816 DEBUG  Queuing item for routing: Pin on net 'GND' (connected: 1/8)
+2026-08-03 20:24:37.816 DEBUG  Queuing item for routing: Pin on net 'GND' (connected: 1/8)
+2026-08-03 20:24:37.816 DEBUG  Queuing item for routing: Pin on net 'GND' (connected: 1/8)
+2026-08-03 20:24:37.817 DEBUG  Queuing item for routing: Pin on net 'GND' (connected: 1/8)
+2026-08-03 20:24:37.817 DEBUG  Queuing item for routing: Pin on net 'GND' (connected: 1/8)
+2026-08-03 20:24:37.818 DEBUG  Queuing item for routing: Pin on net 'GND' (connected: 1/8)
+2026-08-03 20:24:37.830 DEBUG  [75C50A\B89098] Pass #1: 19 incompletes across 24 items to route
+2026-08-03 20:24:37.831 DEBUG  [75C50A\B89098]   Net 'GND' has 7 incomplete(s)
+2026-08-03 20:24:37.834 DEBUG  [75C50A\B89098]   Net 'VIN' has 1 incomplete(s)
+2026-08-03 20:24:37.834 DEBUG  [75C50A\B89098]   Net 'V-' has 3 incomplete(s)
+2026-08-03 20:24:37.834 DEBUG  [75C50A\B89098]   Net 'V+' has 3 incomplete(s)
+2026-08-03 20:24:37.834 DEBUG  [75C50A\B89098]   Net 'VDD' has 5 incomplete(s)
+2026-08-03 20:24:39.396 DEBUG  [75C50A\B89098] Autorouter Failed to route connection between pin #2 of component #5, pin #11 of component #4, pin #2 of component #4, pin #11 of component #3, pin #2 of component #3, pin #11 of component #2, pin #2 of component #2 and pin #11 of component #5, because some of their layers are disabled.
+2026-08-03 20:24:45.300 DEBUG  [75C50A\B89098] Autorouter Failed to route connection between pin #11 of component #5, pin #11 of component #4, pin #2 of component #4, pin #11 of component #3, pin #2 of component #3, pin #11 of component #2, pin #2 of component #2 and pin #2 of component #5, because no connection was found between their nets.
+2026-08-03 20:24:45.491 DEBUG  [75C50A\B89098] Autorouter Failed to route connection between pin #11 of component #5, pin #2 of component #5, pin #2 of component #4, pin #11 of component #3, pin #2 of component #3, pin #11 of component #2, pin #2 of component #2 and pin #11 of component #4, because some of their layers are disabled.
+2026-08-03 20:24:52.574 DEBUG  [75C50A\B89098] Autorouter Failed to route connection between pin #11 of component #5, pin #2 of component #5, pin #11 of component #4, pin #11 of component #3, pin #2 of component #3, pin #11 of component #2, pin #2 of component #2 and pin #2 of component #4, because no connection was found between their nets.
+2026-08-03 20:24:52.593 DEBUG  [75C50A\B89098] Pass #1: Failed to route Pin on net 'GND' (5 items remaining, 1 failures). State: FAILED
+2026-08-03 20:24:52.697 DEBUG  [75C50A\B89098] Autorouter Failed to route connection between pin #11 of component #5, pin #2 of component #5, pin #11 of component #4, pin #2 of component #4, pin #2 of component #3, pin #11 of component #2, pin #2 of component #2 and pin #11 of component #3, because some of their layers are disabled.
+2026-08-03 20:24:52.701 DEBUG  [75C50A\B89098] Pass #1: Failed to route Pin on net 'GND' (4 items remaining, 1 failures). State: FAILED
+2026-08-03 20:24:58.357 DEBUG  [75C50A\B89098] Autorouter Failed to route connection between pin #11 of component #5, pin #2 of component #5, pin #11 of component #4, pin #2 of component #4, pin #11 of component #3, pin #11 of component #2, pin #2 of component #2 and pin #2 of component #3, because no connection was found between their nets.
+2026-08-03 20:24:58.358 DEBUG  [75C50A\B89098] Pass #1: Failed to route Pin on net 'GND' (3 items remaining, 1 failures). State: FAILED
+2026-08-03 20:24:58.412 DEBUG  [75C50A\B89098] Autorouter Failed to route connection between pin #11 of component #5, pin #2 of component #5, pin #11 of component #4, pin #2 of component #4, pin #11 of component #3, pin #2 of component #3, pin #2 of component #2 and pin #11 of component #2, because some of their layers are disabled.
+2026-08-03 20:24:58.412 DEBUG  [75C50A\B89098] Pass #1: Failed to route Pin on net 'GND' (2 items remaining, 1 failures). State: FAILED
+2026-08-03 20:25:03.798 DEBUG  [75C50A\B89098] Autorouter Failed to route connection between pin #11 of component #5, pin #2 of component #5, pin #11 of component #4, pin #2 of component #4, pin #11 of component #3, pin #2 of component #3, pin #11 of component #2 and pin #2 of component #2, because no connection was found between their nets.
+2026-08-03 20:25:03.800 DEBUG  [75C50A\B89098] Pass #1: Failed to route Pin on net 'GND' (1 items remaining, 1 failures). State: FAILED
+2026-08-03 20:25:03.888 INFO   [75C50A\B89098] Auto-router pass #1 on board 'a863c917c9921e8c905a0fd50b81a941' was completed in 26.09 seconds with the score of 626.42 (8 unrouted and 12 violations).
+2026-08-03 20:25:04.490 DEBUG  Queuing item for routing: Pin on net 'VDD' (connected: 5/10)
+2026-08-03 20:25:04.491 DEBUG  Queuing item for routing: Pin on net 'VDD' (connected: 5/10)
+2026-08-03 20:25:04.491 DEBUG  Queuing item for routing: Pin on net 'GND' (connected: 1/8)
+2026-08-03 20:25:04.492 DEBUG  Queuing item for routing: Pin on net 'GND' (connected: 1/8)
+2026-08-03 20:25:04.495 DEBUG  Queuing item for routing: Pin on net 'GND' (connected: 1/8)
+2026-08-03 20:25:04.495 DEBUG  Queuing item for routing: Pin on net 'GND' (connected: 1/8)
+2026-08-03 20:25:04.495 DEBUG  Queuing item for routing: Pin on net 'GND' (connected: 1/8)
+2026-08-03 20:25:04.495 DEBUG  Queuing item for routing: Pin on net 'GND' (connected: 1/8)
+2026-08-03 20:25:04.495 DEBUG  Queuing item for routing: Pin on net 'GND' (connected: 1/8)
+2026-08-03 20:25:04.495 DEBUG  Queuing item for routing: Pin on net 'GND' (connected: 1/8)
+2026-08-03 20:25:04.511 DEBUG  [75C50A\B89098] Pass #2: 8 incompletes across 10 items to route
+2026-08-03 20:25:04.517 DEBUG  [75C50A\B89098]   Net 'GND' has 7 incomplete(s)
+2026-08-03 20:25:04.517 DEBUG  [75C50A\B89098]   Net 'VDD' has 1 incomplete(s)
+2026-08-03 20:25:06.025 DEBUG  [75C50A\B89098] Autorouter Failed to route connection between pin #2 of component #5, pin #11 of component #4, pin #2 of component #4, pin #11 of component #3, pin #2 of component #3, pin #11 of component #2, pin #2 of component #2 and pin #11 of component #5, because some of their layers are disabled.
+2026-08-03 20:25:12.235 DEBUG  [75C50A\B89098] Autorouter Failed to route connection between pin #11 of component #5, pin #11 of component #4, pin #2 of component #4, pin #11 of component #3, pin #2 of component #3, pin #11 of component #2, pin #2 of component #2 and pin #2 of component #5, because no connection was found between their nets.
+2026-08-03 20:25:12.290 DEBUG  [75C50A\B89098] Autorouter Failed to route connection between pin #11 of component #5, pin #2 of component #5, pin #2 of component #4, pin #11 of component #3, pin #2 of component #3, pin #11 of component #2, pin #2 of component #2 and pin #11 of component #4, because some of their layers are disabled.
+2026-08-03 20:25:17.241 DEBUG  [75C50A\B89098] Autorouter Failed to route connection between pin #11 of component #5, pin #2 of component #5, pin #11 of component #4, pin #11 of component #3, pin #2 of component #3, pin #11 of component #2, pin #2 of component #2 and pin #2 of component #4, because no connection was found between their nets.
+2026-08-03 20:25:17.242 DEBUG  [75C50A\B89098] Pass #2: Failed to route Pin on net 'GND' (5 items remaining, 2 failures). State: FAILED
+2026-08-03 20:25:17.326 DEBUG  [75C50A\B89098] Autorouter Failed to route connection between pin #11 of component #5, pin #2 of component #5, pin #11 of component #4, pin #2 of component #4, pin #2 of component #3, pin #11 of component #2, pin #2 of component #2 and pin #11 of component #3, because some of their layers are disabled.
+2026-08-03 20:25:17.327 DEBUG  [75C50A\B89098] Pass #2: Failed to route Pin on net 'GND' (4 items remaining, 2 failures). State: FAILED
+2026-08-03 20:25:23.367 DEBUG  [75C50A\B89098] Autorouter Failed to route connection between pin #11 of component #5, pin #2 of component #5, pin #11 of component #4, pin #2 of component #4, pin #11 of component #3, pin #11 of component #2, pin #2 of component #2 and pin #2 of component #3, because no connection was found between their nets.
+2026-08-03 20:25:23.382 DEBUG  [75C50A\B89098] Pass #2: Failed to route Pin on net 'GND' (3 items remaining, 2 failures). State: FAILED
+2026-08-03 20:25:23.426 DEBUG  [75C50A\B89098] Autorouter Failed to route connection between pin #11 of component #5, pin #2 of component #5, pin #11 of component #4, pin #2 of component #4, pin #11 of component #3, pin #2 of component #3, pin #2 of component #2 and pin #11 of component #2, because some of their layers are disabled.
+2026-08-03 20:25:23.426 DEBUG  [75C50A\B89098] Pass #2: Failed to route Pin on net 'GND' (2 items remaining, 2 failures). State: FAILED
+2026-08-03 20:25:29.397 DEBUG  [75C50A\B89098] Autorouter Failed to route connection between pin #11 of component #5, pin #2 of component #5, pin #11 of component #4, pin #2 of component #4, pin #11 of component #3, pin #2 of component #3, pin #11 of component #2 and pin #2 of component #2, because no connection was found between their nets.
+2026-08-03 20:25:29.401 DEBUG  [75C50A\B89098] Pass #2: Failed to route Pin on net 'GND' (1 items remaining, 2 failures). State: FAILED
+2026-08-03 20:25:29.531 INFO   [75C50A\B89098] Auto-router pass #2 on board '88402ae854070b65e83ec252a64d916f' was completed in 25.04 seconds with the score of 581.38 (9 unrouted and 12 violations).
+2026-08-03 20:25:29.691 DEBUG  Queuing item for routing: Pin on net 'V+' (connected: 1/6)
+2026-08-03 20:25:29.695 DEBUG  Queuing item for routing: Pin on net 'V-' (connected: 1/6)
+2026-08-03 20:25:29.695 DEBUG  Queuing item for routing: Pin on net 'V+' (connected: 5/6)
+2026-08-03 20:25:29.695 DEBUG  Queuing item for routing: Pin on net 'V-' (connected: 5/6)
+2026-08-03 20:25:29.695 DEBUG  Queuing item for routing: Pin on net 'GND' (connected: 1/8)
+2026-08-03 20:25:29.695 DEBUG  Queuing item for routing: Pin on net 'GND' (connected: 1/8)
+2026-08-03 20:25:29.695 DEBUG  Queuing item for routing: Pin on net 'GND' (connected: 1/8)
+2026-08-03 20:25:29.695 DEBUG  Queuing item for routing: Pin on net 'GND' (connected: 1/8)
+2026-08-03 20:25:29.695 DEBUG  Queuing item for routing: Pin on net 'GND' (connected: 1/8)
+2026-08-03 20:25:29.695 DEBUG  Queuing item for routing: Pin on net 'GND' (connected: 1/8)
+2026-08-03 20:25:29.695 DEBUG  Queuing item for routing: Pin on net 'GND' (connected: 1/8)
+2026-08-03 20:25:29.695 DEBUG  Queuing item for routing: Pin on net 'GND' (connected: 1/8)
+2026-08-03 20:25:29.706 DEBUG  [75C50A\B89098] Pass #3: 9 incompletes across 12 items to route
+2026-08-03 20:25:29.706 DEBUG  [75C50A\B89098]   Net 'GND' has 7 incomplete(s)
+2026-08-03 20:25:29.707 DEBUG  [75C50A\B89098]   Net 'V-' has 1 incomplete(s)
+2026-08-03 20:25:29.707 DEBUG  [75C50A\B89098]   Net 'V+' has 1 incomplete(s)
+2026-08-03 20:25:30.195 DEBUG  [75C50A\B89098] Autorouter Failed to route connection between pin #2 of component #5, pin #11 of component #4, pin #2 of component #4, pin #11 of component #3, pin #2 of component #3, pin #11 of component #2, pin #2 of component #2 and pin #11 of component #5, because some of their layers are disabled.
+2026-08-03 20:25:30.196 DEBUG  [75C50A\B89098] Pass #3: Failed to route Pin on net 'GND' (8 items remaining, 3 failures). State: FAILED
+2026-08-03 20:25:35.260 DEBUG  [75C50A\B89098] Autorouter Failed to route connection between pin #11 of component #5, pin #11 of component #4, pin #2 of component #4, pin #11 of component #3, pin #2 of component #3, pin #11 of component #2, pin #2 of component #2 and pin #2 of component #5, because no connection was found between their nets.
+2026-08-03 20:25:35.261 DEBUG  [75C50A\B89098] Pass #3: Failed to route Pin on net 'GND' (7 items remaining, 3 failures). State: FAILED
+2026-08-03 20:25:35.326 DEBUG  [75C50A\B89098] Autorouter Failed to route connection between pin #11 of component #5, pin #2 of component #5, pin #2 of component #4, pin #11 of component #3, pin #2 of component #3, pin #11 of component #2, pin #2 of component #2 and pin #11 of component #4, because some of their layers are disabled.
+2026-08-03 20:25:35.328 DEBUG  [75C50A\B89098] Pass #3: Failed to route Pin on net 'GND' (6 items remaining, 3 failures). State: FAILED
+2026-08-03 20:25:40.494 DEBUG  [75C50A\B89098] Autorouter Failed to route connection between pin #11 of component #5, pin #2 of component #5, pin #11 of component #4, pin #11 of component #3, pin #2 of component #3, pin #11 of component #2, pin #2 of component #2 and pin #2 of component #4, because no connection was found between their nets.
+2026-08-03 20:25:40.496 DEBUG  [75C50A\B89098] Pass #3: Failed to route Pin on net 'GND' (5 items remaining, 3 failures). State: FAILED
+2026-08-03 20:25:40.555 DEBUG  [75C50A\B89098] Autorouter Failed to route connection between pin #11 of component #5, pin #2 of component #5, pin #11 of component #4, pin #2 of component #4, pin #2 of component #3, pin #11 of component #2, pin #2 of component #2 and pin #11 of component #3, because some of their layers are disabled.
+2026-08-03 20:25:40.555 DEBUG  [75C50A\B89098] Pass #3: Failed to route Pin on net 'GND' (4 items remaining, 3 failures). State: FAILED
+2026-08-03 20:25:45.718 DEBUG  [75C50A\B89098] Autorouter Failed to route connection between pin #11 of component #5, pin #2 of component #5, pin #11 of component #4, pin #2 of component #4, pin #11 of component #3, pin #11 of component #2, pin #2 of component #2 and pin #2 of component #3, because no connection was found between their nets.
+2026-08-03 20:25:45.719 DEBUG  [75C50A\B89098] Pass #3: Failed to route Pin on net 'GND' (3 items remaining, 3 failures). State: FAILED
+2026-08-03 20:25:45.771 DEBUG  [75C50A\B89098] Autorouter Failed to route connection between pin #11 of component #5, pin #2 of component #5, pin #11 of component #4, pin #2 of component #4, pin #11 of component #3, pin #2 of component #3, pin #2 of component #2 and pin #11 of component #2, because some of their layers are disabled.
+2026-08-03 20:25:45.772 DEBUG  [75C50A\B89098] Pass #3: Failed to route Pin on net 'GND' (2 items remaining, 3 failures). State: FAILED
+2026-08-03 20:25:51.404 DEBUG  [75C50A\B89098] Autorouter Failed to route connection between pin #11 of component #5, pin #2 of component #5, pin #11 of component #4, pin #2 of component #4, pin #11 of component #3, pin #2 of component #3, pin #11 of component #2 and pin #2 of component #2, because no connection was found between their nets.
+2026-08-03 20:25:51.405 DEBUG  [75C50A\B89098] Pass #3: Failed to route Pin on net 'GND' (1 items remaining, 3 failures). State: FAILED
+2026-08-03 20:25:51.513 INFO   [75C50A\B89098] Auto-router pass #3 on board '9b55971c774affe8883a8ad24f6b97f7' was completed in 21.83 seconds with the score of 626.42 (8 unrouted and 12 violations).
+2026-08-03 20:25:51.743 DEBUG  [75C50A\B89098] The final board state (score 626.42 (8 unrouted and 12 violations)) is worse than the best board seen during routing (score 626.42 (8 unrouted and 12 violations)). Restoring the best board as the final result.
+2026-08-03 20:25:51.744 DEBUG  === Performance Profile ===
+2026-08-03 20:25:51.744 DEBUG  === Routing Parameters ===
+2026-08-03 20:25:51.744 DEBUG    Via Costs: 50, Plane Via Costs: 5
+2026-08-03 20:25:51.744 DEBUG    Layer Costs (Preferred / Against):
+2026-08-03 20:25:51.745 DEBUG      Layer 1: 1.0 / 2.2
+2026-08-03 20:25:51.746 DEBUG      Layer 2: 1.0 / 2.2
+2026-08-03 20:25:51.746 DEBUG      Layer 3: 1.0 / 2.2
+2026-08-03 20:25:51.746 DEBUG      Layer 4: 1.0 / 2.2
+2026-08-03 20:25:51.746 DEBUG      Layer 5: 1.0 / 2.2
+2026-08-03 20:25:51.746 DEBUG      Layer 6: 1.0 / 1.8
+2026-08-03 20:25:51.746 DEBUG  
+2026-08-03 20:25:51.748 DEBUG    autoroute_item                          :    71825 ms total,       46 calls,   1561 ms avg
+2026-08-03 20:25:51.748 DEBUG  
+2026-08-03 20:25:51.748 DEBUG  === Pass History ===
+2026-08-03 20:25:51.748 DEBUG    Pass 1  :    8 unrouted items,    26.05 s,   100 ripup cost
+2026-08-03 20:25:51.749 DEBUG    Pass 2  :    9 unrouted items,    25.01 s,   200 ripup cost
+2026-08-03 20:25:51.749 DEBUG    Pass 3  :    8 unrouted items,    21.80 s,   300 ripup cost
+2026-08-03 20:25:51.749 DEBUG  ===========================
+2026-08-03 20:25:51.769 INFO   [75C50A\B89098] Auto-router session completed: started with 19 unrouted nets, completed in 1 minute 14.20 seconds, final score: 626.42 (8 unrouted and 12 violations).

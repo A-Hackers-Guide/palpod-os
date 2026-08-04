@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "palpod-halbach-controller")(type "KiCad")(uri "${KIPRJMOD}/libraries/palpod-halbach-controller.kicad_sym")(options "")(descr "PAL Pod Halbach controller specialty symbols (STM32H723, DRV8323, INA240, MLX90393, MAX706, MCP2542FD, TL331, IPI050N06N, STM32G030, RTK-2412)"))
+)

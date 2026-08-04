@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "palpod-compute-backplane")(type "KiCad")(uri "${KIPRJMOD}/libraries/palpod-compute-backplane.pretty")(options "")(descr "PAL Pod compute-backplane project-local footprints (placeholder outlines)"))
+)

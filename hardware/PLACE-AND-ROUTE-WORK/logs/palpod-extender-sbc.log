@@ -1,0 +1,76 @@
+==== palpod-extender-sbc at Mon Aug  3 20:27:16 PDT 2026 ====
+--- Stage 1-4: place + DSN ---
+./src/common/stdpbase.cpp(59): assert ""traits"" failed in Get(): create wxApp before calling this
+08:27:18 PM: Debug: Adding duplicate image handler for 'PNG file'
+08:27:18 PM: Debug: Adding duplicate image handler for 'JPEG file'
+08:27:18 PM: Debug: Adding duplicate image handler for 'TIFF file'
+08:27:18 PM: Debug: Adding duplicate image handler for 'GIF file'
+08:27:18 PM: Debug: Adding duplicate image handler for 'PNM file'
+08:27:18 PM: Debug: Adding duplicate image handler for 'PCX file'
+08:27:18 PM: Debug: Adding duplicate image handler for 'IFF file'
+08:27:18 PM: Debug: Adding duplicate image handler for 'Windows icon file'
+08:27:18 PM: Debug: Adding duplicate image handler for 'Windows cursor file'
+08:27:18 PM: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+08:27:18 PM: Debug: Adding duplicate image handler for 'TGA file'
+08:27:18 PM: Debug: Adding duplicate image handler for 'XPM file'
+
+======================================================================
+== BOARD: palpod-extender-sbc
+======================================================================
+RESULT: {
+  "board": "palpod-extender-sbc",
+  "stages": {
+    "netlist": "OK",
+    "place": "OK (28 placed, 6 lib-miss)",
+    "assign_nets": "OK (5 pads, 28 miss)",
+    "dsn": "OK (116372 bytes)"
+  },
+  "errors": [],
+  "comps_in_netlist": 34,
+  "nets_in_netlist": 5,
+  "synthetic_nets": 5,
+  "real_nets": 0,
+  "total_pads_to_route": 33,
+  "footprints_placed": 28,
+  "footprints_failed": 6,
+  "pads_net_assigned": 5,
+  "pads_missing": 28,
+  "dsn_path": "/private/tmp/claude-501/-Users-lexer-kindle/80e67baf-6192-4db2-b491-aa5b4ee00c5b/scratchpad/palpod-os/hardware/electrical/kicad/palpod-extender-sbc/palpod-extender-sbc-routed.dsn"
+}
+--- Stage 4b: FreeRouting (240s, 3 passes) ---
+  (session completed at Mon Aug  3 20:27:33 PDT 2026, waiting 15s for SES save)
+  (killing freerouting 15s after session completed)
+2026-08-03 20:27:20.519 INFO   Freerouting v2.2.4 (build-date: 2026-05-13)
+WARNING: Final field userProfileSettings in class app.freerouting.settings.GlobalSettings has been mutated reflectively by class com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$2 in unnamed module @5bb21b69 (file:/private/tmp/freerouting/freerouting.jar)
+WARNING: Use --enable-final-field-mutation=ALL-UNNAMED to avoid a warning
+WARNING: Mutating final fields will be blocked in a future release unless final field mutation is enabled
+2026-08-03 20:27:22.084 INFO   New version available: v2.2.4
+2026-08-03 20:27:22.284 INFO   Opening '/private/tmp/claude-501/-Users-lexer-kindle/80e67baf-6192-4db2-b491-aa5b4ee00c5b/scratchpad/palpod-os/hardware/electrical/kicad/palpod-extender-sbc/palpod-extender-sbc-routed.dsn'...
+2026-08-03 20:27:32.155 INFO   [DCFB2C\DF05D5] Starting routing of 'palpod-extender-sbc-routed' on 5 threads...
+2026-08-03 20:27:32.816 INFO   [DCFB2C\DF05D5] Auto-router pass #1 on board '1b7601dc4b8a6102700f5e0f30de9578' was completed in 0.34 seconds with the score of 958.25 (1 violation).
+2026-08-03 20:27:32.886 INFO   [DCFB2C\DF05D5] Auto-router pass #2 on board '6d8d84e8e675e4e50206d45c2696a512' was completed in 0.00 seconds with the score of 958.25 (1 violation).
+2026-08-03 20:27:32.910 INFO   [DCFB2C\DF05D5] Auto-router session completed: started with 3 unrouted nets, completed in 0.75 seconds, final score: 958.25 (1 violation).
+FREEROUTING_FAIL (exit=143)
+--- Stage 6a: Gerbers ---
+Plotted to '/private/tmp/claude-501/-Users-lexer-kindle/80e67baf-6192-4db2-b491-aa5b4ee00c5b/scratchpad/palpod-os/hardware/electrical/kicad/palpod-extender-sbc/fab/gerbers-routed/palpod-extender-sbc-routed-User_7.gbr'.
+Plotted to '/private/tmp/claude-501/-Users-lexer-kindle/80e67baf-6192-4db2-b491-aa5b4ee00c5b/scratchpad/palpod-os/hardware/electrical/kicad/palpod-extender-sbc/fab/gerbers-routed/palpod-extender-sbc-routed-User_8.gbr'.
+Plotted to '/private/tmp/claude-501/-Users-lexer-kindle/80e67baf-6192-4db2-b491-aa5b4ee00c5b/scratchpad/palpod-os/hardware/electrical/kicad/palpod-extender-sbc/fab/gerbers-routed/palpod-extender-sbc-routed-User_9.gbr'.
+--- Stage 6b: Drill ---
+Created file '/private/tmp/claude-501/-Users-lexer-kindle/80e67baf-6192-4db2-b491-aa5b4ee00c5b/scratchpad/palpod-os/hardware/electrical/kicad/palpod-extender-sbc/fab/gerbers-routed/palpod-extender-sbc-routed.drl'
+Done.
+--- Stage 6c: DRC ---
+Found 310 violations
+Found 3 unconnected items
+Saved DRC Report to /private/tmp/claude-501/-Users-lexer-kindle/80e67baf-6192-4db2-b491-aa5b4ee00c5b/scratchpad/palpod-os/hardware/electrical/kicad/palpod-extender-sbc/fab/gerbers-routed/drc-report.txt
+--- Stage 6d: 3D render (top) ---
+Rendering: 100 %
+Rendering time 0.933 s
+Successfully created 3D render image
+--- Stage 6e: PDF (F.Cu+B.Cu) ---
+Plotted to '/private/tmp/claude-501/-Users-lexer-kindle/80e67baf-6192-4db2-b491-aa5b4ee00c5b/scratchpad/palpod-os/hardware/electrical/kicad/palpod-extender-sbc/fab/gerbers-routed/board-pcb-routed-top.pdf'.
+Done.
+Plotted to '/private/tmp/claude-501/-Users-lexer-kindle/80e67baf-6192-4db2-b491-aa5b4ee00c5b/scratchpad/palpod-os/hardware/electrical/kicad/palpod-extender-sbc/fab/gerbers-routed/board-pcb-routed-bot.pdf'.
+Done.
+--- Stage 6g: Zip ---
+-rw-r--r--  1 lexer_kindle  wheel  199523 Aug  3 20:28 palpod-extender-sbc-routed-fab-package.zip
+==== palpod-extender-sbc done at Mon Aug  3 20:28:03 PDT 2026 ====

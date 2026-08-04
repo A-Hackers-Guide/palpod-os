@@ -1,0 +1,11 @@
+2026-08-03 20:24:23.024 INFO   Freerouting v2.2.4 (build-date: 2026-05-13)
+WARNING: Final field userProfileSettings in class app.freerouting.settings.GlobalSettings has been mutated reflectively by class com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$2 in unnamed module @5bb21b69 (file:/private/tmp/freerouting/freerouting.jar)
+WARNING: Use --enable-final-field-mutation=ALL-UNNAMED to avoid a warning
+WARNING: Mutating final fields will be blocked in a future release unless final field mutation is enabled
+2026-08-03 20:24:25.092 INFO   New version available: v2.2.4
+2026-08-03 20:24:25.884 INFO   Opening '/private/tmp/claude-501/-Users-lexer-kindle/80e67baf-6192-4db2-b491-aa5b4ee00c5b/scratchpad/palpod-os/hardware/electrical/kicad/palpod-audio-amp/palpod-audio-amp-routed.dsn'...
+2026-08-03 20:24:37.566 INFO   [75C50A\B89098] Starting routing of 'palpod-audio-amp-routed' on 5 threads...
+2026-08-03 20:25:03.888 INFO   [75C50A\B89098] Auto-router pass #1 on board 'a863c917c9921e8c905a0fd50b81a941' was completed in 26.09 seconds with the score of 626.42 (8 unrouted and 12 violations).
+2026-08-03 20:25:29.531 INFO   [75C50A\B89098] Auto-router pass #2 on board '88402ae854070b65e83ec252a64d916f' was completed in 25.04 seconds with the score of 581.38 (9 unrouted and 12 violations).
+2026-08-03 20:25:51.513 INFO   [75C50A\B89098] Auto-router pass #3 on board '9b55971c774affe8883a8ad24f6b97f7' was completed in 21.83 seconds with the score of 626.42 (8 unrouted and 12 violations).
+2026-08-03 20:25:51.769 INFO   [75C50A\B89098] Auto-router session completed: started with 19 unrouted nets, completed in 1 minute 14.20 seconds, final score: 626.42 (8 unrouted and 12 violations).

@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "palpod-audio-amp")(type "KiCad")(uri "${KIPRJMOD}/libraries/palpod-audio-amp.pretty")(options "")(descr "PAL Pod Audio Amp project-local specialty footprints (placeholder outlines)"))
+)

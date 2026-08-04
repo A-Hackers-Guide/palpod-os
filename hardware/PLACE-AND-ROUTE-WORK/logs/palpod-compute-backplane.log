@@ -1,0 +1,39 @@
+==== palpod-compute-backplane at Mon Aug  3 20:28:03 PDT 2026 ====
+--- Stage 1-4: place + DSN ---
+./src/common/stdpbase.cpp(59): assert ""traits"" failed in Get(): create wxApp before calling this
+08:28:05 PM: Debug: Adding duplicate image handler for 'PNG file'
+08:28:05 PM: Debug: Adding duplicate image handler for 'JPEG file'
+08:28:05 PM: Debug: Adding duplicate image handler for 'TIFF file'
+08:28:05 PM: Debug: Adding duplicate image handler for 'GIF file'
+08:28:05 PM: Debug: Adding duplicate image handler for 'PNM file'
+08:28:05 PM: Debug: Adding duplicate image handler for 'PCX file'
+08:28:05 PM: Debug: Adding duplicate image handler for 'IFF file'
+08:28:05 PM: Debug: Adding duplicate image handler for 'Windows icon file'
+08:28:05 PM: Debug: Adding duplicate image handler for 'Windows cursor file'
+08:28:05 PM: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+08:28:05 PM: Debug: Adding duplicate image handler for 'TGA file'
+08:28:05 PM: Debug: Adding duplicate image handler for 'XPM file'
+
+======================================================================
+== BOARD: palpod-compute-backplane
+======================================================================
+RESULT: {
+  "board": "palpod-compute-backplane",
+  "stages": {
+    "netlist": "OK",
+    "place": "OK (34 placed, 0 lib-miss)",
+    "assign_nets": "OK (26 pads, 0 miss)",
+    "dsn": "FAIL: export returned false"
+  },
+  "errors": [],
+  "comps_in_netlist": 34,
+  "nets_in_netlist": 4,
+  "synthetic_nets": 4,
+  "real_nets": 0,
+  "total_pads_to_route": 26,
+  "footprints_placed": 34,
+  "footprints_failed": 0,
+  "pads_net_assigned": 26,
+  "pads_missing": 0
+}
+STAGE_FAIL: no DSN produced

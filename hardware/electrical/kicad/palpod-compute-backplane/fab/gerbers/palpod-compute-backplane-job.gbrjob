@@ -1,0 +1,413 @@
+{
+  "Header": {
+    "GenerationSoftware": {
+      "Vendor": "KiCad",
+      "Application": "Pcbnew",
+      "Version": "10.0.5"
+    },
+    "CreationDate": "2026-08-03T18:12:57-07:00"
+  },
+  "GeneralSpecs": {
+    "ProjectId": {
+      "Name": "palpod-compute-backplane",
+      "GUID": "70616c70-6f64-42d6-936f-6d707574652d",
+      "Revision": "A0"
+    },
+    "Size": {
+      "X": 450.15,
+      "Y": 300.15
+    },
+    "LayerNumber": 14,
+    "BoardThickness": 2.4,
+    "Finish": "ENIG",
+    "ImpedanceControlled": true
+  },
+  "DesignRules": [
+    {
+      "Layers": "Outer",
+      "PadToPad": 0.2,
+      "PadToTrack": 0.2,
+      "TrackToTrack": 0.15
+    },
+    {
+      "Layers": "Inner",
+      "PadToPad": 0.2,
+      "PadToTrack": 0.2,
+      "TrackToTrack": 0.15
+    }
+  ],
+  "FilesAttributes": [
+    {
+      "Path": "palpod-compute-backplane-F_Cu.gtl",
+      "FileFunction": "Copper,L1,Top",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "palpod-compute-backplane-GND1.g1",
+      "FileFunction": "Copper,L2,Inr",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "palpod-compute-backplane-SIG1.g2",
+      "FileFunction": "Copper,L3,Inr",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "palpod-compute-backplane-GND2.g3",
+      "FileFunction": "Copper,L4,Inr",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "palpod-compute-backplane-SIG2.g4",
+      "FileFunction": "Copper,L5,Inr",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "palpod-compute-backplane-PWR12V.g5",
+      "FileFunction": "Copper,L6,Inr",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "palpod-compute-backplane-PWR3V3.g6",
+      "FileFunction": "Copper,L7,Inr",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "palpod-compute-backplane-PWR1V8.g7",
+      "FileFunction": "Copper,L8,Inr",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "palpod-compute-backplane-PWR_ANALOG.g8",
+      "FileFunction": "Copper,L9,Inr",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "palpod-compute-backplane-SIG3.g9",
+      "FileFunction": "Copper,L10,Inr",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "palpod-compute-backplane-GND3.g10",
+      "FileFunction": "Copper,L11,Inr",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "palpod-compute-backplane-SIG4.g11",
+      "FileFunction": "Copper,L12,Inr",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "palpod-compute-backplane-GND4.g12",
+      "FileFunction": "Copper,L13,Inr",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "palpod-compute-backplane-B_Cu.gbl",
+      "FileFunction": "Copper,L14,Bot",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "palpod-compute-backplane-F_Adhesive.gta",
+      "FileFunction": "Glue,Top",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "palpod-compute-backplane-B_Adhesive.gba",
+      "FileFunction": "Glue,Bot",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "palpod-compute-backplane-F_Paste.gtp",
+      "FileFunction": "SolderPaste,Top",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "palpod-compute-backplane-B_Paste.gbp",
+      "FileFunction": "SolderPaste,Bot",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "palpod-compute-backplane-F_Silkscreen.gto",
+      "FileFunction": "Legend,Top",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "palpod-compute-backplane-B_Silkscreen.gbo",
+      "FileFunction": "Legend,Bot",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "palpod-compute-backplane-F_Mask.gts",
+      "FileFunction": "SolderMask,Top",
+      "FilePolarity": "Negative"
+    },
+    {
+      "Path": "palpod-compute-backplane-B_Mask.gbs",
+      "FileFunction": "SolderMask,Bot",
+      "FilePolarity": "Negative"
+    },
+    {
+      "Path": "palpod-compute-backplane-User_Drawings.gbr",
+      "FileFunction": "Other,User",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "palpod-compute-backplane-User_Comments.gbr",
+      "FileFunction": "Other,User",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "palpod-compute-backplane-User_Eco1.gbr",
+      "FileFunction": "Other,User",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "palpod-compute-backplane-User_Eco2.gbr",
+      "FileFunction": "Other,User",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "palpod-compute-backplane-Edge_Cuts.gm1",
+      "FileFunction": "Profile",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "palpod-compute-backplane-F_Fab.gbr",
+      "FileFunction": "AssemblyDrawing,Top",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "palpod-compute-backplane-B_Fab.gbr",
+      "FileFunction": "AssemblyDrawing,Bot",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "palpod-compute-backplane-User_1.gbr",
+      "FileFunction": "Other,User",
+      "FilePolarity": "Positive"
+    },
+    {
+      "Path": "palpod-compute-backplane-User_2.gbr",
+      "FileFunction": "Other,User",
+      "FilePolarity": "Positive"
+    }
+  ],
+  "MaterialStackup": [
+    {
+      "Type": "Legend",
+      "Name": "Top Silk Screen"
+    },
+    {
+      "Type": "SolderPaste",
+      "Name": "Top Solder Paste"
+    },
+    {
+      "Type": "SolderMask",
+      "Color": "Green",
+      "Thickness": 0.01,
+      "Name": "Top Solder Mask"
+    },
+    {
+      "Type": "Copper",
+      "Thickness": 0.035,
+      "Name": "F.Cu"
+    },
+    {
+      "Type": "Dielectric",
+      "Thickness": 0.15,
+      "Material": "Megtron 6",
+      "DielectricConstant": "3.4",
+      "LossTangent": "0.004",
+      "Name": "F.Cu/GND1",
+      "Notes": "Type: dielectric layer 1 (from F.Cu to GND1)"
+    },
+    {
+      "Type": "Copper",
+      "Thickness": 0.0152,
+      "Name": "GND1"
+    },
+    {
+      "Type": "Dielectric",
+      "Thickness": 0.15,
+      "Material": "Megtron 6",
+      "DielectricConstant": "3.4",
+      "LossTangent": "0.004",
+      "Name": "GND1/SIG1",
+      "Notes": "Type: dielectric layer 2 (from GND1 to SIG1)"
+    },
+    {
+      "Type": "Copper",
+      "Thickness": 0.0152,
+      "Name": "SIG1"
+    },
+    {
+      "Type": "Dielectric",
+      "Thickness": 0.15,
+      "Material": "Megtron 6",
+      "DielectricConstant": "3.4",
+      "LossTangent": "0.004",
+      "Name": "SIG1/GND2",
+      "Notes": "Type: dielectric layer 3 (from SIG1 to GND2)"
+    },
+    {
+      "Type": "Copper",
+      "Thickness": 0.0152,
+      "Name": "GND2"
+    },
+    {
+      "Type": "Dielectric",
+      "Thickness": 0.15,
+      "Material": "Megtron 6",
+      "DielectricConstant": "3.4",
+      "LossTangent": "0.004",
+      "Name": "GND2/SIG2",
+      "Notes": "Type: dielectric layer 4 (from GND2 to SIG2)"
+    },
+    {
+      "Type": "Copper",
+      "Thickness": 0.0152,
+      "Name": "SIG2"
+    },
+    {
+      "Type": "Dielectric",
+      "Thickness": 0.15,
+      "Material": "Megtron 6",
+      "DielectricConstant": "3.4",
+      "LossTangent": "0.004",
+      "Name": "SIG2/PWR12V",
+      "Notes": "Type: dielectric layer 5 (from SIG2 to PWR12V)"
+    },
+    {
+      "Type": "Copper",
+      "Thickness": 0.0152,
+      "Name": "PWR12V"
+    },
+    {
+      "Type": "Dielectric",
+      "Thickness": 0.15,
+      "Material": "Megtron 6",
+      "DielectricConstant": "3.4",
+      "LossTangent": "0.004",
+      "Name": "PWR12V/PWR3V3",
+      "Notes": "Type: dielectric layer 6 (from PWR12V to PWR3V3)"
+    },
+    {
+      "Type": "Copper",
+      "Thickness": 0.0152,
+      "Name": "PWR3V3"
+    },
+    {
+      "Type": "Dielectric",
+      "Thickness": 0.15,
+      "Material": "Megtron 6",
+      "DielectricConstant": "3.4",
+      "LossTangent": "0.004",
+      "Name": "PWR3V3/PWR1V8",
+      "Notes": "Type: dielectric layer 7 (from PWR3V3 to PWR1V8)"
+    },
+    {
+      "Type": "Copper",
+      "Thickness": 0.0152,
+      "Name": "PWR1V8"
+    },
+    {
+      "Type": "Dielectric",
+      "Thickness": 0.15,
+      "Material": "Megtron 6",
+      "DielectricConstant": "3.4",
+      "LossTangent": "0.004",
+      "Name": "PWR1V8/PWR_ANALOG",
+      "Notes": "Type: dielectric layer 8 (from PWR1V8 to PWR_ANALOG)"
+    },
+    {
+      "Type": "Copper",
+      "Thickness": 0.0152,
+      "Name": "PWR_ANALOG"
+    },
+    {
+      "Type": "Dielectric",
+      "Thickness": 0.15,
+      "Material": "Megtron 6",
+      "DielectricConstant": "3.4",
+      "LossTangent": "0.004",
+      "Name": "PWR_ANALOG/SIG3",
+      "Notes": "Type: dielectric layer 9 (from PWR_ANALOG to SIG3)"
+    },
+    {
+      "Type": "Copper",
+      "Thickness": 0.0152,
+      "Name": "SIG3"
+    },
+    {
+      "Type": "Dielectric",
+      "Thickness": 0.15,
+      "Material": "Megtron 6",
+      "DielectricConstant": "3.4",
+      "LossTangent": "0.004",
+      "Name": "SIG3/GND3",
+      "Notes": "Type: dielectric layer 10 (from SIG3 to GND3)"
+    },
+    {
+      "Type": "Copper",
+      "Thickness": 0.0152,
+      "Name": "GND3"
+    },
+    {
+      "Type": "Dielectric",
+      "Thickness": 0.15,
+      "Material": "Megtron 6",
+      "DielectricConstant": "3.4",
+      "LossTangent": "0.004",
+      "Name": "GND3/SIG4",
+      "Notes": "Type: dielectric layer 11 (from GND3 to SIG4)"
+    },
+    {
+      "Type": "Copper",
+      "Thickness": 0.0152,
+      "Name": "SIG4"
+    },
+    {
+      "Type": "Dielectric",
+      "Thickness": 0.15,
+      "Material": "Megtron 6",
+      "DielectricConstant": "3.4",
+      "LossTangent": "0.004",
+      "Name": "SIG4/GND4",
+      "Notes": "Type: dielectric layer 12 (from SIG4 to GND4)"
+    },
+    {
+      "Type": "Copper",
+      "Thickness": 0.0152,
+      "Name": "GND4"
+    },
+    {
+      "Type": "Dielectric",
+      "Thickness": 0.15,
+      "Material": "Megtron 6",
+      "DielectricConstant": "3.4",
+      "LossTangent": "0.004",
+      "Name": "GND4/B.Cu",
+      "Notes": "Type: dielectric layer 13 (from GND4 to B.Cu)"
+    },
+    {
+      "Type": "Copper",
+      "Thickness": 0.035,
+      "Name": "B.Cu"
+    },
+    {
+      "Type": "SolderMask",
+      "Color": "Green",
+      "Thickness": 0.01,
+      "Name": "Bottom Solder Mask"
+    },
+    {
+      "Type": "SolderPaste",
+      "Name": "Bottom Solder Paste"
+    },
+    {
+      "Type": "Legend",
+      "Name": "Bottom Silk Screen"
+    }
+  ]
+}

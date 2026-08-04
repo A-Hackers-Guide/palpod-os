@@ -1,0 +1,516 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# PALPod OS — docker compose stack
+#
+# All PAL Pod services in one file. Designed for the Jetson AGX Orin 64GB
+# Developer Kit running Ubuntu 22.04 aarch64 with the NVIDIA Container Toolkit
+# installed. Also boots on any x86_64 Ubuntu machine with an NVIDIA GPU.
+#
+# Bring up:   docker compose up -d
+# Tear down:  docker compose down
+# Logs:       docker compose logs -f <service>
+#
+# Every service:
+#   - has an explicit restart policy (unless-stopped)
+#   - has a healthcheck where the upstream image supports one
+#   - joins the `palpod` bridge network so Traefik can reach it by service name
+#   - reads secrets from .env (never hard-coded here)
+# ─────────────────────────────────────────────────────────────────────────────
+
+version: "3.9"
+
+# ─── Shared networks ────────────────────────────────────────────────────────
+networks:
+  palpod:
+    name: palpod
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.28.0.0/16
+
+# ─── Named volumes (config only — media is bind-mounted from host) ──────────
+volumes:
+  plex_config:
+  jellyfin_config:
+  jellyfin_cache:
+  audiobookshelf_config:
+  audiobookshelf_metadata:
+  xteve_config:
+  sunshine_config:
+  steam_config:
+  steam_home:
+  postgres_data:
+  traefik_certs:
+  palweb_node_modules:
+  anydesk_config:
+
+services:
+
+  # ───────────────────────────────────────────────────────────────────────────
+  # Traefik — TLS terminator & subdomain router.
+  # Serves *.${PALPOD_DOMAIN} with a self-signed root the LAN trusts.
+  # ───────────────────────────────────────────────────────────────────────────
+  traefik:
+    image: traefik:v3.1
+    container_name: traefik
+    restart: unless-stopped
+    command:
+      - "--api.dashboard=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--providers.file.directory=/etc/traefik/dynamic"
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.web.http.redirections.entrypoint.to=websecure"
+      - "--entrypoints.web.http.redirections.entrypoint.scheme=https"
+      - "--entrypoints.websecure.address=:443"
+    ports:
+      - "80:80"
+      - "443:443"
+      - "127.0.0.1:8080:8080"   # dashboard, LAN-loopback only
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./configs/traefik/traefik.yml:/etc/traefik/traefik.yml:ro
+      - ./configs/traefik/dynamic:/etc/traefik/dynamic:ro
+      - traefik_certs:/certs
+    networks:
+      - palpod
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:8080/ping"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  # ───────────────────────────────────────────────────────────────────────────
+  # Postgres 16 — backing store for pal-web.
+  # Schema is initialised from configs/postgres/init.sql on first boot.
+  # ───────────────────────────────────────────────────────────────────────────
+  postgres:
+    image: postgres:16-alpine
+    container_name: postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      TZ: ${TZ}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./configs/postgres/init.sql:/docker-entrypoint-initdb.d/00-init.sql:ro
+    networks:
+      - palpod
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  # ───────────────────────────────────────────────────────────────────────────
+  # Plex Media Server. Uses the LinuxServer image, which auto-migrates config.
+  # For hardware transcoding on the Jetson, mount the NVIDIA runtime devices.
+  # ───────────────────────────────────────────────────────────────────────────
+  plex:
+    image: lscr.io/linuxserver/plex:latest
+    container_name: plex
+    restart: unless-stopped
+    runtime: nvidia
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+      VERSION: docker
+      PLEX_CLAIM: ${PLEX_CLAIM}
+      NVIDIA_VISIBLE_DEVICES: all
+      NVIDIA_DRIVER_CAPABILITIES: compute,video,utility
+    volumes:
+      - plex_config:/config
+      - ${MEDIA_MOVIES}:/data/movies
+      - ${MEDIA_TV}:/data/tv
+      - ${MEDIA_MUSIC}:/data/music
+    ports:
+      - "32400:32400"
+      - "1900:1900/udp"
+      - "5353:5353/udp"
+      - "32410:32410/udp"
+      - "32412:32412/udp"
+      - "32413:32413/udp"
+      - "32414:32414/udp"
+      - "32469:32469"
+    networks:
+      - palpod
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.plex.rule=Host(`plex.${PALPOD_DOMAIN}`)"
+      - "traefik.http.routers.plex.tls=true"
+      - "traefik.http.services.plex.loadbalancer.server.port=32400"
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost:32400/identity"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    depends_on:
+      traefik:
+        condition: service_healthy
+
+  # ───────────────────────────────────────────────────────────────────────────
+  # Jellyfin — open-source companion to Plex. Same media, no account required.
+  # ───────────────────────────────────────────────────────────────────────────
+  jellyfin:
+    image: jellyfin/jellyfin:latest
+    container_name: jellyfin
+    restart: unless-stopped
+    runtime: nvidia
+    user: "${PUID}:${PGID}"
+    environment:
+      TZ: ${TZ}
+      JELLYFIN_PublishedServerUrl: ${JELLYFIN_PUBLISHED_URL}
+      NVIDIA_VISIBLE_DEVICES: all
+      NVIDIA_DRIVER_CAPABILITIES: compute,video,utility
+    volumes:
+      - jellyfin_config:/config
+      - jellyfin_cache:/cache
+      - ${MEDIA_MOVIES}:/media/movies:ro
+      - ${MEDIA_TV}:/media/tv:ro
+      - ${MEDIA_MUSIC}:/media/music:ro
+    ports:
+      - "8096:8096"
+      - "8920:8920"
+      - "7359:7359/udp"
+      - "1901:1900/udp"
+    networks:
+      - palpod
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.jellyfin.rule=Host(`jelly.${PALPOD_DOMAIN}`)"
+      - "traefik.http.routers.jellyfin.tls=true"
+      - "traefik.http.services.jellyfin.loadbalancer.server.port=8096"
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost:8096/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  # ───────────────────────────────────────────────────────────────────────────
+  # Audiobookshelf — self-hosted audiobook & podcast server.
+  # ───────────────────────────────────────────────────────────────────────────
+  audiobookshelf:
+    image: ghcr.io/advplyr/audiobookshelf:latest
+    container_name: audiobookshelf
+    restart: unless-stopped
+    environment:
+      TZ: ${TZ}
+      AUDIOBOOKSHELF_UID: ${PUID}
+      AUDIOBOOKSHELF_GID: ${PGID}
+    volumes:
+      - audiobookshelf_config:/config
+      - audiobookshelf_metadata:/metadata
+      - ${MEDIA_AUDIOBOOKS}:/audiobooks
+      - ${MEDIA_PODCASTS}:/podcasts
+    ports:
+      - "13378:80"
+    networks:
+      - palpod
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.abs.rule=Host(`books.${PALPOD_DOMAIN}`)"
+      - "traefik.http.routers.abs.tls=true"
+      - "traefik.http.services.abs.loadbalancer.server.port=80"
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost/healthcheck"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+  # ───────────────────────────────────────────────────────────────────────────
+  # xTeVe — M3U + EPG proxy. Presents your IPTV bouquet to Plex/Jellyfin as
+  # HDHomeRun-style tuners so they appear as first-class channels.
+  # ───────────────────────────────────────────────────────────────────────────
+  xteve:
+    image: alturismo/xteve:latest
+    container_name: xteve
+    restart: unless-stopped
+    environment:
+      TZ: ${TZ}
+      PUID: ${PUID}
+      PGID: ${PGID}
+    volumes:
+      - xteve_config:/home/xteve/conf
+      - ./configs/xteve/config.yaml.example:/home/xteve/conf/config.yaml.example:ro
+      - ${MEDIA_MOVIES}:/tmp/xteve:rw     # buffer directory
+    ports:
+      - "34400:34400"
+    networks:
+      - palpod
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.xteve.rule=Host(`xteve.${PALPOD_DOMAIN}`)"
+      - "traefik.http.routers.xteve.tls=true"
+      - "traefik.http.services.xteve.loadbalancer.server.port=34400"
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:34400/web/"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+
+  # ───────────────────────────────────────────────────────────────────────────
+  # Sunshine — Moonlight-compatible game/desktop streaming host.
+  # Requires the NVIDIA runtime. Uses host networking so mDNS pairing works.
+  # ───────────────────────────────────────────────────────────────────────────
+  sunshine:
+    image: lizardbyte/sunshine:latest
+    container_name: sunshine
+    restart: unless-stopped
+    runtime: nvidia
+    network_mode: host        # required for LAN mDNS discovery + wide port range
+    environment:
+      TZ: ${TZ}
+      PUID: ${PUID}
+      PGID: ${PGID}
+      NVIDIA_VISIBLE_DEVICES: all
+      NVIDIA_DRIVER_CAPABILITIES: all
+    volumes:
+      - sunshine_config:/config
+      - ./configs/sunshine/sunshine.conf:/config/sunshine.conf:ro
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+    devices:
+      - /dev/uinput:/dev/uinput
+      - /dev/dri:/dev/dri
+    cap_add:
+      - SYS_ADMIN     # needed for input capture
+    healthcheck:
+      test: ["CMD", "curl", "-fkS", "https://localhost:47990/"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  # ───────────────────────────────────────────────────────────────────────────
+  # Headless Steam — runs Steam Big Picture inside Xvfb, streamed via Sunshine.
+  # NEVER routed to the Sphere face — the face is exclusively pal-face's HDMI.
+  # ───────────────────────────────────────────────────────────────────────────
+  steam-headless:
+    image: josh5/steam-headless:latest
+    container_name: steam-headless
+    restart: unless-stopped
+    runtime: nvidia
+    shm_size: "2gb"
+    environment:
+      TZ: ${TZ}
+      USER_PASSWORD: ${SUNSHINE_ADMIN_PASSWORD}
+      MODE: primary
+      WEB_UI_MODE: vnc
+      ENABLE_STEAM: "true"
+      ENABLE_SUNSHINE: "false"     # we run Sunshine as its own container
+      STEAM_USERNAME: ${STEAM_USERNAME}
+      STEAM_PASSWORD: ${STEAM_PASSWORD}
+      NVIDIA_VISIBLE_DEVICES: all
+      NVIDIA_DRIVER_CAPABILITIES: all
+    volumes:
+      - steam_config:/config
+      - steam_home:/home/default
+    devices:
+      - /dev/dri:/dev/dri
+      - /dev/uinput:/dev/uinput
+    ports:
+      - "8083:8083"   # web/VNC UI
+    networks:
+      - palpod
+    depends_on:
+      sunshine:
+        condition: service_started
+
+  # ───────────────────────────────────────────────────────────────────────────
+  # pal-web — unified control app. Sibling repo, mounted as a code volume.
+  # Uses a slim Node runtime; the image is only used for `node`, not for code.
+  # ───────────────────────────────────────────────────────────────────────────
+  pal-web:
+    image: node:20-bookworm-slim
+    container_name: pal-web
+    restart: unless-stopped
+    working_dir: /app
+    command: ["npm", "run", "start"]
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}
+      JWT_SECRET: ${PAL_WEB_JWT_SECRET}
+      EXTENDER_SHARED_SECRET: ${PAL_EXTENDER_SHARED_SECRET}
+      TZ: ${TZ}
+    volumes:
+      - ${PAL_WEB_PATH}:/app
+      - palweb_node_modules:/app/node_modules
+    ports:
+      - "3000:3000"
+    networks:
+      - palpod
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.palweb.rule=Host(`pod.${PALPOD_DOMAIN}`)"
+      - "traefik.http.routers.palweb.tls=true"
+      - "traefik.http.services.palweb.loadbalancer.server.port=3000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+  # ───────────────────────────────────────────────────────────────────────────
+  # pal-voice — LLM + STT + TTS + wake-word. Sibling repo, code-mounted.
+  # Runs on the Jetson GPU; needs the NVIDIA runtime and access to models/.
+  # ───────────────────────────────────────────────────────────────────────────
+  pal-voice:
+    image: nvcr.io/nvidia/l4t-pytorch:r36.2.0-pth2.2-py3
+    container_name: pal-voice
+    restart: unless-stopped
+    runtime: nvidia
+    working_dir: /app
+    command: ["python3", "-m", "pal_voice.main"]
+    environment:
+      TZ: ${TZ}
+      DATABASE_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}
+      MODEL_DIR: ${PAL_VOICE_MODEL_DIR}
+      NVIDIA_VISIBLE_DEVICES: all
+      NVIDIA_DRIVER_CAPABILITIES: compute,utility
+    volumes:
+      - ${PAL_VOICE_PATH}:/app
+      - ${PAL_VOICE_MODEL_DIR}:${PAL_VOICE_MODEL_DIR}:ro
+      - /dev/snd:/dev/snd
+    devices:
+      - /dev/snd:/dev/snd
+    ports:
+      - "50051:50051"    # gRPC — pal-web talks to pal-voice here
+    networks:
+      - palpod
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  # ───────────────────────────────────────────────────────────────────────────
+  # pal-face — Pygame Sphere renderer. Renders to the HDMI framebuffer.
+  # Sibling repo, code-mounted. No exposed port — output is HDMI only.
+  # ───────────────────────────────────────────────────────────────────────────
+  pal-face:
+    image: python:3.11-slim-bookworm
+    container_name: pal-face
+    restart: unless-stopped
+    working_dir: /app
+    command: ["python3", "-m", "pal_face.main"]
+    environment:
+      TZ: ${TZ}
+      DISPLAY: ":0"
+      SDL_VIDEODRIVER: kmsdrm
+    volumes:
+      - ${PAL_FACE_PATH}:/app
+      - /dev/dri:/dev/dri
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+    devices:
+      - /dev/dri:/dev/dri
+      - /dev/fb0:/dev/fb0
+    privileged: true    # required for direct framebuffer access on Jetson
+    networks:
+      - palpod
+    depends_on:
+      pal-voice:
+        condition: service_started
+
+  # ───────────────────────────────────────────────────────────────────────────
+  # RustDesk self-hosted — remote desktop for the Pod.
+  #
+  # Two cooperating processes ship in the same upstream image:
+  #   * hbbs (this service)  — the ID / rendezvous server. RustDesk clients
+  #                            register their 9-digit ID with hbbs and discover
+  #                            peers through it.
+  #   * hbbr (next service)  — the relay. Used when a direct P2P LAN path
+  #                            between two peers is not available (double-NAT,
+  #                            symmetric NAT, cross-VLAN).
+  #
+  # Both containers share ./data/rustdesk-keys, which stores the X25519
+  # keypair generated on first boot by configs/rustdesk/generate-keys.sh.
+  # Every client must pin the resulting public key or hbbs will reject it.
+  #
+  # Client setup (see configs/rustdesk/README.md for full flow):
+  #   Point the RustDesk Client's "ID Server" at this host, port 21116.
+  #   Point "Relay Server" at this host, port 21117.
+  #   Paste the public key from ./data/rustdesk-keys/id_ed25519.pub into
+  #   the "Key" field.
+  # ───────────────────────────────────────────────────────────────────────────
+  rustdesk-hbbs:
+    image: rustdesk/rustdesk-server:latest
+    container_name: rustdesk-hbbs
+    restart: unless-stopped
+    command: ["hbbs", "-r", "rustdesk-hbbr:21117", "-k", "_"]
+    environment:
+      TZ: ${TZ}
+      # "_" tells hbbs to auto-generate a key if none exists in /root and
+      # reuse the on-disk key on every subsequent boot.
+      RELAY: rustdesk-hbbr:21117
+      ENCRYPTED_ONLY: "1"
+    volumes:
+      - ./data/rustdesk-keys:/root
+    ports:
+      - "21115:21115"          # NAT type test (tcp)
+      - "21116:21116"          # ID / rendezvous (tcp)
+      - "21116:21116/udp"      # ID / rendezvous (udp — required for hole-punch)
+      - "21118:21118"          # web console (tcp, LAN-only)
+    networks:
+      - palpod
+    healthcheck:
+      test: ["CMD-SHELL", "nc -z 127.0.0.1 21116 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+  rustdesk-hbbr:
+    image: rustdesk/rustdesk-server:latest
+    container_name: rustdesk-hbbr
+    restart: unless-stopped
+    command: ["hbbr", "-k", "_"]
+    environment:
+      TZ: ${TZ}
+    volumes:
+      - ./data/rustdesk-keys:/root
+    ports:
+      - "21117:21117"          # relay (tcp)
+      - "21119:21119"          # web console (tcp, LAN-only)
+    networks:
+      - palpod
+    healthcheck:
+      test: ["CMD-SHELL", "nc -z 127.0.0.1 21117 || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+  # ───────────────────────────────────────────────────────────────────────────
+  # AnyDesk — OPTIONAL, OPT-IN ONLY.
+  #
+  # RustDesk is the default remote-desktop backend and covers the vast
+  # majority of use cases. This service exists ONLY for users who explicitly
+  # prefer AnyDesk's commercial client.
+  #
+  # NOT started by `docker compose up -d`. To enable, the user must:
+  #   1. Read and accept the AnyDesk EULA:  https://anydesk.com/en/terms
+  #   2. Run:  docker compose --profile anydesk up -d anydesk
+  #
+  # The image below runs the AnyDesk client inside a KasmVNC workspace so it
+  # can be pre-paired from a browser on port 3001. It is NOT the on-premises
+  # AnyDesk rendezvous server — that requires a paid AnyDesk license and is
+  # out of scope for the MVP. Pod owners who want a fully offline experience
+  # should stay on RustDesk.
+  # ───────────────────────────────────────────────────────────────────────────
+  anydesk:
+    image: lscr.io/linuxserver/anydesk:latest
+    container_name: anydesk
+    restart: unless-stopped
+    profiles: ["anydesk"]      # << gate: only starts when --profile anydesk is passed
+    environment:
+      TZ: ${TZ}
+      PUID: ${PUID}
+      PGID: ${PGID}
+      # By setting this variable the user acknowledges the AnyDesk EULA.
+      # Left blank in .env.example on purpose — no accidental agreement.
+      ANYDESK_EULA_ACCEPTED: ${ANYDESK_EULA_ACCEPTED:-}
+    volumes:
+      - anydesk_config:/config
+    ports:
+      - "3001:3000"            # KasmVNC web UI for pre-pairing (LAN-only)
+    networks:
+      - palpod

@@ -1,0 +1,200 @@
+/* pal-web dark palette. Existing tokens (--pal-bg, --pal-fg, --pal-accent,
+   --pal-danger, --pal-muted) are preserved. Anything below this fold is
+   scoped to the /static/remote.html UI. */
+
+:root {
+  --pal-bg: #0b0d10;
+  --pal-surface: #14181d;
+  --pal-surface-2: #1c2128;
+  --pal-fg: #e6e9ee;
+  --pal-muted: #8a939f;
+  --pal-accent: #d4b483;      /* PAL Pod champagne */
+  --pal-accent-fg: #1a1410;
+  --pal-danger: #d97757;
+  --pal-ok: #7aa878;
+  --pal-border: #262c33;
+  --pal-radius: 12px;
+  --pal-shadow: 0 10px 32px rgba(0, 0, 0, 0.6);
+}
+
+/* ------------------------------------------------------------------ */
+/* Remote UI                                                          */
+/* ------------------------------------------------------------------ */
+
+body.pal-dark {
+  background: var(--pal-bg);
+  color: var(--pal-fg);
+  font-family: -apple-system, "SF Pro Text", Inter, system-ui, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.pal-header {
+  padding: 32px 40px 12px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.pal-header h1 { margin: 0 0 8px; font-weight: 500; letter-spacing: -0.01em; }
+.pal-subtle { color: var(--pal-muted); }
+.pal-small { font-size: 0.85rem; }
+
+.pal-main {
+  padding: 8px 40px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 20px;
+}
+
+.pal-card {
+  background: var(--pal-surface);
+  border: 1px solid var(--pal-border);
+  border-radius: var(--pal-radius);
+  padding: 24px;
+}
+.pal-card h2 { margin: 0 0 16px; font-weight: 500; }
+
+.pal-hidden { display: none !important; }
+
+/* Forms */
+.pal-form {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+.pal-form label {
+  display: grid;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--pal-muted);
+}
+.pal-form input,
+.pal-form select {
+  background: var(--pal-surface-2);
+  border: 1px solid var(--pal-border);
+  border-radius: 8px;
+  color: var(--pal-fg);
+  padding: 10px 12px;
+  font-size: 0.95rem;
+}
+.pal-form button { grid-column: 1 / -1; justify-self: start; }
+
+/* Buttons */
+.pal-btn {
+  background: var(--pal-surface-2);
+  color: var(--pal-fg);
+  border: 1px solid var(--pal-border);
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.pal-btn:hover { background: #232a32; }
+.pal-btn-primary {
+  background: var(--pal-accent);
+  color: var(--pal-accent-fg);
+  border-color: transparent;
+}
+.pal-btn-primary:hover { filter: brightness(1.05); }
+.pal-btn-danger { color: var(--pal-danger); }
+.pal-btn-danger:hover { background: rgba(217, 119, 87, 0.12); }
+
+/* Device rows */
+.pal-device-list { display: grid; gap: 12px; }
+.pal-device-row {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 16px;
+  align-items: center;
+  background: var(--pal-surface-2);
+  border: 1px solid var(--pal-border);
+  border-radius: 10px;
+  padding: 16px;
+}
+.pal-device-info { min-width: 0; }
+.pal-device-name { font-weight: 500; font-size: 1rem; }
+.pal-device-actions { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+
+.pal-badge {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+.pal-badge-view_only { background: rgba(138, 147, 159, 0.15); color: var(--pal-muted); }
+.pal-badge-granted { background: rgba(212, 180, 131, 0.18); color: var(--pal-accent); }
+.pal-badge-revoked { background: rgba(217, 119, 87, 0.15); color: var(--pal-danger); }
+
+/* Viewer */
+.pal-viewer-row {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 20px;
+}
+#viewer-canvas {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-radius: 10px;
+  border: 1px solid var(--pal-border);
+  outline: none;
+}
+.pal-viewer-aside { display: grid; gap: 14px; align-content: start; }
+.pal-checkbox {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+  background: var(--pal-surface-2);
+  border-radius: 8px;
+  border: 1px solid var(--pal-border);
+}
+.pal-countdown {
+  padding: 12px;
+  border-radius: 8px;
+  background: rgba(212, 180, 131, 0.12);
+  color: var(--pal-accent);
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+
+/* Modal */
+.pal-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: grid;
+  place-items: center;
+  z-index: 100;
+}
+.pal-modal-card {
+  background: var(--pal-surface);
+  border: 1px solid var(--pal-border);
+  border-radius: var(--pal-radius);
+  box-shadow: var(--pal-shadow);
+  padding: 28px;
+  min-width: 340px;
+  max-width: 420px;
+}
+.pal-modal-card h3 { margin: 0 0 12px; font-weight: 500; }
+.pal-radio-row { display: flex; gap: 8px; margin: 18px 0; }
+.pal-radio {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  padding: 12px;
+  background: var(--pal-surface-2);
+  border: 1px solid var(--pal-border);
+  border-radius: 8px;
+  cursor: pointer;
+}
+.pal-radio input { accent-color: var(--pal-accent); margin-right: 6px; }
+.pal-modal-actions { display: flex; gap: 10px; justify-content: flex-end; }
+
+@media (max-width: 720px) {
+  .pal-header, .pal-main { padding-inline: 20px; }
+  .pal-device-row { grid-template-columns: 1fr; }
+  .pal-device-actions { justify-content: flex-start; }
+  .pal-viewer-row { grid-template-columns: 1fr; }
+}

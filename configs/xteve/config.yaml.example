@@ -1,0 +1,52 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# xTeVe — example configuration.
+#
+# xTeVe presents your IPTV bouquet to Plex and Jellyfin as one or more
+# HDHomeRun-compatible network tuners. Fill in `providers.m3u_url` and
+# `providers.epg_url`, restart the container, then in Plex go to
+#   Settings → DVR & Live TV → Set up Plex DVR → point at http://xteve:34400
+# and Plex will discover the virtual HDHomeRun.
+#
+# xTeVe's own web UI (http://xteve:34400/web) is the source of truth for
+# channel mapping — this file is a starting point for a scripted deploy.
+# ─────────────────────────────────────────────────────────────────────────────
+
+listen:
+  # Where the HDHomeRun emulator + web UI bind. Leave 0.0.0.0 inside the
+  # container; Traefik and direct port mapping expose it externally.
+  host: 0.0.0.0
+  port: 34400
+
+# The friendly name Plex/Jellyfin will see when they discover the tuner.
+device:
+  name: PAL Pod xTeVe
+  friendly_name: PAL Pod Live TV
+  tuner_count: 4               # concurrent streams to allow
+  buffer: ffmpeg               # options: none | ffmpeg | vlc
+  buffer_dir: /tmp/xteve
+
+providers:
+  # Your IPTV subscription's M3U playlist.
+  m3u_url: "REPLACE_WITH_YOUR_M3U_URL"
+  m3u_refresh_hours: 12
+
+  # Matching XMLTV EPG.
+  epg_url: "REPLACE_WITH_YOUR_EPG_URL"
+  epg_refresh_hours: 6
+
+# Which channels to expose. Empty = all channels from the M3U pass through.
+# Populate this after you've imported the M3U at least once via the web UI.
+channels: []
+
+# Filter rules applied before Plex/Jellyfin see the playlist.
+filters:
+  - name: "Drop adult"
+    group_regex: "(?i)adult|xxx"
+    action: drop
+  - name: "Drop test channels"
+    name_regex: "(?i)test|debug"
+    action: drop
+
+logging:
+  level: info
+  file: /home/xteve/conf/xteve.log
