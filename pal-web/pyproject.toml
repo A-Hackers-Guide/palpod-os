@@ -21,11 +21,18 @@ dependencies = [
 dev = [
     "pytest>=8.0",
     "pytest-asyncio>=0.24",
+    "pytest-cov>=5.0",
     "respx>=0.21",
     "aiosqlite>=0.20",
     "greenlet>=3.0",
+    # Real-Postgres integration tests spin up a disposable postgres:16
+    # container via testcontainers. Marked --run-integration for opt-in.
+    "testcontainers[postgres]>=4.0",
 ]
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
 testpaths = ["tests"]
+markers = [
+    "integration: real-Postgres tests requiring a Docker-compatible runtime; auto-skip when unavailable.",
+]

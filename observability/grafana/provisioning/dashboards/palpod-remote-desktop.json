@@ -1,0 +1,346 @@
+{
+  "annotations": { "list": [] },
+  "description": "Remote-desktop security telemetry: registered devices, active grants, grant events, rejected input, WS anomaly rate, consent cooldowns, 24h grant-minute budget.",
+  "editable": false,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 1,
+  "id": null,
+  "links": [],
+  "liveNow": true,
+  "panels": [
+    {
+      "id": 1,
+      "type": "row",
+      "title": "Fleet",
+      "collapsed": false,
+      "gridPos": { "x": 0, "y": 0, "w": 24, "h": 1 },
+      "panels": []
+    },
+    {
+      "id": 2,
+      "type": "stat",
+      "title": "Registered devices",
+      "gridPos": { "x": 0, "y": 1, "w": 6, "h": 5 },
+      "datasource": { "type": "prometheus", "uid": "palpod-prometheus" },
+      "targets": [
+        { "refId": "A", "expr": "palweb_remote_devices_registered", "instant": true, "datasource": { "type": "prometheus", "uid": "palpod-prometheus" } }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "color": { "mode": "fixed", "fixedColor": "#22d3ee" },
+          "thresholds": { "mode": "absolute", "steps": [ { "color": "gray", "value": null } ] }
+        },
+        "overrides": []
+      },
+      "options": { "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false }, "graphMode": "area", "colorMode": "value" }
+    },
+    {
+      "id": 3,
+      "type": "stat",
+      "title": "Active control grants",
+      "gridPos": { "x": 6, "y": 1, "w": 6, "h": 5 },
+      "datasource": { "type": "prometheus", "uid": "palpod-prometheus" },
+      "targets": [
+        { "refId": "A", "expr": "palweb_active_grants", "instant": true, "datasource": { "type": "prometheus", "uid": "palpod-prometheus" } }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "color": { "mode": "thresholds" },
+          "thresholds": { "mode": "absolute", "steps": [ { "color": "gray", "value": null }, { "color": "#22d3ee", "value": 1 }, { "color": "#f59e0b", "value": 3 }, { "color": "#ef4444", "value": 5 } ] }
+        },
+        "overrides": []
+      },
+      "options": { "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false }, "graphMode": "area", "colorMode": "background" }
+    },
+    {
+      "id": 4,
+      "type": "stat",
+      "title": "Shortest remaining grant countdown",
+      "gridPos": { "x": 12, "y": 1, "w": 6, "h": 5 },
+      "datasource": { "type": "prometheus", "uid": "palpod-prometheus" },
+      "targets": [
+        { "refId": "A", "expr": "min(palweb_grant_seconds_remaining) or vector(0)", "instant": true, "datasource": { "type": "prometheus", "uid": "palpod-prometheus" } }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "s",
+          "color": { "mode": "thresholds" },
+          "thresholds": { "mode": "absolute", "steps": [ { "color": "red", "value": null }, { "color": "#f59e0b", "value": 30 }, { "color": "#22d3ee", "value": 120 } ] }
+        },
+        "overrides": []
+      },
+      "options": { "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false }, "graphMode": "area", "colorMode": "value" }
+    },
+    {
+      "id": 5,
+      "type": "stat",
+      "title": "Grant events / hour",
+      "gridPos": { "x": 18, "y": 1, "w": 6, "h": 5 },
+      "datasource": { "type": "prometheus", "uid": "palpod-prometheus" },
+      "targets": [
+        { "refId": "A", "expr": "sum(rate(palweb_remote_grant_events_total[1h])) * 3600", "instant": true, "datasource": { "type": "prometheus", "uid": "palpod-prometheus" } }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "color": { "mode": "fixed", "fixedColor": "#22d3ee" },
+          "thresholds": { "mode": "absolute", "steps": [ { "color": "gray", "value": null } ] }
+        },
+        "overrides": []
+      },
+      "options": { "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false }, "graphMode": "area", "colorMode": "value" }
+    },
+    {
+      "id": 6,
+      "type": "row",
+      "title": "Consent lifecycle",
+      "collapsed": false,
+      "gridPos": { "x": 0, "y": 6, "w": 24, "h": 1 },
+      "panels": []
+    },
+    {
+      "id": 7,
+      "type": "timeseries",
+      "title": "Grant events per hour (by kind)",
+      "gridPos": { "x": 0, "y": 7, "w": 12, "h": 9 },
+      "datasource": { "type": "prometheus", "uid": "palpod-prometheus" },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum by (kind) (rate(palweb_remote_grant_events_total[15m])) * 3600",
+          "legendFormat": "{{kind}}",
+          "datasource": { "type": "prometheus", "uid": "palpod-prometheus" }
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "color": { "mode": "palette-classic" },
+          "custom": {
+            "drawStyle": "bars",
+            "lineWidth": 1,
+            "fillOpacity": 80,
+            "stacking": { "mode": "normal", "group": "A" }
+          }
+        },
+        "overrides": [
+          { "matcher": { "id": "byName", "options": "granted" }, "properties": [ { "id": "color", "value": { "mode": "fixed", "fixedColor": "#22d3ee" } } ] },
+          { "matcher": { "id": "byName", "options": "denied" }, "properties": [ { "id": "color", "value": { "mode": "fixed", "fixedColor": "#ef4444" } } ] },
+          { "matcher": { "id": "byName", "options": "expired" }, "properties": [ { "id": "color", "value": { "mode": "fixed", "fixedColor": "#f59e0b" } } ] },
+          { "matcher": { "id": "byName", "options": "revoked" }, "properties": [ { "id": "color", "value": { "mode": "fixed", "fixedColor": "#a78bfa" } } ] }
+        ]
+      },
+      "options": { "legend": { "displayMode": "table", "placement": "right", "showLegend": true, "calcs": ["sum"] }, "tooltip": { "mode": "multi", "sort": "desc" } }
+    },
+    {
+      "id": 8,
+      "type": "timeseries",
+      "title": "Consent-cooldown blocks per hour",
+      "gridPos": { "x": 12, "y": 7, "w": 12, "h": 9 },
+      "datasource": { "type": "prometheus", "uid": "palpod-prometheus" },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum(rate(palweb_consent_cooldown_blocks_total[15m])) * 3600",
+          "legendFormat": "blocks / hour",
+          "datasource": { "type": "prometheus", "uid": "palpod-prometheus" }
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "color": { "mode": "fixed", "fixedColor": "#f59e0b" },
+          "custom": {
+            "drawStyle": "line",
+            "lineInterpolation": "smooth",
+            "lineWidth": 2,
+            "fillOpacity": 25,
+            "gradientMode": "opacity",
+            "showPoints": "never"
+          }
+        },
+        "overrides": []
+      },
+      "options": { "legend": { "displayMode": "list", "placement": "bottom", "showLegend": true }, "tooltip": { "mode": "multi" } }
+    },
+    {
+      "id": 9,
+      "type": "row",
+      "title": "Input policing",
+      "collapsed": false,
+      "gridPos": { "x": 0, "y": 16, "w": 24, "h": 1 },
+      "panels": []
+    },
+    {
+      "id": 10,
+      "type": "timeseries",
+      "title": "Rejected input events per session (by reason)",
+      "gridPos": { "x": 0, "y": 17, "w": 12, "h": 9 },
+      "datasource": { "type": "prometheus", "uid": "palpod-prometheus" },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum by (reason) (rate(palweb_input_events_total{authorized=\"false\"}[5m]))",
+          "legendFormat": "{{reason}}",
+          "datasource": { "type": "prometheus", "uid": "palpod-prometheus" }
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "ops",
+          "color": { "mode": "palette-classic" },
+          "custom": {
+            "drawStyle": "line",
+            "lineInterpolation": "stepAfter",
+            "lineWidth": 2,
+            "fillOpacity": 25,
+            "gradientMode": "opacity",
+            "showPoints": "never",
+            "stacking": { "mode": "normal", "group": "A" }
+          }
+        },
+        "overrides": [
+          { "matcher": { "id": "byName", "options": "unauthorized" }, "properties": [ { "id": "color", "value": { "mode": "fixed", "fixedColor": "#ef4444" } } ] },
+          { "matcher": { "id": "byName", "options": "expired" }, "properties": [ { "id": "color", "value": { "mode": "fixed", "fixedColor": "#f59e0b" } } ] },
+          { "matcher": { "id": "byName", "options": "malformed" }, "properties": [ { "id": "color", "value": { "mode": "fixed", "fixedColor": "#a78bfa" } } ] }
+        ]
+      },
+      "options": { "legend": { "displayMode": "table", "placement": "right", "showLegend": true, "calcs": ["sum", "last"] }, "tooltip": { "mode": "multi", "sort": "desc" } }
+    },
+    {
+      "id": 11,
+      "type": "timeseries",
+      "title": "WS anomaly rate (from remote_ws_anomaly_summary)",
+      "gridPos": { "x": 12, "y": 17, "w": 12, "h": 9 },
+      "datasource": { "type": "prometheus", "uid": "palpod-prometheus" },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum by (kind) (rate(palweb_ws_anomalies_total[5m]))",
+          "legendFormat": "{{kind}}",
+          "datasource": { "type": "prometheus", "uid": "palpod-prometheus" }
+        },
+        {
+          "refId": "B",
+          "expr": "sum(rate(palweb_ws_anomalies_suppressed_total[5m]))",
+          "legendFormat": "suppressed (aggregated)",
+          "datasource": { "type": "prometheus", "uid": "palpod-prometheus" }
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "ops",
+          "color": { "mode": "palette-classic" },
+          "custom": {
+            "drawStyle": "line",
+            "lineInterpolation": "smooth",
+            "lineWidth": 2,
+            "fillOpacity": 20,
+            "gradientMode": "opacity",
+            "showPoints": "never"
+          }
+        },
+        "overrides": [
+          { "matcher": { "id": "byName", "options": "suppressed (aggregated)" }, "properties": [ { "id": "color", "value": { "mode": "fixed", "fixedColor": "#f59e0b" } }, { "id": "custom.lineStyle", "value": { "fill": "dash", "dash": [8, 4] } } ] }
+        ]
+      },
+      "options": { "legend": { "displayMode": "table", "placement": "right", "showLegend": true, "calcs": ["last", "mean"] }, "tooltip": { "mode": "multi", "sort": "desc" } }
+    },
+    {
+      "id": 12,
+      "type": "row",
+      "title": "24h guardrail",
+      "collapsed": false,
+      "gridPos": { "x": 0, "y": 26, "w": 24, "h": 1 },
+      "panels": []
+    },
+    {
+      "id": 13,
+      "type": "gauge",
+      "title": "Rolling 24h grant-minutes: used vs. budget",
+      "gridPos": { "x": 0, "y": 27, "w": 12, "h": 9 },
+      "datasource": { "type": "prometheus", "uid": "palpod-prometheus" },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum(increase(palweb_grant_seconds_used_total[24h])) / 60",
+          "legendFormat": "used (min)",
+          "instant": true,
+          "datasource": { "type": "prometheus", "uid": "palpod-prometheus" }
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "m",
+          "min": 0,
+          "max": 240,
+          "color": { "mode": "thresholds" },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "#22d3ee", "value": null },
+              { "color": "#f59e0b", "value": 180 },
+              { "color": "#ef4444", "value": 220 }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": { "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false }, "showThresholdLabels": true, "showThresholdMarkers": true, "orientation": "auto" }
+    },
+    {
+      "id": 14,
+      "type": "timeseries",
+      "title": "Cumulative grant-minutes over the trailing 24h (rolling)",
+      "gridPos": { "x": 12, "y": 27, "w": 12, "h": 9 },
+      "datasource": { "type": "prometheus", "uid": "palpod-prometheus" },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum(increase(palweb_grant_seconds_used_total[24h])) / 60",
+          "legendFormat": "used (min)",
+          "datasource": { "type": "prometheus", "uid": "palpod-prometheus" }
+        },
+        {
+          "refId": "B",
+          "expr": "vector(240)",
+          "legendFormat": "budget (240 min)",
+          "datasource": { "type": "prometheus", "uid": "palpod-prometheus" }
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "m",
+          "color": { "mode": "palette-classic" },
+          "custom": {
+            "drawStyle": "line",
+            "lineInterpolation": "smooth",
+            "lineWidth": 2,
+            "fillOpacity": 25,
+            "gradientMode": "opacity",
+            "showPoints": "never"
+          }
+        },
+        "overrides": [
+          { "matcher": { "id": "byName", "options": "used (min)" }, "properties": [ { "id": "color", "value": { "mode": "fixed", "fixedColor": "#22d3ee" } } ] },
+          { "matcher": { "id": "byName", "options": "budget (240 min)" }, "properties": [ { "id": "color", "value": { "mode": "fixed", "fixedColor": "#ef4444" } }, { "id": "custom.lineStyle", "value": { "fill": "dash", "dash": [8, 6] } }, { "id": "custom.fillOpacity", "value": 0 } ] }
+        ]
+      },
+      "options": { "legend": { "displayMode": "list", "placement": "bottom", "showLegend": true }, "tooltip": { "mode": "multi" } }
+    }
+  ],
+  "refresh": "10s",
+  "schemaVersion": 39,
+  "style": "dark",
+  "tags": ["palpod", "security", "remote-desktop"],
+  "templating": { "list": [] },
+  "time": { "from": "now-24h", "to": "now" },
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "PALPod OS — Remote-desktop security",
+  "uid": "palpod-remote-desktop",
+  "version": 1,
+  "weekStart": ""
+}

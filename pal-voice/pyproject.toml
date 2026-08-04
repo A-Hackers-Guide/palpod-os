@@ -1,16 +1,88 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "palvoice"
-version = "0.2.0"
-description = "PAL Pod voice orchestrator (intents stub)."
-requires-python = ">=3.11"
-dependencies = []
+version = "0.1.0"
+description = "Voice pipeline for PAL Pod — wake / STT / LLM / TTS on a Jetson AGX Orin."
+requires-python = ">=3.10"
+readme = "README.md"
+license = { text = "Proprietary" }
+authors = [{ name = "PAL Pod" }]
+
+# Core deps that work on every target (Jetson, x86, CPU).
+dependencies = [
+    "numpy>=1.24,<2.1",
+    "pyyaml>=6.0",
+    "pydantic>=2.5",
+    "pydantic-settings>=2.1",
+    "sqlalchemy>=2.0",
+    "websockets>=12.0",
+    "structlog>=24.1",
+    "sounddevice>=0.4.6",
+    "soundfile>=0.12",
+    "webrtcvad>=2.0.10",
+    "openwakeword>=0.6.0",
+    "onnxruntime>=1.17",
+    "piper-tts>=1.2.0",
+    "sentence-transformers>=2.5",
+    "resemblyzer>=0.1.4",
+    "face_recognition>=1.3",
+    # sqlite-vec is optional; memory.py has a numpy fallback.
+    "sqlite-vec>=0.1.1; python_version >= '3.10'",
+]
 
 [project.optional-dependencies]
-dev = [
-    "pytest>=8.0",
-    "pytest-asyncio>=0.24",
+# Faster whisper on CUDA (Jetson JetPack ships CTranslate2 wheels).
+jetson = [
+    "faster-whisper>=1.0",
 ]
+x86 = [
+    "faster-whisper>=1.0",
+]
+# CPU-only dev environment: use pure-Python whisper-cpp bindings.
+cpu = [
+    "faster-whisper>=1.0",
+]
+dev = [
+    "pytest>=7.4",
+    "pytest-asyncio>=0.23",
+    "pytest-mock>=3.12",
+    "ruff>=0.4",
+    "mypy>=1.10",
+]
+
+[project.scripts]
+palvoice = "palvoice.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["palvoice*"]
+
+[tool.setuptools.package-data]
+palvoice = ["models/MODELS.md"]
+
+# llama-cpp-python is intentionally NOT in [project.dependencies] because it
+# needs to be built from source per-target with the right BLAS/CUDA flags.
+# See Dockerfile for the build recipe.
+#
+# For local dev, install it separately:
+#
+#   # Jetson (JetPack 6 / L4T r36):
+#   CMAKE_ARGS="-DGGML_CUDA=on -DGGML_CUDA_F16=on" pip install --no-cache-dir llama-cpp-python
+#   # x86 + NVIDIA GPU:
+#   CMAKE_ARGS="-DGGML_CUDA=on" pip install --no-cache-dir llama-cpp-python
+#   # CPU-only:
+#   pip install llama-cpp-python
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
 testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM"]
+ignore = ["E501"]

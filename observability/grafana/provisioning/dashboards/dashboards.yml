@@ -1,0 +1,20 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Grafana dashboard provisioning — points at the JSON files in this directory
+# so every dashboard is auto-loaded on first boot. Dashboards are read-only
+# in the UI (`allowUiUpdates: false`); to change one, edit the JSON on disk
+# and let Grafana re-scan every 30s.
+# ─────────────────────────────────────────────────────────────────────────────
+apiVersion: 1
+
+providers:
+  - name: palpod
+    orgId: 1
+    folder: PALPod
+    folderUid: palpod-folder
+    type: file
+    disableDeletion: true
+    updateIntervalSeconds: 30
+    allowUiUpdates: false
+    options:
+      path: /etc/grafana/provisioning/dashboards
+      foldersFromFilesStructure: false

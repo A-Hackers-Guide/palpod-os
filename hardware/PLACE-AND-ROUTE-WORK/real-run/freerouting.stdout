@@ -1,0 +1,14 @@
+2026-08-04 08:41:19.994 INFO   Freerouting v2.2.4 (build-date: 2026-05-13)
+WARNING: Final field userProfileSettings in class app.freerouting.settings.GlobalSettings has been mutated reflectively by class com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$2 in unnamed module @5bb21b69 (file:/private/tmp/freerouting/freerouting.jar)
+WARNING: Use --enable-final-field-mutation=ALL-UNNAMED to avoid a warning
+WARNING: Mutating final fields will be blocked in a future release unless final field mutation is enabled
+2026-08-04 08:41:21.825 INFO   New version available: v2.2.4
+2026-08-04 08:41:21.885 INFO   Opening '/private/tmp/claude-501/-Users-lexer-kindle/80e67baf-6192-4db2-b491-aa5b4ee00c5b/scratchpad/palpod-os/hardware/electrical/kicad/palpod-mic-array/palpod-mic-array-real.dsn'...
+2026-08-04 08:41:33.562 INFO   [E74BED\796A3F] Starting routing of 'palpod-mic-array-real' on 4 threads...
+2026-08-04 08:42:52.520 INFO   [E74BED\796A3F] Auto-router pass #1 on board '3533645915b789c9098617f991b81025' was completed in 1 minute 18.40 seconds with the score of 827.17 (57 unrouted).
+2026-08-04 08:43:51.521 INFO   [E74BED\796A3F] Auto-router pass #2 on board '7404736e56edfba66df811c5575f37ca' was completed in 58.78 seconds with the score of 898.47 (40 unrouted).
+2026-08-04 08:44:41.342 INFO   [E74BED\796A3F] Auto-router pass #3 on board '71d387fac743eaacdcac97e53ee8fbf7' was completed in 49.71 seconds with the score of 923.65 (32 unrouted).
+2026-08-04 08:45:32.550 INFO   [E74BED\796A3F] Auto-router pass #4 on board 'c3f25ee0b5b6ffe3e5b20e8054eb2cd4' was completed in 51.10 seconds with the score of 934.86 (28 unrouted).
+2026-08-04 08:46:22.414 INFO   [E74BED\796A3F] Auto-router pass #5 on board '66298aa519adc59a70296df657a42894' was completed in 49.73 seconds with the score of 942.93 (25 unrouted).
+2026-08-04 08:47:15.734 INFO   [E74BED\796A3F] Auto-router pass #6 on board '3e134b741bf057feaf13b4aa850db852' was completed in 53.19 seconds with the score of 942.89 (25 unrouted).
+2026-08-04 08:48:03.447 INFO   [E74BED\796A3F] Auto-router pass #7 on board '99fef9a8ea438bb48582b80adecf65bb' was completed in 47.55 seconds with the score of 942.95 (25 unrouted).

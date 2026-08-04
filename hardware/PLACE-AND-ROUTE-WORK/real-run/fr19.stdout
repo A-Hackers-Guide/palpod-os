@@ -1,0 +1,13 @@
+2026-08-04 08:56:57.688 [main] INFO  Freerouting v1.9.0 (build-date: 2023-10-30)
+WARNING: Final field user_id in class app.freerouting.gui.StartupOptions has been mutated reflectively by class com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$1 in unnamed module @2e3fc542 (file:/private/tmp/freerouting-1.9.0.jar)
+WARNING: Use --enable-final-field-mutation=ALL-UNNAMED to avoid a warning
+WARNING: Mutating final fields will be blocked in a future release unless final field mutation is enabled
+2026-08-04 08:56:57.719 [main] INFO  Settings were loaded from freerouting.json
+2026-08-04 08:56:58.742 [main] INFO  Opening '/private/tmp/claude-501/-Users-lexer-kindle/80e67baf-6192-4db2-b491-aa5b4ee00c5b/scratchpad/palpod-os/hardware/electrical/kicad/palpod-mic-array/palpod-mic-array-real.dsn'...
+2026-08-04 08:56:59.271 [ForkJoinPool.commonPool-worker-1] INFO  New version available: v2.2.4
+2026-08-04 08:57:20.873 [main] WARN  Multi-threaded route optimization is broken and it is known to generate clearance violations. It is highly recommended to use the single-threaded route optimization instead by setting the number of threads to 1 with the '-mt 1' command line argument.
+2026-08-04 08:57:20.891 [Thread-26] INFO  Starting auto-routing...
+2026-08-04 08:59:56.652 [Thread-26] INFO  Auto-routing was completed in 2 minute(s) 35.76 seconds.
+2026-08-04 08:59:56.765 [Thread-26] INFO  Starting route optimization on 4 threads...
+2026-08-04 09:00:01.537 [Thread-26] INFO  Route optimization was completed in 4.77 seconds.
+2026-08-04 09:00:01.579 [Thread-26] INFO  Saving '/private/tmp/claude-501/-Users-lexer-kindle/80e67baf-6192-4db2-b491-aa5b4ee00c5b/scratchpad/palpod-os/hardware/electrical/kicad/palpod-mic-array/palpod-mic-array-real.ses'...

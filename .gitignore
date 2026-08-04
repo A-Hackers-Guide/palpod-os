@@ -1,41 +1,41 @@
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-.pytest_cache/
-.venv/
-venv/
+# Local runtime data — never commit
+data/
+/var/lib/palpod/
+
+# Secrets and env
 .env
 .env.local
-.mypy_cache/
-.ruff_cache/
-
-# Node
-node_modules/
-dist/
-build/
-
-# KiCad
-*-backups/
-_autosave-*
-*.kicad_lck
-fp-info-cache
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Data + secrets
-data/
 secrets/
 *.pem
 *.key
-palpod_agent_token
-palpod_session_secret
+*.crt
+!configs/**/*.example
 
-# Fab artifacts (regeneratable)
-hardware/electrical/kicad/*/fab/gerbers-routed/
-hardware/electrical/kicad/*/fab/*.pyc
+# TLS artefacts
+acme.json
+letsencrypt/
 
-# Session-local scratch
-PLACE-AND-ROUTE-WORK/logs/
+# Docker / compose local overrides
+docker-compose.override.yml
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Logs
+*.log
+logs/
+
+# Postgres dumps we generate ad-hoc
+*.sql.gz
+*.dump
+
+# Sibling repo checkouts (mounted into containers)
+/pal-web/
+/pal-voice/
+/pal-face/

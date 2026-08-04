@@ -1,0 +1,416 @@
+** Drc report for palpod-mic-array-routed.kicad_pcb **
+** Created on 2026-08-03T20:23:29 **
+** Report includes: Errors, Warnings **
+
+** Found 89 DRC violations **
+[clearance]: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.0000 mm)
+    Rule: netclass 'Default'; error
+    @(-30.0375 mm, -43.5458 mm): Pad 4 [<no net>] of U2 on F.Cu
+    @(-29.8875 mm, -43.8958 mm): Pad 64 [<no net>] of U2 on F.Cu
+[clearance]: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.0000 mm)
+    Rule: netclass 'Default'; error
+    @(-30.0375 mm, -43.5458 mm): Pad 4 [<no net>] of U2 on F.Cu
+    @(-29.8875 mm, -43.3958 mm): Pad 65 [<no net>] of U2 on F.Cu
+[clearance]: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.0000 mm)
+    Rule: netclass 'Default'; error
+    @(-29.5375 mm, -43.5458 mm): Pad 5 [<no net>] of U2 on F.Cu
+    @(-29.8875 mm, -43.8958 mm): Pad 64 [<no net>] of U2 on F.Cu
+[clearance]: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.0000 mm)
+    Rule: netclass 'Default'; error
+    @(-29.5375 mm, -43.5458 mm): Pad 5 [<no net>] of U2 on F.Cu
+    @(-29.8875 mm, -43.3958 mm): Pad 65 [<no net>] of U2 on F.Cu
+[clearance]: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.0000 mm)
+    Rule: netclass 'Default'; error
+    @(-25.5375 mm, -43.5458 mm): Pad 13 [<no net>] of U2 on F.Cu
+    @(-25.1875 mm, -43.3958 mm): Pad 21 [<no net>] of U2 on F.Cu
+[clearance]: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.0000 mm)
+    Rule: netclass 'Default'; error
+    @(-25.5375 mm, -43.5458 mm): Pad 13 [<no net>] of U2 on F.Cu
+    @(-25.1875 mm, -43.8958 mm): Pad 22 [<no net>] of U2 on F.Cu
+[clearance]: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.0000 mm)
+    Rule: netclass 'Default'; error
+    @(-25.0375 mm, -43.5458 mm): Pad 14 [<no net>] of U2 on F.Cu
+    @(-25.1875 mm, -43.3958 mm): Pad 21 [<no net>] of U2 on F.Cu
+[clearance]: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.0000 mm)
+    Rule: netclass 'Default'; error
+    @(-25.0375 mm, -43.5458 mm): Pad 14 [<no net>] of U2 on F.Cu
+    @(-25.1875 mm, -43.8958 mm): Pad 22 [<no net>] of U2 on F.Cu
+[clearance]: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.0000 mm)
+    Rule: netclass 'Default'; error
+    @(-25.1875 mm, -47.8958 mm): Pad 30 [<no net>] of U2 on F.Cu
+    @(-25.5375 mm, -48.2458 mm): Pad 39 [<no net>] of U2 on F.Cu
+[clearance]: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.0000 mm)
+    Rule: netclass 'Default'; error
+    @(-25.1875 mm, -47.8958 mm): Pad 30 [<no net>] of U2 on F.Cu
+    @(-25.0375 mm, -48.2458 mm): Pad 38 [<no net>] of U2 on F.Cu
+[clearance]: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.0000 mm)
+    Rule: netclass 'Default'; error
+    @(-25.1875 mm, -48.3958 mm): Pad 31 [<no net>] of U2 on F.Cu
+    @(-25.5375 mm, -48.2458 mm): Pad 39 [<no net>] of U2 on F.Cu
+[clearance]: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.0000 mm)
+    Rule: netclass 'Default'; error
+    @(-25.1875 mm, -48.3958 mm): Pad 31 [<no net>] of U2 on F.Cu
+    @(-25.0375 mm, -48.2458 mm): Pad 38 [<no net>] of U2 on F.Cu
+[clearance]: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.0000 mm)
+    Rule: netclass 'Default'; error
+    @(-29.5375 mm, -48.2458 mm): Pad 47 [<no net>] of U2 on F.Cu
+    @(-29.8875 mm, -48.3958 mm): Pad 55 [<no net>] of U2 on F.Cu
+[clearance]: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.0000 mm)
+    Rule: netclass 'Default'; error
+    @(-29.5375 mm, -48.2458 mm): Pad 47 [<no net>] of U2 on F.Cu
+    @(-29.8875 mm, -47.8958 mm): Pad 56 [<no net>] of U2 on F.Cu
+[clearance]: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.0000 mm)
+    Rule: netclass 'Default'; error
+    @(-30.0375 mm, -48.2458 mm): Pad 48 [<no net>] of U2 on F.Cu
+    @(-29.8875 mm, -48.3958 mm): Pad 55 [<no net>] of U2 on F.Cu
+[clearance]: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.0000 mm)
+    Rule: netclass 'Default'; error
+    @(-30.0375 mm, -48.2458 mm): Pad 48 [<no net>] of U2 on F.Cu
+    @(-29.8875 mm, -47.8958 mm): Pad 56 [<no net>] of U2 on F.Cu
+[copper_edge_clearance]: Board edge clearance violation (board setup constraints edge clearance 0.3000 mm; actual 0.0000 mm)
+    Rule: board setup constraints edge; error
+    @(0.0000 mm, 0.0000 mm): Circle on Edge.Cuts
+    @(42.7458 mm, -43.5958 mm): Pad 3 [<no net>] of U7 on F.Cu
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(-25.1875 mm, -43.3958 mm): Pad 21 [<no net>] of U2 on F.Cu
+    @(-25.5375 mm, -43.5458 mm): Pad 13 [<no net>] of U2 on F.Cu
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(-30.0375 mm, -43.5458 mm): Pad 4 [<no net>] of U2 on F.Cu
+    @(-29.8875 mm, -43.3958 mm): Pad 65 [<no net>] of U2 on F.Cu
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(-25.1875 mm, -43.3958 mm): Pad 21 [<no net>] of U2 on F.Cu
+    @(-25.0375 mm, -43.5458 mm): Pad 14 [<no net>] of U2 on F.Cu
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(-30.0375 mm, -43.5458 mm): Pad 4 [<no net>] of U2 on F.Cu
+    @(-29.8875 mm, -43.8958 mm): Pad 64 [<no net>] of U2 on F.Cu
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(-25.1875 mm, -43.8958 mm): Pad 22 [<no net>] of U2 on F.Cu
+    @(-25.5375 mm, -43.5458 mm): Pad 13 [<no net>] of U2 on F.Cu
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(-29.5375 mm, -43.5458 mm): Pad 5 [<no net>] of U2 on F.Cu
+    @(-29.8875 mm, -43.3958 mm): Pad 65 [<no net>] of U2 on F.Cu
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(-25.1875 mm, -43.8958 mm): Pad 22 [<no net>] of U2 on F.Cu
+    @(-25.0375 mm, -43.5458 mm): Pad 14 [<no net>] of U2 on F.Cu
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(-25.1875 mm, -47.8958 mm): Pad 30 [<no net>] of U2 on F.Cu
+    @(-25.0375 mm, -48.2458 mm): Pad 38 [<no net>] of U2 on F.Cu
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(-25.1875 mm, -47.8958 mm): Pad 30 [<no net>] of U2 on F.Cu
+    @(-25.5375 mm, -48.2458 mm): Pad 39 [<no net>] of U2 on F.Cu
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(-25.1875 mm, -48.3958 mm): Pad 31 [<no net>] of U2 on F.Cu
+    @(-25.0375 mm, -48.2458 mm): Pad 38 [<no net>] of U2 on F.Cu
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(-25.1875 mm, -48.3958 mm): Pad 31 [<no net>] of U2 on F.Cu
+    @(-25.5375 mm, -48.2458 mm): Pad 39 [<no net>] of U2 on F.Cu
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(-29.5375 mm, -48.2458 mm): Pad 47 [<no net>] of U2 on F.Cu
+    @(-29.8875 mm, -48.3958 mm): Pad 55 [<no net>] of U2 on F.Cu
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(-29.5375 mm, -48.2458 mm): Pad 47 [<no net>] of U2 on F.Cu
+    @(-29.8875 mm, -47.8958 mm): Pad 56 [<no net>] of U2 on F.Cu
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(-30.0375 mm, -48.2458 mm): Pad 48 [<no net>] of U2 on F.Cu
+    @(-29.8875 mm, -48.3958 mm): Pad 55 [<no net>] of U2 on F.Cu
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(-29.5375 mm, -43.5458 mm): Pad 5 [<no net>] of U2 on F.Cu
+    @(-29.8875 mm, -43.8958 mm): Pad 64 [<no net>] of U2 on F.Cu
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(-30.0375 mm, -48.2458 mm): Pad 48 [<no net>] of U2 on F.Cu
+    @(-29.8875 mm, -47.8958 mm): Pad 56 [<no net>] of U2 on F.Cu
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(0.0000 mm, 0.0000 mm): Circle on Edge.Cuts
+    @(0.0000 mm, -58.0000 mm): PCB text 'See mic-array-reference-design.md for BOM and placement plan' on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(0.0000 mm, 0.0000 mm): Circle on Edge.Cuts
+    @(0.0000 mm, -55.0000 mm): PCB text 'PAL Pod Mic Array - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(0.0000 mm, 0.0000 mm): Circle on Edge.Cuts
+    @(-42.2958 mm, -49.4958 mm): Segment of U1 on F.Silkscreen
+[silk_edge_clearance]: Silkscreen clipped by board edge
+    Rule: board setup constraints silk; warning
+    @(0.0000 mm, 0.0000 mm): Circle on Edge.Cuts
+    @(-42.2958 mm, -42.2958 mm): Segment of U1 on F.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-30.1375 mm, -48.4958 mm): Segment of U2 on F.Silkscreen
+    @(-25.0375 mm, -48.2458 mm): Pad 38 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-30.1375 mm, -48.4958 mm): Segment of U2 on F.Silkscreen
+    @(-25.5375 mm, -48.2458 mm): Pad 39 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-30.1375 mm, -48.4958 mm): Segment of U2 on F.Silkscreen
+    @(-25.1875 mm, -48.3958 mm): Pad 31 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-30.1375 mm, -48.4958 mm): Segment of U2 on F.Silkscreen
+    @(-26.0375 mm, -48.2458 mm): Pad 40 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-30.1375 mm, -48.4958 mm): Segment of U2 on F.Silkscreen
+    @(-26.5375 mm, -48.2458 mm): Pad 41 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-30.1375 mm, -48.4958 mm): Segment of U2 on F.Silkscreen
+    @(-27.0375 mm, -48.2458 mm): Pad 42 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-30.1375 mm, -48.4958 mm): Segment of U2 on F.Silkscreen
+    @(-27.5375 mm, -48.2458 mm): Pad 43 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-30.1375 mm, -48.4958 mm): Segment of U2 on F.Silkscreen
+    @(-28.0375 mm, -48.2458 mm): Pad 44 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-30.1375 mm, -48.4958 mm): Segment of U2 on F.Silkscreen
+    @(-28.5375 mm, -48.2458 mm): Pad 45 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-30.1375 mm, -48.4958 mm): Segment of U2 on F.Silkscreen
+    @(-29.0375 mm, -48.2458 mm): Pad 46 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-30.1375 mm, -48.4958 mm): Segment of U2 on F.Silkscreen
+    @(-29.5375 mm, -48.2458 mm): Pad 47 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-30.1375 mm, -48.4958 mm): Segment of U2 on F.Silkscreen
+    @(-29.8875 mm, -48.3958 mm): Pad 55 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-30.1375 mm, -48.4958 mm): Segment of U2 on F.Silkscreen
+    @(-30.0375 mm, -48.2458 mm): Pad 48 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-30.1375 mm, -43.2958 mm): Segment of U2 on F.Silkscreen
+    @(-30.0375 mm, -43.5458 mm): Pad 4 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-30.1375 mm, -43.2958 mm): Segment of U2 on F.Silkscreen
+    @(-29.8875 mm, -43.3958 mm): Pad 65 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-30.1375 mm, -43.2958 mm): Segment of U2 on F.Silkscreen
+    @(-29.8875 mm, -47.3958 mm): Pad 57 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-30.1375 mm, -43.2958 mm): Segment of U2 on F.Silkscreen
+    @(-29.8875 mm, -46.8958 mm): Pad 58 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-30.1375 mm, -43.2958 mm): Segment of U2 on F.Silkscreen
+    @(-29.8875 mm, -46.3958 mm): Pad 59 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-30.1375 mm, -43.2958 mm): Segment of U2 on F.Silkscreen
+    @(-29.8875 mm, -45.8958 mm): Pad 60 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-30.1375 mm, -43.2958 mm): Segment of U2 on F.Silkscreen
+    @(-29.8875 mm, -48.3958 mm): Pad 55 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-30.1375 mm, -43.2958 mm): Segment of U2 on F.Silkscreen
+    @(-29.8875 mm, -47.8958 mm): Pad 56 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-30.1375 mm, -43.2958 mm): Segment of U2 on F.Silkscreen
+    @(-30.0375 mm, -48.2458 mm): Pad 48 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-30.1375 mm, -43.2958 mm): Segment of U2 on F.Silkscreen
+    @(-29.8875 mm, -45.3958 mm): Pad 61 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-30.1375 mm, -43.2958 mm): Segment of U2 on F.Silkscreen
+    @(-29.8875 mm, -44.8958 mm): Pad 62 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-30.1375 mm, -43.2958 mm): Segment of U2 on F.Silkscreen
+    @(-29.8875 mm, -44.3958 mm): Pad 63 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-30.1375 mm, -43.2958 mm): Segment of U2 on F.Silkscreen
+    @(-29.8875 mm, -43.8958 mm): Pad 64 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-24.9375 mm, -48.4958 mm): Segment of U2 on F.Silkscreen
+    @(-25.1875 mm, -43.3958 mm): Pad 21 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-24.9375 mm, -48.4958 mm): Segment of U2 on F.Silkscreen
+    @(-25.1875 mm, -43.8958 mm): Pad 22 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-24.9375 mm, -48.4958 mm): Segment of U2 on F.Silkscreen
+    @(-25.0375 mm, -43.5458 mm): Pad 14 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-24.9375 mm, -48.4958 mm): Segment of U2 on F.Silkscreen
+    @(-25.1875 mm, -44.3958 mm): Pad 23 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-24.9375 mm, -48.4958 mm): Segment of U2 on F.Silkscreen
+    @(-25.1875 mm, -44.8958 mm): Pad 24 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-24.9375 mm, -48.4958 mm): Segment of U2 on F.Silkscreen
+    @(-25.1875 mm, -45.3958 mm): Pad 25 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-24.9375 mm, -48.4958 mm): Segment of U2 on F.Silkscreen
+    @(-25.1875 mm, -45.8958 mm): Pad 26 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-24.9375 mm, -48.4958 mm): Segment of U2 on F.Silkscreen
+    @(-25.1875 mm, -46.3958 mm): Pad 27 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-24.9375 mm, -48.4958 mm): Segment of U2 on F.Silkscreen
+    @(-25.1875 mm, -46.8958 mm): Pad 28 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-24.9375 mm, -48.4958 mm): Segment of U2 on F.Silkscreen
+    @(-25.1875 mm, -47.3958 mm): Pad 29 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-24.9375 mm, -48.4958 mm): Segment of U2 on F.Silkscreen
+    @(-25.1875 mm, -47.8958 mm): Pad 30 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-24.9375 mm, -48.4958 mm): Segment of U2 on F.Silkscreen
+    @(-25.0375 mm, -48.2458 mm): Pad 38 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-24.9375 mm, -48.4958 mm): Segment of U2 on F.Silkscreen
+    @(-25.1875 mm, -48.3958 mm): Pad 31 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-24.9375 mm, -43.2958 mm): Segment of U2 on F.Silkscreen
+    @(-30.0375 mm, -43.5458 mm): Pad 4 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-24.9375 mm, -43.2958 mm): Segment of U2 on F.Silkscreen
+    @(-29.5375 mm, -43.5458 mm): Pad 5 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-24.9375 mm, -43.2958 mm): Segment of U2 on F.Silkscreen
+    @(-29.0375 mm, -43.5458 mm): Pad 6 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-24.9375 mm, -43.2958 mm): Segment of U2 on F.Silkscreen
+    @(-28.5375 mm, -43.5458 mm): Pad 7 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-24.9375 mm, -43.2958 mm): Segment of U2 on F.Silkscreen
+    @(-28.0375 mm, -43.5458 mm): Pad 8 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-24.9375 mm, -43.2958 mm): Segment of U2 on F.Silkscreen
+    @(-27.5375 mm, -43.5458 mm): Pad 9 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-24.9375 mm, -43.2958 mm): Segment of U2 on F.Silkscreen
+    @(-27.0375 mm, -43.5458 mm): Pad 10 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-24.9375 mm, -43.2958 mm): Segment of U2 on F.Silkscreen
+    @(-26.5375 mm, -43.5458 mm): Pad 11 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-24.9375 mm, -43.2958 mm): Segment of U2 on F.Silkscreen
+    @(-26.0375 mm, -43.5458 mm): Pad 12 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-24.9375 mm, -43.2958 mm): Segment of U2 on F.Silkscreen
+    @(-25.5375 mm, -43.5458 mm): Pad 13 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-24.9375 mm, -43.2958 mm): Segment of U2 on F.Silkscreen
+    @(-25.1875 mm, -43.3958 mm): Pad 21 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-24.9375 mm, -43.2958 mm): Segment of U2 on F.Silkscreen
+    @(-29.8875 mm, -43.3958 mm): Pad 65 [<no net>] of U2 on F.Cu
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(-24.9375 mm, -43.2958 mm): Segment of U2 on F.Silkscreen
+    @(-25.0375 mm, -43.5458 mm): Pad 14 [<no net>] of U2 on F.Cu
+
+** Found 10 unconnected pads **
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(-47.0958 mm, 46.6458 mm): Pad 1 [<no net>] of M9 on F.Cu
+    @(-47.0958 mm, 46.6458 mm): Pad 1 [<no net>] of M9 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(-47.0958 mm, 46.6458 mm): Pad 1 [<no net>] of M9 on F.Cu
+    @(-47.0958 mm, 46.6458 mm): Pad 1 [<no net>] of M9 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(-47.0958 mm, 46.6458 mm): Pad 1 [<no net>] of M9 on F.Cu
+    @(-47.0958 mm, 46.6458 mm): Pad 1 [<no net>] of M9 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(-47.0958 mm, 46.6458 mm): Pad 1 [<no net>] of M9 on F.Cu
+    @(-47.0958 mm, 46.6458 mm): Pad 1 [<no net>] of M9 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(-47.0958 mm, 46.6458 mm): Pad 1 [<no net>] of M9 on F.Cu
+    @(-47.0958 mm, 46.6458 mm): Pad 1 [<no net>] of M9 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(-47.0958 mm, 46.6458 mm): Pad 1 [<no net>] of M9 on F.Cu
+    @(-47.0958 mm, 46.6458 mm): Pad 1 [<no net>] of M9 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(-47.0958 mm, 46.6458 mm): Pad 1 [<no net>] of M9 on F.Cu
+    @(-47.0958 mm, 46.6458 mm): Pad 1 [<no net>] of M9 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(-44.6958 mm, 46.6458 mm): Pad 2 [<no net>] of M9 on F.Cu
+    @(-44.6958 mm, 46.6458 mm): Pad 2 [<no net>] of M9 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(-44.6958 mm, 46.6458 mm): Pad 2 [<no net>] of M9 on F.Cu
+    @(-44.6958 mm, 46.6458 mm): Pad 2 [<no net>] of M9 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(-44.6958 mm, 46.6458 mm): Pad 2 [<no net>] of M9 on F.Cu
+    @(-44.6958 mm, 46.6458 mm): Pad 2 [<no net>] of M9 on F.Cu
+
+** Found 0 Footprint errors **
+
+** Ignored checks **
+    - Footprint has no courtyard defined
+    - Track endpoint not centered on via
+    - Tuning profile track geometries
+    - Footprint doesn't match symbol's footprint filters
+    - PTH inside courtyard
+    - NPTH inside courtyard
+    - Footprint component type doesn't match footprint pads
+
+** End of Report **

@@ -1,0 +1,20 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Grafana datasource provisioning — auto-loaded on first boot.
+# The Prometheus container is reachable at http://prometheus:9090 on the
+# `palpod` docker network. `isDefault: true` makes every dashboard target
+# this datasource by default.
+# ─────────────────────────────────────────────────────────────────────────────
+apiVersion: 1
+
+datasources:
+  - name: Prometheus
+    type: prometheus
+    access: proxy
+    uid: palpod-prometheus
+    url: http://prometheus:9090
+    isDefault: true
+    editable: false
+    jsonData:
+      timeInterval: 15s
+      httpMethod: POST
+      manageAlerts: false

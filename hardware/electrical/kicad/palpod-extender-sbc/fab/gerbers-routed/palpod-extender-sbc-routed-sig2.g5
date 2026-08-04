@@ -1,0 +1,34 @@
+%TF.GenerationSoftware,KiCad,Pcbnew,10.0.5*%
+%TF.CreationDate,2026-08-03T20:27:53-07:00*%
+%TF.ProjectId,palpod-extender-sbc-routed,70616c70-6f64-42d6-9578-74656e646572,A0*%
+%TF.SameCoordinates,Original*%
+%TF.FileFunction,Copper,L6,Inr*%
+%TF.FilePolarity,Positive*%
+%FSLAX46Y46*%
+G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
+G04 Created by KiCad (PCBNEW 10.0.5) date 2026-08-03 20:27:53*
+%MOMM*%
+%LPD*%
+G01*
+G04 APERTURE LIST*
+%TA.AperFunction,ComponentPad*%
+%ADD10R,4.000000X2.000000*%
+%TD*%
+%TA.AperFunction,ComponentPad*%
+%ADD11O,3.300000X2.000000*%
+%TD*%
+%TA.AperFunction,ComponentPad*%
+%ADD12O,2.000000X3.500000*%
+%TD*%
+G04 APERTURE END LIST*
+D10*
+%TO.N,N/C*%
+%TO.C,J6*%
+X42487500Y-31970000D03*
+D11*
+X42487500Y-37970000D03*
+D12*
+X37987500Y-38970000D03*
+X46987500Y-38970000D03*
+%TD*%
+M02*

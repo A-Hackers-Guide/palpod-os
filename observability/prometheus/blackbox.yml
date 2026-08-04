@@ -1,0 +1,34 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Blackbox exporter — probe modules used by the `palpod-probes` scrape job in
+# prometheus.yml. Every service without a native /metrics endpoint is
+# reachable through one of these modules.
+# ─────────────────────────────────────────────────────────────────────────────
+modules:
+  http_2xx:
+    prober: http
+    timeout: 5s
+    http:
+      valid_http_versions: ["HTTP/1.1", "HTTP/2.0"]
+      valid_status_codes: []          # 2xx by default
+      follow_redirects: true
+      preferred_ip_protocol: ip4
+      tls_config:
+        insecure_skip_verify: true    # Traefik self-signed root is LAN-trusted
+                                      # but blackbox_exporter has no CA bundle
+                                      # for it, so we skip verification.
+
+  http_any:
+    prober: http
+    timeout: 5s
+    http:
+      valid_status_codes: [200, 301, 302, 401, 403]
+      follow_redirects: false
+      preferred_ip_protocol: ip4
+      tls_config:
+        insecure_skip_verify: true
+
+  tcp_connect:
+    prober: tcp
+    timeout: 5s
+    tcp:
+      preferred_ip_protocol: ip4

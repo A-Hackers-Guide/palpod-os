@@ -1,0 +1,10 @@
+2026-08-04 08:48:49.792 INFO   Freerouting v2.2.4 (build-date: 2026-05-13)
+WARNING: Final field userProfileSettings in class app.freerouting.settings.GlobalSettings has been mutated reflectively by class com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$2 in unnamed module @5bb21b69 (file:/private/tmp/freerouting/freerouting.jar)
+WARNING: Use --enable-final-field-mutation=ALL-UNNAMED to avoid a warning
+WARNING: Mutating final fields will be blocked in a future release unless final field mutation is enabled
+2026-08-04 08:48:51.388 INFO   Opening '/private/tmp/claude-501/-Users-lexer-kindle/80e67baf-6192-4db2-b491-aa5b4ee00c5b/scratchpad/palpod-os/hardware/electrical/kicad/palpod-mic-array/palpod-mic-array-real.dsn'...
+2026-08-04 08:48:51.406 INFO   New version available: v2.2.4
+2026-08-04 08:49:01.442 INFO   [7A411E\2FB98F] Starting routing of 'palpod-mic-array-real' on 4 threads...
+2026-08-04 08:50:06.081 INFO   [7A411E\2FB98F] Auto-router pass #1 on board '3533645915b789c9098617f991b81025' was completed in 1 minute 4.30 seconds with the score of 827.17 (57 unrouted).
+2026-08-04 08:51:06.194 INFO   [7A411E\2FB98F] Auto-router pass #2 on board '7404736e56edfba66df811c5575f37ca' was completed in 59.86 seconds with the score of 898.47 (40 unrouted).
+2026-08-04 08:51:06.345 INFO   [7A411E\2FB98F] Auto-router session completed: started with 162 unrouted nets, completed in 2 minutes 4.90 seconds, final score: 898.47 (40 unrouted).

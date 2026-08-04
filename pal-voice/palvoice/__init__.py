@@ -1,3 +1,7 @@
-"""pal-voice: voice-orchestration for PAL Pod."""
+"""pal-voice — voice pipeline for PAL Pod.
 
-__version__ = "0.2.0"
+Start reading at ``palvoice.orchestrator`` — it wires every other module into
+the wake -> STT -> LLM -> TTS state machine.
+"""
+
+__version__ = "0.1.0"

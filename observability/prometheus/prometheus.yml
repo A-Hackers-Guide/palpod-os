@@ -1,0 +1,107 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Prometheus scrape configuration for the PALPod OS observability stack.
+#
+# Scrape targets are addressed by their docker-compose service name because
+# every container joins the `palpod` bridge network. Ports match the internal
+# container port, not the host-published port.
+#
+# Every job carries a `service` label so Grafana can group panels cleanly.
+# ─────────────────────────────────────────────────────────────────────────────
+global:
+  scrape_interval: 15s
+  evaluation_interval: 30s
+  external_labels:
+    stack: palpod
+
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets: []      # no alertmanager yet — hook one in later
+
+rule_files: []
+
+scrape_configs:
+  # --- Prometheus self-monitoring --------------------------------------------
+  - job_name: prometheus
+    static_configs:
+      - targets: ["localhost:9090"]
+        labels:
+          service: prometheus
+
+  # --- Host OS metrics (node_exporter) ---------------------------------------
+  - job_name: node
+    static_configs:
+      - targets: ["node_exporter:9100"]
+        labels:
+          service: host
+
+  # --- Container runtime metrics (cAdvisor) ----------------------------------
+  - job_name: cadvisor
+    static_configs:
+      - targets: ["cadvisor:8080"]
+        labels:
+          service: containers
+
+  # --- Postgres metrics ------------------------------------------------------
+  - job_name: postgres
+    static_configs:
+      - targets: ["postgres_exporter:9187"]
+        labels:
+          service: postgres
+
+  # --- PALPod first-party services (self-scrape /metrics) --------------------
+  # These are grouped under one job so the `palpod-services` uptime panel
+  # can filter `up{job="palpod-services"}` in a single expression.
+  - job_name: palpod-services
+    metrics_path: /metrics
+    static_configs:
+      - targets: ["pal-web:8000"]
+        labels:
+          service: pal-web
+      - targets: ["pal-voice:7778"]
+        labels:
+          service: pal-voice
+      - targets: ["rustdesk-hbbs:21118"]
+        labels:
+          service: rustdesk-hbbs
+
+  # --- Blackbox probes for the "does it answer HTTP" services ---------------
+  # Plex, Jellyfin, Audiobookshelf, xTeVe and Sunshine do not expose a
+  # Prometheus /metrics endpoint. We probe their health URLs so the
+  # top-level uptime panel still has a signal for each of them.
+  - job_name: palpod-probes
+    metrics_path: /probe
+    params:
+      module: [http_2xx]
+    static_configs:
+      - targets:
+          - http://plex:32400/identity
+        labels: { service: plex }
+      - targets:
+          - http://jellyfin:8096/health
+        labels: { service: jellyfin }
+      - targets:
+          - http://audiobookshelf/healthcheck
+        labels: { service: audiobookshelf }
+      - targets:
+          - http://xteve:34400/web/
+        labels: { service: xteve }
+      - targets:
+          - https://sunshine:47990/
+        labels: { service: sunshine }
+      - targets:
+          - http://pal-face:8001/health
+        labels: { service: pal-face }
+      - targets:
+          - http://traefik:8080/ping
+        labels: { service: traefik }
+      - targets:
+          - tcp://rustdesk-hbbr:21117
+        labels: { service: rustdesk-hbbr }
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: blackbox_exporter:9115

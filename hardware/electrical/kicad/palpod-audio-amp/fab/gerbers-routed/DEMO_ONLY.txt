@@ -1,0 +1,17 @@
+DEMO ONLY - NOT MANUFACTURABLE
+==============================
+
+Board: palpod-audio-amp
+Generated: Mon Aug  3 20:26:21 PDT 2026
+
+This board was:
+  1. Auto-placed by a naive grid-based Python script (no thermal, no signal
+     integrity, no length-matching, no differential-pair awareness).
+  2. Auto-routed by FreeRouting 2.2.4 (open-source topological router,
+     no length-matching, no impedance control, no crosstalk analysis).
+
+Do NOT send to fabrication. Autorouted PCBs must be reviewed by a
+qualified PCB engineer. High-speed, high-current, RF, and mixed-signal
+designs almost always require manual routing.
+
+See PLACE-AND-ROUTE-REPORT.md for pipeline results.

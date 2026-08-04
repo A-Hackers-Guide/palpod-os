@@ -1,0 +1,3 @@
+DEMO ONLY - NOT MANUFACTURABLE
+Board: palpod-compute-backplane
+DSN export failed (KiCad pcbnew.ExportSpecctraDSN returned false for this 450x300mm 14-layer board). FreeRouting was not invoked. Only placement is reflected here.
