@@ -1,0 +1,114 @@
+---
+name: Bug report
+description: Something in PALPod OS is broken or behaves wrong.
+title: "[bug] "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for filing a bug. Please fill in every field you can — the more
+        of the reproduction context you capture up front, the faster we can
+        get you unstuck.
+
+        **Do not file security issues here.** See
+        [SECURITY.md](../SECURITY.md) — email `security@palpod.com` instead.
+
+  - type: input
+    id: hardware-version
+    attributes:
+      label: Hardware version
+      description: >-
+        Which Pod are you on? (e.g. "MVP demo unit #003", "Jetson AGX Orin
+        64GB Developer Kit", "TrueNAS SCALE production stack rev A").
+      placeholder: Jetson AGX Orin 64GB Developer Kit
+    validations:
+      required: true
+
+  - type: input
+    id: palpod-os-version
+    attributes:
+      label: PALPod OS version
+      description: >-
+        Output of `git -C /opt/palpod-os describe --tags --always --dirty` —
+        or the commit SHA if you built from a branch.
+      placeholder: v0.2.0 (commit abc1234)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: compose-profile
+    attributes:
+      label: docker-compose profile
+      description: Which docker-compose profile(s) were active?
+      multiple: true
+      options:
+        - default (no profile)
+        - anydesk
+        - gpu-passthrough
+        - dev
+        - other (describe in "Additional context")
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+      description: Numbered steps that reliably trigger the bug.
+      placeholder: |
+        1. `docker compose up -d`
+        2. Open https://pod.palpod.local
+        3. Say "Hey Pod, show me the office Mac"
+        4. Observe...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What did you expect to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: What actually happened?
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: >-
+        Paste relevant output from `docker compose logs <service>` or
+        `journalctl -u palpod-*`. Redact anything you consider sensitive.
+      render: shell
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context
+      description: Screenshots, network topology notes, anything else.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: acknowledgements
+    attributes:
+      label: Acknowledgements
+      options:
+        - label: >-
+            I have searched existing issues and this bug is not already
+            reported.
+          required: true
+        - label: >-
+            This is NOT a security vulnerability. (For security issues, email
+            `security@palpod.com` — see SECURITY.md.)
+          required: true

@@ -1,0 +1,115 @@
+---
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: pytest (${{ matrix.component }}, py${{ matrix.python }})
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.11", "3.12", "3.13"]
+        component: [pal-web, pal-voice, pal-face]
+    defaults:
+      run:
+        working-directory: ${{ matrix.component }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+          cache-dependency-path: ${{ matrix.component }}/pyproject.toml
+
+      - name: Install component (with dev extras)
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+
+      - name: Run pytest with coverage
+        run: |
+          python -m pytest \
+            --cov \
+            --cov-report=xml:coverage.xml \
+            --cov-report=term-missing
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v4
+        continue-on-error: true
+        with:
+          files: ${{ matrix.component }}/coverage.xml
+          flags: ${{ matrix.component }}-py${{ matrix.python }}
+          name: ${{ matrix.component }}-py${{ matrix.python }}
+          fail_ci_if_error: false
+          token: ${{ secrets.CODECOV_TOKEN }}
+
+  compose-validate:
+    name: docker compose config
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate docker-compose.yml
+        run: docker compose -f docker-compose.yml config > /dev/null
+
+  kicad-syntax:
+    name: KiCad s-expression syntax check
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install sexpdata
+        run: python -m pip install --upgrade pip sexpdata==1.0.2
+
+      - name: Parse every KiCad schematic and PCB
+        run: |
+          python - <<'PY'
+          import pathlib
+          import sys
+          import sexpdata
+
+          root = pathlib.Path("hardware/electrical/kicad")
+          files = sorted(
+              list(root.rglob("*.kicad_sch"))
+              + list(root.rglob("*.kicad_pcb"))
+          )
+          if not files:
+              print("No KiCad files found under", root, file=sys.stderr)
+              sys.exit(1)
+
+          failures = []
+          for path in files:
+              try:
+                  with path.open("r", encoding="utf-8") as fh:
+                      sexpdata.load(fh)
+              except Exception as exc:
+                  failures.append((path, exc))
+                  print(f"FAIL {path}: {exc}")
+              else:
+                  print(f"OK   {path}")
+
+          if failures:
+              print(f"\n{len(failures)} KiCad file(s) failed to parse", file=sys.stderr)
+              sys.exit(1)
+          print(f"\nAll {len(files)} KiCad files parsed cleanly.")
+          PY

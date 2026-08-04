@@ -1,0 +1,74 @@
+---
+name: Feature request
+description: Propose a new capability or a change in behavior.
+title: "[feature] "
+labels: ["enhancement", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the idea. Before filing, please skim `ROADMAP.md` and
+        `ATLAS.md` §6 — the non-negotiable boundaries there rule out a
+        surprising number of otherwise-reasonable feature requests
+        (no cloud calls, no subscription tiers, no UI on the Sphere face).
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: >-
+        What are you trying to do that PALPod OS makes hard, impossible, or
+        awkward today? Describe the user (owner, guest, installer) and the
+        situation.
+      placeholder: >-
+        As the Pod owner, when I bring a new Moonlight extender onto the LAN
+        I have to SSH in and edit /etc/palpod/... by hand because ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Proposed solution
+      description: >-
+        What should PALPod OS do instead? Be as concrete as you can — a rough
+        API shape or UX flow is very helpful.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: >-
+        What other approaches did you think about? Why did you reject them?
+        (Even a one-line "I thought about doing X but it would break Y" is
+        useful.)
+    validations:
+      required: false
+
+  - type: dropdown
+    id: willingness
+    attributes:
+      label: Willingness to implement
+      description: Would you like to try building this yourself?
+      options:
+        - Yes — I want to open the PR.
+        - Maybe — I can prototype but would want guidance.
+        - No — I am filing the idea for the maintainers.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: acknowledgements
+    attributes:
+      label: Acknowledgements
+      options:
+        - label: >-
+            I have searched existing issues and this feature is not already
+            proposed.
+          required: true
+        - label: >-
+            My proposal does not add a cloud dependency, telemetry, or a
+            subscription tier (per `ATLAS.md` §6).
+          required: true

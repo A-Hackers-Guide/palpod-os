@@ -1,0 +1,93 @@
+---
+name: KiCad Renders
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "hardware/electrical/kicad/**"
+      - ".github/workflows/kicad-render.yml"
+
+concurrency:
+  group: kicad-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  render:
+    name: Render ${{ matrix.board }}
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        board:
+          - palpod-mic-array
+          - palpod-orb
+          - palpod-extender-sbc
+          - palpod-halbach-controller
+          - palpod-audio-amp
+          - palpod-compute-backplane
+    # The KiCad 8 CLI ships in the official image; we run it via docker
+    # rather than a first-party GitHub action to keep the pin explicit.
+    container:
+      image: kicad/kicad:8.0.4
+      options: --user root
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Locate board files
+        id: board
+        shell: bash
+        run: |
+          set -euo pipefail
+          dir="hardware/electrical/kicad/${{ matrix.board }}"
+          if [ ! -d "$dir" ]; then
+            echo "Board directory not found: $dir" >&2
+            exit 1
+          fi
+          sch="$dir/${{ matrix.board }}.kicad_sch"
+          pcb="$dir/${{ matrix.board }}.kicad_pcb"
+          if [ ! -f "$sch" ]; then
+            echo "Schematic not found: $sch" >&2
+            exit 1
+          fi
+          if [ ! -f "$pcb" ]; then
+            echo "PCB not found: $pcb" >&2
+            exit 1
+          fi
+          echo "dir=$dir"      >> "$GITHUB_OUTPUT"
+          echo "sch=$sch"      >> "$GITHUB_OUTPUT"
+          echo "pcb=$pcb"      >> "$GITHUB_OUTPUT"
+
+      - name: Prepare output directory
+        run: mkdir -p "renders/${{ matrix.board }}"
+
+      - name: Export schematic PDF
+        run: |
+          kicad-cli sch export pdf \
+            --output "renders/${{ matrix.board }}/${{ matrix.board }}-schematic.pdf" \
+            "${{ steps.board.outputs.sch }}"
+
+      - name: Export PCB PDF (top + bottom)
+        run: |
+          kicad-cli pcb export pdf \
+            --output "renders/${{ matrix.board }}/${{ matrix.board }}-pcb.pdf" \
+            --layers "F.Cu,B.Cu,F.Silkscreen,B.Silkscreen,Edge.Cuts" \
+            "${{ steps.board.outputs.pcb }}"
+
+      - name: Render 3D board image
+        run: |
+          kicad-cli pcb render \
+            --output "renders/${{ matrix.board }}/${{ matrix.board }}-3d.png" \
+            --width 1920 --height 1080 \
+            --side top \
+            "${{ steps.board.outputs.pcb }}"
+
+      - name: Upload renders
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.board }}-renders
+          path: renders/${{ matrix.board }}/
+          if-no-files-found: error
+          retention-days: 30

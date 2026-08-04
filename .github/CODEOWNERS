@@ -1,0 +1,49 @@
+# CODEOWNERS for palpod-os
+#
+# Order matters: the LAST matching pattern wins for a given file.
+# See https://docs.github.com/en/repositories/managing-your-repositories-settings-and-security/customizing-your-repository/about-code-owners
+#
+# TODO(team-growth): as we hire, split ownership to the specialists:
+#   - hardware/mechanical/       -> @<mech-id-hire>
+#   - hardware/electrical/       -> @<hardware-ee-hire>
+#   - pal-voice/                 -> @<embedded-firmware-hire>
+#   - pal-web/                   -> @<full-stack-hire>
+# Until then, the founder owns everything. Do not delete this file —
+# GitHub's branch-protection "require review from Code Owners" rule
+# depends on it existing.
+
+# Default owner for everything in the repo.
+* @A-Hackers-Guide
+
+# Hardware — until the EE hire lands, the founder reviews every board change.
+hardware/                       @A-Hackers-Guide
+
+# Web control app — auth, remote-desktop endpoints, consent checks.
+pal-web/                        @A-Hackers-Guide
+
+# Voice orchestrator — wake-word, STT, LLM, TTS bridges.
+pal-voice/                      @A-Hackers-Guide
+
+# Face renderer — the Sphere is aesthetically load-bearing (see ATLAS.md §4).
+pal-face/                       @A-Hackers-Guide
+
+# CI, workflows, repo hygiene.
+/.github/                       @A-Hackers-Guide
+
+# Compose stack + install scripts + systemd units — the operator surface.
+/docker-compose.yml             @A-Hackers-Guide
+/install.sh                     @A-Hackers-Guide
+/update.sh                      @A-Hackers-Guide
+/uninstall.sh                   @A-Hackers-Guide
+/systemd/                       @A-Hackers-Guide
+/scripts/                       @A-Hackers-Guide
+/configs/                       @A-Hackers-Guide
+
+# Docs and roadmap.
+/docs/                          @A-Hackers-Guide
+/README.md                      @A-Hackers-Guide
+/ATLAS.md                       @A-Hackers-Guide
+/ROADMAP.md                     @A-Hackers-Guide
+/SECURITY.md                    @A-Hackers-Guide
+/CODE_OF_CONDUCT.md             @A-Hackers-Guide
+/CONTRIBUTING.md                @A-Hackers-Guide

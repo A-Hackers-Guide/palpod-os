@@ -1,5 +1,13 @@
 # PALPod OS
 
+[![CI](https://github.com/A-Hackers-Guide/palpod-os/actions/workflows/ci.yml/badge.svg)](https://github.com/A-Hackers-Guide/palpod-os/actions/workflows/ci.yml)
+[![Lint](https://github.com/A-Hackers-Guide/palpod-os/actions/workflows/lint.yml/badge.svg)](https://github.com/A-Hackers-Guide/palpod-os/actions/workflows/lint.yml)
+[![Coverage](https://img.shields.io/badge/coverage-pending-lightgrey.svg)](https://codecov.io/gh/A-Hackers-Guide/palpod-os)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
+[![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue.svg)](https://www.python.org/downloads/)
+[![KiCad 8](https://img.shields.io/badge/KiCad-8.x-314cb0.svg)](https://www.kicad.org/)
+[![Contributors](https://img.shields.io/github/contributors/A-Hackers-Guide/palpod-os.svg)](https://github.com/A-Hackers-Guide/palpod-os/graphs/contributors)
+
 > The software layer of PAL Pod — a $95k fully-offline luxury home AI and media
 > server. This repository provides the orchestration scaffolding: everything a
 > single Jetson AGX Orin dev kit needs to boot into a working Pod after one
