@@ -1,0 +1,17 @@
+line-length = 120
+target-version = "py311"
+
+[lint]
+# Ignore E702 (multi-statement per line) — used deliberately in table-formatted parse scripts
+ignore = ["E702", "E501", "E731"]
+
+exclude = [
+  ".venv",
+  "node_modules",
+  "hardware/PLACE-AND-ROUTE-WORK/",
+  "hardware/electrical/kicad/*/scratchpad/",
+]
+
+[lint.per-file-ignores]
+"**/__init__.py" = ["F401"]
+"**/tests/**" = ["E501", "S101"]

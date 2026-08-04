@@ -1,0 +1,10 @@
+{
+  "default": true,
+  "MD013": false,        // line-length — prose docs have long lines
+  "MD024": false,        // duplicate headings — ROADMAP has "Q4 2026 — Foundation" style repetition
+  "MD025": false,        // multiple H1 — ISSUE_TEMPLATE/security.md has legit multiple sections
+  "MD033": false,        // inline HTML — used for badges + shields
+  "MD040": false,        // fenced code language — some blocks are prose examples
+  "MD041": false,        // first line H1 — badges block goes first
+  "MD049": false         // emphasis style — mixed underscores/asterisks in generated content
+}

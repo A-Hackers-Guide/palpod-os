@@ -37,18 +37,19 @@ SRC="$1"; shift
 [[ -d "$SRC" ]] || { echo "[!] Not a directory: $SRC" >&2; exit 1; }
 
 DRY=0
-MODE=link
+MODE="link"
 while [[ $# -gt 0 ]]; do
   case "$1" in
     --dry-run) DRY=1 ;;
-    --move)    MODE=move ;;
-    --copy)    MODE=copy ;;
-    --link)    MODE=link ;;
+    --move)    MODE="move" ;;
+    --copy)    MODE="copy" ;;
+    --link)    MODE="link" ;;
     *) echo "[!] Unknown flag: $1" >&2; exit 1 ;;
   esac
   shift
 done
 
+# shellcheck source=/dev/null
 set -a; source .env; set +a
 
 # ─── Classification ────────────────────────────────────────────────────────

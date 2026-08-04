@@ -44,6 +44,7 @@ case "$ROLE" in
   *) echo "[!] Invalid role: $ROLE" >&2; exit 1 ;;
 esac
 
+# shellcheck source=/dev/null
 set -a; source .env; set +a
 : "${PAL_WEB_JWT_SECRET:?PAL_WEB_JWT_SECRET is unset in .env}"
 

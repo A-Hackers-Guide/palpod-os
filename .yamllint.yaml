@@ -1,31 +1,21 @@
----
-# yamllint configuration for palpod-os.
-#
-# We inherit the default ruleset and adjust the handful of things that are
-# awkward for GitHub Actions files (the `on:` key is legitimately a mapping,
-# not a boolean; workflows can wander over 80 columns with long action refs).
-
 extends: default
 
 rules:
-  document-start:
-    present: true
-    level: warning
-  line-length:
-    max: 120
-    level: warning
-    allow-non-breakable-words: true
-    allow-non-breakable-inline-mappings: true
+  line-length: disable
+  document-start: disable
   truthy:
-    allowed-values: ["true", "false"]
-    # GitHub Actions uses `on:` as a mapping key — silence that specific case.
     check-keys: false
   comments:
     min-spaces-from-content: 1
-  comments-indentation: disable
+  colons:
+    max-spaces-after: -1        # GitHub Actions uses aligned colons
+  braces:
+    max-spaces-inside: 1        # allow ${{ expr }} style
+  brackets:
+    max-spaces-inside: 1
 
 ignore: |
-  **/.venv/**
-  **/node_modules/**
-  **/.egg-info/**
-  hardware/electrical/kicad/**
+  .venv/
+  node_modules/
+  **/__pycache__/
+  hardware/electrical/kicad/

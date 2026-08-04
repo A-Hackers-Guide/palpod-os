@@ -24,6 +24,7 @@ if [[ ! -f .env ]]; then
   echo "[first-boot] .env missing — run install.sh first." >&2
   exit 1
 fi
+# shellcheck source=/dev/null
 set -a; source .env; set +a
 
 DATA_ROOT="${PALPOD_DATA_ROOT:-/var/lib/palpod}"

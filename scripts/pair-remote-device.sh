@@ -56,6 +56,7 @@ if [[ -n "$RUSTDESK_ID" && ! "$RUSTDESK_ID" =~ ^[0-9]{9,10}$ ]]; then
   exit 1
 fi
 
+# shellcheck source=/dev/null
 set -a; source .env; set +a
 : "${POSTGRES_USER:?POSTGRES_USER is unset in .env}"
 : "${POSTGRES_DB:?POSTGRES_DB is unset in .env}"

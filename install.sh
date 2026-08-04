@@ -158,6 +158,7 @@ else
 fi
 
 # Load env for the rest of the script.
+# shellcheck source=/dev/null
 set -a; source .env; set +a
 
 # ─── 6. First-boot preparation ───────────────────────────────────────────────
