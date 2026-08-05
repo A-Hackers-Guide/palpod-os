@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!--
+      Nothing leaves the house. We deliberately allow user-installed CAs
+      ONLY for the Hearth's .local mDNS hostname and the 192.168/10.0/172.16
+      RFC1918 ranges, because a Hearth uses a self-signed cert whose SPKI
+      is pinned at runtime after QR pairing.
+    -->
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">pod.palpod.local</domain>
+        <domain includeSubdomains="true">hearth.local</domain>
+        <trust-anchors>
+            <certificates src="system" />
+            <certificates src="user" />
+        </trust-anchors>
+    </domain-config>
+
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>

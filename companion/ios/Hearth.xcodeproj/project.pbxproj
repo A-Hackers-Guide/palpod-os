@@ -1,0 +1,690 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A0000010A0000000A0000010 /* HearthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0000010B0000000B0000010 /* HearthApp.swift */; };
+		A0000011A0000000A0000011 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0000011B0000000B0000011 /* Colors.swift */; };
+		A0000012A0000000A0000012 /* Typography.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0000012B0000000B0000012 /* Typography.swift */; };
+		A0000013A0000000A0000013 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0000013B0000000B0000013 /* ButtonStyles.swift */; };
+		A0000014A0000000A0000014 /* ConsentGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0000014B0000000B0000014 /* ConsentGesture.swift */; };
+		A0000015A0000000A0000015 /* ConsentTokenSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0000015B0000000B0000015 /* ConsentTokenSource.swift */; };
+		A0000016A0000000A0000016 /* HearthClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0000016B0000000B0000016 /* HearthClient.swift */; };
+		A0000017A0000000A0000017 /* KeychainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0000017B0000000B0000017 /* KeychainStore.swift */; };
+		A0000018A0000000A0000018 /* WebSocketClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0000018B0000000B0000018 /* WebSocketClient.swift */; };
+		A0000019A0000000A0000019 /* DiscoveryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0000019B0000000B0000019 /* DiscoveryService.swift */; };
+		A000001AA000000A000001A0 /* QRScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B000001AB000000B000001A0 /* QRScanner.swift */; };
+		A000001BA000001B000001B0 /* RemoteDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B000001BB000001B000001B0 /* RemoteDevice.swift */; };
+		A000001CA000001C000001C0 /* ControlGrant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B000001CB000001C000001C0 /* ControlGrant.swift */; };
+		A000001DA000001D000001D0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B000001DB000001D000001D0 /* User.swift */; };
+		A000001EA000001E000001E0 /* PersonalityAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = B000001EB000001E000001E0 /* PersonalityAxis.swift */; };
+		A000001FA000001F000001F0 /* MediaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B000001FB000001F000001F0 /* MediaItem.swift */; };
+		A0000020A0000020A0000020 /* Extender.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0000020B0000020B0000020 /* Extender.swift */; };
+		A0000021A0000021A0000021 /* DiscoveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0000021B0000021B0000021 /* DiscoveryView.swift */; };
+		A0000022A0000022A0000022 /* QRPairView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0000022B0000022B0000022 /* QRPairView.swift */; };
+		A0000023A0000023A0000023 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0000023B0000023B0000023 /* LoginView.swift */; };
+		A0000024A0000024A0000024 /* DevicesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0000024B0000024B0000024 /* DevicesListView.swift */; };
+		A0000025A0000025A0000025 /* DeviceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0000025B0000025B0000025 /* DeviceRow.swift */; };
+		A0000026A0000026A0000026 /* DeviceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0000026B0000026B0000026 /* DeviceDetailView.swift */; };
+		A0000027A0000027A0000027 /* GrantControlSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0000027B0000027B0000027 /* GrantControlSheet.swift */; };
+		A0000028A0000028A0000028 /* SessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0000028B0000028B0000028 /* SessionView.swift */; };
+		A0000029A0000029A0000029 /* AnomalyLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0000029B0000029B0000029 /* AnomalyLogView.swift */; };
+		A000002AA000002AA000002A /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B000002AB000002AB000002A /* UsersView.swift */; };
+		A000002BA000002BA000002B /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B000002BB000002BB000002B /* UserDetailView.swift */; };
+		A000002CA000002CA000002C /* PersonalitySlidersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B000002CB000002CB000002C /* PersonalitySlidersView.swift */; };
+		A000002DA000002DA000002D /* VoicePresetPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B000002DB000002DB000002D /* VoicePresetPicker.swift */; };
+		A000002EA000002EA000002E /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B000002EB000002EB000002E /* LibraryView.swift */; };
+		A000002FA000002FA000002F /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B000002FB000002FB000002F /* ItemDetailView.swift */; };
+		A0000030A0000030A0000030 /* PlayTargetPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0000030B0000030B0000030 /* PlayTargetPicker.swift */; };
+		A0000031A0000031A0000031 /* ExtendersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0000031B0000031B0000031 /* ExtendersListView.swift */; };
+		A0000032A0000032A0000032 /* ExtenderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0000032B0000032B0000032 /* ExtenderDetailView.swift */; };
+		A0000033A0000033A0000033 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0000033B0000033B0000033 /* SettingsView.swift */; };
+		A0000034A0000034A0000034 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0000034B0000034B0000034 /* AboutView.swift */; };
+		A0000035A0000035A0000035 /* AdvancedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0000035B0000035B0000035 /* AdvancedView.swift */; };
+		A0000036A0000036A0000036 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0000036B0000036B0000036 /* Assets.xcassets */; };
+		A0000040A0000040A0000040 /* ConsentGestureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0000040B0000040B0000040 /* ConsentGestureTests.swift */; };
+		A0000041A0000041A0000041 /* HearthClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0000041B0000041B0000041 /* HearthClientTests.swift */; };
+		A0000042A0000042A0000042 /* PersonalityAxisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0000042B0000042B0000042 /* PersonalityAxisTests.swift */; };
+		A0000050A0000050A0000050 /* OnboardingFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0000050B0000050B0000050 /* OnboardingFlowTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C0000001C0000001C0000001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0000001D0000001D0000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E0000001E0000001E0000001;
+			remoteInfo = Hearth;
+		};
+		C0000002C0000002C0000002 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0000001D0000001D0000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E0000001E0000001E0000001;
+			remoteInfo = Hearth;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B0000010B0000000B0000010 /* HearthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HearthApp.swift; sourceTree = "<group>"; };
+		B0000011B0000000B0000011 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		B0000012B0000000B0000012 /* Typography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typography.swift; sourceTree = "<group>"; };
+		B0000013B0000000B0000013 /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
+		B0000014B0000000B0000014 /* ConsentGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentGesture.swift; sourceTree = "<group>"; };
+		B0000015B0000000B0000015 /* ConsentTokenSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentTokenSource.swift; sourceTree = "<group>"; };
+		B0000016B0000000B0000016 /* HearthClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HearthClient.swift; sourceTree = "<group>"; };
+		B0000017B0000000B0000017 /* KeychainStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStore.swift; sourceTree = "<group>"; };
+		B0000018B0000000B0000018 /* WebSocketClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketClient.swift; sourceTree = "<group>"; };
+		B0000019B0000000B0000019 /* DiscoveryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryService.swift; sourceTree = "<group>"; };
+		B000001AB000000B000001A0 /* QRScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScanner.swift; sourceTree = "<group>"; };
+		B000001BB000001B000001B0 /* RemoteDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDevice.swift; sourceTree = "<group>"; };
+		B000001CB000001C000001C0 /* ControlGrant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlGrant.swift; sourceTree = "<group>"; };
+		B000001DB000001D000001D0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B000001EB000001E000001E0 /* PersonalityAxis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalityAxis.swift; sourceTree = "<group>"; };
+		B000001FB000001F000001F0 /* MediaItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaItem.swift; sourceTree = "<group>"; };
+		B0000020B0000020B0000020 /* Extender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extender.swift; sourceTree = "<group>"; };
+		B0000021B0000021B0000021 /* DiscoveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryView.swift; sourceTree = "<group>"; };
+		B0000022B0000022B0000022 /* QRPairView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRPairView.swift; sourceTree = "<group>"; };
+		B0000023B0000023B0000023 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		B0000024B0000024B0000024 /* DevicesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesListView.swift; sourceTree = "<group>"; };
+		B0000025B0000025B0000025 /* DeviceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRow.swift; sourceTree = "<group>"; };
+		B0000026B0000026B0000026 /* DeviceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDetailView.swift; sourceTree = "<group>"; };
+		B0000027B0000027B0000027 /* GrantControlSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrantControlSheet.swift; sourceTree = "<group>"; };
+		B0000028B0000028B0000028 /* SessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionView.swift; sourceTree = "<group>"; };
+		B0000029B0000029B0000029 /* AnomalyLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnomalyLogView.swift; sourceTree = "<group>"; };
+		B000002AB000002AB000002A /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
+		B000002BB000002BB000002B /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
+		B000002CB000002CB000002C /* PersonalitySlidersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalitySlidersView.swift; sourceTree = "<group>"; };
+		B000002DB000002DB000002D /* VoicePresetPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoicePresetPicker.swift; sourceTree = "<group>"; };
+		B000002EB000002EB000002E /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
+		B000002FB000002FB000002F /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
+		B0000030B0000030B0000030 /* PlayTargetPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayTargetPicker.swift; sourceTree = "<group>"; };
+		B0000031B0000031B0000031 /* ExtendersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendersListView.swift; sourceTree = "<group>"; };
+		B0000032B0000032B0000032 /* ExtenderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtenderDetailView.swift; sourceTree = "<group>"; };
+		B0000033B0000033B0000033 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		B0000034B0000034B0000034 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		B0000035B0000035B0000035 /* AdvancedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedView.swift; sourceTree = "<group>"; };
+		B0000036B0000036B0000036 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B0000037B0000037B0000037 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0000040B0000040B0000040 /* ConsentGestureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentGestureTests.swift; sourceTree = "<group>"; };
+		B0000041B0000041B0000041 /* HearthClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HearthClientTests.swift; sourceTree = "<group>"; };
+		B0000042B0000042B0000042 /* PersonalityAxisTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalityAxisTests.swift; sourceTree = "<group>"; };
+		B0000050B0000050B0000050 /* OnboardingFlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFlowTests.swift; sourceTree = "<group>"; };
+		F0000001F0000001F0000001 /* Hearth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hearth.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0000002F0000002F0000002 /* HearthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HearthTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0000003F0000003F0000003 /* HearthUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HearthUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		G0000001G0000001G0000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		G0000002G0000002G0000002 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		G0000003G0000003G0000003 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		H0000000H0000000H0000000 = {
+			isa = PBXGroup;
+			children = (
+				H0000001H0000001H0000001 /* Hearth */,
+				H0000002H0000002H0000002 /* HearthTests */,
+				H0000003H0000003H0000003 /* HearthUITests */,
+				H0000004H0000004H0000004 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		H0000001H0000001H0000001 /* Hearth */ = {
+			isa = PBXGroup;
+			children = (
+				B0000010B0000000B0000010 /* HearthApp.swift */,
+				B0000037B0000037B0000037 /* Info.plist */,
+				H0000010H0000010H0000010 /* Core */,
+				H0000011H0000011H0000011 /* Models */,
+				H0000012H0000012H0000012 /* Features */,
+				H0000013H0000013H0000013 /* UIStyle */,
+				B0000036B0000036B0000036 /* Assets.xcassets */,
+			);
+			path = Hearth;
+			sourceTree = "<group>";
+		};
+		H0000002H0000002H0000002 /* HearthTests */ = {
+			isa = PBXGroup;
+			children = (
+				B0000040B0000040B0000040 /* ConsentGestureTests.swift */,
+				B0000041B0000041B0000041 /* HearthClientTests.swift */,
+				B0000042B0000042B0000042 /* PersonalityAxisTests.swift */,
+			);
+			path = HearthTests;
+			sourceTree = "<group>";
+		};
+		H0000003H0000003H0000003 /* HearthUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B0000050B0000050B0000050 /* OnboardingFlowTests.swift */,
+			);
+			path = HearthUITests;
+			sourceTree = "<group>";
+		};
+		H0000004H0000004H0000004 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F0000001F0000001F0000001 /* Hearth.app */,
+				F0000002F0000002F0000002 /* HearthTests.xctest */,
+				F0000003F0000003F0000003 /* HearthUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		H0000010H0000010H0000010 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				B0000014B0000000B0000014 /* ConsentGesture.swift */,
+				B0000015B0000000B0000015 /* ConsentTokenSource.swift */,
+				B0000016B0000000B0000016 /* HearthClient.swift */,
+				B0000017B0000000B0000017 /* KeychainStore.swift */,
+				B0000018B0000000B0000018 /* WebSocketClient.swift */,
+				B0000019B0000000B0000019 /* DiscoveryService.swift */,
+				B000001AB000000B000001A0 /* QRScanner.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		H0000011H0000011H0000011 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B000001BB000001B000001B0 /* RemoteDevice.swift */,
+				B000001CB000001C000001C0 /* ControlGrant.swift */,
+				B000001DB000001D000001D0 /* User.swift */,
+				B000001EB000001E000001E0 /* PersonalityAxis.swift */,
+				B000001FB000001F000001F0 /* MediaItem.swift */,
+				B0000020B0000020B0000020 /* Extender.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		H0000012H0000012H0000012 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				H0000020H0000020H0000020 /* Onboarding */,
+				H0000021H0000021H0000021 /* Devices */,
+				H0000022H0000022H0000022 /* Household */,
+				H0000023H0000023H0000023 /* Library */,
+				H0000024H0000024H0000024 /* Extenders */,
+				H0000025H0000025H0000025 /* Settings */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		H0000013H0000013H0000013 /* UIStyle */ = {
+			isa = PBXGroup;
+			children = (
+				B0000011B0000000B0000011 /* Colors.swift */,
+				B0000012B0000000B0000012 /* Typography.swift */,
+				B0000013B0000000B0000013 /* ButtonStyles.swift */,
+			);
+			path = UIStyle;
+			sourceTree = "<group>";
+		};
+		H0000020H0000020H0000020 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				B0000021B0000021B0000021 /* DiscoveryView.swift */,
+				B0000022B0000022B0000022 /* QRPairView.swift */,
+				B0000023B0000023B0000023 /* LoginView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		H0000021H0000021H0000021 /* Devices */ = {
+			isa = PBXGroup;
+			children = (
+				B0000024B0000024B0000024 /* DevicesListView.swift */,
+				B0000025B0000025B0000025 /* DeviceRow.swift */,
+				B0000026B0000026B0000026 /* DeviceDetailView.swift */,
+				B0000027B0000027B0000027 /* GrantControlSheet.swift */,
+				B0000028B0000028B0000028 /* SessionView.swift */,
+				B0000029B0000029B0000029 /* AnomalyLogView.swift */,
+			);
+			path = Devices;
+			sourceTree = "<group>";
+		};
+		H0000022H0000022H0000022 /* Household */ = {
+			isa = PBXGroup;
+			children = (
+				B000002AB000002AB000002A /* UsersView.swift */,
+				B000002BB000002BB000002B /* UserDetailView.swift */,
+				B000002CB000002CB000002C /* PersonalitySlidersView.swift */,
+				B000002DB000002DB000002D /* VoicePresetPicker.swift */,
+			);
+			path = Household;
+			sourceTree = "<group>";
+		};
+		H0000023H0000023H0000023 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				B000002EB000002EB000002E /* LibraryView.swift */,
+				B000002FB000002FB000002F /* ItemDetailView.swift */,
+				B0000030B0000030B0000030 /* PlayTargetPicker.swift */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		H0000024H0000024H0000024 /* Extenders */ = {
+			isa = PBXGroup;
+			children = (
+				B0000031B0000031B0000031 /* ExtendersListView.swift */,
+				B0000032B0000032B0000032 /* ExtenderDetailView.swift */,
+			);
+			path = Extenders;
+			sourceTree = "<group>";
+		};
+		H0000025H0000025H0000025 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				B0000033B0000033B0000033 /* SettingsView.swift */,
+				B0000034B0000034B0000034 /* AboutView.swift */,
+				B0000035B0000035B0000035 /* AdvancedView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E0000001E0000001E0000001 /* Hearth */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = I0000001I0000001I0000001 /* Build configuration list for PBXNativeTarget "Hearth" */;
+			buildPhases = (
+				J0000001J0000001J0000001 /* Sources */,
+				G0000001G0000001G0000001 /* Frameworks */,
+				K0000001K0000001K0000001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Hearth;
+			productName = Hearth;
+			productReference = F0000001F0000001F0000001 /* Hearth.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E0000002E0000002E0000002 /* HearthTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = I0000002I0000002I0000002 /* Build configuration list for PBXNativeTarget "HearthTests" */;
+			buildPhases = (
+				J0000002J0000002J0000002 /* Sources */,
+				G0000002G0000002G0000002 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				L0000001L0000001L0000001 /* PBXTargetDependency */,
+			);
+			name = HearthTests;
+			productName = HearthTests;
+			productReference = F0000002F0000002F0000002 /* HearthTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E0000003E0000003E0000003 /* HearthUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = I0000003I0000003I0000003 /* Build configuration list for PBXNativeTarget "HearthUITests" */;
+			buildPhases = (
+				J0000003J0000003J0000003 /* Sources */,
+				G0000003G0000003G0000003 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				L0000002L0000002L0000002 /* PBXTargetDependency */,
+			);
+			name = HearthUITests;
+			productName = HearthUITests;
+			productReference = F0000003F0000003F0000003 /* HearthUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D0000001D0000001D0000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					E0000001E0000001E0000001 = { CreatedOnToolsVersion = 15.0; };
+					E0000002E0000002E0000002 = { CreatedOnToolsVersion = 15.0; TestTargetID = E0000001E0000001E0000001; };
+					E0000003E0000003E0000003 = { CreatedOnToolsVersion = 15.0; TestTargetID = E0000001E0000001E0000001; };
+				};
+			};
+			buildConfigurationList = M0000001M0000001M0000001 /* Build configuration list for PBXProject "Hearth" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = H0000000H0000000H0000000;
+			productRefGroup = H0000004H0000004H0000004 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E0000001E0000001E0000001 /* Hearth */,
+				E0000002E0000002E0000002 /* HearthTests */,
+				E0000003E0000003E0000003 /* HearthUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		K0000001K0000001K0000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0000036A0000036A0000036 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		J0000001J0000001J0000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0000010A0000000A0000010 /* HearthApp.swift in Sources */,
+				A0000011A0000000A0000011 /* Colors.swift in Sources */,
+				A0000012A0000000A0000012 /* Typography.swift in Sources */,
+				A0000013A0000000A0000013 /* ButtonStyles.swift in Sources */,
+				A0000014A0000000A0000014 /* ConsentGesture.swift in Sources */,
+				A0000015A0000000A0000015 /* ConsentTokenSource.swift in Sources */,
+				A0000016A0000000A0000016 /* HearthClient.swift in Sources */,
+				A0000017A0000000A0000017 /* KeychainStore.swift in Sources */,
+				A0000018A0000000A0000018 /* WebSocketClient.swift in Sources */,
+				A0000019A0000000A0000019 /* DiscoveryService.swift in Sources */,
+				A000001AA000000A000001A0 /* QRScanner.swift in Sources */,
+				A000001BA000001B000001B0 /* RemoteDevice.swift in Sources */,
+				A000001CA000001C000001C0 /* ControlGrant.swift in Sources */,
+				A000001DA000001D000001D0 /* User.swift in Sources */,
+				A000001EA000001E000001E0 /* PersonalityAxis.swift in Sources */,
+				A000001FA000001F000001F0 /* MediaItem.swift in Sources */,
+				A0000020A0000020A0000020 /* Extender.swift in Sources */,
+				A0000021A0000021A0000021 /* DiscoveryView.swift in Sources */,
+				A0000022A0000022A0000022 /* QRPairView.swift in Sources */,
+				A0000023A0000023A0000023 /* LoginView.swift in Sources */,
+				A0000024A0000024A0000024 /* DevicesListView.swift in Sources */,
+				A0000025A0000025A0000025 /* DeviceRow.swift in Sources */,
+				A0000026A0000026A0000026 /* DeviceDetailView.swift in Sources */,
+				A0000027A0000027A0000027 /* GrantControlSheet.swift in Sources */,
+				A0000028A0000028A0000028 /* SessionView.swift in Sources */,
+				A0000029A0000029A0000029 /* AnomalyLogView.swift in Sources */,
+				A000002AA000002AA000002A /* UsersView.swift in Sources */,
+				A000002BA000002BA000002B /* UserDetailView.swift in Sources */,
+				A000002CA000002CA000002C /* PersonalitySlidersView.swift in Sources */,
+				A000002DA000002DA000002D /* VoicePresetPicker.swift in Sources */,
+				A000002EA000002EA000002E /* LibraryView.swift in Sources */,
+				A000002FA000002FA000002F /* ItemDetailView.swift in Sources */,
+				A0000030A0000030A0000030 /* PlayTargetPicker.swift in Sources */,
+				A0000031A0000031A0000031 /* ExtendersListView.swift in Sources */,
+				A0000032A0000032A0000032 /* ExtenderDetailView.swift in Sources */,
+				A0000033A0000033A0000033 /* SettingsView.swift in Sources */,
+				A0000034A0000034A0000034 /* AboutView.swift in Sources */,
+				A0000035A0000035A0000035 /* AdvancedView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		J0000002J0000002J0000002 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0000040A0000040A0000040 /* ConsentGestureTests.swift in Sources */,
+				A0000041A0000041A0000041 /* HearthClientTests.swift in Sources */,
+				A0000042A0000042A0000042 /* PersonalityAxisTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		J0000003J0000003J0000003 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0000050A0000050A0000050 /* OnboardingFlowTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		L0000001L0000001L0000001 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E0000001E0000001E0000001 /* Hearth */;
+			targetProxy = C0000001C0000001C0000001 /* PBXContainerItemProxy */;
+		};
+		L0000002L0000002L0000002 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E0000001E0000001E0000001 /* Hearth */;
+			targetProxy = C0000002C0000002C0000002 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		N0000001N0000001N0000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("DEBUG=1", "$(inherited)");
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		N0000002N0000002N0000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		N0000003N0000003N0000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Hearth/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Hearth;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks");
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hearthhome.hearth";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		N0000004N0000004N0000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Hearth/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Hearth;
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks");
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hearthhome.hearth";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		N0000005N0000005N0000005 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hearthhome.hearth.tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hearth.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Hearth";
+			};
+			name = Debug;
+		};
+		N0000006N0000006N0000006 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hearthhome.hearth.tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hearth.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Hearth";
+			};
+			name = Release;
+		};
+		N0000007N0000007N0000007 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hearthhome.hearth.uitests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Hearth;
+			};
+			name = Debug;
+		};
+		N0000008N0000008N0000008 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hearthhome.hearth.uitests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Hearth;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		M0000001M0000001M0000001 /* Build configuration list for PBXProject "Hearth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				N0000001N0000001N0000001 /* Debug */,
+				N0000002N0000002N0000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		I0000001I0000001I0000001 /* Build configuration list for PBXNativeTarget "Hearth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				N0000003N0000003N0000003 /* Debug */,
+				N0000004N0000004N0000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		I0000002I0000002I0000002 /* Build configuration list for PBXNativeTarget "HearthTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				N0000005N0000005N0000005 /* Debug */,
+				N0000006N0000006N0000006 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		I0000003I0000003I0000003 /* Build configuration list for PBXNativeTarget "HearthUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				N0000007N0000007N0000007 /* Debug */,
+				N0000008N0000008N0000008 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D0000001D0000001D0000001 /* Project object */;
+}

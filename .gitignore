@@ -39,3 +39,11 @@ logs/
 /pal-web/
 /pal-voice/
 /pal-face/
+
+# Companion app build artifacts
+companion/ios/.build/
+companion/ios/DerivedData/
+companion/android/.gradle/
+companion/android/build/
+companion/android/app/build/
+companion/android/local.properties

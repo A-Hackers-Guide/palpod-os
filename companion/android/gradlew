@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+# Minimal placeholder — regenerate with `gradle wrapper` on first build.
+DIR="$(cd "$(dirname "$0")" && pwd)"
+exec gradle "$@"
