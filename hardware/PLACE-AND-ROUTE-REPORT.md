@@ -1,9 +1,9 @@
-# PAL Pod PCB Auto-Place + Auto-Route Report
+# Hearth PCB Auto-Place + Auto-Route Report
 
 **DEMO ONLY - NOT MANUFACTURABLE**
 
 This report documents the results of running an automated place-and-route
-pipeline over all six PAL Pod PCB projects. The pipeline used:
+pipeline over all six Hearth PCB projects. The pipeline used:
 
 - **Placer**: Naive Python grid placer (bucket by ref-prefix, cell size = max footprint + 3mm padding)
 - **Router**: FreeRouting v2.2.4 (headless CLI mode, low pass counts)

@@ -1,4 +1,4 @@
-# Contributing to PALPod OS
+# Contributing to HearthOS
 
 Thanks for wanting to help. This repository is the base operating layer for a
 $95k, fully-offline luxury home AI and media server. That framing shapes
@@ -180,7 +180,7 @@ review.
   rule. Break it and the product stops being the product.
 - **No new subscription revenue models.** The buyer paid $95k. Everything
   they need is included, forever, on their hardware. No SaaS layer, no
-  premium tier, no cloud storage upsell, no "PAL Premium." If a Series A
+  premium tier, no cloud storage upsell, no "Hearth Premium." If a Series A
   investor pushes for one, the answer is no. The whole thesis is that we
   sell one thing at a high price and never come back for more.
 

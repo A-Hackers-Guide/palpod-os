@@ -1,4 +1,4 @@
-# PAL Pod — Dimensional Drawing (textual)
+# Hearth — Dimensional Drawing (textual)
 
 Units: mm. Imperial in parentheses. All references are external envelope
 unless noted "interior".

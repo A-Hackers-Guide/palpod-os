@@ -1,6 +1,6 @@
-# PAL Pod Compute Backplane - KiCad Project
+# Hearth Compute Backplane - KiCad Project
 
-The compute backplane is the highest-complexity PCB in the PAL Pod system:
+The compute backplane is the highest-complexity PCB in the Hearth system:
 a 14-layer, 450x300 mm carrier that hosts **10x NVIDIA Jetson Orin NX**
 SO-DIMM modules (JAE MM70-260B1-R1 260-pin sockets) and **10x AMD Ryzen AI 9
 HX 370** mini-SBC daughtercards (Samtec ExaMAX 56 Gbps mezzanine), stitched

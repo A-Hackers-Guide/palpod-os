@@ -1,7 +1,7 @@
-# PALPod OS — Observability stack
+# HearthOS — Observability stack
 
 A **Prometheus + Grafana** stack that surfaces the health, security, and
-performance of every PALPod service. The stack is **opt-in**: it does not
+performance of every Hearth service. The stack is **opt-in**: it does not
 start with a plain `docker compose up -d`; you have to enable it with a
 profile flag.
 
@@ -22,7 +22,7 @@ That brings up:
 | `cadvisor`           | `gcr.io/cadvisor/cadvisor:latest`                 | Per-container CPU / memory / network / block-io.                                           |
 | `blackbox_exporter`  | `prom/blackbox-exporter:latest`                   | HTTP probes for Plex, Jellyfin, Audiobookshelf, xTeVe, Sunshine, Traefik.                  |
 
-To stop just the observability stack (leave the rest of PALPod running):
+To stop just the observability stack (leave the rest of Hearth running):
 
 ```bash
 docker compose --profile observability down
@@ -51,15 +51,15 @@ something strong and lock the account down — the dashboards themselves are
 read-only (`allowUiUpdates: false` in `dashboards.yml`), but anyone with the
 admin account can still add datasources or install plugins.
 
-Once you are in, the dashboards live under the **PALPod** folder in the
+Once you are in, the dashboards live under the **Hearth** folder in the
 left-hand nav:
 
-- `PALPod OS — Overview`
-- `PALPod OS — AI performance`
-- `PALPod OS — Media servers`
-- `PALPod OS — Remote-desktop security`
-- `PALPod OS — Postgres health`
-- `PALPod OS — Storage health`
+- `HearthOS — Overview`
+- `HearthOS — AI performance`
+- `HearthOS — Media servers`
+- `HearthOS — Remote-desktop security`
+- `HearthOS — Postgres health`
+- `HearthOS — Storage health`
 
 Every dashboard is provisioned from JSON files on disk (see
 `grafana/provisioning/dashboards/`). To edit a dashboard, edit the JSON and

@@ -1,4 +1,4 @@
-# PAL Pod Halbach Levitation Controller — KiCad Project
+# Hearth Halbach Levitation Controller — KiCad Project
 
 **SAFETY-CRITICAL BOARD.** This is the real-time active stabilization
 controller for the Halbach neodymium levitation array that holds the OLED orb

@@ -1,4 +1,4 @@
-# PAL Pod Orb — KiCad Project
+# Hearth Orb — KiCad Project
 
 Internal PCB for the 7-inch magnetically-levitating OLED sphere ("orb"): a
 Nordic nRF54H20 dual-core Cortex-M33+M0 SoC coordinates 6× Sony IMX415 cameras

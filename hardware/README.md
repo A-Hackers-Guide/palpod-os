@@ -1,4 +1,4 @@
-# PAL Pod Hardware Reference Package
+# Hearth Hardware Reference Package
 
 **IMPORTANT — READ THIS FIRST.**
 
@@ -12,7 +12,7 @@ This is a **hardware REFERENCE package**, not a manufacturable design.
 
 ## What this package IS
 
-- A complete, self-consistent architectural picture of the PAL Pod main column and extender.
+- A complete, self-consistent architectural picture of the Hearth main column and extender.
 - Real part numbers, real material grades, real block topologies.
 - A junior-EE-actionable reference design for the far-field mic array (the hardest board).
 - A first-day onboarding doc for the hardware EE the founder hires.

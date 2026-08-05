@@ -1,4 +1,4 @@
-# PAL Pod — Materials Specification
+# Hearth — Materials Specification
 
 Every material choice below is a trade-off decision made deliberately.
 When a hardware EE or mechanical designer proposes a substitution, they

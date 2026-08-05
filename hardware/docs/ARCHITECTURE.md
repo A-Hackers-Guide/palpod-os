@@ -1,4 +1,4 @@
-# PAL Pod — Hardware Architecture
+# Hearth — Hardware Architecture
 
 This is the system-level document. It synthesizes the block diagrams,
 mechanical spec, thermal budget, and power tree into one coherent picture.
@@ -100,7 +100,7 @@ $95k luxury expectation.
 
 Every hardware requirement traces to one of:
 
-- **Software / product requirement** (from the PAL OS spec — outside this hardware package's scope)
+- **Software / product requirement** (from the HearthOS spec — outside this hardware package's scope)
 - **Regulatory requirement** (`docs/CERTIFICATION-PLAN.md`)
 - **DFM requirement** (`docs/DFM-CHECKLIST.md`)
 - **Manufacturability requirement** (BOM lead time, `electrical/bom-summary.md`)

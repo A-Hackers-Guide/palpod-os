@@ -1,4 +1,4 @@
-# PAL Pod Atlas
+# Hearth Atlas
 
 _A reading-order index for anyone new to the project. Read this file first, then follow the reading order for your role. It is the front door — every doc, every board, every service is described here in the order it makes sense to encounter it._
 
@@ -16,7 +16,7 @@ There are three tiers of state to know about, because they persist very differen
 
 **Persistent — survives everything:**
 - `~/.claude/projects/-Users-lexer-kindle/memory/palpod-project.md` — the founder's per-project memory file. Survives session termination, survives machine reboot, survives the scratchpad being wiped. This is the canonical index of what has been decided.
-- `~/.claude/projects/-Users-lexer-kindle/memory/MEMORY.md` — the master memory index. If PAL Pod is one line in that index, it links to `palpod-project.md`.
+- `~/.claude/projects/-Users-lexer-kindle/memory/MEMORY.md` — the master memory index. If Hearth is one line in that index, it links to `palpod-project.md`.
 - Published artifacts:
   - Spec sheet: https://claude.ai/code/artifact/0d37522d-4ec3-4538-a645-1fee3b988962
   - Investor pitch deck: https://claude.ai/code/artifact/5d1b17f6-fd3a-47d3-8e9c-986814a6a0d1
@@ -136,7 +136,7 @@ This section is the most important one for a new hire. Read it slowly.
 
 ### Aspirational — do NOT ship as-is
 
-- **Custom curved OLED sphere.** The spec sheet claims a spherical OLED face. That is a $5M NRE that has not been paid and no vendor has been engaged. The demo unit uses a round flat OLED with the PAL face rendered on it and a curved cosmetic bezel. Do not tell customers the sphere ships in year one.
+- **Custom curved OLED sphere.** The spec sheet claims a spherical OLED face. That is a $5M NRE that has not been paid and no vendor has been engaged. The demo unit uses a round flat OLED with the Hearth face rendered on it and a curved cosmetic bezel. Do not tell customers the sphere ships in year one.
 - **Halbach levitation of a 2kg orb.** Levitation of a 2kg mass with a Halbach + active feedback array is a real research problem. We have a controller PCB design (`palpod-halbach-controller`) but not a functioning levitation rig. Do not promise levitation on stage until we have a demo that runs for 30 minutes without human intervention.
 - **5 TB DDR5 ECC RDIMM.** The spec sheet lists this as a headline number. It is achievable — but only on a server-class platform (Xeon Sapphire Rapids / EPYC Genoa) with real RDIMM sockets. That is not what the compute backplane KiCad project sketches. Anyone reading the KiCad and thinking "this will boot with 5 TB of RAM" is wrong.
 - **HBM3e memory anywhere.** If you see HBM3e mentioned in any doc, that is fabricated context bleeding through from an earlier draft. HBM is on-die with the accelerator; it does not appear as a discrete component on a PCB. Delete on sight.
@@ -158,8 +158,8 @@ These are settled. Do not re-open them without cause.
 - **Session-scoped consent for AI-initiated remote input.** No exceptions. The AI can suggest a click; the human confirms. See section 6.
 - **Direct-to-consumer, no dealer network year 1.** We ship one unit at a time. No distributor discounts, no dealer margins.
 - **$2M for 15% ask.** The Shark Tank pitch is settled. Do not renegotiate with yourself between now and the shoot.
-- **PALPod OS built on TrueNAS SCALE.** Not Ubuntu Server, not bare Debian. TrueNAS SCALE is the production target. The docker-compose is the interim development bring-up.
-- **Face aesthetic committed: PAL from *The Mitchells vs. the Machines*.** Cyan-blue OLED. Pill-shaped eyes. Cup-shaped smile. Nine expressions. Do not redesign the face. If a hire wants to change the face, they need a conversation with the founder before they touch pal-face.
+- **HearthOS built on TrueNAS SCALE.** Not Ubuntu Server, not bare Debian. TrueNAS SCALE is the production target. The docker-compose is the interim development bring-up.
+- **Face aesthetic committed: an original animated companion face.** Cyan-blue OLED. Pill-shaped eyes. Cup-shaped smile. Nine expressions. Do not redesign the face. If a hire wants to change the face, they need a conversation with the founder before they touch pal-face.
 
 ---
 
@@ -183,7 +183,7 @@ These are not preferences. They are the product. A hire who violates one of thes
 - **No AI-initiated remote input without explicit user-tap consent.** The remote-desktop endpoints (landing in `pal-web/palweb/routers/remote.py`) check an `X-Consent-Origin` header. Any code path that skips or fakes that check is a safety bug. The AI can propose an action; the human's actual finger on an actual screen approves it. This is the safety property that lets a $95k box sit in a customer's home and do real things without anyone getting sued.
 - **No cloud dependencies added anywhere.** No AWS SDK. No third-party analytics. No "helpful" webhook to a status server. No telemetry. No update server we host. If a service can't run entirely offline on the customer's own hardware, it can't run at all. This is why we are $95k and not $9,500 with a subscription.
 - **The sphere shows only its face.** Never any UI. Never any game content. Never a remote-desktop stream. Never a notification. The face is the face. Streams and UI go to TVs and extenders. This is a hard product rule. Break it and the product stops being the product.
-- **No new subscription revenue models.** The buyer paid $95k. Everything they need is included, forever, on their hardware. No SaaS layer, no premium tier, no cloud storage upsell, no "PAL Premium." If a Series A investor pushes for one, the answer is no. The whole thesis is that we sell one thing at a high price and never come back for more.
+- **No new subscription revenue models.** The buyer paid $95k. Everything they need is included, forever, on their hardware. No SaaS layer, no premium tier, no cloud storage upsell, no "Hearth Premium." If a Series A investor pushes for one, the answer is no. The whole thesis is that we sell one thing at a high price and never come back for more.
 
 ---
 

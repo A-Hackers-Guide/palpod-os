@@ -1,4 +1,4 @@
-# BACKUP — PAL Pod OS
+# BACKUP — HearthOS
 
 Two things must survive a total loss of the primary Jetson:
 

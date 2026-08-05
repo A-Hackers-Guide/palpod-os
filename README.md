@@ -1,4 +1,4 @@
-# PALPod OS
+# HearthOS
 
 [![CI](https://github.com/A-Hackers-Guide/palpod-os/actions/workflows/ci.yml/badge.svg)](https://github.com/A-Hackers-Guide/palpod-os/actions/workflows/ci.yml)
 [![Lint](https://github.com/A-Hackers-Guide/palpod-os/actions/workflows/lint.yml/badge.svg)](https://github.com/A-Hackers-Guide/palpod-os/actions/workflows/lint.yml)
@@ -8,7 +8,7 @@
 [![KiCad 8](https://img.shields.io/badge/KiCad-8.x-314cb0.svg)](https://www.kicad.org/)
 [![Contributors](https://img.shields.io/github/contributors/A-Hackers-Guide/palpod-os.svg)](https://github.com/A-Hackers-Guide/palpod-os/graphs/contributors)
 
-> The software layer of PAL Pod — a $95k fully-offline luxury home AI and media
+> The software layer of Hearth — a $95k fully-offline luxury home AI and media
 > server. This repository provides the orchestration scaffolding: everything a
 > single Jetson AGX Orin dev kit needs to boot into a working Pod after one
 > `install.sh`.
@@ -17,7 +17,7 @@
 
 ## What this is
 
-PALPod OS is the **base platform**. It brings up:
+HearthOS is the **base platform**. It brings up:
 
 - Media services (Plex, Jellyfin, Audiobookshelf)
 - Live-TV proxy (xTeVe → M3U/EPG into Plex & Jellyfin as first-class channels)
@@ -124,7 +124,7 @@ cd palpod-os
 ```mermaid
 flowchart LR
     subgraph LAN["Home LAN — nothing leaves the house"]
-        subgraph Pod["PAL Pod (Jetson AGX Orin, MVP)"]
+        subgraph Pod["Hearth (Jetson AGX Orin, MVP)"]
             direction TB
             Traefik["Traefik<br/>TLS + subdomains"]
             subgraph Media["Media Stack"]
@@ -137,7 +137,7 @@ flowchart LR
                 Sunshine
                 Steam["Headless Steam"]
             end
-            subgraph Custom["Custom PAL services (sibling repos)"]
+            subgraph Custom["Custom Hearth services (sibling repos)"]
                 PalWeb["pal-web<br/>(unified control app)"]
                 PalVoice["pal-voice<br/>(LLM + STT + TTS + wake)"]
                 PalFace["pal-face<br/>(Pygame Sphere face)"]

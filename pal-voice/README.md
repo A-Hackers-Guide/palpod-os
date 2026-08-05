@@ -1,6 +1,6 @@
 # pal-voice
 
-The voice pipeline for **PAL Pod** — a fully-offline luxury AI + media appliance.
+The voice pipeline for **Hearth** — a fully-offline luxury AI + media appliance.
 
 `pal-voice` turns *"Hey Pod"* into a running local-AI conversation. It runs on a
 single **NVIDIA Jetson AGX Orin 64GB** developer kit (Ubuntu 22.04, aarch64) and
@@ -157,4 +157,4 @@ the orchestrator wires together.
 
 ## License
 
-Proprietary — © PAL Pod. All rights reserved.
+Proprietary — © Hearth. All rights reserved.

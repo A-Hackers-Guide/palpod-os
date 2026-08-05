@@ -1,6 +1,6 @@
 # Security Policy
 
-PAL Pod is a $95k box that sits in a customer's home. Security issues get
+Hearth is a $95k box that sits in a customer's home. Security issues get
 treated with the seriousness that framing implies. If you have found one,
 please report it privately so we can fix it before anyone gets hurt.
 
@@ -8,7 +8,7 @@ please report it privately so we can fix it before anyone gets hurt.
 
 ## Supported versions
 
-PALPod OS is pre-1.0. Only the current `main` branch is supported for
+HearthOS is pre-1.0. Only the current `main` branch is supported for
 security fixes; there is no LTS line yet. Once we cut `v1.0`, this section
 will list the supported minor releases.
 
@@ -27,7 +27,7 @@ Please include:
 
 - A description of the vulnerability and its impact.
 - Steps to reproduce, or a proof-of-concept.
-- The version of PALPod OS you observed it on
+- The version of HearthOS you observed it on
   (`git -C /opt/palpod-os describe --tags --always --dirty`).
 - Your name / handle / affiliation for the hall of thanks below, or a note
   that you would like to remain anonymous.

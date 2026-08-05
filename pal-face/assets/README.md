@@ -1,6 +1,6 @@
 # assets/
 
-No image or font assets ship with the PAL Face Renderer.
+No image or font assets ship with the Hearth Face Renderer.
 
 Every pixel drawn on the round OLED is procedural:
 

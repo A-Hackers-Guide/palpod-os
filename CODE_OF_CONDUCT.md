@@ -125,7 +125,7 @@ For answers to common questions about this code of conduct, see the FAQ at
 [https://www.contributor-covenant.org/faq][FAQ]. Translations are available at
 [https://www.contributor-covenant.org/translations][translations].
 
-This project is maintained by **PAL Pod, Inc.** Enforcement contact:
+This project is maintained by **Hearth Home, Inc.** Enforcement contact:
 **conduct@palpod.com**.
 
 [homepage]: https://www.contributor-covenant.org

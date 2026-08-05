@@ -1,4 +1,4 @@
-# PALPod Roadmap
+# Hearth Roadmap
 
 > **This roadmap is aspirational until funded.** Every quarter below assumes
 > we close the raise on the timeline we're pitching. Read it as *the shape
@@ -17,10 +17,10 @@
 - File provisional patent covering the Halbach + active-feedback levitation
   controller, the extender pairing protocol, and the on-device consent
   architecture for AI-initiated remote input.
-- Form the legal entity (**PAL Pod, Inc.**) and set up counsel of record.
+- Form the legal entity (**Hearth Home, Inc.**) and set up counsel of record.
 - Build the **first MVP demo unit** end-to-end per
   `palpod-mvp-plan.md` (60-day, ~$13.7k BOM). The demo unit uses a round
-  flat OLED with the PAL face on it — the curved sphere OLED is not
+  flat OLED with the Hearth face on it — the curved sphere OLED is not
   a Q4 2026 deliverable (see `ATLAS.md` §4).
 - Shark Tank appearance — pitch is $2M for 15% (see `ATLAS.md` §4).
 
@@ -65,7 +65,7 @@
 - **PVT (Production Validation Test) with the contract manufacturer.** The
   goal is a repeatable line — the same box comes off the CM's process
   every time.
-- Firmware and OS lock candidates. Cut a `v1.0-rc` branch of PALPod OS.
+- Firmware and OS lock candidates. Cut a `v1.0-rc` branch of HearthOS.
 
 ## Q1 2028 — First shipments
 
@@ -97,6 +97,6 @@ Copied from `ATLAS.md` §6. These are load-bearing product commitments and
 they do not appear on any future roadmap:
 
 - No cloud dependencies. No telemetry. No update server we host.
-- No subscription tier. No "PAL Premium." One purchase, one price, forever.
+- No subscription tier. No "Hearth Premium." One purchase, one price, forever.
 - No AI-initiated remote input without explicit user-tap consent.
 - The Sphere face shows only its face — never UI, never streams.

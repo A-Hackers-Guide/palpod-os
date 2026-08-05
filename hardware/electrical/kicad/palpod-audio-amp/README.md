@@ -1,6 +1,6 @@
-# PAL Pod Audio Amp - KiCad Project
+# Hearth Audio Amp - KiCad Project
 
-4-way active amplification board for the PAL Pod reference-grade audio chain:
+4-way active amplification board for the Hearth reference-grade audio chain:
 tweeter, midrange, woofer, and subwoofer stages, each with its own
 Cirrus Logic CS43198 32-bit / 384 kHz DAC feeding a THAT1512 balanced-line
 receiver into a Purifi Audio 1ET7040SA Class-D amplifier module. Balanced

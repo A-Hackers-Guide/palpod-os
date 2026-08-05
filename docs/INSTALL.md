@@ -1,4 +1,4 @@
-# INSTALL — PAL Pod OS on Ubuntu 22.04 (Jetson AGX Orin)
+# INSTALL — HearthOS on Ubuntu 22.04 (Jetson AGX Orin)
 
 This is a step-by-step for a hardware engineer whose main skill is EE, not
 devops. If you follow it in order you'll get a working Pod. Every step

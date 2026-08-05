@@ -1,4 +1,4 @@
-# RustDesk on PAL Pod
+# RustDesk on Hearth
 
 The Pod runs its own **RustDesk rendezvous + relay** so remote-desktop traffic
 never leaves the house. Nothing here talks to `rustdesk.com`.

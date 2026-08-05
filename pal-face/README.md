@@ -1,8 +1,7 @@
-# PAL Face Renderer
+# Hearth Face Renderer
 
-Procedural Pygame renderer for the animated PAL face — the round cyan display
-inside the PAL Pod's levitating orb, inspired by PAL from *The Mitchells vs.
-the Machines*: cyan gradient background, two tall white pill eyes, and a
+Procedural Pygame renderer for the animated Hearth face — the round cyan display
+inside the Hearth's levitating orb, designed as an original animated companion face: cyan gradient background, two tall white pill eyes, and a
 cup-scoop smile.
 
 - **Runtime:** single Jetson AGX Orin 64GB (MVP), full-screen 1080×1080 on a

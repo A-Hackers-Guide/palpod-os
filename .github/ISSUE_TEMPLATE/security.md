@@ -8,7 +8,7 @@ assignees: []
 
 # Please do not report security issues through public GitHub issues.
 
-PAL Pod is a $95k box that sits in someone's home. Public disclosure of a
+Hearth is a $95k box that sits in someone's home. Public disclosure of a
 security vulnerability without a fix in hand puts real customers at real risk.
 We take coordinated disclosure seriously, and so should you.
 
@@ -18,7 +18,7 @@ Email **security@palpod.com** with:
 
 - A description of the vulnerability.
 - Steps to reproduce (or a proof-of-concept).
-- The version of PALPod OS you observed it on
+- The version of HearthOS you observed it on
   (`git -C /opt/palpod-os describe --tags --always --dirty`).
 - Your name / handle for the SECURITY.md hall of thanks, or a note that you
   want to remain anonymous.

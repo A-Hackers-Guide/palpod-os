@@ -1,6 +1,6 @@
-# Welcome — Your First Week on PAL Pod
+# Welcome — Your First Week on Hearth
 
-You are the first hardware engineer on the PAL Pod program. Congratulations,
+You are the first hardware engineer on the Hearth program. Congratulations,
 and I'm sorry.
 
 The founder has spent months architecting this thing on paper. Everything

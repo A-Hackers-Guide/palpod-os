@@ -1,6 +1,6 @@
-# PAL Pod Mic Array — KiCad Project
+# Hearth Mic Array — KiCad Project
 
-Far-field microphone-array daughterboard for PAL Pod: 13 TDK InvenSense
+Far-field microphone-array daughterboard for Hearth: 13 TDK InvenSense
 ICS-41352 MEMS microphones in a dual-ring geometry (7 outer + 6 inner) feed
 an XMOS XVF3800-INBW beamforming DSP and a Syntiant NDP120 always-on wake-word
 neural processor, hosted by an STMicro STM32G474RETx MCU that uplinks over

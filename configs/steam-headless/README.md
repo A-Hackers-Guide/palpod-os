@@ -1,4 +1,4 @@
-# Headless Steam inside PAL Pod
+# Headless Steam inside Hearth
 
 Steam is running inside the `steam-headless` container, which is a fork of
 [josh5/steam-headless](https://github.com/Steam-Headless/docker-steam-headless).

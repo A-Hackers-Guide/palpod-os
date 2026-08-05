@@ -1,4 +1,4 @@
-# SECURITY — PAL Pod OS
+# SECURITY — HearthOS
 
 The single most important product invariant is:
 
@@ -34,7 +34,7 @@ We do **not** defend against:
 ```
 [ WAN ]  ─╳ no ingress  ── [ residential router ] ── [ LAN ]
                                                          │
-                                                         ├── PAL Pod primary
+                                                         ├── Hearth primary
                                                          │       └── Traefik :80/:443
                                                          │       └── direct ports (Plex, Jellyfin, …)
                                                          ├── extenders (mTLS + JWT)

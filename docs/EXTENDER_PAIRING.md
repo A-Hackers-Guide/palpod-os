@@ -51,7 +51,7 @@ on port 3000. Publishing is done by `pal-web` at boot via the `avahi` Node
 bindings; the record looks like:
 
 ```
-Name:  PAL Pod primary
+Name:  Hearth primary
 Type:  _palpod-primary._tcp
 Port:  3000
 TXT:

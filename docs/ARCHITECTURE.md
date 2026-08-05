@@ -1,6 +1,6 @@
-# PALPod OS — Architecture
+# HearthOS — Architecture
 
-This document describes how the pieces of PAL Pod fit together on the MVP
+This document describes how the pieces of Hearth fit together on the MVP
 single-Jetson deployment and how the same design scales to the production
 10-node cluster on TrueNAS SCALE.
 
@@ -14,7 +14,7 @@ graph TB
         FaceOut[Pygame framebuffer output]
     end
 
-    subgraph Pod["PAL Pod — Jetson AGX Orin 64GB"]
+    subgraph Pod["Hearth — Jetson AGX Orin 64GB"]
         subgraph Docker["Docker compose stack"]
             Traefik
             subgraph Data["Data plane"]
@@ -30,7 +30,7 @@ graph TB
                 Sunshine
                 SteamHL[Steam headless / Xvfb]
             end
-            subgraph PalStack["PAL services"]
+            subgraph PalStack["Hearth services"]
                 PalWeb[pal-web]
                 PalVoice[pal-voice]
                 PalFace[pal-face]

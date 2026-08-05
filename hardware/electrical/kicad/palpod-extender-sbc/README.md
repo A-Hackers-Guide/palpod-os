@@ -1,6 +1,6 @@
-# PAL Pod Extender SBC - KiCad Project
+# Hearth Ember SBC - KiCad Project
 
-Thin-client single-board computer for the half-scale PAL Pod extender: a
+Thin-client single-board computer for the half-scale Hearth extender: a
 Rockchip RK3588 octa-core SoC (quad A76 + quad A55, 6 TOPS NPU) hosts 8 GB
 LPDDR5-6400 (Samsung K3LKBFB0EM-MGCP), 128 GB Kingston EMMC128G-M525 eMMC 5.1,
 a Realtek RTL8852BE Wi-Fi 6E + BT 5.3 module on M.2 A+E 2230, an RTL8125BG
@@ -237,5 +237,5 @@ footprints.
 
 - **Extender block-level architecture:** `../../block-diagrams/extender.md`
 - **RK3588 hardware design guide:** Rockchip developer portal (NDA)
-- **Main PAL Pod mic-array daughterboard (sibling project):**
+- **Main Hearth mic-array daughterboard (sibling project):**
   `../palpod-mic-array/`
