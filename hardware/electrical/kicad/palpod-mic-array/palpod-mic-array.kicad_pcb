@@ -11,7 +11,7 @@
     (title "PAL Pod Mic Array - PCB")
     (date "2026-08-03")
     (rev "A0")
-    (company "PAL Pod")
+    (company "Hearth Home, Inc.")
     (comment 1 "4-layer 120mm dia round board")
     (comment 2 "F.Cu / In1.Cu (GND) / In2.Cu (3V3+1V8 split) / B.Cu")
     (comment 3 "Reference: hardware/electrical/mic-array-reference-design.md")

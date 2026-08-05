@@ -8,7 +8,7 @@
     (title "PAL Pod Extender SBC")
     (date "2026-08-03")
     (rev "A0")
-    (company "PAL Pod")
+    (company "Hearth Home, Inc.")
     (comment 1 "RK3588 thin-client SBC: streams Plex/Jellyfin/Moonlight from main pod")
     (comment 2 "8-layer 100x100mm board, 8GB LPDDR5, 128GB eMMC, 2.5GbE, Wi-Fi 6E")
     (comment 3 "Reference: hardware/electrical/block-diagrams/extender.md")

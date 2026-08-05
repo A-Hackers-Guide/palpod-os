@@ -11,7 +11,7 @@
 		(title "PAL Pod Compute Backplane - PCB")
 		(date "2026-08-03")
 		(rev "A0")
-		(company "PAL Pod")
+		(company "Hearth Home, Inc.")
 		(comment 1 "14-layer 450x300mm rectangular backplane")
 		(comment 2 "F.Cu / GND / SIG1 / GND / SIG2 / +12V / +3V3 / +1V8 / +ANA / SIG3 / GND / SIG4 / GND / B.Cu")
 		(comment 3 "Reference: hardware/electrical/block-diagrams/compute-backplane.md")

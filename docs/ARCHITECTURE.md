@@ -121,7 +121,7 @@ sequenceDiagram
     participant P as Plex
     participant F as pal-face
 
-    U->>M: "Hey Pod, play something quiet"
+    U->>M: "Hey Hearth, play something quiet"
     M->>V: audio frames
     V->>V: wake-word + STT
     V->>W: intent { action: play, mood: chill }

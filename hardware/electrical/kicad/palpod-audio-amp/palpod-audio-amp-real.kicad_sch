@@ -8,7 +8,7 @@
 		(title "PAL Pod Audio Amp")
 		(date "2026-08-03")
 		(rev "A0")
-		(company "PAL Pod")
+		(company "Hearth Home, Inc.")
 		(comment 1 "4-way active amplification: 4x CS43198 DAC + 4x Purifi 1ET7040SA Class-D modules")
 		(comment 2 "Board: 6-layer, 250x200mm, +-60V HV rails, star-grounded analog")
 		(comment 3 "Reference: hardware/electrical/block-diagrams/audio-amp.md")

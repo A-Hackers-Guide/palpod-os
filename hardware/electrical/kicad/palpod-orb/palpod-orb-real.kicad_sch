@@ -5,10 +5,10 @@
 	(uuid "ceb7fa82-a753-46be-8eac-6e7118abde02")
 	(paper "A2")
 	(title_block
-		(title "PAL Pod Orb")
+		(title "Hearth Orb")
 		(date "2026-08-03")
 		(rev "A0")
-		(company "PAL Pod")
+		(company "Hearth Home, Inc.")
 		(comment 1 "6-layer flex-rigid orb PCB: nRF54H20 + MIPI CSI-2 aggregator + 6 cameras + ToF + LIDAR + Wi-Fi 7 + Qi RX + Halbach TMR + BMS + curved OLED driver")
 		(comment 2 "Two rigid islands connected by flex bridges. Layers: F.Cu / GND / PWR_3V3 / PWR_5V / GND / B.Cu")
 		(comment 3 "Reference: hardware/electrical/block-diagrams/orb.md")

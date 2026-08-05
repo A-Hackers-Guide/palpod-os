@@ -11,7 +11,7 @@
 		(title "PAL Pod Halbach Levitation Controller - PCB")
 		(date "2026-08-03")
 		(rev "A0")
-		(company "PAL Pod")
+		(company "Hearth Home, Inc.")
 		(comment 1 "SAFETY-CRITICAL 4-layer 150x100mm - active servo controller")
 		(comment 2 "F.Cu 2oz / In1.Cu (GND) 1oz / In2.Cu (PWR high-current) 1oz / B.Cu 2oz - ENIG")
 		(comment 3 "Reference: hardware/electrical/block-diagrams/levitation-controller.md")

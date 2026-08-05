@@ -8,10 +8,10 @@
 	)
 	(paper "A2")
 	(title_block
-		(title "PAL Pod Orb - PCB (Flex-Rigid 6-Layer)")
+		(title "Hearth Orb - PCB (Flex-Rigid 6-Layer)")
 		(date "2026-08-03")
 		(rev "A0")
-		(company "PAL Pod")
+		(company "Hearth Home, Inc.")
 		(comment 1 "6-layer flex-rigid: F.Cu / GND / PWR_3V3 / PWR_5V / GND / B.Cu")
 		(comment 2 "Rigid: 1oz Cu on FR4. Flex: 0.5oz Cu on polyimide. ENIG.")
 		(comment 3 "See hardware/electrical/block-diagrams/orb.md")
@@ -12464,7 +12464,7 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "PAL Pod Orb - Rev A0"
+	(gr_text "Hearth Orb - Rev A0"
 		(at -17 -12 0)
 		(layer "F.SilkS")
 		(uuid "80b34bfd-0c10-4969-8170-0322dedfa072")

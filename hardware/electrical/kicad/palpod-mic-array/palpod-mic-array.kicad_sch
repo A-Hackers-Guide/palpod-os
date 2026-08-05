@@ -8,7 +8,7 @@
 		(title "PAL Pod Mic Array")
 		(date "2026-08-03")
 		(rev "A0")
-		(company "PAL Pod")
+		(company "Hearth Home, Inc.")
 		(comment 1 "13-mic dual-ring far-field array with XVF3800 beamformer, NDP120 wake, STM32G474 host")
 		(comment 2 "Board: 4-layer, 120mm dia round, USB 2.0 hi-speed uplink")
 		(comment 3 "Reference: hardware/electrical/mic-array-reference-design.md")

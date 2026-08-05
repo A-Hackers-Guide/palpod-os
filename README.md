@@ -53,9 +53,9 @@ authenticate peers is generated during `install.sh` and never leaves the box.
 
 Typical use:
 
-- *"Hey Pod, show me the office Mac"* → Pod pulls up a live view of that
+- *"Hey Hearth, show me the office Mac"* → Pod pulls up a live view of that
   machine on the TV you're near (or any Moonlight extender).
-- *"Hey Pod, click the send button on my laptop"* → Pod drives the mouse and
+- *"Hey Hearth, click the send button on my laptop"* → Pod drives the mouse and
   keyboard on the remote machine — only for devices you've explicitly
   granted **AI control** to.
 - The pal-web UI lists every registered device, opens a session, and shows

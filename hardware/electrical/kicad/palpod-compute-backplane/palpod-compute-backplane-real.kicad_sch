@@ -8,7 +8,7 @@
 		(title "PAL Pod Compute Backplane")
 		(date "2026-08-03")
 		(rev "A0")
-		(company "PAL Pod")
+		(company "Hearth Home, Inc.")
 		(comment 1 "10x Jetson Orin NX (SODIMM MM70) + 10x AMD Ryzen AI 9 HX 370 (ExaMAX) + BCM56780 fabric")
 		(comment 2 "14-layer stackup, 450x300mm, ENIG, ~3kW power distribution")
 		(comment 3 "Reference: hardware/electrical/block-diagrams/compute-backplane.md")

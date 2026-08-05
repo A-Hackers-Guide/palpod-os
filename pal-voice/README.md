@@ -2,7 +2,7 @@
 
 The voice pipeline for **Hearth** — a fully-offline luxury AI + media appliance.
 
-`pal-voice` turns *"Hey Pod"* into a running local-AI conversation. It runs on a
+`pal-voice` turns *"Hey Hearth"* into a running local-AI conversation. It runs on a
 single **NVIDIA Jetson AGX Orin 64GB** developer kit (Ubuntu 22.04, aarch64) and
 speaks only to the other pod services over an in-process WebSocket bridge.
 

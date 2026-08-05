@@ -11,7 +11,7 @@
 		(title "PAL Pod Extender SBC - PCB")
 		(date "2026-08-03")
 		(rev "A0")
-		(company "PAL Pod")
+		(company "Hearth Home, Inc.")
 		(comment 1 "8-layer 100x100mm board, ENIG, 1oz outer / 0.5oz inner")
 		(comment 2 "Stackup: F.Cu / GND / sig1 / PWR_1V1 / PWR_3V3 / sig2 / GND / B.Cu")
 		(comment 3 "Reference: hardware/electrical/block-diagrams/extender.md")

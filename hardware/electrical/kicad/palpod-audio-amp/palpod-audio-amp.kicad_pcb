@@ -11,7 +11,7 @@
     (title "PAL Pod Audio Amp - PCB")
     (date "2026-08-03")
     (rev "A0")
-    (company "PAL Pod")
+    (company "Hearth Home, Inc.")
     (comment 1 "6-layer 250mm x 200mm rectangular board")
     (comment 2 "F.Cu / In1.Cu (GND) / In2.Cu (PWR_analog) / In3.Cu (PWR_60V) / In4.Cu (GND) / B.Cu")
     (comment 3 "2oz outer copper for HV/speaker traces, 1oz inner. ENIG finish.")

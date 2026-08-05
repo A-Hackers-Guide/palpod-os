@@ -8,7 +8,7 @@
 		(title "PAL Pod Halbach Levitation Controller")
 		(date "2026-08-03")
 		(rev "A0")
-		(company "PAL Pod")
+		(company "Hearth Home, Inc.")
 		(comment 1 "SAFETY-CRITICAL: 2kg glass orb levitates via active servo control - a controller fault means the orb falls")
 		(comment 2 "Dual STM32H723 lockstep, 6x DRV8323 half-bridge, 6x MLX90393 hall, MAX706 window WDT, hardware OC latch, E-stop")
 		(comment 3 "Reference: hardware/electrical/block-diagrams/levitation-controller.md")

@@ -1,0 +1,15 @@
+%TF.GenerationSoftware,KiCad,Pcbnew,10.0.5*%
+%TF.CreationDate,2026-08-04T17:22:55-07:00*%
+%TF.ProjectId,palpod-extender-sbc-real,70616c70-6f64-42d6-9578-74656e646572,A0*%
+%TF.SameCoordinates,Original*%
+%TF.FileFunction,Glue,Top*%
+%TF.FilePolarity,Positive*%
+%FSLAX46Y46*%
+G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
+G04 Created by KiCad (PCBNEW 10.0.5) date 2026-08-04 17:22:55*
+%MOMM*%
+%LPD*%
+G01*
+G04 APERTURE LIST*
+G04 APERTURE END LIST*
+M02*

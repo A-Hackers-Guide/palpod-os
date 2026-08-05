@@ -1,4 +1,4 @@
 (sym_lib_table
   (version 7)
-  (lib (name "palpod-orb")(type "KiCad")(uri "${KIPRJMOD}/libraries/palpod-orb.kicad_sym")(options "")(descr "PAL Pod orb project-local specialty symbols (nRF54H20, MIPI aggregator, LIDAR, Qi RX, TMR, OLED driver, BMS, ToF, cameras, M.2 socket)"))
+  (lib (name "palpod-orb")(type "KiCad")(uri "${KIPRJMOD}/libraries/palpod-orb.kicad_sym")(options "")(descr "Hearth orb project-local specialty symbols (nRF54H20, MIPI aggregator, LIDAR, Qi RX, TMR, OLED driver, BMS, ToF, cameras, M.2 socket)"))
 )
