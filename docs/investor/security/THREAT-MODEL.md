@@ -21,18 +21,20 @@ Offline at Hearth means:
 - **State** — user library metadata, watch history, wake-word calibration, LLM chat history, and companion device pairings live on-box, in LUKS-encrypted storage. There is no analytics pipeline, no product-usage beacon.
 - **Companion** — the iOS and Android companion apps talk only to `pod.palpod.local` over mDNS discovery on the LAN. They do not have a cloud back-end and do not federate through one.
 
+  *Note on the `palpod` link-local hostname:* the mDNS service identifier `pod.palpod.local` is a shipping-firmware internal code identifier, retained per Hearth's naming convention that keeps internal codenames stable across the PAL Pod → Hearth rebrand (see project memory `palpod-project.md`). Public DNS endpoints (updates.hearth.co, sentry.hearth.support, rustdesk.hearth.support) use the Hearth brand. The `palpod.local` mDNS name is scheduled for migration to `hearth.local` in the v1.1 firmware release (target 2027 Q3, tracked as `HRTH-SEC-0161`) coordinated with a companion-app update on the same release train.
+
 ### 1.2 What DOES leave the household
 
 There are **exactly seven egress classes**. Each is called out in the customer-facing "About Data" panel in the local UI, each is off-by-default or user-triggered (except the two housekeeping classes 6 and 7, which are on-by-default because refusing them means running an unpatched box), and each corresponds to a commit in the tree that a customer or auditor can inspect. The two housekeeping classes (DNS and apt) were previously implicit in the boundary diagram and are now made explicit; the previous version's "five egresses" wording was tightened after the diligence review flagged the contradiction (`HRTH-SEC-0140`, closed with this document revision).
 
 | # | Egress | Direction | Default | Justification | Data class leaving |
 |---|--------|-----------|---------|---------------|--------------------|
-| 1 | **Signed firmware update pull** | Outbound HTTPS to `updates.palpod.com` on TCP/443 | ON, checks daily | Security patches require distribution. Signed images, verified locally before install. | Only the update manifest URL and the customer's install-key SHA256 hash (per §6). No user data. |
+| 1 | **Signed firmware update pull** | Outbound HTTPS to `updates.hearth.co` on TCP/443 | ON, checks daily | Security patches require distribution. Signed images, verified locally before install. | Only the update manifest URL and the customer's install-key SHA256 hash (per §6). No user data. |
 | 2 | **NTP** | Outbound UDP/123 to `time.cloudflare.com` (primary), pool.ntp.org (fallback) | ON | JWT expiry, TLS validity, LUKS unlock ordering, and grant windows all depend on wall-clock. See §1.3 for the "should we ship a local GPS PPS module" argument; deferred to v2 as `HRTH-SEC-0121`. | Wall-clock only. |
-| 3 | **RustDesk self-hosted remote support** | Outbound TCP/21115-21119 to the customer's own self-hosted `hbbs/hbbr` (default: `rustdesk.palpod.support` in the standard config, customer may point at their own relay) | OFF at unbox. Requires (a) enabling in local UI, (b) generating a session-scoped ticket, (c) a physical tap on the pod's OLED sphere. | Family remote-support use case. Video frames + input events. E2E-crypto to the local RustDesk client on the pod. | Screen frames, input events, only while a session is open. |
+| 3 | **RustDesk self-hosted remote support** | Outbound TCP/21115-21119 to the customer's own self-hosted `hbbs/hbbr` (default: `rustdesk.hearth.support` in the standard config, customer may point at their own relay) | OFF at unbox. Requires (a) enabling in local UI, (b) generating a session-scoped ticket, (c) a physical tap on the pod's OLED sphere. | Family remote-support use case. Video frames + input events. E2E-crypto to the local RustDesk client on the pod. | Screen frames, input events, only while a session is open. |
 | 4 | **Customer-configured integrations** | Outbound to whatever the customer configures | OFF | If the customer wires a Jellyfin remote proxy or an ntfy.sh push into their own account, that's their egress, not ours. | Whatever the customer picked. |
-| 5 | **Bug report upload (opt-in)** | Outbound HTTPS to `sentry.palpod.support`, but only when the customer opens Settings → Diagnostics → "Send this crash report" | OFF, per-crash | Voluntary crash bundle upload. **Client-side scrub — see §1.5.** | Allowlisted crash fields only: stack trace, kernel version, config hash. |
-| 6 | **DNS resolution** | Outbound DoT (TCP/853) to `1.1.1.1` (Cloudflare) by default, or a customer-configured resolver in Settings → Network → DNS | ON | Required to resolve `updates.palpod.com`, `time.cloudflare.com`, and `sentry.palpod.support` from classes 1, 2, and 5. Plain UDP/53 is disabled by default; only DoT egress is on the nftables allowlist. Query padding (RFC 7830 EDNS(0) padding to 468 bytes) is enabled in `chrony`-adjacent DoT client `stubby.conf`. | DNS query names + timing. Fingerprintable telemetry, mitigated by DoT + query padding + resolver of the customer's choosing. |
+| 5 | **Bug report upload (opt-in)** | Outbound HTTPS to `sentry.hearth.support`, but only when the customer opens Settings → Diagnostics → "Send this crash report" | OFF, per-crash | Voluntary crash bundle upload. **Client-side scrub — see §1.5.** | Allowlisted crash fields only: stack trace, kernel version, config hash. |
+| 6 | **DNS resolution** | Outbound DoT (TCP/853) to `1.1.1.1` (Cloudflare) by default, or a customer-configured resolver in Settings → Network → DNS | ON | Required to resolve `updates.hearth.co`, `time.cloudflare.com`, and `sentry.hearth.support` from classes 1, 2, and 5. Plain UDP/53 is disabled by default; only DoT egress is on the nftables allowlist. Query padding (RFC 7830 EDNS(0) padding to 468 bytes) is enabled in `chrony`-adjacent DoT client `stubby.conf`. | DNS query names + timing. Fingerprintable telemetry, mitigated by DoT + query padding + resolver of the customer's choosing. |
 | 7 | **apt / dpkg security updates** | Outbound HTTPS (TCP/443) to `archive.ubuntu.com`, `security.ubuntu.com`, and `ppa.launchpad.net/hearth/hearth-os/ubuntu` | ON, daily via `unattended-upgrades` cron | Ubuntu LTS security patches for kernel, TLS, libc, container runtime. Signed by Ubuntu's apt keyring and by our own GPG key for the Hearth PPA. If we skip this, CVEs land unfixed — that is worse for the customer than the DNS query "someone is running Ubuntu on Hearth PPA" tells an on-path observer. | apt package list requests + response manifests + package downloads (all signed, none user-derived). |
 
 **What does NOT leave under any circumstance:** wake-word audio, STT transcripts, LLM prompts/responses, media library contents, viewing history, companion device pairings, family member names, chat history, browser cookies, or any file placed in the user's storage. There is no telemetry endpoint. `grep -rn "telemetry\|analytics\|beacon" /opt/palpod-os` returns zero non-comment hits. This is verifiable and CI-enforced (see the pre-commit hook `scripts/no_telemetry_egress.sh`).
@@ -45,7 +47,7 @@ NTP is genuinely necessary — JWT/session cookie expiry (`palweb/auth.py:222`),
 
 We took a hit on the last diligence review for saying "five egresses" when the boundary diagram clearly showed apt and DNS. The seven-class version is honest. Two design notes:
 
-- **DNS.** A resolver egress is technically fingerprintable — an on-path observer sees "Hearth queried A record for `updates.palpod.com` at 03:00" and knows there's a Hearth box on the LAN. We mitigate that by defaulting to DoT (encrypted transport), padding queries (RFC 7830), and giving the customer a first-run setting to point the DoT client at their own resolver (Pi-hole with Unbound is the documented recipe). This does not make DNS invisible, but it makes it look like generic DoT traffic to `1.1.1.1` rather than a distinctive Hearth signature.
+- **DNS.** A resolver egress is technically fingerprintable — an on-path observer sees "Hearth queried A record for `updates.hearth.co` at 03:00" and knows there's a Hearth box on the LAN. We mitigate that by defaulting to DoT (encrypted transport), padding queries (RFC 7830), and giving the customer a first-run setting to point the DoT client at their own resolver (Pi-hole with Unbound is the documented recipe). This does not make DNS invisible, but it makes it look like generic DoT traffic to `1.1.1.1` rather than a distinctive Hearth signature.
 - **apt.** Same principle: an on-path observer sees Ubuntu APT traffic, and the Hearth PPA URL leaks that we exist on the LAN. We do not attempt to hide the update pull. We do promise (and CI-enforce) that no request body from the box contains user data — the `apt-transport-https` request is a URL + `If-Modified-Since` header, nothing more.
 
 ### 1.5 Sentry: client-side scrub, primary defence
@@ -59,10 +61,10 @@ We previously described PII scrubbing as "server-side after upload." That is an 
   - installed package versions (dpkg -l output, filtered to Hearth-owned packages)
   - free memory / disk high-water marks
 - **Not in the allowlist, therefore never uploaded:** file paths under `/home` or `/var/lib/plex/media`, device names, hostname, IP addresses, MAC addresses, mDNS advertisements, chat history, LLM prompts, transcripts, or any file content.
-- The bundle is signed by the pod (ECDSA P-256, same key hierarchy as §6) and encrypted to `sentry.palpod.support`'s pubkey before upload. Only allowlisted fields are on the wire.
+- The bundle is signed by the pod (ECDSA P-256, same key hierarchy as §6) and encrypted to `sentry.hearth.support`'s pubkey before upload. Only allowlisted fields are on the wire.
 - The customer is shown the exact bundle contents in the local UI ("Preview crash bundle") before tapping "Send this crash report." The preview is byte-identical to what is uploaded.
 
-**Fallback (server side):** even with the client-side allowlist, `sentry.palpod.support` runs a defence-in-depth scrub on ingest — the ingest server rejects bundles that contain fields outside the allowlist (schema-validated). Bundles are held in an ephemeral tmpfs for less than five seconds before hitting disk-encrypted long-term storage. Retention: 30 days, then hard-deleted (row + object). Retention SLA is customer-visible at `hearth.com/security/sentry-sla`. Tracked as `HRTH-SEC-0148`.
+**Fallback (server side):** even with the client-side allowlist, `sentry.hearth.support` runs a defence-in-depth scrub on ingest — the ingest server rejects bundles that contain fields outside the allowlist (schema-validated). Bundles are held in an ephemeral tmpfs for less than five seconds before hitting disk-encrypted long-term storage. Retention: 30 days, then hard-deleted (row + object). Retention SLA is customer-visible at `hearth.co/security/sentry-sla`. Tracked as `HRTH-SEC-0148`.
 
 ### 1.6 Explicit non-goals
 
@@ -75,10 +77,10 @@ Hearth is not a burglar alarm, is not a home firewall, and is not audited by any
 ```
                           EXTERNAL NETWORK (untrusted)
      ┌────────────────────────────────────────────────────────────────────────┐
-     │  updates.palpod.com/443 (signed images)     time.cloudflare.com/123    │
+     │  updates.hearth.co/443 (signed images)     time.cloudflare.com/123    │
      │  archive.ubuntu.com/443 (apt security)      1.1.1.1/853 (DoT resolver) │
-     │  ppa.launchpad.net/443 (Hearth PPA)         sentry.palpod.support/443  │
-     │  rustdesk.palpod.support/21115-9 (opt-in, tap-gated)                   │
+     │  ppa.launchpad.net/443 (Hearth PPA)         sentry.hearth.support/443  │
+     │  rustdesk.hearth.support/21115-9 (opt-in, tap-gated)                   │
      └────────────────────────────┬───────────────────────────────────────────┘
                                   │  Outbound-only. Egress-filtered by
                                   │  nftables ruleset `hearth-egress`.
@@ -237,7 +239,7 @@ Each mitigation cell is grounded in the actual code. Where a mitigation is aspir
 
 | Threat | Description | Attack scenario | Mitigation in place | Residual risk |
 |---|---|---|---|---|
-| Spoofing | Rogue update server | DNS poisoning points `updates.palpod.com` at attacker. | TLS + HPKP-like SPKI pin on the update client; response payload signed with Hearth firmware key (ECDSA P-256), verified against burned-in Jetson public key. | Root key compromise is total loss — see §6.6 (escrow). |
+| Spoofing | Rogue update server | DNS poisoning points `updates.hearth.co` at attacker. | TLS + HPKP-like SPKI pin on the update client; response payload signed with Hearth firmware key (ECDSA P-256), verified against burned-in Jetson public key. | Root key compromise is total loss — see §6.6 (escrow). |
 | Tampering | In-flight image swap | On-path attacker replaces bytes. | Signature verified before install; image also has a per-file SHA256 manifest, itself signed. | Verifier bug is tracked as `HRTH-SEC-0150` with a formal-methods spec (TLA+ pass) as the scoped fix. |
 | Repudiation | "We didn't push that update" | Customer disputes an installed update. | Every install writes a signed audit row: image hash + signer + timestamp + previous image hash (chained). | Yes. |
 | Information disclosure | Update client leaks user data | Update check payload includes anything besides install ID hash. | The exact request body is in `update.sh` — a fixed JSON `{"install_id_hash":"<sha256>","current_ver":"<semver>"}`. Reviewed line-by-line in third-party audit deliverable. | Contractual — see §7. |
@@ -455,7 +457,7 @@ The escrow deposits, updated quarterly:
 - Hearth Systems Inc. files for bankruptcy or dissolution.
 - No signed security update has been pushed to the Hearth PPA for **12 consecutive months**.
 - Three unremediated CVEs of Critical or High severity within a single component class remain open past their §8 SLA.
-- Hearth ceases operation of `updates.palpod.com` for more than 60 days.
+- Hearth ceases operation of `updates.hearth.co` for more than 60 days.
 
 **What "release" means in practice:** the source tree, toolchain, and signing key shards are handed to a customer trustee (initially the largest enterprise buyer with a signed trustee agreement; if none, a nominated maintainer selected by EscrowTech from the Hearth security community). The trustee has the legal right to re-key the signing hierarchy (which invalidates further Hearth-signed pushes), publish a fork under the same source-available terms, and ship signed updates to customers who consent to the trustee's new key. Existing pod owners can accept the trustee's public key via a signed rotation record countersigned by both the last Hearth key and the trustee. This is not "Hearth's customers are stranded"; it is "Hearth's customers have a defined path off the mothership."
 
@@ -487,7 +489,7 @@ LUKS2 with argon2id KDF (`iter-time=2000`, `memory=1G`) on the NVMe JBOD. Master
 
 ## 7. Independent audit plan
 
-**Cadence:** Annual full-stack firmware + web + companion audit; ad-hoc after any incident (§8) or major release. **Deliverable:** private full report + public redacted summary published to `hearth.com/security/audits/<year>.pdf`.
+**Cadence:** Annual full-stack firmware + web + companion audit; ad-hoc after any incident (§8) or major release. **Deliverable:** private full report + public redacted summary published to `hearth.co/security/audits/<year>.pdf`.
 
 **On the "reproducible builds vs source-available vs NDA the audit" question.** The prior version of this document was too casual on all three fronts and the diligence review caught the contradiction. The precise, defensible position:
 
@@ -510,7 +512,7 @@ LUKS2 with argon2id KDF (`iter-time=2000`, `memory=1G`) on the NVMe JBOD. Master
 
 ## 8. Incident response playbook
 
-**Reporting channel:** `security@palpod.com` (documented in `/SECURITY.md`).
+**Reporting channel:** `security@hearth.co` (documented in `/SECURITY.md`).
 
 **Severity SLA (public commitment):**
 
@@ -528,7 +530,7 @@ LUKS2 with argon2id KDF (`iter-time=2000`, `memory=1G`) on the NVMe JBOD. Master
 - **High/Medium:** dashboard banner + next monthly digest email (opt-in).
 - **All levels:** GitHub Security Advisory published on the calendar day, credited to the reporter unless anonymity requested.
 
-**Postmortem:** every incident gets a blameless postmortem published to `hearth.com/security/incidents/<id>.md` (redacted).
+**Postmortem:** every incident gets a blameless postmortem published to `hearth.co/security/incidents/<id>.md` (redacted).
 
 **Escrow-trigger interaction:** if three unremediated Critical/High findings within a single component class remain open past SLA, the §6.7 escrow trigger fires. This makes the SLA table not just a promise but a mechanical consequence — miss the SLA repeatedly and the customer path off the mothership opens automatically.
 
@@ -552,7 +554,7 @@ LUKS2 with argon2id KDF (`iter-time=2000`, `memory=1G`) on the NVMe JBOD. Master
 
 - **Reserve:** $50,000 pool committed year one. Renewable; if we spend it, we replenish.
 - **Safe harbor language:** we adopt the [disclose.io](https://disclose.io) safe-harbor template verbatim. No lawsuits against good-faith researchers under this policy. Documented in `/SECURITY.md`.
-- **Hall of thanks:** researchers credited on `hearth.com/security/thanks`.
+- **Hall of thanks:** researchers credited on `hearth.co/security/thanks`.
 
 ---
 

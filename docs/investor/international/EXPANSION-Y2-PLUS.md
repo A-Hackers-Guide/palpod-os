@@ -429,36 +429,31 @@ All non-US prices set to protect ~25% gross margin post-duty/VAT and normalize o
 
 ## 8. Data Residency + GDPR
 
-The offline architecture is the case. Per THREAT-MODEL.md's 7-class egress model, only these classes ever leave the household perimeter — and Hearth is the **data controller** for every one of them under GDPR Article 4(7) because we determine the purposes and means of processing:
+The offline architecture is the case. Per THREAT-MODEL.md §1.2's canonical 7-class egress model, only these classes ever leave the household perimeter — and Hearth is the **data controller** for six of them under GDPR Article 4(7) (for class 4, customer-configured integrations, the customer determines the purposes and means and is therefore the controller for that class):
 
-1. **Firmware update pull** (signed, initiated by device, HTTPS to Hearth update CDN)
-2. **NTP** (time sync, RFC 5905, `time.cloudflare.com` primary + household pool)
-3. **DNS** (encrypted, DoH to Cloudflare `1.1.1.1` + user override)
-4. **Concierge screen-share on user request only** (via local RustDesk relay per §6)
-5. **Support ticket creation** (metadata only: firmware version, error class, no user content, user-initiated)
-6. **License activation** (one-time at commissioning: serial + license key exchange)
-7. **Optional weather/news content pull** (user-toggled, IP-anonymized via user's own network)
+1. **Signed firmware update pull** — Outbound HTTPS to `updates.hearth.co` on TCP/443. Signed images, verified locally before install.
+2. **NTP** — Outbound UDP/123 to `time.cloudflare.com` (primary) + `pool.ntp.org` (fallback). Wall-clock only.
+3. **RustDesk self-hosted remote support** — Outbound TCP/21115-21119 to `rustdesk.hearth.support` (or a customer-nominated relay). OFF at unbox; requires local-UI enable + session-scoped ticket + physical tap on the pod's OLED sphere. Concierge screen-share rides on this class.
+4. **Customer-configured integrations** — Outbound to whatever the customer configures (Jellyfin remote proxy, ntfy.sh push, personal MQTT broker, etc.). Off by default; enabled per-integration by the customer, who is the data controller for this class.
+5. **Bug report upload / Sentry** — Outbound HTTPS to `sentry.hearth.support`, per-crash, only when the customer opens Settings → Diagnostics → "Send this crash report." Client-side scrub against a strict allowlist (stack trace, kernel version, config hash, dpkg-list). No raw file content.
+6. **DNS resolution** — Outbound DoT (TCP/853) to `1.1.1.1` (Cloudflare) by default, or a customer-configured resolver. Query padding (RFC 7830 EDNS(0) padding) enabled.
+7. **apt / dpkg security updates** — Outbound HTTPS to `archive.ubuntu.com`, `security.ubuntu.com`, and `ppa.launchpad.net/hearth/hearth-os/ubuntu`. Signed by Ubuntu's apt keyring and by the Hearth GPG key for the Hearth PPA.
 
 **Everything else — every voice utterance, every media file, every LLM prompt, every calendar entry, every wake-word training sample — stays on-device.** No cloud STT, no cloud TTS, no cloud LLM, no cloud media library. Every processing step runs on the Jetson cluster + Framework nodes inside the sphere.
 
 ### GDPR Article 6 Lawfulness Per Egress Class
 
-The v1 draft asserted Article 6 lawfulness was "not required" — that was wrong. Hearth is a controller for each of the 7 egress classes (firmware CDN captures client IPs, license activation captures serial↔identity mapping, support tickets are personal data by definition, DNS resolution is metadata about household activity). Article 6(1) lawfulness must be asserted per processing class:
+The v1 draft asserted Article 6 lawfulness was "not required" — that was wrong. Hearth is a controller for six of the seven egress classes (firmware CDN captures client IPs, RustDesk relay sees session metadata, DNS resolution is metadata about household activity, apt and NTP fingerprint the box's presence, Sentry bundles are ingested by Hearth infrastructure). For class 4, customer-configured integrations, the customer is the controller because they determine purposes and means; Hearth's role is limited to executing the egress the customer defined. Article 6(1) lawfulness must be asserted per processing class:
 
 | Egress class | Article 6 legal basis | Rationale |
 |---|---|---|
-| 1. Firmware update pull | 6(1)(b) contract performance + 6(1)(f) legitimate interest | Update delivery is a necessary part of ongoing product service; security patching is a documented legitimate interest with balancing test filed in DPIA |
-| 2. NTP | 6(1)(f) legitimate interest | Household time sync is necessary for scheduled operations, event correlation, and security; no personal data revealed beyond the IP of the LAN egress |
-| 3. DNS (DoH) | 6(1)(f) legitimate interest | Name resolution is necessary for network operation; DoH minimizes exposure vs plaintext DNS; user override is documented |
-| 4. Concierge screen-share (RustDesk) | 6(1)(a) explicit consent + physical-tap gesture at device | Concierge cannot initiate; user must physically tap "Allow Concierge" gesture on the device, which creates a session-scoped ephemeral tunnel with local audit log |
-| 5. Support ticket creation | 6(1)(a) explicit consent, per-ticket | User authors and confirms each ticket submission; no automated telemetry |
-| 6. License activation | 6(1)(b) contract performance | Serial↔license exchange is necessary to establish the paid contract |
-| 7. Optional weather/news content pull | 6(1)(a) explicit consent, per-widget | User toggles each content widget individually; consent is granular and revocable in device settings |
-
-Two additional egress paths deserve their own line even though they aren't in the "7 classes" from THREAT-MODEL:
-
-- **`apt update` (Debian package repository refresh for Framework nodes)** — 6(1)(f) legitimate interest (system security). Traffic is to Debian mirrors + Framework OEM repo, not to Hearth. Documented and disclosed.
-- **Bug-report upload with user attachments** — 6(1)(a) explicit consent per-report, with a preview screen showing exactly what will be transmitted before the user confirms.
+| 1. Signed firmware update pull | 6(1)(b) contract performance + 6(1)(f) legitimate interest | Update delivery is a necessary part of ongoing product service; security patching is a documented legitimate interest with balancing test filed in DPIA |
+| 2. NTP | 6(1)(f) legitimate interest | Household time sync is necessary for scheduled operations (JWT expiry, TLS validity, LUKS unlock ordering, grant windows); no personal data revealed beyond the IP of the LAN egress |
+| 3. RustDesk self-hosted remote support | 6(1)(a) explicit consent + physical-tap gesture at device | Remote support (including concierge screen-share) cannot initiate server-side; user must physically tap "Allow Support" on the pod's OLED sphere, which creates a session-scoped ephemeral tunnel with local audit log |
+| 4. Customer-configured integrations | 6(1)(a) explicit consent | Customer opts in per integration; the customer is the data controller for this class (Hearth documents this in the local UI at the moment the integration is added, so the customer's DPA obligations are surfaced explicitly) |
+| 5. Bug report upload / Sentry | 6(1)(a) per-report explicit consent | User previews the exact allowlisted bundle contents and confirms each upload; no automated telemetry; strict allowlist enforced client-side and re-validated server-side |
+| 6. DNS resolution | 6(1)(f) legitimate interest | Name resolution is necessary for network operation; DoT to `1.1.1.1` minimizes exposure vs plaintext DNS; customer override to a nominated resolver is documented |
+| 7. apt / dpkg security updates | 6(1)(f) legitimate interest (security) | Ubuntu LTS security patches for kernel, TLS, libc, container runtime; documented legitimate-interest balancing test — the security necessity of shipping CVE fixes outweighs the modest observability of "this box runs Ubuntu with the Hearth PPA on its apt list" |
 
 ### DPIA (Article 35) Requirements
 
@@ -478,8 +473,8 @@ Per Article 28, we maintain and publish the sub-processor list. Customers must b
 
 | Sub-processor | Location | Purpose | Data touched |
 |---|---|---|---|
-| Cloudflare | Global anycast | NTP + DoH resolution | Household egress IPs, DNS query metadata |
-| Amazon CloudFront (firmware CDN) | Global anycast, EU nodes for EU customers | Firmware binary distribution | Household egress IPs, firmware version fetch logs |
+| Cloudflare | Global anycast | NTP (`time.cloudflare.com`) + DoT resolution (`1.1.1.1`) + firmware CDN edge for `updates.hearth.co` | Household egress IPs, DNS query metadata, firmware version fetch logs |
+| Canonical Ltd | UK, global mirror network | Ubuntu security-update distribution via `archive.ubuntu.com` + `security.ubuntu.com` + `ppa.launchpad.net` | Household egress IPs, apt manifest fetches |
 | Sanmina (Fremont) | US (California) | Manufacturing-stage QA data + support-ticket triage L3 | Serial numbers, calibration data, support ticket content |
 | Hetzner Online GmbH | Germany (Frankfurt) | EU RustDesk relay + EU CDN edge | Session metadata for concierge screen-share (payload E2E-encrypted; relay sees IP + session start/end only) |
 | OVH / M247 | UK (London) | UK RustDesk relay | Same as EU relay, UK jurisdiction |
@@ -515,7 +510,7 @@ Records of processing (Article 30) are maintained for the 7 egress classes plus 
 - Local export to standard formats (JSON for structured data, media in original codecs). Concierge can walk user through the export UI.
 
 ### Article 37 (DPO)
-- Hearth appoints a fractional DPO via **ProDPO** (Dublin-based) starting Q1 2028 for EU-wide coverage. UK DPO via **The DPO Centre** (Colchester). Both are named sub-processors with contact detail published at `hearth.com/dpo/eu` and `hearth.com/dpo/uk`.
+- Hearth appoints a fractional DPO via **ProDPO** (Dublin-based) starting Q1 2028 for EU-wide coverage. UK DPO via **The DPO Centre** (Colchester). Both are named sub-processors with contact detail published at `hearth.co/dpo/eu` and `hearth.co/dpo/uk`.
 
 ### SAR (Subject Access Request) Mechanism
 - Local concierge triggers on-device SAR export via secure tunnel
@@ -669,7 +664,7 @@ Some markets warrant multiple voice presets — Germany (Hochdeutsch + Bavarian 
 ### Distributor Conflict / Channel Cannibalization
 - Y1-Y2 dealer exclusivity by postcode / Land / Emirate protects local reps
 - Y3+ convert to non-exclusive with performance triggers (unit-quota, service SLA, GDPR audit pass)
-- Direct-to-consumer via hearth.com/global remains available for customers who explicitly reject dealer channel (rare); referred to nearest dealer with 10% concierge kickback
+- Direct-to-consumer via hearth.co/global remains available for customers who explicitly reject dealer channel (rare); referred to nearest dealer with 10% concierge kickback
 
 ### Concierge Model Doesn't Travel
 - **Risk:** US concierge cultural register (informal, upbeat) alienates German/French/Japanese HNW who expect formality.
