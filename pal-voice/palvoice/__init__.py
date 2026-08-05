@@ -1,4 +1,4 @@
-"""pal-voice — voice pipeline for PAL Pod.
+"""pal-voice — voice pipeline for Hearth.
 
 Start reading at ``palvoice.orchestrator`` — it wires every other module into
 the wake -> STT -> LLM -> TTS state machine.

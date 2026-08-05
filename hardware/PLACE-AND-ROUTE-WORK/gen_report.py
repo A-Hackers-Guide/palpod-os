@@ -80,12 +80,12 @@ def parse_drc(path):
     return r
 
 lines = []
-lines.append('# PAL Pod PCB Auto-Place + Auto-Route Report')
+lines.append('# Hearth PCB Auto-Place + Auto-Route Report')
 lines.append('')
 lines.append('**DEMO ONLY - NOT MANUFACTURABLE**')
 lines.append('')
 lines.append('This report documents the results of running an automated place-and-route')
-lines.append('pipeline over all six PAL Pod PCB projects. The pipeline used:')
+lines.append('pipeline over all six Hearth PCB projects. The pipeline used:')
 lines.append('')
 lines.append('- **Placer**: Naive Python grid placer (bucket by ref-prefix, cell size = max footprint + 3mm padding)')
 lines.append('- **Router**: FreeRouting v2.2.4 (headless CLI mode, low pass counts)')

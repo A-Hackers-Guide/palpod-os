@@ -1,7 +1,7 @@
 # ─────────────────────────────────────────────────────────────────────────────
 # PALPod OS — docker compose stack
 #
-# All PAL Pod services in one file. Designed for the Jetson AGX Orin 64GB
+# All Hearth services in one file. Designed for the Jetson AGX Orin 64GB
 # Developer Kit running Ubuntu 22.04 aarch64 with the NVIDIA Container Toolkit
 # installed. Also boots on any x86_64 Ubuntu machine with an NVIDIA GPU.
 #
