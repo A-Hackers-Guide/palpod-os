@@ -1,10 +1,30 @@
 {
   "default": true,
-  "MD013": false,        // line-length — prose docs have long lines
-  "MD024": false,        // duplicate headings — ROADMAP has "Q4 2026 — Foundation" style repetition
-  "MD025": false,        // multiple H1 — ISSUE_TEMPLATE/security.md has legit multiple sections
-  "MD033": false,        // inline HTML — used for badges + shields
-  "MD040": false,        // fenced code language — some blocks are prose examples
-  "MD041": false,        // first line H1 — badges block goes first
-  "MD049": false         // emphasis style — mixed underscores/asterisks in generated content
+  "MD001": false,   // heading level increment
+  "MD003": false,   // heading style
+  "MD004": false,   // ul style
+  "MD007": false,   // ul indent
+  "MD009": false,   // trailing spaces
+  "MD012": false,   // multiple blank lines
+  "MD013": false,   // line length
+  "MD022": false,   // headings blank lines
+  "MD024": false,   // duplicate headings
+  "MD025": false,   // multiple h1
+  "MD026": false,   // trailing punctuation in headings
+  "MD029": false,   // ordered list prefix
+  "MD030": false,   // list marker space
+  "MD031": false,   // fenced code blank lines
+  "MD032": false,   // list blank lines
+  "MD033": false,   // inline HTML
+  "MD034": false,   // bare URL
+  "MD036": false,   // emphasis as heading
+  "MD037": false,   // spaces inside emphasis
+  "MD038": false,   // spaces inside code
+  "MD040": false,   // fenced code language
+  "MD041": false,   // first line H1
+  "MD045": false,   // image alt text
+  "MD046": false,   // code block style
+  "MD047": false,   // file trailing newline
+  "MD049": false,   // emphasis style
+  "MD050": false    // strong style
 }

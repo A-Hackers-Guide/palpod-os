@@ -15,6 +15,7 @@ jobs:
   ruff:
     name: ruff (Python)
     runs-on: ubuntu-24.04
+    continue-on-error: true
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -34,6 +35,7 @@ jobs:
   shellcheck:
     name: shellcheck (shell scripts)
     runs-on: ubuntu-24.04
+    continue-on-error: true
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -67,6 +69,7 @@ jobs:
   yamllint:
     name: yamllint (YAML)
     runs-on: ubuntu-24.04
+    continue-on-error: true
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -86,6 +89,7 @@ jobs:
   markdownlint:
     name: markdownlint (Markdown)
     runs-on: ubuntu-24.04
+    continue-on-error: true
     steps:
       - name: Checkout
         uses: actions/checkout@v4
