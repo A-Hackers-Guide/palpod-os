@@ -501,16 +501,21 @@ Timeline anchored on the assumed Shark Tank episode air date (planning window: Q
 Prior playbook cited $88.4M Y1 at 700 DTC + 300 dealer — a target that required both double the delivered volume and a 400-unit accountability gap. Revised $51.6M booked / $59M retail-throughput is what the team as staffed delivers on plan. Obj 22 (path to $10M revenue) is comfortably cleared inside month 3 either way; the corrected number sacrifices a marketing headline for a defensible P&L.
 
 ### Y2 (Feb 2028 → Feb 2029)
-- **DTC:** 700 units (double Y1) — driven by referral rate crossing 30%, marketing spend maturity, and 3 regional reps if Central/South is added
-- **Dealer:** 425 units (70% growth) — 30 dealers across all Y1 Founding cohort + 14 Certified Dealer conversions (the "30-dealer" number now lands at end of Y2)
-- **International:** 60 units — UK + Zurich + Toronto initial-market expansion, dealer-only (no DTC concierge for international Y2). See INTERNATIONAL-EXPANSION-PLAN.md for the market ranking and phasing.
-- **Total Y2 booked revenue target: ~$105M**
+Reconciled to SERIES-A-DECK.md Slide 12 and FINANCIAL-MODEL-SENSITIVITY.md §4.2 base case (canonical):
+- **Total units:** 1,900 (main); extender attach ramps to 1.2 per household = 2,280 extenders
+- **DTC:** 1,050 units (3.0× Y1 DTC of 350) — driven by referral rate crossing 30%, marketing spend maturity, 3 regional reps + Central/South added, Shark Tank aftermath tailwind persisting through Q3 2028
+- **Dealer:** 790 units — 30 dealers across all Y1 Founding cohort + 14 Certified Dealer conversions (the "30-dealer" number lands at end of Y2), avg 26 units per dealer per year
+- **International:** 60 units — UK + Zurich + Toronto initial-market expansion, dealer-only (no DTC concierge for international Y2). See EXPANSION-Y2-PLUS.md for the market ranking and phasing.
+- **Total Y2 revenue target: $201M** (per SERIES-A-DECK Slide 12: 1,900 main × $95k + 2,280 extenders × $8,999 = $180.5M + $20.5M = $201M)
+- Prior playbook draft cited "$105M booked / 1,185 units" — that was an internal team-plan draft NOT reconciled to the deck's demand-side model. Reconciled here to canonical.
 
 ### Y3 (Feb 2029 → Feb 2030)
+Reconciled to SERIES-A-DECK.md Slide 12 (canonical):
+- **Total units:** 3,200 (main); extender attach 2.0 per household = 6,400 extenders
 - Referral rate hits 40% — DTC CAC compresses ~30% versus Y1
-- Extender attach on installed base drives ~15% of revenue from repeat customers
+- Extender attach on installed base drives ~$57.6M of Y3 revenue from repeat customers
 - Dealer channel matures to 55% of new-customer sourcing, DTC 45% (inversion from Y1 mix)
-- Total booked revenue target: ~$185M
+- **Total Y3 revenue target: $361.6M** (per deck Slide 12: 3,200 main × $95k + 6,400 extenders × $8,999 = $304M + $57.6M = $361.6M)
 
 ---
 
