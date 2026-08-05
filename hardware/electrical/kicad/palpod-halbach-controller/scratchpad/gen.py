@@ -812,7 +812,7 @@ def build_kicad_pro():
         "subpart_id_separator": 0
       },
       "sheets": [["00000000-0000-4000-8000-000000000001", "Root"]],
-      "text_variables": {"BOARD_REV": "A0", "PROJECT": "PAL Pod Halbach Controller"}
+      "text_variables": {"BOARD_REV": "A0", "PROJECT": "Hearth Halbach Controller"}
     }
     return json.dumps(pro, indent=2)
 
@@ -981,10 +981,10 @@ def build_schematic():
     parts.append(f'\t(uuid "{PROJ_UUID}")\n')
     parts.append('\t(paper "A2")\n')
     parts.append('\t(title_block\n')
-    parts.append('\t\t(title "PAL Pod Halbach Levitation Controller")\n')
+    parts.append('\t\t(title "Hearth Halbach Levitation Controller")\n')
     parts.append('\t\t(date "2026-08-03")\n')
     parts.append('\t\t(rev "A0")\n')
-    parts.append('\t\t(company "PAL Pod")\n')
+    parts.append('\t\t(company "Hearth")\n')
     parts.append('\t\t(comment 1 "SAFETY-CRITICAL: 2kg glass orb levitates via active servo control - a controller fault means the orb falls")\n')
     parts.append('\t\t(comment 2 "Dual STM32H723 lockstep, 6x DRV8323 half-bridge, 6x MLX90393 hall, MAX706 window WDT, hardware OC latch, E-stop")\n')
     parts.append('\t\t(comment 3 "Reference: hardware/electrical/block-diagrams/levitation-controller.md")\n')
@@ -1245,10 +1245,10 @@ def build_pcb():
   )
   (paper "A3")
   (title_block
-    (title "PAL Pod Halbach Levitation Controller - PCB")
+    (title "Hearth Halbach Levitation Controller - PCB")
     (date "2026-08-03")
     (rev "A0")
-    (company "PAL Pod")
+    (company "Hearth")
     (comment 1 "SAFETY-CRITICAL 4-layer 150x100mm - active servo controller")
     (comment 2 "F.Cu 2oz / In1.Cu (GND) 1oz / In2.Cu (PWR high-current) 1oz / B.Cu 2oz - ENIG")
     (comment 3 "Reference: hardware/electrical/block-diagrams/levitation-controller.md")
@@ -1357,7 +1357,7 @@ def build_pcb():
     (uuid "{uuid("edge:rect")}")
   )
 
-  (gr_text "PAL Pod Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB"
+  (gr_text "Hearth Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB"
     (at {x1+5} {y1+5} 0)
     (layer "F.SilkS")
     (uuid "{uuid("silk:title")}")
@@ -1418,7 +1418,7 @@ def build_sym_lib_table():
             '  (version 7)\n'
             f'  (lib (name "palpod-halbach-controller")(type "KiCad")'
             f'(uri "${{KIPRJMOD}}/libraries/palpod-halbach-controller.kicad_sym")'
-            f'(options "")(descr "PAL Pod Halbach controller specialty symbols'
+            f'(options "")(descr "Hearth Halbach controller specialty symbols'
             f' (STM32H723, DRV8323, INA240, MLX90393, MAX706, MCP2542FD, TL331,'
             f' IPI050N06N, STM32G030, RTK-2412)"))\n'
             ')\n')
@@ -1428,7 +1428,7 @@ def build_fp_lib_table():
             '  (version 7)\n'
             f'  (lib (name "palpod-halbach-controller")(type "KiCad")'
             f'(uri "${{KIPRJMOD}}/libraries/palpod-halbach-controller.pretty")'
-            f'(options "")(descr "PAL Pod Halbach controller specialty footprints (placeholder outlines)"))\n'
+            f'(options "")(descr "Hearth Halbach controller specialty footprints (placeholder outlines)"))\n'
             ')\n')
 
 def build_prl():
@@ -1481,7 +1481,7 @@ def build_prl():
 
 
 def build_readme():
-    return f"""# PAL Pod Halbach Levitation Controller — KiCad Project
+    return f"""# Hearth Halbach Levitation Controller — KiCad Project
 
 **SAFETY-CRITICAL BOARD.** This is the real-time active stabilization
 controller for the Halbach neodymium levitation array that holds the OLED orb

@@ -2770,11 +2770,11 @@
 [silk_overlap]: Silkscreen clearance
     Rule: board setup constraints silk; warning
     @(195.0000 mm, 55.0000 mm): PCB text 'ISO 7010 W006 magnetic-field warning label goes here (silkscreen or mechanical drawing)' on F.Silkscreen
-    @(55.0000 mm, 55.0000 mm): PCB text 'PAL Pod Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(55.0000 mm, 55.0000 mm): PCB text 'Hearth Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
 [silk_overlap]: Silkscreen clearance
     Rule: board setup constraints silk; warning
     @(116.2406 mm, 57.5594 mm): Reference field of U12
-    @(55.0000 mm, 55.0000 mm): PCB text 'PAL Pod Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(55.0000 mm, 55.0000 mm): PCB text 'Hearth Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
 [silk_overlap]: Silkscreen clearance
     Rule: board setup constraints silk; warning
     @(55.0000 mm, 60.0000 mm): PCB text 'SAFETY-CRITICAL BOARD - Full FMEA / DFMEA / power-on checklist required before energizing coils' on F.Silkscreen
@@ -2786,7 +2786,7 @@
 [silk_overlap]: Silkscreen clearance
     Rule: board setup constraints silk; warning
     @(165.5969 mm, 54.1594 mm): Rectangle of U15 on F.Silkscreen
-    @(55.0000 mm, 55.0000 mm): PCB text 'PAL Pod Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(55.0000 mm, 55.0000 mm): PCB text 'Hearth Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
 [silk_overlap]: Silkscreen clearance
     Rule: board setup constraints silk; warning
     @(55.0000 mm, 60.0000 mm): PCB text 'SAFETY-CRITICAL BOARD - Full FMEA / DFMEA / power-on checklist required before energizing coils' on F.Silkscreen
@@ -2802,11 +2802,11 @@
 [silk_overlap]: Silkscreen clearance
     Rule: board setup constraints silk; warning
     @(63.6844 mm, 57.5594 mm): Reference field of U1
-    @(55.0000 mm, 55.0000 mm): PCB text 'PAL Pod Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(55.0000 mm, 55.0000 mm): PCB text 'Hearth Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
 [silk_overlap]: Silkscreen clearance
     Rule: board setup constraints silk; warning
     @(81.2031 mm, 57.5594 mm): Reference field of U10
-    @(55.0000 mm, 55.0000 mm): PCB text 'PAL Pod Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(55.0000 mm, 55.0000 mm): PCB text 'Hearth Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
 [silk_overlap]: Silkscreen clearance
     Rule: board setup constraints silk; warning
     @(55.0000 mm, 60.0000 mm): PCB text 'SAFETY-CRITICAL BOARD - Full FMEA / DFMEA / power-on checklist required before energizing coils' on F.Silkscreen
@@ -2814,7 +2814,7 @@
 [silk_overlap]: Silkscreen clearance
     Rule: board setup constraints silk; warning
     @(165.5969 mm, 54.1594 mm): Rectangle of U15 on F.Silkscreen
-    @(55.0000 mm, 55.0000 mm): PCB text 'PAL Pod Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(55.0000 mm, 55.0000 mm): PCB text 'Hearth Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
 [silk_overlap]: Silkscreen clearance
     Rule: board setup constraints silk; warning
     @(195.0000 mm, 55.0000 mm): PCB text 'ISO 7010 W006 magnetic-field warning label goes here (silkscreen or mechanical drawing)' on F.Silkscreen
@@ -2826,7 +2826,7 @@
 [silk_overlap]: Silkscreen clearance
     Rule: board setup constraints silk; warning
     @(165.5969 mm, 54.1594 mm): Rectangle of U15 on F.Silkscreen
-    @(55.0000 mm, 55.0000 mm): PCB text 'PAL Pod Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(55.0000 mm, 55.0000 mm): PCB text 'Hearth Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
 [silk_overlap]: Silkscreen clearance
     Rule: board setup constraints silk; warning
     @(55.0000 mm, 60.0000 mm): PCB text 'SAFETY-CRITICAL BOARD - Full FMEA / DFMEA / power-on checklist required before energizing coils' on F.Silkscreen
@@ -2834,7 +2834,7 @@
 [silk_overlap]: Silkscreen clearance
     Rule: board setup constraints silk; warning
     @(98.7219 mm, 57.5594 mm): Reference field of U11
-    @(55.0000 mm, 55.0000 mm): PCB text 'PAL Pod Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(55.0000 mm, 55.0000 mm): PCB text 'Hearth Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
 [silk_overlap]: Silkscreen clearance
     Rule: board setup constraints silk; warning
     @(55.0000 mm, 60.0000 mm): PCB text 'SAFETY-CRITICAL BOARD - Full FMEA / DFMEA / power-on checklist required before energizing coils' on F.Silkscreen
@@ -2869,11 +2869,11 @@
     @(167.5259 mm, 55.2894 mm): Pad 45 [<no net>] of U15 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(55.0000 mm, 55.0000 mm): PCB text 'PAL Pod Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(55.0000 mm, 55.0000 mm): PCB text 'Hearth Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
     @(165.9569 mm, 55.8714 mm): Pad 2 [<no net>] of U15 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(55.0000 mm, 55.0000 mm): PCB text 'PAL Pod Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(55.0000 mm, 55.0000 mm): PCB text 'Hearth Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
     @(165.9569 mm, 56.9134 mm): Pad 3 [<no net>] of U15 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
@@ -2917,27 +2917,27 @@
     @(171.6369 mm, 54.8304 mm): Pad 36 [<no net>] of U15 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(55.0000 mm, 55.0000 mm): PCB text 'PAL Pod Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(55.0000 mm, 55.0000 mm): PCB text 'Hearth Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
     @(171.6369 mm, 56.9134 mm): Pad 34 [<no net>] of U15 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(55.0000 mm, 55.0000 mm): PCB text 'PAL Pod Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(55.0000 mm, 55.0000 mm): PCB text 'Hearth Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
     @(171.6369 mm, 55.8714 mm): Pad 35 [<no net>] of U15 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(55.0000 mm, 55.0000 mm): PCB text 'PAL Pod Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(55.0000 mm, 55.0000 mm): PCB text 'Hearth Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
     @(171.6369 mm, 54.8304 mm): Pad 36 [<no net>] of U15 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(55.0000 mm, 55.0000 mm): PCB text 'PAL Pod Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(55.0000 mm, 55.0000 mm): PCB text 'Hearth Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
     @(171.5929 mm, 55.2894 mm): Pad 37 [<no net>] of U15 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(55.0000 mm, 55.0000 mm): PCB text 'PAL Pod Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(55.0000 mm, 55.0000 mm): PCB text 'Hearth Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
     @(171.0839 mm, 55.2894 mm): Pad 38 [PVDD] of U15 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(55.0000 mm, 55.0000 mm): PCB text 'PAL Pod Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(55.0000 mm, 55.0000 mm): PCB text 'Hearth Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
     @(170.5759 mm, 55.2894 mm): Pad 39 [<no net>] of U15 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
@@ -3417,11 +3417,11 @@
     @(170.0679 mm, 55.2894 mm): Pad 40 [GVDD] of U15 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(55.0000 mm, 55.0000 mm): PCB text 'PAL Pod Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(55.0000 mm, 55.0000 mm): PCB text 'Hearth Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
     @(170.0679 mm, 55.2894 mm): Pad 40 [GVDD] of U15 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(55.0000 mm, 55.0000 mm): PCB text 'PAL Pod Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(55.0000 mm, 55.0000 mm): PCB text 'Hearth Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
     @(169.5599 mm, 55.2894 mm): Pad 41 [<no net>] of U15 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
@@ -3433,7 +3433,7 @@
     @(171.0839 mm, 55.2894 mm): Pad 38 [PVDD] of U15 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(55.0000 mm, 55.0000 mm): PCB text 'PAL Pod Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(55.0000 mm, 55.0000 mm): PCB text 'Hearth Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
     @(171.0839 mm, 55.2894 mm): Pad 38 [PVDD] of U15 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
@@ -3453,7 +3453,7 @@
     @(171.5929 mm, 55.2894 mm): Pad 37 [<no net>] of U15 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(55.0000 mm, 55.0000 mm): PCB text 'PAL Pod Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(55.0000 mm, 55.0000 mm): PCB text 'Hearth Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
     @(171.5929 mm, 55.2894 mm): Pad 37 [<no net>] of U15 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
@@ -3473,31 +3473,31 @@
     @(166.5099 mm, 55.2894 mm): Pad 47 [<no net>] of U15 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(55.0000 mm, 55.0000 mm): PCB text 'PAL Pod Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(55.0000 mm, 55.0000 mm): PCB text 'Hearth Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
     @(165.9569 mm, 54.8304 mm): Pad 1 [<no net>] of U15 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(55.0000 mm, 55.0000 mm): PCB text 'PAL Pod Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(55.0000 mm, 55.0000 mm): PCB text 'Hearth Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
     @(165.9569 mm, 55.8714 mm): Pad 2 [<no net>] of U15 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(55.0000 mm, 55.0000 mm): PCB text 'PAL Pod Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(55.0000 mm, 55.0000 mm): PCB text 'Hearth Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
     @(166.0009 mm, 55.2894 mm): Pad 48 [<no net>] of U15 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(55.0000 mm, 55.0000 mm): PCB text 'PAL Pod Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(55.0000 mm, 55.0000 mm): PCB text 'Hearth Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
     @(165.9569 mm, 56.9134 mm): Pad 3 [<no net>] of U15 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(55.0000 mm, 55.0000 mm): PCB text 'PAL Pod Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(55.0000 mm, 55.0000 mm): PCB text 'Hearth Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
     @(165.9569 mm, 57.9554 mm): Pad 4 [<no net>] of U15 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(55.0000 mm, 55.0000 mm): PCB text 'PAL Pod Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(55.0000 mm, 55.0000 mm): PCB text 'Hearth Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
     @(167.0179 mm, 55.2894 mm): Pad 46 [<no net>] of U15 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(55.0000 mm, 55.0000 mm): PCB text 'PAL Pod Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(55.0000 mm, 55.0000 mm): PCB text 'Hearth Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
     @(166.5099 mm, 55.2894 mm): Pad 47 [<no net>] of U15 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
@@ -3509,7 +3509,7 @@
     @(167.5259 mm, 55.2894 mm): Pad 45 [<no net>] of U15 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(55.0000 mm, 55.0000 mm): PCB text 'PAL Pod Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(55.0000 mm, 55.0000 mm): PCB text 'Hearth Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
     @(167.5259 mm, 55.2894 mm): Pad 45 [<no net>] of U15 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
@@ -3537,35 +3537,35 @@
     @(165.9569 mm, 62.1224 mm): Pad 8 [<no net>] of U15 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(55.0000 mm, 55.0000 mm): PCB text 'PAL Pod Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(55.0000 mm, 55.0000 mm): PCB text 'Hearth Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
     @(165.9569 mm, 55.8714 mm): Pad 2 [<no net>] of U15 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(55.0000 mm, 55.0000 mm): PCB text 'PAL Pod Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(55.0000 mm, 55.0000 mm): PCB text 'Hearth Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
     @(165.9569 mm, 56.9134 mm): Pad 3 [<no net>] of U15 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(55.0000 mm, 55.0000 mm): PCB text 'PAL Pod Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(55.0000 mm, 55.0000 mm): PCB text 'Hearth Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
     @(165.9569 mm, 57.9554 mm): Pad 4 [<no net>] of U15 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(55.0000 mm, 55.0000 mm): PCB text 'PAL Pod Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(55.0000 mm, 55.0000 mm): PCB text 'Hearth Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
     @(165.9569 mm, 54.8304 mm): Pad 1 [<no net>] of U15 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(55.0000 mm, 55.0000 mm): PCB text 'PAL Pod Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(55.0000 mm, 55.0000 mm): PCB text 'Hearth Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
     @(166.0009 mm, 55.2894 mm): Pad 48 [<no net>] of U15 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(55.0000 mm, 55.0000 mm): PCB text 'PAL Pod Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(55.0000 mm, 55.0000 mm): PCB text 'Hearth Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
     @(167.0179 mm, 55.2894 mm): Pad 46 [<no net>] of U15 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(55.0000 mm, 55.0000 mm): PCB text 'PAL Pod Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(55.0000 mm, 55.0000 mm): PCB text 'Hearth Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
     @(168.5429 mm, 55.2894 mm): Pad 43 [<no net>] of U15 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(55.0000 mm, 55.0000 mm): PCB text 'PAL Pod Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(55.0000 mm, 55.0000 mm): PCB text 'Hearth Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
     @(170.5759 mm, 55.2894 mm): Pad 39 [<no net>] of U15 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
@@ -3589,7 +3589,7 @@
     @(168.5429 mm, 55.2894 mm): Pad 43 [<no net>] of U15 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(55.0000 mm, 55.0000 mm): PCB text 'PAL Pod Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(55.0000 mm, 55.0000 mm): PCB text 'Hearth Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
     @(168.5429 mm, 55.2894 mm): Pad 43 [<no net>] of U15 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
@@ -3601,15 +3601,15 @@
     @(170.5759 mm, 55.2894 mm): Pad 39 [<no net>] of U15 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(55.0000 mm, 55.0000 mm): PCB text 'PAL Pod Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(55.0000 mm, 55.0000 mm): PCB text 'Hearth Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
     @(170.0679 mm, 55.2894 mm): Pad 40 [GVDD] of U15 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(55.0000 mm, 55.0000 mm): PCB text 'PAL Pod Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(55.0000 mm, 55.0000 mm): PCB text 'Hearth Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
     @(169.5599 mm, 55.2894 mm): Pad 41 [<no net>] of U15 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(55.0000 mm, 55.0000 mm): PCB text 'PAL Pod Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(55.0000 mm, 55.0000 mm): PCB text 'Hearth Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
     @(169.0509 mm, 55.2894 mm): Pad 42 [<no net>] of U15 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
@@ -3633,7 +3633,7 @@
     @(171.0839 mm, 55.2894 mm): Pad 38 [PVDD] of U15 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(55.0000 mm, 55.0000 mm): PCB text 'PAL Pod Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(55.0000 mm, 55.0000 mm): PCB text 'Hearth Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
     @(171.0839 mm, 55.2894 mm): Pad 38 [PVDD] of U15 on F.Cu
 
 ** Found 16 unconnected pads **

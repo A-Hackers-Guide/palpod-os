@@ -177,7 +177,7 @@
     @(111.3500 mm, 79.1500 mm): Segment of J3 on F.Silkscreen
 [silk_overlap]: Silkscreen clearance
     Rule: board setup constraints silk; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(116.6500 mm, 10.8500 mm): Segment of J3 on F.Silkscreen
 [silk_overlap]: Silkscreen clearance
     Rule: board setup constraints silk; warning
@@ -189,19 +189,19 @@
     @(116.6500 mm, 10.8500 mm): Segment of J3 on F.Silkscreen
 [silk_overlap]: Silkscreen clearance
     Rule: board setup constraints silk; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(116.6500 mm, 10.8500 mm): Segment of J3 on F.Silkscreen
 [silk_overlap]: Silkscreen clearance
     Rule: board setup constraints silk; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(116.6500 mm, 10.8500 mm): Segment of J3 on F.Silkscreen
 [silk_overlap]: Silkscreen clearance
     Rule: board setup constraints silk; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(111.3500 mm, 79.1500 mm): Segment of J3 on F.Silkscreen
 [silk_overlap]: Silkscreen clearance
     Rule: board setup constraints silk; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(116.6500 mm, 10.8500 mm): Segment of J3 on F.Silkscreen
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
@@ -397,27 +397,27 @@
     @(57.5000 mm, 210.9750 mm): Pad 4 [<no net>] of U6 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(115.5000 mm, 15.7500 mm): Pad 254 [<no net>] of J3 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(115.5000 mm, 15.2500 mm): Pad 255 [<no net>] of J3 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(115.5000 mm, 17.7500 mm): Pad 250 [<no net>] of J3 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(115.5000 mm, 17.2500 mm): Pad 251 [<no net>] of J3 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(115.5000 mm, 16.2500 mm): Pad 253 [<no net>] of J3 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(115.5000 mm, 16.7500 mm): Pad 252 [<no net>] of J3 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
@@ -461,163 +461,163 @@
     @(115.5000 mm, 27.7500 mm): Pad 230 [<no net>] of J3 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(115.5000 mm, 19.7500 mm): Pad 246 [<no net>] of J3 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(115.5000 mm, 19.2500 mm): Pad 247 [<no net>] of J3 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(115.5000 mm, 18.7500 mm): Pad 248 [<no net>] of J3 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(115.5000 mm, 18.2500 mm): Pad 249 [<no net>] of J3 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(115.5000 mm, 17.7500 mm): Pad 250 [<no net>] of J3 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(115.5000 mm, 17.2500 mm): Pad 251 [<no net>] of J3 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(115.5000 mm, 16.7500 mm): Pad 252 [<no net>] of J3 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(115.5000 mm, 16.2500 mm): Pad 253 [<no net>] of J3 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(115.5000 mm, 15.7500 mm): Pad 254 [<no net>] of J3 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(115.5000 mm, 15.2500 mm): Pad 255 [<no net>] of J3 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(115.5000 mm, 19.7500 mm): Pad 246 [<no net>] of J3 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(115.5000 mm, 19.2500 mm): Pad 247 [<no net>] of J3 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(115.5000 mm, 18.7500 mm): Pad 248 [<no net>] of J3 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(115.5000 mm, 18.2500 mm): Pad 249 [<no net>] of J3 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(115.5000 mm, 17.7500 mm): Pad 250 [<no net>] of J3 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(115.5000 mm, 17.2500 mm): Pad 251 [<no net>] of J3 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(115.5000 mm, 16.7500 mm): Pad 252 [<no net>] of J3 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(115.5000 mm, 16.2500 mm): Pad 253 [<no net>] of J3 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(115.5000 mm, 15.7500 mm): Pad 254 [<no net>] of J3 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(115.5000 mm, 15.2500 mm): Pad 255 [<no net>] of J3 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(112.5000 mm, 18.7500 mm): Pad 118 [<no net>] of J3 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(112.5000 mm, 18.2500 mm): Pad 119 [<no net>] of J3 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(112.5000 mm, 19.7500 mm): Pad 116 [<no net>] of J3 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(112.5000 mm, 19.2500 mm): Pad 117 [<no net>] of J3 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(112.5000 mm, 17.7500 mm): Pad 120 [<no net>] of J3 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(112.5000 mm, 17.2500 mm): Pad 121 [<no net>] of J3 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(112.5000 mm, 16.7500 mm): Pad 122 [<no net>] of J3 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(112.5000 mm, 16.2500 mm): Pad 123 [<no net>] of J3 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(112.5000 mm, 15.7500 mm): Pad 124 [<no net>] of J3 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(112.5000 mm, 15.2500 mm): Pad 125 [<no net>] of J3 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(115.5000 mm, 19.7500 mm): Pad 246 [<no net>] of J3 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(115.5000 mm, 19.2500 mm): Pad 247 [<no net>] of J3 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(115.5000 mm, 18.7500 mm): Pad 248 [<no net>] of J3 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(115.5000 mm, 18.2500 mm): Pad 249 [<no net>] of J3 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(115.5000 mm, 17.7500 mm): Pad 250 [<no net>] of J3 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(115.5000 mm, 17.2500 mm): Pad 251 [<no net>] of J3 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(115.5000 mm, 16.7500 mm): Pad 252 [<no net>] of J3 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(115.5000 mm, 16.2500 mm): Pad 253 [<no net>] of J3 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(115.5000 mm, 15.7500 mm): Pad 254 [<no net>] of J3 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(225.0000 mm, 20.0000 mm): PCB text 'PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
+    @(225.0000 mm, 20.0000 mm): PCB text 'Hearth Compute Backplane - Rev A0 - PLACEHOLDER' on F.Silkscreen
     @(115.5000 mm, 15.2500 mm): Pad 255 [<no net>] of J3 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning

@@ -1168,10 +1168,10 @@ def build_schematic():
     # Title block
     title = (
         "\t(title_block\n"
-        "\t\t(title \"PAL Pod Compute Backplane\")\n"
+        "\t\t(title \"Hearth Compute Backplane\")\n"
         "\t\t(date \"2026-08-03\")\n"
         "\t\t(rev \"A0\")\n"
-        "\t\t(company \"PAL Pod\")\n"
+        "\t\t(company \"Hearth\")\n"
         "\t\t(comment 1 \"10x Jetson Orin NX (SODIMM MM70) + 10x AMD Ryzen AI 9 HX 370 (ExaMAX) + BCM56780 fabric\")\n"
         "\t\t(comment 2 \"14-layer stackup, 450x300mm, ENIG, ~3kW power distribution\")\n"
         "\t\t(comment 3 \"Reference: hardware/electrical/block-diagrams/compute-backplane.md\")\n"
@@ -1328,7 +1328,7 @@ def build_pcb():
     ])
 
     silks = (
-        f"  (gr_text \"PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER\" "
+        f"  (gr_text \"Hearth Compute Backplane - Rev A0 - PLACEHOLDER\" "
         f"(at 225 20 0) (layer \"F.SilkS\") (uuid \"{uid()}\") "
         f"(effects (font (size 4 4) (thickness 0.6)) (justify left bottom)))\n"
         f"  (gr_text \"14-layer / ENIG / Megtron 6 / 450x300mm\" "
@@ -1353,10 +1353,10 @@ def build_pcb():
         "  )\n"
         "  (paper \"A2\")\n"
         "  (title_block\n"
-        "    (title \"PAL Pod Compute Backplane - PCB\")\n"
+        "    (title \"Hearth Compute Backplane - PCB\")\n"
         "    (date \"2026-08-03\")\n"
         "    (rev \"A0\")\n"
-        "    (company \"PAL Pod\")\n"
+        "    (company \"Hearth\")\n"
         "    (comment 1 \"14-layer 450x300mm rectangular backplane\")\n"
         "    (comment 2 \"F.Cu / GND / SIG1 / GND / SIG2 / +12V / +3V3 / +1V8 / +ANA / SIG3 / GND / SIG4 / GND / B.Cu\")\n"
         "    (comment 3 \"Reference: hardware/electrical/block-diagrams/compute-backplane.md\")\n"
@@ -1726,7 +1726,7 @@ def build_project():
             "subpart_first_id": 65, "subpart_id_separator": 0,
         },
         "sheets": [[ROOT_SHEET_UUID, "Root"]],
-        "text_variables": {"BOARD_REV": "A0", "PROJECT": "PAL Pod Compute Backplane"},
+        "text_variables": {"BOARD_REV": "A0", "PROJECT": "Hearth Compute Backplane"},
     }
     (ROOT / f"{PROJECT}.kicad_pro").write_text(json.dumps(pro, indent=2))
 
@@ -1737,7 +1737,7 @@ def build_libtables():
         "  (version 7)\n"
         f"  (lib (name \"{PROJECT}\")(type \"KiCad\")"
         f"(uri \"${{KIPRJMOD}}/libraries/{PROJECT}.kicad_sym\")(options \"\")"
-        "(descr \"PAL Pod compute-backplane project-local symbols (BCM56780, MM70 SODIMM, ExaMAX, UCD90320, Aries retimer, BMC, TPM, TPS, ATX24)\"))\n"
+        "(descr \"Hearth compute-backplane project-local symbols (BCM56780, MM70 SODIMM, ExaMAX, UCD90320, Aries retimer, BMC, TPM, TPS, ATX24)\"))\n"
         ")\n"
     )
     (ROOT / "fp-lib-table").write_text(
@@ -1745,7 +1745,7 @@ def build_libtables():
         "  (version 7)\n"
         f"  (lib (name \"{PROJECT}\")(type \"KiCad\")"
         f"(uri \"${{KIPRJMOD}}/libraries/{PROJECT}.pretty\")(options \"\")"
-        "(descr \"PAL Pod compute-backplane project-local footprints (placeholder outlines)\"))\n"
+        "(descr \"Hearth compute-backplane project-local footprints (placeholder outlines)\"))\n"
         ")\n"
     )
 

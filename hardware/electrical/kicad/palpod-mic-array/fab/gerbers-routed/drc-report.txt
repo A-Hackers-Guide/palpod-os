@@ -142,7 +142,7 @@
 [silk_edge_clearance]: Silkscreen clipped by board edge
     Rule: board setup constraints silk; warning
     @(0.0000 mm, 0.0000 mm): Circle on Edge.Cuts
-    @(0.0000 mm, -55.0000 mm): PCB text 'PAL Pod Mic Array - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(0.0000 mm, -55.0000 mm): PCB text 'Hearth Mic Array - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
 [silk_edge_clearance]: Silkscreen clipped by board edge
     Rule: board setup constraints silk; warning
     @(0.0000 mm, 0.0000 mm): Circle on Edge.Cuts

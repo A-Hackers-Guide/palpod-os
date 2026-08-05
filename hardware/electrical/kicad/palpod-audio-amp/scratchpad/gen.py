@@ -797,10 +797,10 @@ def build_schematic():
         f'\t(uuid "{U("root-sch")}")\n'
         '\t(paper "A3")\n'
         '\t(title_block\n'
-        '\t\t(title "PAL Pod Audio Amp")\n'
+        '\t\t(title "Hearth Audio Amp")\n'
         '\t\t(date "2026-08-03")\n'
         '\t\t(rev "A0")\n'
-        '\t\t(company "PAL Pod")\n'
+        '\t\t(company "Hearth")\n'
         '\t\t(comment 1 "4-way active amplification: 4x CS43198 DAC + 4x Purifi 1ET7040SA Class-D modules")\n'
         '\t\t(comment 2 "Board: 6-layer, 250x200mm, +-60V HV rails, star-grounded analog")\n'
         '\t\t(comment 3 "Reference: hardware/electrical/block-diagrams/audio-amp.md")\n'
@@ -884,10 +884,10 @@ def build_pcb():
   )
   (paper "A3")
   (title_block
-    (title "PAL Pod Audio Amp - PCB")
+    (title "Hearth Audio Amp - PCB")
     (date "2026-08-03")
     (rev "A0")
-    (company "PAL Pod")
+    (company "Hearth")
     (comment 1 "6-layer 250mm x 200mm rectangular board")
     (comment 2 "F.Cu / In1.Cu (GND) / In2.Cu (PWR_analog) / In3.Cu (PWR_60V) / In4.Cu (GND) / B.Cu")
     (comment 3 "2oz outer copper for HV/speaker traces, 1oz inner. ENIG finish.")
@@ -1035,7 +1035,7 @@ def build_pcb():
   (gr_line (start 250 200) (end 0 200)   (stroke (width 0.15) (type solid)) (layer "Edge.Cuts") (uuid "{U("edge3")}"))
   (gr_line (start 0 200)   (end 0 0)     (stroke (width 0.15) (type solid)) (layer "Edge.Cuts") (uuid "{U("edge4")}"))
 
-  (gr_text "PAL Pod Audio Amp - Rev A0 - PLACEHOLDER PCB"
+  (gr_text "Hearth Audio Amp - Rev A0 - PLACEHOLDER PCB"
     (at 10 10 0)
     (layer "F.SilkS")
     (uuid "{U("title-text-1")}")

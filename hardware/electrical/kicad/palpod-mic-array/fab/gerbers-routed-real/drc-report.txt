@@ -183,11 +183,11 @@
 [silk_edge_clearance]: Silkscreen clipped by board edge
     Rule: board setup constraints silk; warning
     @(0.0000 mm, 0.0000 mm): Circle on Edge.Cuts
-    @(0.0000 mm, -55.0000 mm): PCB text 'PAL Pod Mic Array - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(0.0000 mm, -55.0000 mm): PCB text 'Hearth Mic Array - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
 [silk_overlap]: Silkscreen clearance
     Rule: board setup constraints silk; warning
     @(0.0000 mm, -57.0150 mm): Reference field of J1
-    @(0.0000 mm, -55.0000 mm): PCB text 'PAL Pod Mic Array - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(0.0000 mm, -55.0000 mm): PCB text 'Hearth Mic Array - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
     @(11.4000 mm, -2.6000 mm): Segment of U2 on F.Silkscreen
@@ -398,35 +398,35 @@
     @(16.5000 mm, 2.3500 mm): Pad 14 [GND] of U2 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(0.0000 mm, -55.0000 mm): PCB text 'PAL Pod Mic Array - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(0.0000 mm, -55.0000 mm): PCB text 'Hearth Mic Array - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
     @(0.7500 mm, -55.6800 mm): Pad B6 [USB_DP] of J1 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(0.0000 mm, -55.0000 mm): PCB text 'PAL Pod Mic Array - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(0.0000 mm, -55.0000 mm): PCB text 'Hearth Mic Array - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
     @(1.2500 mm, -55.6800 mm): Pad A8 [SBU1] of J1 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(0.0000 mm, -55.0000 mm): PCB text 'PAL Pod Mic Array - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(0.0000 mm, -55.0000 mm): PCB text 'Hearth Mic Array - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
     @(1.7500 mm, -55.6800 mm): Pad B5 [CC2] of J1 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(0.0000 mm, -55.0000 mm): PCB text 'PAL Pod Mic Array - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(0.0000 mm, -55.0000 mm): PCB text 'Hearth Mic Array - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
     @(3.2000 mm, -55.6800 mm): Pad A12 [GND] of J1 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(0.0000 mm, -55.0000 mm): PCB text 'PAL Pod Mic Array - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(0.0000 mm, -55.0000 mm): PCB text 'Hearth Mic Array - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
     @(3.2000 mm, -55.6800 mm): Pad B1 [GND] of J1 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(0.0000 mm, -55.0000 mm): PCB text 'PAL Pod Mic Array - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(0.0000 mm, -55.0000 mm): PCB text 'Hearth Mic Array - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
     @(2.4000 mm, -55.6800 mm): Pad A9 [<no net>] of J1 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(0.0000 mm, -55.0000 mm): PCB text 'PAL Pod Mic Array - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(0.0000 mm, -55.0000 mm): PCB text 'Hearth Mic Array - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
     @(2.4000 mm, -55.6800 mm): Pad B4 [+5V] of J1 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(0.0000 mm, -55.0000 mm): PCB text 'PAL Pod Mic Array - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(0.0000 mm, -55.0000 mm): PCB text 'Hearth Mic Array - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
     @(5.1100 mm, -55.1050 mm): Pad SH [<no net>] of J1 on F.Cu
 
 ** Found 26 unconnected pads **

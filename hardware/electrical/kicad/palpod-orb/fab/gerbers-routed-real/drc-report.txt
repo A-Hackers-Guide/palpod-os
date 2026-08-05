@@ -1077,7 +1077,7 @@
 [silk_overlap]: Silkscreen clearance
     Rule: board setup constraints silk; warning
     @(3.3000 mm, -13.4000 mm): Segment of U3 on F.Silkscreen
-    @(-17.0000 mm, -12.0000 mm): PCB text 'PAL Pod Orb - Rev A0' on F.Silkscreen
+    @(-17.0000 mm, -12.0000 mm): PCB text 'Hearth Orb - Rev A0' on F.Silkscreen
 [silk_overlap]: Silkscreen clearance
     Rule: board setup constraints silk; warning
     @(-17.0000 mm, -9.0000 mm): PCB text 'Rigid1: nRF54H20 + MIPI aggregator' on F.Silkscreen
@@ -1100,7 +1100,7 @@
     @(8.6000 mm, -38.1000 mm): Segment of J2 on F.Silkscreen
 [silk_overlap]: Silkscreen clearance
     Rule: board setup constraints silk; warning
-    @(-17.0000 mm, -12.0000 mm): PCB text 'PAL Pod Orb - Rev A0' on F.Silkscreen
+    @(-17.0000 mm, -12.0000 mm): PCB text 'Hearth Orb - Rev A0' on F.Silkscreen
     @(10.0000 mm, -13.6765 mm): Reference field of C12
 [silk_overlap]: Silkscreen clearance
     Rule: board setup constraints silk; warning

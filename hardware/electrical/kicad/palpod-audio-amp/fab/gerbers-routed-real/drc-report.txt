@@ -1389,7 +1389,7 @@
     @(10.0000 mm, 15.0000 mm): PCB text 'See ../block-diagrams/audio-amp.md and README for signal chain, BOM, and layout plan' on F.Silkscreen
 [silk_overlap]: Silkscreen clearance
     Rule: board setup constraints silk; warning
-    @(10.0000 mm, 10.0000 mm): PCB text 'PAL Pod Audio Amp - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(10.0000 mm, 10.0000 mm): PCB text 'Hearth Audio Amp - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
     @(92.4000 mm, 147.6000 mm): Segment of A15 on F.Silkscreen
 [silk_overlap]: Silkscreen clearance
     Rule: board setup constraints silk; warning
@@ -1749,11 +1749,11 @@
     @(68.9500 mm, 15.5550 mm): Pad 1 [+3V3_ISO] of U4 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(10.0000 mm, 10.0000 mm): PCB text 'PAL Pod Audio Amp - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(10.0000 mm, 10.0000 mm): PCB text 'Hearth Audio Amp - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
     @(97.5000 mm, 107.5000 mm): PTH pad MH1 [<no net>] of A15
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(10.0000 mm, 10.0000 mm): PCB text 'PAL Pod Audio Amp - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
+    @(10.0000 mm, 10.0000 mm): PCB text 'Hearth Audio Amp - Rev A0 - PLACEHOLDER PCB' on F.Silkscreen
     @(100.0000 mm, 107.5000 mm): PTH pad 3 [GND] of A15
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning

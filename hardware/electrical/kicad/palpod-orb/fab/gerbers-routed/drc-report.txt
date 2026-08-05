@@ -1642,14 +1642,14 @@
 [silk_overlap]: Silkscreen clearance
     Rule: board setup constraints silk; warning
     @(-9.8786 mm, -6.5921 mm): Segment of U7 on F.Silkscreen
-    @(-17.0000 mm, -12.0000 mm): PCB text 'PAL Pod Orb - Rev A0' on F.Silkscreen
+    @(-17.0000 mm, -12.0000 mm): PCB text 'Hearth Orb - Rev A0' on F.Silkscreen
 [silk_overlap]: Silkscreen clearance
     Rule: board setup constraints silk; warning
     @(5.3143 mm, -11.1921 mm): Reference field of U8
     @(-6.6786 mm, -6.5921 mm): Segment of U7 on F.Silkscreen
 [silk_overlap]: Silkscreen clearance
     Rule: board setup constraints silk; warning
-    @(-17.0000 mm, -12.0000 mm): PCB text 'PAL Pod Orb - Rev A0' on F.Silkscreen
+    @(-17.0000 mm, -12.0000 mm): PCB text 'Hearth Orb - Rev A0' on F.Silkscreen
     @(-6.6786 mm, -9.7921 mm): Segment of U7 on F.Silkscreen
 [silk_overlap]: Silkscreen clearance
     Rule: board setup constraints silk; warning
@@ -2037,19 +2037,19 @@
     @(-11.0786 mm, -9.4807 mm): Pad 22 [<no net>] of U1 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(-17.0000 mm, -12.0000 mm): PCB text 'PAL Pod Orb - Rev A0' on F.Silkscreen
+    @(-17.0000 mm, -12.0000 mm): PCB text 'Hearth Orb - Rev A0' on F.Silkscreen
     @(-11.5786 mm, -12.3807 mm): Pad 9 [<no net>] of U1 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(-17.0000 mm, -12.0000 mm): PCB text 'PAL Pod Orb - Rev A0' on F.Silkscreen
+    @(-17.0000 mm, -12.0000 mm): PCB text 'Hearth Orb - Rev A0' on F.Silkscreen
     @(-11.5786 mm, -12.7807 mm): Pad 10 [<no net>] of U1 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(-17.0000 mm, -12.0000 mm): PCB text 'PAL Pod Orb - Rev A0' on F.Silkscreen
+    @(-17.0000 mm, -12.0000 mm): PCB text 'Hearth Orb - Rev A0' on F.Silkscreen
     @(-11.5786 mm, -13.1807 mm): Pad 11 [<no net>] of U1 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(-17.0000 mm, -12.0000 mm): PCB text 'PAL Pod Orb - Rev A0' on F.Silkscreen
+    @(-17.0000 mm, -12.0000 mm): PCB text 'Hearth Orb - Rev A0' on F.Silkscreen
     @(-11.5786 mm, -13.5807 mm): Pad 12 [<no net>] of U1 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
@@ -2625,19 +2625,19 @@
     @(-5.4786 mm, -9.4807 mm): Pad 36 [<no net>] of U1 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(-17.0000 mm, -12.0000 mm): PCB text 'PAL Pod Orb - Rev A0' on F.Silkscreen
+    @(-17.0000 mm, -12.0000 mm): PCB text 'Hearth Orb - Rev A0' on F.Silkscreen
     @(-4.9786 mm, -12.3807 mm): Pad 49 [<no net>] of U1 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(-17.0000 mm, -12.0000 mm): PCB text 'PAL Pod Orb - Rev A0' on F.Silkscreen
+    @(-17.0000 mm, -12.0000 mm): PCB text 'Hearth Orb - Rev A0' on F.Silkscreen
     @(-4.9786 mm, -12.7807 mm): Pad 48 [<no net>] of U1 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(-17.0000 mm, -12.0000 mm): PCB text 'PAL Pod Orb - Rev A0' on F.Silkscreen
+    @(-17.0000 mm, -12.0000 mm): PCB text 'Hearth Orb - Rev A0' on F.Silkscreen
     @(-4.9786 mm, -13.5807 mm): Pad 46 [<no net>] of U1 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
-    @(-17.0000 mm, -12.0000 mm): PCB text 'PAL Pod Orb - Rev A0' on F.Silkscreen
+    @(-17.0000 mm, -12.0000 mm): PCB text 'Hearth Orb - Rev A0' on F.Silkscreen
     @(-4.9786 mm, -13.1807 mm): Pad 47 [<no net>] of U1 on F.Cu
 [silk_over_copper]: Silkscreen clipped by solder mask
     Local override; warning
