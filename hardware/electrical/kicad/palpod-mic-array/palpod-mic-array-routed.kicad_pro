@@ -753,7 +753,7 @@
   ],
   "text_variables": {
     "BOARD_REV": "A0",
-    "PROJECT": "PAL Pod Mic Array"
+    "PROJECT": "Hearth Mic Array"
   },
   "tuning_profiles": {
     "meta": {

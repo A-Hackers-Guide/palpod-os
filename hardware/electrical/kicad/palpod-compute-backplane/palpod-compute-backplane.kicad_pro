@@ -736,6 +736,6 @@
   ],
   "text_variables": {
     "BOARD_REV": "A0",
-    "PROJECT": "PAL Pod Compute Backplane"
+    "PROJECT": "Hearth Compute Backplane"
   }
 }

@@ -8,7 +8,7 @@
 	)
 	(paper "A2")
 	(title_block
-		(title "PAL Pod Compute Backplane - PCB")
+		(title "Hearth Compute Backplane - PCB")
 		(date "2026-08-03")
 		(rev "A0")
 		(company "Hearth Home, Inc.")
@@ -51117,7 +51117,7 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "PAL Pod Compute Backplane - Rev A0 - PLACEHOLDER"
+	(gr_text "Hearth Compute Backplane - Rev A0 - PLACEHOLDER"
 		(at 225 20 0)
 		(layer "F.SilkS")
 		(uuid "56c802bb-4b54-4ffd-9a99-70175ae3614a")

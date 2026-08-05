@@ -739,6 +739,6 @@
   ],
   "text_variables": {
     "BOARD_REV": "A0",
-    "PROJECT": "PAL Pod Halbach Controller"
+    "PROJECT": "Hearth Halbach Controller"
   }
 }

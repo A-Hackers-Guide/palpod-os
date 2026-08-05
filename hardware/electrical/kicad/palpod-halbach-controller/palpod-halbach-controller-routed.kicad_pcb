@@ -8,7 +8,7 @@
 	)
 	(paper "A3")
 	(title_block
-		(title "PAL Pod Halbach Levitation Controller - PCB")
+		(title "Hearth Halbach Levitation Controller - PCB")
 		(date "2026-08-03")
 		(rev "A0")
 		(company "Hearth Home, Inc.")
@@ -12922,7 +12922,7 @@
 			(justify left top)
 		)
 	)
-	(gr_text "PAL Pod Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB"
+	(gr_text "Hearth Halbach Levitation Controller - Rev A0 - PLACEHOLDER PCB"
 		(at 55 55 0)
 		(layer "F.SilkS")
 		(uuid "c9247884-ed01-4d05-8672-bf6c6b516c78")

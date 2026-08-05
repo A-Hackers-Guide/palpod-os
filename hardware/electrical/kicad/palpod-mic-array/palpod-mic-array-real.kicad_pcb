@@ -8,7 +8,7 @@
 	)
 	(paper "A3")
 	(title_block
-		(title "PAL Pod Mic Array - PCB")
+		(title "Hearth Mic Array - PCB")
 		(date "2026-08-03")
 		(rev "A0")
 		(company "Hearth Home, Inc.")
@@ -8994,7 +8994,7 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "PAL Pod Mic Array - Rev A0 - PLACEHOLDER PCB"
+	(gr_text "Hearth Mic Array - Rev A0 - PLACEHOLDER PCB"
 		(at 0 -55 0)
 		(layer "F.SilkS")
 		(uuid "a1b2c3d4-1111-4222-8333-000000001001")

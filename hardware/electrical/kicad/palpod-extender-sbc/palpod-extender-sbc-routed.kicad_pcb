@@ -8,7 +8,7 @@
 	)
 	(paper "A3")
 	(title_block
-		(title "PAL Pod Extender SBC - PCB")
+		(title "Hearth Extender SBC - PCB")
 		(date "2026-08-03")
 		(rev "A0")
 		(company "Hearth Home, Inc.")
@@ -14930,7 +14930,7 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "PAL Pod Extender SBC - Rev A0 - PLACEHOLDER PCB"
+	(gr_text "Hearth Extender SBC - Rev A0 - PLACEHOLDER PCB"
 		(at 5 -5 0)
 		(layer "F.SilkS")
 		(uuid "0e040e3d-2135-4117-8781-5871a978078b")

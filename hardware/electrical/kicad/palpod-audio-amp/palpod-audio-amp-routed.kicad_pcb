@@ -8,7 +8,7 @@
 	)
 	(paper "A3")
 	(title_block
-		(title "PAL Pod Audio Amp - PCB")
+		(title "Hearth Audio Amp - PCB")
 		(date "2026-08-03")
 		(rev "A0")
 		(company "Hearth Home, Inc.")
@@ -26203,7 +26203,7 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "PAL Pod Audio Amp - Rev A0 - PLACEHOLDER PCB"
+	(gr_text "Hearth Audio Amp - Rev A0 - PLACEHOLDER PCB"
 		(at 10 10 0)
 		(layer "F.SilkS")
 		(uuid "e44a3b2b-ec49-5b5e-a463-b74228676a2f")

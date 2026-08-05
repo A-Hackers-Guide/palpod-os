@@ -825,7 +825,7 @@
   ],
   "text_variables": {
     "BOARD_REV": "A0",
-    "PROJECT": "PAL Pod Extender SBC"
+    "PROJECT": "Hearth Extender SBC"
   },
   "tuning_profiles": {
     "meta": {

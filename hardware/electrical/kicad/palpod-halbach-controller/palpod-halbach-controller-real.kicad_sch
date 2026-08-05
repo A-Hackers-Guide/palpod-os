@@ -5,7 +5,7 @@
 	(uuid "9f5800cf-1ee3-4e93-8d91-bffe1f54e1f9")
 	(paper "A2")
 	(title_block
-		(title "PAL Pod Halbach Levitation Controller")
+		(title "Hearth Halbach Levitation Controller")
 		(date "2026-08-03")
 		(rev "A0")
 		(company "Hearth Home, Inc.")

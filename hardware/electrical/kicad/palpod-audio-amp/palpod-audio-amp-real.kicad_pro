@@ -785,7 +785,7 @@
   ],
   "text_variables": {
     "BOARD_REV": "A0",
-    "PROJECT": "PAL Pod Audio Amp"
+    "PROJECT": "Hearth Audio Amp"
   },
   "tuning_profiles": {
     "meta": {
